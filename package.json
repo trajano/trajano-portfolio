@@ -1,0 +1,22 @@
+{
+  "name": "trajano-portfolio",
+  "version": "1.0.0",
+  "description": "Archimedes Trajano portfolio site.",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trajano/trajano-portfolio.git"
+  },
+  "author": "Archimedes Trajano <developer@trajano.net>",
+  "license": "EPL-1.0",
+  "bugs": {
+    "url": "https://github.com/trajano/trajano-portfolio/issues"
+  },
+  "homepage": "https://github.com/trajano/trajano-portfolio#readme",
+  "devDependencies": {
+    "webpack": "^1.14.0"
+  }
+}
