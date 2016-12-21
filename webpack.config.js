@@ -1,3 +1,4 @@
+var HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
     module: {
         loaders: [
@@ -15,5 +16,13 @@ module.exports = {
     output: {
         path: './dist',
         filename: 'bundle.js'
-    }
+    },
+    plugins: [new HtmlWebpackPlugin({
+        template: './app.html',
+        minify:  {
+           removeAttributeQuotes: true,
+           collapseWhitespace: true,
+           html5: true
+         }
+    })]
 }
