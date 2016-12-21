@@ -4,7 +4,7 @@
   "description": "Archimedes Trajano portfolio site.",
   "main": "index.js",
   "scripts": {
-    "postinstall": "cd semantic && gulp build && cd .. && webpack",
+    "postinstall": "cd semantic && gulp build && cd .. && webpack -p",
     "dev": "webpack-dev-server dist/ --inline"
   },
   "repository": {
