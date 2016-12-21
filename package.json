@@ -4,9 +4,8 @@
   "description": "Archimedes Trajano portfolio site.",
   "main": "index.js",
   "scripts": {
-    "postinstall": "webpack",
-    "xpostinstall": "cd semantic && gulp build && cd .. && webpack",
-    "build": "webpack"
+    "postinstall": "cd semantic && gulp build && cd .. && webpack -p",
+    "dev": "webpack-dev-server dist/ --inline"
   },
   "repository": {
     "type": "git",
@@ -19,10 +18,14 @@
   },
   "homepage": "https://github.com/trajano/trajano-portfolio#readme",
   "devDependencies": {
+    "css-loader": "^0.26.1",
     "file-loader": "^0.9.0",
     "font-loader": "^0.1.2",
+    "html-webpack-plugin": "^2.24.1",
+    "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
-    "webpack": "^1.14.0"
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
     "semantic-ui": "^2.2.6"
