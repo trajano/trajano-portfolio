@@ -1,5 +1,5 @@
 module.exports = {
-       module: {
+    module: {
         loaders: [
             {
                 test: /\.css$/,
