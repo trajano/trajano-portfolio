@@ -2,6 +2,18 @@ html {
   font-family: Lato, sans-serif;
 }
 
+.nav-wrapper .brand-logo img {
+  height: 64px;
+  border:10px solid transparent;
+}
+
+@media (max-width: 600px) {
+   .nav-wrapper .brand-logo img {
+    height: 56px;
+    border:10px solid transparent;
+  }
+}
+
 nav ul a,
 nav .brand-logo {
   color: #444;
