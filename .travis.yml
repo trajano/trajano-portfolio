@@ -10,4 +10,4 @@ after_success:
 - git -C dist add -A
 - git -C dist commit -a -m "Travis build"
 - git -C dist rebase origin/gh-pages
-- if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then git -C dist push origin HEAD:gh-pages; fi
+- if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then git -C dist push origin HEAD:gh-pages; fi
