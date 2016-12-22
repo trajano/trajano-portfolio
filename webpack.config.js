@@ -1,3 +1,4 @@
+var CopyWebpackPlugin = require('copy-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
     module: {
@@ -7,7 +8,7 @@ module.exports = {
                 loader: "style-loader!css-loader"
             }, {
                 test: /\.(eot|svg|ttf|woff|woff2|png)$/,
-                loader: 'file-loader'
+                loader: 'file-loader?name=[name].[ext]'
             }
         ]
     },
@@ -16,7 +17,9 @@ module.exports = {
         path: './dist',
         filename: 'bundle.js'
     },
-    plugins: [new HtmlWebpackPlugin({
+    plugins: [new CopyWebpackPlugin([{
+        from: 'assets'
+    }]), new HtmlWebpackPlugin({
         template: './app.html',
         minify: {
             removeAttributeQuotes: true,
