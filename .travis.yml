@@ -1,7 +1,5 @@
 language: node_js
 node_js: node
-addons:
-  ssh_known_hosts: github.com
 before_install:
 - openssl aes-256-cbc -K $encrypted_8a3d438a572c_key -iv $encrypted_8a3d438a572c_iv
   -in .git-credentials.enc -out $HOME/.git-credentials -d
