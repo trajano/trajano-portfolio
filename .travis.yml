@@ -10,7 +10,7 @@ after_success:
 - git commit -a -m "Travis build"
 - git remote rm origin
 - git remote add origin https://trajano:$GITHUB_TOKEN@github.com/trajano/trajano-portfolio
-- git push origin HEAD:gh-pages
+- if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then git push origin gh-pages; fi
 env:
   global:
     secure: M4ea74aYAPHIdV4sduRSqaZadvl/JorE5osg4ERDH0aA1tIz3GI4QoS/W70YFFTcZ3u/yM6mWkjMfQ7iv7neRRWV/SI3rUCGB6TfDY9o4oSou8AObA/IqMPUih1B3/dXk8UoMBS7rKjNH8KgdcGNC0+WYqW+6LDDNFV4utES3khNtMCw1slLNtQnsve78jsLfeE5QLLrOw63PxzT/gh8xRpvN3elwcMLe2d9oL1MMfpCMqqREhkqYL6tbYzY/jo13Iu+wNZBzM0qP3btoKSjOsfpnx4UfdqgvC1PxVDaqPzPVzC471p1desLCUJOTx5s5WfS6FehBS7/GEzW+qRgwI7NDeGNAKcUYpACLD9ZPW5+6qVaRGL7mvz8kJ9uyirw77aFU1B2F0nG+1s8EDvlJD1bbCn7PEDQbKcSfbZRwCeZxOjXyGaBXhCUJJlzUR0NjWHU1zycyjrQEzyGSsUVvbmbGssHJ/7ypqi+dRocYE0GMBtSM/7zA0lA13dFPgOU2HDpxZp4tf8ccFF7bdFkDFfniWucHyKcbJQGTEP2HuDlOw5dh9fRnNFfNFHIPohmTC0TkKC8nHG/ZBPTu8Smv30/sbk7+UVRyzx8wqJmAU8x5QveT2yvQh/xhLTkNzh8UW+g8auzMO6lpmSdzSOecxNrhM6jyLWx0LUi2JYLz8c=
