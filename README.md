@@ -4,7 +4,7 @@
 
 My portfolio site of Archimedes Trajano.
 
-This is built using Semantic UI and webpack.
+This is built using webpack.
 
 # Installation
 
