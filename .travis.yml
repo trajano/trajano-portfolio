@@ -9,8 +9,7 @@ before_install:
 - git config --global user.email "travis@trajano.net"
 - git config --global user.name  "Travis Service Account"
 after_success:
-- cd dist/
-- git add -A
-- git commit -a -m "Travis build"
-- git rebase origin/gh-pages
-- if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then git push origin HEAD:gh-pages; fi
+- git -C dist add -A
+- git -C dist commit -a -m "Travis build"
+- git -C dist rebase origin/gh-pages
+- if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then git -C dist push origin HEAD:gh-pages; fi
