@@ -1,13 +1,28 @@
+var webpack = require("webpack")
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
     module: {
         loaders: [
             {
-                test: /\.css$/,
-                loader: "style-loader!css-loader"
+                test: /\.scss$/,
+                loaders: ["style-loader", "css-loader", "sass-loader"]
             }, {
-                test: /\.(eot|svg|ttf|woff|woff2|png)$/,
-                loader: 'file-loader'
+                test: /\.css$/,
+                loaders: ["style-loader", "css-loader"]
+            }, {
+                test: /\.jpg|\.png$/,
+                include: /images/,
+                loaders: ["file-loader"]
+            }, {
+                test: /\.woff2|\.woff|\.ttf|\.eot$/,
+                loaders: ["file-loader"]
+            }, {
+                test: /\.js$/,
+                exclude: /(node_modules|bower_components)/,
+                loader: 'babel-loader',
+                query: {
+                    presets: ['es2015']
+                }
             }
         ]
     },
@@ -16,12 +31,17 @@ module.exports = {
         path: './dist',
         filename: 'bundle.js'
     },
-    plugins: [new HtmlWebpackPlugin({
+    plugins: [new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery",
+        "window.jQuery": "jquery",
+    }), new HtmlWebpackPlugin({
         template: './app.html',
         minify: {
             removeAttributeQuotes: true,
             collapseWhitespace: true,
             html5: true
         }
-    })]
+    })],
+    devtool: 'source-map',
 }
