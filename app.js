@@ -4,6 +4,8 @@ import './style.css'
 import 'materialize-css/dist/js/materialize'
 
 $(function () {
-    $('.button-collapse').sideNav();
+    $('.button-collapse').sideNav({
+         edge: 'right'
+    });
     $('.parallax').parallax();
 })
