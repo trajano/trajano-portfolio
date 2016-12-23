@@ -1,4 +1,5 @@
 var webpack = require("webpack")
+var CopyWebpackPlugin = require('copy-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
     module: {
@@ -6,17 +7,21 @@ module.exports = {
             {
                 test: /\.scss$/,
                 loaders: ["style-loader", "css-loader", "sass-loader"]
-            }, {
+            },
+            {
                 test: /\.css$/,
                 loaders: ["style-loader", "css-loader"]
-            }, {
+            },
+            {
                 test: /\.jpg|\.png$/,
                 include: /images/,
                 loaders: ["file-loader"]
-            }, {
+            },
+            {
                 test: /\.woff2|\.woff|\.ttf|\.eot|\.svg(\?v=[0-9]\.[0-9]\.[0-9])?$/,
                 loaders: ["file-loader"]
-            }, {
+            },
+            {
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
                 loader: 'babel-loader',
@@ -24,7 +29,6 @@ module.exports = {
                     presets: ['es2015']
                 }
             }
-
         ]
     },
     entry: './app.js',
@@ -35,17 +39,23 @@ module.exports = {
     externals: {
         "node-waves": "Waves",
     },
-    plugins: [new webpack.ProvidePlugin({
-        $: "jquery",
-        jQuery: "jquery",
-        "window.jQuery": "jquery",
-    }), new HtmlWebpackPlugin({
-        template: './app.html',
-        minify: {
-            removeAttributeQuotes: true,
-            collapseWhitespace: true,
-            html5: true
-        }
-    })],
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery",
+        }),
+        new CopyWebpackPlugin([{
+            from: 'assets'
+        }]),
+        new HtmlWebpackPlugin({
+            template: './app.html',
+            minify: {
+                removeAttributeQuotes: true,
+                collapseWhitespace: true,
+                html5: true
+            }
+        })
+    ],
     devtool: 'source-map',
 }
