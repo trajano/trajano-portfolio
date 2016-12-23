@@ -11,4 +11,4 @@ before_install:
 after_success:
 - git -C dist add .
 - git -C dist commit -a -m "Travis build"
-- if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then git -C dist push origin HEAD:gh-pages; fi
+- if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then git -C dist push origin gh-pages; fi
