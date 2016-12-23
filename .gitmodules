@@ -1,4 +1,0 @@
-[submodule "dist"]
-	path = dist
-	url = https://github.com/trajano/trajano-portfolio
-	branch = gh-pages
