@@ -14,7 +14,7 @@ module.exports = {
                 include: /images/,
                 loaders: ["file-loader"]
             }, {
-                test: /\.woff2|\.woff|\.ttf|\.eot$/,
+                test: /\.woff2|\.woff|\.ttf|\.eot|\.svg(\?v=[0-9]\.[0-9]\.[0-9])?$/,
                 loaders: ["file-loader"]
             }, {
                 test: /\.js$/,
@@ -24,6 +24,7 @@ module.exports = {
                     presets: ['es2015']
                 }
             }
+
         ]
     },
     entry: './app.js',
