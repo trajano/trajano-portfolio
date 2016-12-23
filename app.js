@@ -1,4 +1,3 @@
-import 'font-awesome/scss/font-awesome.scss'
 import './app.scss'
 import 'materialize-css/dist/js/materialize'
 
