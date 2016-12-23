@@ -1,7 +1,7 @@
 @import "~materialize-css/sass/components/mixins";
 @import "~materialize-css/sass/components/color";
 // Override variables in materializecss
-$secondary-color: color("red", "lighten-1");
+$secondary-color: color("blue", "lighten-1");
 @import "~materialize-css/sass/components/variables";
 // Reset
 @import "~materialize-css/sass/components/normalize";
@@ -13,7 +13,7 @@ $secondary-color: color("red", "lighten-1");
 @import "~materialize-css/sass/components/typography";
 @import "~materialize-css/sass/components/cards";
 //@import "~materialize-css/sass/components/toast";
-//@import "~materialize-css/sass/components/tabs";
+@import "~materialize-css/sass/components/tabs";
 //@import "~materialize-css/sass/components/tooltip";
 @import "~materialize-css/sass/components/buttons";
 //@import "~materialize-css/sass/components/dropdown";

@@ -2,9 +2,11 @@
 <html lang="en">
 
 <head>
-    <title>Archimedes Trajano</title>
+    <title><%= htmlWebpackPlugin.options.title %></title>
     <meta charset="utf-8">
+    <meta name="Description" content="<%= htmlWebpackPlugin.options.description %>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="noindex" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
     <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -15,9 +17,9 @@
         <div class="section no-pad-bot">
             <div class="container">
                 <br><br>
-                <h1 class="header center -text text-lighten-2 thin">Archimedes Trajano</h1>
+                <h1 class="header center -text text-lighten-2 thin"><%= htmlWebpackPlugin.options.title %></h1>
                 <div class="row center">
-                    <h5 class="header col s12 light">IT Consultant. Not a model or graphic designer so just using some random stock images of cats for now.</h5>
+                    <h5 class="header col s12 light"><%= htmlWebpackPlugin.options.description  %></h5>
                 </div>
                 <div id="skip-to-content">
                     <a class="btn-floating btn-large waves-effect waves-light" href="#mainnav"><i class="material-icons">arrow_downward</i></a>
@@ -31,7 +33,7 @@
             <div class="nav-wrapper">
                 <a id="logo-container" href="#" class="brand-logo left"><img src="assets/portfolio-logo.png" alt="Trajano"></a>
 
-                <ul class="right hide-on-med-and-down table-of-contents">
+                <ul id="nav-desktop" class="right hide-on-med-and-down table-of-contents">
                     <li><a href="#mainnav">About Archie</li>
                     <li><a href="#projects">Personal Projects</li>
                     <li><a href="#social">Social</li>
@@ -46,13 +48,13 @@
                             <div class="background">
                                 <img src="//lorempixel.com/400/300/cats/3">
                             </div>
-                            <a href="#!user"><img class="circle" src="//en.gravatar.com/userimage/291884/5042730d41e772fe2a3729a921340c95.png?size=200"></a>
-                            <a href="#!name"><span class="white-text name">Archie</span></a>
+                            <img class="circle" src="//en.gravatar.com/userimage/291884/5042730d41e772fe2a3729a921340c95.png?size=200">
+                            <span class="white-text name">Archie</span>
                             <a href="mailto:archie...trajano...net" class="obfuscate"><span class="white-text email">archie...trajano...net</span></a>
-                            <a href="tel:+one fouronesix-eightfivesix-sixsixfivefive" class="obfuscate"><span class="white-text tel">fouronesix-eightfivesix-sixsixfivefive</span></a>
+                            <a href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive" class="obfuscate"><span class="white-text tel">FourOneSix-EightFiveSix-SixSixFiveFive</span></a>
                         </div>
                     </li>
-                    <li><a href="#me">About Archie</li>
+                    <li><a href="#mainnav">About Archie</li>
                     <li><a href="#projects">Personal Projects</li>
                     <li><a href="#social">Social</li>
                     <li><a href="#resume">Resume</a></li>
@@ -314,18 +316,19 @@
 
             <div class="row">
                 <div class="col s12 m12 l12">
-                    <p>FYI TO RECRUITERS: My IT consulting rate is <b>$150/hr</b> within the Greater Toronto Area only. My development
-                        contracting rate is <b>$100/hr</b> (telecommute / work from home only). I am presently not open for
-                        long term business travel.</p>
+                    <p><b>FYI TO RECRUITERS:</b> My IT consulting rate is <b>$150/hr</b> within the Greater Toronto Area only.
+                        My development contracting rate is <b>$100/hr</b> (telecommute / work from home only). I am presently
+                        not open for long term business travel.</p>
                     <div class="center">
                         <p>
                             <a title="Archimedes Trajano Resume in Word Format" class="waves-effect waves-light btn-large" href="assets/Archimedes%20Trajano.docx"><i class="fa fa-file-word-o left"> </i> Word</a>
                             <a title="Archimedes Trajano Resume in PDF format" class="waves-effect waves-light btn-large" href="assets/Archimedes%20Trajano.pdf"><i class="fa fa-file-pdf-o left"> </i> PDF</a>
-                            <a title="Archimedes Trajano Resume" class="waves-effect waves-light btn-large" href="https://trajano.net/archimedes-trajano-resume/"><i class="fa fa-eye left"> </i> View online</a>
+                            <a title="Archimedes Trajano Resume" class="waves-effect waves-light btn-large btn-primary" href="https://trajano.net/archimedes-trajano-resume/"><i class="fa fa-eye left"> </i> View online</a>
                         </p>
                         <p>
+                            <a class="waves-effect waves-light btn-large" href="http://stackoverflow.com/users/story/242042"><i class="fa fa-stack-overflow left"> </i>  Stack Overflow Developer Story</a>
                             <a class="waves-effect waves-light btn-large" href="https://linkedin.com/in/trajano"><i class="fa fa-linkedin left"> </i>  LinkedIn Profile</a>
-                            <a class="waves-effect waves-light btn-large" href="http://stackoverflow.com/users/story/242042"><i class="fa fa-stack-overflow left"> </i>  Stack Overflow Developer Story</a></p>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -335,35 +338,39 @@
     <footer class="page-footer blue darken-2">
         <div class="container">
             <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Company Bio</h5>
-                    <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would
-                        help support and continue development on this project and is greatly appreciated.</p>
+                <div class="col l8 s12">
+                    <h5 class="white-text">Bio</h5>
+                    <p class="grey-text text-lighten-4">Archimedes Trajano is an IT consultant and IT contractor with focus on Application Architecture and tooling
+                        utilizing various industry standard technologies such as Java EE and Web Services.</p>
+                    <p class="grey-text text-lighten-4">Archie has over 16 years of full-time experience with various companies, with 4 years of part-time/internship
+                        work with York University and IBM Canada. He provides skills in integration with legacy systems,
+                        development infrastructure, web services and custom application development. His development skill,
+                        adaptability to new technologies, and integration skills help customers with their effort in becoming
+                        an even more successful.</p>
 
 
                 </div>
-                <div class="col l3 s12">
-                    <h5 class="white-text">Settings</h5>
-                    <ul>
-                        <li><a class="white-text" href="#!">Link 1</a></li>
-                        <li><a class="white-text" href="#!">Link 2</a></li>
-                        <li><a class="white-text" href="#!">Link 3</a></li>
-                        <li><a class="white-text" href="#!">Link 4</a></li>
-                    </ul>
-                </div>
-                <div class="col l3 s12">
+                <div class="col l4 s12">
                     <h5 class="white-text">Contact me</h5>
 
-                    <p><i class="white-text material-icons left">email</i><a class="white-text obfuscate" href="mailto:archie...trajano...net">archie...trajano...net</a></p>
+                    <p><a class="white-text waves-effect btn-flat obfuscate" href="mailto:archie...trajano...net"><i class=" material-icons left">email</i> archie...trajano...net</a></p>
 
-                    <p><i class="white-text material-icons left">phone</i><a class="white-text obfuscate" href="tel:+one fouronesix-eightfivesix-sixsixfivefive">fouronesix-eightfivesix-sixsixfivefive</a></p>
+                    <p>
+                        <a class="white-text waves-effect btn-flat obfuscate" href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive"><i class=" material-icons left">phone_iphone</i> FourOneSix-EightFiveSix-SixSixFiveFive</a></p>
 
                 </div>
             </div>
         </div>
         <div class="footer-copyright">
             <div class="container">
-                Based on parallax template from <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+                <div class="row">
+                    <div class="col s6">
+                        © 2016 Trajano
+                    </div>
+                    <div class="col s6 right-align">
+                        <a class="white-text" href="https://trajano.net/privacy-policy">Privacy policy</a>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>

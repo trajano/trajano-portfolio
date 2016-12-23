@@ -21,6 +21,9 @@ html {
             height: $navbar-height;
             border: 10px solid transparent;
         }
+        a {
+            color: $primary-color;
+        }
         @media #{$medium-and-down} {
             .nav-wrapper .brand-logo img {
                 height: $navbar-height-mobile;
@@ -65,4 +68,40 @@ html {
             @extend .email;
         }
     }
+}
+
+#nav-desktop.table-of-contents {
+    li {
+        transition: background-color .3s;
+        float: left;
+        padding: 0;
+    }
+    a {
+        display: inline-block;
+        transition: background-color .3s;
+        font-size: $navbar-font-size;
+        font-weight: 400;
+        color: $navbar-font-color;
+        padding-left: 15px;
+        cursor: pointer;
+        color: $primary-color;
+        height: auto;
+        line-height: inherit;
+        letter-spacing: .4;
+        &:hover {
+            border-left: 0;
+            padding-left: 15px;
+        }
+        &.active {
+            font-weight: 400;
+            border-left: 0;
+            padding-left: 15px;
+            border-bottom: 10px solid $primary-color;
+        }
+    }
+}
+
+.btn,
+.btn-flat {
+    text-transform: none;
 }

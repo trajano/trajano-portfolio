@@ -10,7 +10,8 @@ $(function () {
     })
 
     $('.button-collapse').sideNav({
-        edge: 'right'
+        edge: 'right',
+        closeOnClick: true
     })
     $('.scrollspy').scrollSpy({
         scrollOffset: 0
@@ -21,27 +22,27 @@ $(function () {
     $(".obfuscate").each(function () {
         $(this).html($(this).html()
             .replace("...", "@").replace(/\.\.\./g, ".")
-            .replace(/one/g, "1")
-            .replace(/two/g, "2")
-            .replace(/three/g, "3")
-            .replace(/four/g, "4")
-            .replace(/five/g, "5")
-            .replace(/six/g, "6")
-            .replace(/seven/g, "7")
-            .replace(/eight/g, "8")
-            .replace(/nine/g, "9")
-            .replace(/zero/g, "0"));
+            .replace(/One/g, "1")
+            .replace(/Two/g, "2")
+            .replace(/Three/g, "3")
+            .replace(/Four/g, "4")
+            .replace(/Five/g, "5")
+            .replace(/Six/g, "6")
+            .replace(/Seven/g, "7")
+            .replace(/Eight/g, "8")
+            .replace(/Nine/g, "9")
+            .replace(/Zero/g, "0"));
         $(this).attr("href", $(this).attr("href")
             .replace("...", "@").replace(/\.\.\./g, ".")
-            .replace(/one/g, "1")
-            .replace(/two/g, "2")
-            .replace(/three/g, "3")
-            .replace(/four/g, "4")
-            .replace(/five/g, "5")
-            .replace(/six/g, "6")
-            .replace(/seven/g, "7")
-            .replace(/eight/g, "8")
-            .replace(/nine/g, "9")
-            .replace(/zero/g, "0"));
+            .replace(/One/g, "1")
+            .replace(/Two/g, "2")
+            .replace(/Three/g, "3")
+            .replace(/Four/g, "4")
+            .replace(/Five/g, "5")
+            .replace(/Six/g, "6")
+            .replace(/Seven/g, "7")
+            .replace(/Eight/g, "8")
+            .replace(/Nine/g, "9")
+            .replace(/Zero/g, "0"));
     });
 })

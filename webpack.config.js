@@ -49,6 +49,8 @@ module.exports = {
             from: 'assets'
         }]),
         new HtmlWebpackPlugin({
+            title: "Archimedes Trajano",
+            description: "IT Consultant. Not a model or graphic designer so just using some random stock images of cats for now.",
             template: './app.html',
             minify: {
                 removeAttributeQuotes: true,
