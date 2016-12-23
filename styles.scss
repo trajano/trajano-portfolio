@@ -15,7 +15,7 @@ html {
         min-height: $navbar-height-mobile;
     }
     nav {
-        z-index: 1000000;
+        z-index: 1000;
         background-color: $main-backgound-color;
         .nav-wrapper .brand-logo img {
             height: $navbar-height;
@@ -33,7 +33,7 @@ html {
 }
 
 #top-banner {
-    .section {
+    &.parallax-container {
         min-height: calc(100vh - 64px);
     }
     #skip-to-content {
@@ -44,7 +44,7 @@ html {
         right: $navbar-height;
     }
     @media #{$medium-and-down} {
-        .section {
+        &.parallax-container {
             min-height: calc(100vh - 56px);
         }
         #skip-to-content {
@@ -104,4 +104,12 @@ html {
 .btn,
 .btn-flat {
     text-transform: none;
+}
+
+.parallax-container {
+    min-height: 380px;
+    color: white;
+    .parallax {
+        background: rgba(70, 72, 82, 0.3);
+    }
 }
