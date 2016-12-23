@@ -1,6 +1,7 @@
 @import "~materialize-css/sass/components/mixins";
 @import "~materialize-css/sass/components/color";
-// Variables;
+// Override variables in materializecss
+$secondary-color: color("red", "lighten-1");
 @import "~materialize-css/sass/components/variables";
 // Reset
 @import "~materialize-css/sass/components/normalize";
