@@ -49,3 +49,19 @@ html {
         }
     }
 }
+
+.side-nav {
+    .userView {
+        .name {
+            // add bottom padding as well to space out for tap area
+            padding-bottom: 16px;
+        }
+        .email {
+            // make the font slightly larger since it is going to be clickable
+            font-size: $sidenav-font-size + 4;
+        }
+        .tel {
+            @extend .email;
+        }
+    }
+}
