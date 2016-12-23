@@ -1,7 +1,7 @@
 
 #mainnav.affix-top {
   top:0;
-  position: absolute;
+  position: fixed;
 }
 nav ul a,
 nav .brand-logo {
@@ -20,6 +20,6 @@ p {
   min-height: 380px;
   line-height: 0;
   height: auto;
-  f-color: rgba(255,255,255,.9);
+  color: rgba(255,255,255,.9);
 }
 

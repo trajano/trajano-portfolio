@@ -1,0 +1,51 @@
+/* Customized styles */
+
+
+/* This is the main background color, I chose a light green tinge to give it a more earthy warm feel */
+
+$main-backgound-color: color("green", "lighten-5");
+html {
+    font-family: Lato, sans-serif;
+    background-color: $main-backgound-color;
+}
+
+#mainnav {
+    min-height: $navbar-height;
+    @media #{$medium-and-down} {
+        min-height: $navbar-height-mobile;
+    }
+    nav {
+        background-color: $main-backgound-color;
+        .nav-wrapper .brand-logo img {
+            height: $navbar-height;
+            border: 10px solid transparent;
+        }
+        @media #{$medium-and-down} {
+            .nav-wrapper .brand-logo img {
+                height: $navbar-height-mobile;
+            }
+        }
+    }
+}
+
+#top-banner {
+    .section {
+        min-height: calc(100vh - 64px);
+    }
+    #skip-to-content {
+        position: absolute;
+        width: $button-floating-size;
+        height: $button-floating-size;
+        bottom: $navbar-height;
+        right: $navbar-height;
+    }
+    @media #{$medium-and-down} {
+        .section {
+            min-height: calc(100vh - 56px);
+        }
+        #skip-to-content {
+            bottom: $navbar-height-mobile;
+            right: $navbar-height-mobile;
+        }
+    }
+}
