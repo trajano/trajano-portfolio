@@ -1,6 +1,5 @@
 import 'font-awesome/scss/font-awesome.scss'
 import './app.scss'
-import './style.css'
 import 'materialize-css/dist/js/materialize'
 
 $(function () {
