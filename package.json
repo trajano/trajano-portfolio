@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "postinstall": "webpack -p",
-    "dev": "webpack-dev-server --open --inline"
+    "start": "webpack-dev-server --open --inline"
   },
   "repository": {
     "type": "git",
