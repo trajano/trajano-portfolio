@@ -2,14 +2,378 @@
 <html lang="en">
 
 <head>
-    <title>Archimedes Trajano</title>
+    <title><%= htmlWebpackPlugin.options.title %></title>
     <meta charset="utf-8">
+    <meta name="Description" content="<%= htmlWebpackPlugin.options.description %>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="robots" content="noindex" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
-    Hello world
+    <div id="top-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <br><br>
+                <h1 class="header center -text text-lighten-2 thin"><%= htmlWebpackPlugin.options.title %></h1>
+                <div class="row center">
+                    <h5 class="header col s12 light"><%= htmlWebpackPlugin.options.description  %></h5>
+                </div>
+                <div id="skip-to-content">
+                    <a class="btn-floating btn-large waves-effect waves-light" href="#mainnav"><i class="material-icons">arrow_downward</i></a>
+                </div>
+            </div>
+        </div>
+        <div class="parallax"><img src="//lorempixel.com/1920/1080/cats/1" alt="Unsplashed background img 1"></div>
+    </div>
+    <div id="mainnav" class="scrollspy">
+        <nav role="navigation">
+            <div class="nav-wrapper">
+                <a id="logo-container" href="#" class="brand-logo left"><img src="assets/portfolio-logo.png" alt="Trajano"></a>
+
+                <ul id="nav-desktop" class="right hide-on-med-and-down table-of-contents">
+                    <li><a href="#mainnav">About Archie</li>
+                    <li><a href="#projects">Personal Projects</li>
+                    <li><a href="#social">Social</li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="https://trajano.net/" title="Archimedes Trajano Blog">Blog</a></li>
+                    <!--<li><a href="#"><i class="material-icons">search</i></a></li>-->
+                </ul>
+
+                <ul id="nav-mobile" class="side-nav z-depth-5 table-of-contents">
+                    <li>
+                        <div class="userView z-depth-1">
+                            <div class="background">
+                                <img src="//lorempixel.com/400/300/cats/3">
+                            </div>
+                            <img class="circle" src="//en.gravatar.com/userimage/291884/5042730d41e772fe2a3729a921340c95.png?size=200">
+                            <span class="white-text name">Archie</span>
+                            <a href="mailto:archie...trajano...net" class="obfuscate"><span class="white-text email">archie...trajano...net</span></a>
+                            <a href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive" class="obfuscate"><span class="white-text tel">FourOneSix-EightFiveSix-SixSixFiveFive</span></a>
+                        </div>
+                    </li>
+                    <li><a href="#mainnav">About Archie</li>
+                    <li><a href="#projects">Personal Projects</li>
+                    <li><a href="#social">Social</li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="https://trajano.net/" title="Archimedes Trajano Blog">Blog</a></li>
+                    <li>
+                        <div class="divider"></div>
+                    </li>
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse right"><i class="material-icons">menu</i></a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container ">
+        <div class="section">
+
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center brown-text"><i class="fa fa-github fa-lg"></i> </h2>
+                        <h5 class="center">I'm a coder</h5>
+
+                        <p>I design and develop enterprise applications in a variety of languages including but not limited
+                            to Java, JavaScript and SQL. I work to make sure everything is integrated on the enterprise scale.
+                            I am full-stack.</p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center brown-text"><i class="fa fa-yelp fa-lg"></i> </h2>
+                        <h5 class="center">I think enterprise</h5>
+
+                        <p>A typical entprise is more than a single project or technology or group of people, it takes a different
+                            mentality to consider factors such as ... But I can scale down to development.</p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center brown-text"><i class="fa fa-linkedin fa-lg"></i> </h2>
+                        <h5 class="center">I'm an IT polymath</h5>
+
+                        <p>Whatever comes comes, I learn and absorb new technologies for brunch very quickly.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="parallax-container valign-wrapper scrollspy" id="projects">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <div class="row center">
+                    <h5 class="header col s12 light">My personal projects at least a sampling of it. Many more can be found in
+                        <a href="https://github.com/trajano">my GitHub profile</a>.</h5>
+                </div>
+            </div>
+        </div>
+        <div class="parallax"><img src="//lorempixel.com/1920/1080/cats/9" alt="Unsplashed background img 3"></div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+
+
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="card small">
+                        <div class="card-image">
+                            <img src="//lorempixel.com/600/580/cats/8">
+                            <span class="card-title">Card Title</span>
+                        </div>
+                        <a class="card-content waves-block waves-effect waves-red black-text" href="https://github.com/trajano/">
+                            <p class="light">Where I have my open source projects hosted on including this portfolio design. Feel free to
+                                fork it.</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="card small">
+                        <div class="card-image">
+                            <img src="//lorempixel.com/600/580/cats/8">
+                            <span class="card-title">Card Title</span>
+                        </div>
+                        <a class="card-content waves-block waves-effect waves-red black-text" href="https://github.com/trajano/">
+                            <p class="light">Where I have my open source projects hosted on including this portfolio design. Feel free to
+                                fork it.</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="card small">
+                        <div class="card-image">
+                            <img src="//lorempixel.com/600/580/cats/3">
+                            <span class="card-title">Card Title</span>
+                        </div>
+                        <a class="card-content waves-block waves-effect waves-red black-text" href="https://github.com/trajano/">
+                            <p class="light">Where I have my open source projects hosted on including this portfolio design. Feel free to
+                                fork it.</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="card small">
+                        <div class="card-image">
+                            <img src="//lorempixel.com/600/580/cats/6">
+                            <span class="card-title">Card Title</span>
+                        </div>
+                        <a class="card-content waves-block waves-effect waves-red black-text" href="https://github.com/trajano/">
+                            <p class="light">Where I have my open source projects hosted on including this portfolio design. Feel free to
+                                fork it.</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="card small">
+                        <div class="card-image">
+                            <img src="//lorempixel.com/600/580/cats/5">
+                            <span class="card-title">Card Title</span>
+                        </div>
+                        <a class="card-content waves-block waves-effect waves-red black-text" href="https://github.com/trajano/">
+                            <p class="light">Where I have my open source projects hosted on including this portfolio design. Feel free to
+                                fork it.</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="card small">
+                        <div class="card-image">
+                            <img src="//lorempixel.com/600/580/cats/7">
+                            <span class="card-title">Card Title</span>
+                        </div>
+                        <a class="card-content waves-block waves-effect waves-red black-text" href="https://github.com/trajano/">
+                            <p class="light">Where I have my open source projects hosted on including this portfolio design. Feel free to
+                                fork it.</p>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="parallax-container valign-wrapper scrollspy" id="social">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <div class="row center">
+                    <h5 class="header col s12 light">Social networking. My presence on the Internet.</h5>
+                </div>
+            </div>
+        </div>
+        <div class="parallax"><img src="//lorempixel.com/1920/1080/cats/7"></div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+
+            <div class="row">
+                <div class="col s12 m6 l4">
+                    <div class="card small">
+                        <a class="card-content waves-block waves-effect waves-red black-text" href="https://github.com/trajano/">
+                            <h2 class="center brown-text"><i class="fa fa-github fa-lg"></i> </h2>
+                            <span class="card-title">GitHub</span>
+
+                            <p class="light">Where I have my open source projects hosted on including this portfolio design. Feel free to
+                                fork it.</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col s12 m6 l4">
+                    <div class="card small">
+                        <a class="card-content waves-block waves-effect waves-red black-text" href="https://trajano.net/">
+                            <h2 class="center brown-text"><i class="fa fa-wordpress fa-lg"></i> </h2>
+                            <span class="card-title">My Blog</span>
+
+                            <p class="light">A place where I channel my thoughts about the many things that interest me.</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col s12 m6 l4">
+                    <div class="card  small  sticky-action">
+                        <a class="card-content waves-effect waves-red black-text" href="https://trajano.yelp.com/">
+                            <h2 class="center brown-text"><i class="fa fa-yelp fa-lg"></i> </h2>
+                            <span class="card-title">Yelp</span>
+
+                            <p class="light">I use this so I don't need to remember whether I like a place or not.</p>
+                        </a>
+                        <div class="card-action">
+                            <a href="https://trajano.net/2015/06/how-i-do-my-yelp-reviews/">How I do my Yelp reviews</a>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+
+                <div class="col s12 m6 l4">
+                    <div class="card small">
+                        <a class="card-content waves-block waves-effect waves-red black-text" href="https://linkedin.com/in/trajano">
+                            <h2 class="center brown-text"><i class="fa fa-linkedin fa-lg"></i> </h2>
+                            <span class="card-title">LinkedIn</span>
+
+                            <p class="light">My professional profile where I keep the most complete and up to date work experience.</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m6 l4">
+                    <div class="card  small sticky-action">
+                        <a class="card-content waves-effect waves-block waves-red black-text" href="http://stackoverflow.com/users/242042/archimedes-trajano">
+                            <h2 class="center brown-text"><i class="fa fa-stack-overflow fa-lg"></i> </h2>
+                            <span class="card-title">Stack Overflow</span>
+
+                            <p class="light">This is the Q &amp; A site I generally frequent andd contribute to.</p>
+                        </a>
+                        <div class="card-action">
+                            <a href="http://stackexchange.com/users/87230/archimedes-trajano">Stack Exchange network profile</a>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                <div class="col s12 m6 l4">
+                    <div class="card small">
+                        <a class="card-content waves-block waves-effect waves-red black-text" href="https://twitter.com/trajano">
+                            <h2 class="center brown-text"><i class="fa fa-twitter fa-lg"></i> </h2>
+                            <span class="card-title">Twitter</span>
+
+                            <p class="light">For quick shoutouts.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="parallax-container valign-wrapper scrollspy" id="resume">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <div class="row center">
+                    <h5 class="header col s12 light">My Resume. Available in various formats, but if you want the complete picture, it's best to look in
+                        <a href="https://linkedin.com/in/trajano">my LinkedIn profile</a>.</h5>
+                </div>
+            </div>
+        </div>
+        <div class="parallax"><img src="//lorempixel.com/1920/1080/cats/2" alt="Unsplashed background img 3"></div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <p><b>FYI TO RECRUITERS:</b> My IT consulting rate is <b>$150/hr</b> within the Greater Toronto Area only.
+                        My development contracting rate is <b>$100/hr</b> (telecommute / work from home only). I am presently
+                        not open for long term business travel.</p>
+                    <div class="center">
+                        <p>
+                            <a title="Archimedes Trajano Resume in Word Format" class="waves-effect waves-light btn-large" href="assets/Archimedes%20Trajano.docx"><i class="fa fa-file-word-o left"> </i> Word</a>
+                            <a title="Archimedes Trajano Resume in PDF format" class="waves-effect waves-light btn-large" href="assets/Archimedes%20Trajano.pdf"><i class="fa fa-file-pdf-o left"> </i> PDF</a>
+                            <a title="Archimedes Trajano Resume" class="waves-effect waves-light btn-large btn-primary" href="https://trajano.net/archimedes-trajano-resume/"><i class="fa fa-eye left"> </i> View online</a>
+                        </p>
+                        <p>
+                            <a class="waves-effect waves-light btn-large" href="http://stackoverflow.com/users/story/242042"><i class="fa fa-stack-overflow left"> </i>  Stack Overflow Developer Story</a>
+                            <a class="waves-effect waves-light btn-large" href="https://linkedin.com/in/trajano"><i class="fa fa-linkedin left"> </i>  LinkedIn Profile</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="page-footer blue darken-2">
+        <div class="container">
+            <div class="row">
+                <div class="col l8 s12">
+                    <h5 class="white-text">Bio</h5>
+                    <p class="grey-text text-lighten-4">Archimedes Trajano is an IT consultant and IT contractor with focus on Application Architecture and tooling
+                        utilizing various industry standard technologies such as Java EE and Web Services.</p>
+                    <p class="grey-text text-lighten-4">Archie has over 16 years of full-time experience with various companies, with 4 years of part-time/internship
+                        work with York University and IBM Canada. He provides skills in integration with legacy systems,
+                        development infrastructure, web services and custom application development. His development skill,
+                        adaptability to new technologies, and integration skills help customers with their effort in becoming
+                        an even more successful.</p>
+
+
+                </div>
+                <div class="col l4 s12">
+                    <h5 class="white-text">Contact me</h5>
+
+                    <p><a class="white-text waves-effect btn-flat obfuscate" href="mailto:archie...trajano...net"><i class=" material-icons left">email</i> archie...trajano...net</a></p>
+
+                    <p>
+                        <a class="white-text waves-effect btn-flat obfuscate" href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive"><i class=" material-icons left">phone_iphone</i> FourOneSix-EightFiveSix-SixSixFiveFive</a></p>
+
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col s6">
+                        © 2016 Trajano
+                    </div>
+                    <div class="col s6 right-align">
+                        <a class="white-text" href="https://trajano.net/privacy-policy">Privacy policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

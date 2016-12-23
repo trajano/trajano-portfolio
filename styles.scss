@@ -1,0 +1,107 @@
+/* Customized styles */
+
+
+/* This is the main background color, I chose a light green tinge to give it a more earthy warm feel */
+
+$main-backgound-color: color("green", "lighten-5");
+html {
+    font-family: Lato, sans-serif;
+    background-color: $main-backgound-color;
+}
+
+#mainnav {
+    min-height: $navbar-height;
+    @media #{$medium-and-down} {
+        min-height: $navbar-height-mobile;
+    }
+    nav {
+        z-index: 1000000;
+        background-color: $main-backgound-color;
+        .nav-wrapper .brand-logo img {
+            height: $navbar-height;
+            border: 10px solid transparent;
+        }
+        a {
+            color: $primary-color;
+        }
+        @media #{$medium-and-down} {
+            .nav-wrapper .brand-logo img {
+                height: $navbar-height-mobile;
+            }
+        }
+    }
+}
+
+#top-banner {
+    .section {
+        min-height: calc(100vh - 64px);
+    }
+    #skip-to-content {
+        position: absolute;
+        width: $button-floating-size;
+        height: $button-floating-size;
+        bottom: $navbar-height;
+        right: $navbar-height;
+    }
+    @media #{$medium-and-down} {
+        .section {
+            min-height: calc(100vh - 56px);
+        }
+        #skip-to-content {
+            bottom: $navbar-height-mobile;
+            right: $navbar-height-mobile;
+        }
+    }
+}
+
+.side-nav {
+    .userView {
+        .name {
+            // add bottom padding as well to space out for tap area
+            padding-bottom: 16px;
+        }
+        .email {
+            // make the font slightly larger since it is going to be clickable
+            font-size: $sidenav-font-size + 4;
+        }
+        .tel {
+            @extend .email;
+        }
+    }
+}
+
+#nav-desktop.table-of-contents {
+    li {
+        transition: background-color .3s;
+        float: left;
+        padding: 0;
+    }
+    a {
+        display: inline-block;
+        transition: background-color .3s;
+        font-size: $navbar-font-size;
+        font-weight: 400;
+        color: $navbar-font-color;
+        padding-left: 15px;
+        cursor: pointer;
+        color: $primary-color;
+        height: auto;
+        line-height: inherit;
+        letter-spacing: .4;
+        &:hover {
+            border-left: 0;
+            padding-left: 15px;
+        }
+        &.active {
+            font-weight: 400;
+            border-left: 0;
+            padding-left: 15px;
+            border-bottom: 10px solid $primary-color;
+        }
+    }
+}
+
+.btn,
+.btn-flat {
+    text-transform: none;
+}
