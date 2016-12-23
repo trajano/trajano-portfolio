@@ -32,6 +32,9 @@ module.exports = {
         path: './dist',
         filename: 'bundle.js'
     },
+    externals: {
+        "node-waves": "Waves",
+    },
     plugins: [new webpack.ProvidePlugin({
         $: "jquery",
         jQuery: "jquery",

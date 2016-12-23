@@ -4,7 +4,7 @@ import './style.css'
 import 'materialize-css/dist/js/materialize'
 
 $(function () {
-
+    Waves.displayEffect({ duration: 200 })
     $('#mainnav nav').pushpin({
         top: $('#mainnav').offset().top
     })

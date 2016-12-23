@@ -15,6 +15,7 @@ html {
         min-height: $navbar-height-mobile;
     }
     nav {
+        z-index: 1000000;
         background-color: $main-backgound-color;
         .nav-wrapper .brand-logo img {
             height: $navbar-height;
@@ -63,5 +64,12 @@ html {
         .tel {
             @extend .email;
         }
+    }
+}
+
+.waves-effect {
+    // transition: 4s ease-out;
+    .waves-ripple {
+        //       transition: all 5s ease-out;
     }
 }

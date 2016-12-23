@@ -28,21 +28,23 @@
                 </div>
             </div>
         </div>
-        <div class="parallax"><img src="//lorempixel.com/1920/1080/cats/" alt="Unsplashed background img 1"></div>
+        <div class="parallax"><img src="//lorempixel.com/1920/1080/cats/1" alt="Unsplashed background img 1"></div>
     </div>
     <div id="mainnav" class="scrollspy">
-        <nav role="navigation" data-target="mainnav">
+        <nav role="navigation">
             <div class="nav-wrapper">
                 <a id="logo-container" href="#" class="brand-logo left"><img src="images/portfolio-logo.png" alt="Trajano"></a>
-                <ul class="right hide-on-med-and-down">
+
+                <ul class="right hide-on-med-and-down table-of-contents">
+                    <li><a href="#mainnav">About Archie</li>
                     <li><a href="#opensource">Personal Projects</li>
                     <li><a href="#social">Social</li>
-                    <li><a href="https://trajano.net/archimedes-trajano-resume/" title="Archimedes Trajano Resume">Resume</a></li>
+                    <li><a href="#resume">Resume</a></li>
                     <li><a href="https://trajano.net/" title="Archimedes Trajano Blog">Blog</a></li>
                     <li><a href="#"><i class="material-icons">search</i></a></li>
                 </ul>
 
-                <ul id="nav-mobile" class="side-nav z-depth-5">
+                <ul id="nav-mobile" class="side-nav z-depth-5 table-of-contents">
                     <li>
                         <div class="userView z-depth-1">
                             <div class="background">
@@ -54,20 +56,21 @@
                             <a href="tel:+one fouronesix-eightfivesix-sixsixfivefive" class="obfuscate"><span class="white-text tel">fouronesix-eightfivesix-sixsixfivefive</span></a>
                         </div>
                     </li>
-                    <li><a href="https://trajano.net/archimedes-trajano-resume/" title="Archimedes Trajano Resume">Resume</a></li>
+                    <li><a href="#me">About Archie</li>
+                    <li><a href="#opensource">Personal Projects</li>
+                    <li><a href="#social">Social</li>
+                    <li><a href="#resume">Resume</a></li>
                     <li><a href="https://trajano.net/" title="Archimedes Trajano Blog">Blog</a></li>
                     <li>
                         <div class="divider"></div>
                     </li>
-                    <li><a class="subheader">Subheader</a></li>
-                    <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
                 </ul>
                 <a href="#" data-activates="nav-mobile" class="button-collapse right"><i class="material-icons">menu</i></a>
             </div>
         </nav>
     </div>
 
-    <div class="container">
+    <div class="container ">
         <div class="section">
 
             <!--   Icon Section   -->
@@ -138,11 +141,11 @@
     </div>
 
 
-    <div class="parallax-container valign-wrapper">
+    <div class="parallax-container valign-wrapper scrollspy" id="social">
         <div class="section no-pad-bot">
             <div class="container">
                 <div class="row center">
-                    <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+                    <h5 class="header col s12 light">Social networking. My presence on the Internet.</h5>
                 </div>
             </div>
         </div>
@@ -153,32 +156,116 @@
         <div class="section">
 
             <div class="row">
-                <div class="col s12 center">
-                    <h3><i class="mdi-content-send brown-text"></i></h3>
-                    <h4>Contact Us</h4>
-                    <p class="left-align light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam
-                        pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros
-                        justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget,
-                        bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla
-                        imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam
-                        eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et
-                        ultrices posuere cubilia Curae;</p>
+                <div class="col s12 m6 l4">
+                    <div class="card small">
+                        <a class="card-content waves-block waves-effect waves-red black-text" href="https://github.com/trajano/">
+                            <h2 class="center brown-text"><i class="fa fa-github fa-lg"></i> </h2>
+                            <span class="card-title">GitHub</span>
+
+                            <p class="light">Where I have my open source projects hosted on including this portfolio design. Feel free to
+                                fork it.</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col s12 m6 l4">
+                    <div class="card small">
+                        <a class="card-content waves-block waves-effect waves-red black-text" href="https://trajano.net/">
+                            <h2 class="center brown-text"><i class="fa fa-wordpress fa-lg"></i> </h2>
+                            <span class="card-title">My Blog</span>
+
+                            <p class="light">A place where I channel my thoughts about the many things that interest me.</p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col s12 m6 l4">
+                    <div class="card  small  sticky-action">
+                        <a class="card-content waves-effect waves-red black-text" href="https://trajano.yelp.com/">
+                            <h2 class="center brown-text"><i class="fa fa-yelp fa-lg"></i> </h2>
+                            <span class="card-title">Yelp</span>
+
+                            <p class="light">I use this so I don't need to remember whether I like a place or not.</p>
+                        </a>
+                        <div class="card-action">
+                            <a href="https://trajano.net/2015/06/how-i-do-my-yelp-reviews/">How I do my Yelp reviews</a>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+
+                <div class="col s12 m6 l4">
+                    <div class="card small">
+                        <a class="card-content waves-block waves-effect waves-red black-text" href="https://linkedin.com/in/trajano">
+                            <h2 class="center brown-text"><i class="fa fa-linkedin fa-lg"></i> </h2>
+                            <span class="card-title">LinkedIn</span>
+
+                            <p class="light">My professional profile where I keep the most complete and up to date work experience.</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col s12 m6 l4">
+                    <div class="card  small sticky-action">
+                        <a class="card-content waves-effect waves-block waves-red black-text" href="http://stackoverflow.com/users/242042/archimedes-trajano">
+                            <h2 class="center brown-text"><i class="fa fa-stack-overflow fa-lg"></i> </h2>
+                            <span class="card-title">Stack Overflow</span>
+
+                            <p class="light">This is the Q &amp; A site I generally frequent andd contribute to.</p>
+                        </a>
+                        <div class="card-action">
+                            <a href="http://stackexchange.com/users/87230/archimedes-trajano">Stack Exchange network profile</a>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                <div class="col s12 m6 l4">
+                    <div class="card small">
+                        <a class="card-content waves-block waves-effect waves-red black-text" href="https://twitter.com/trajano">
+                            <h2 class="center brown-text"><i class="fa fa-twitter fa-lg"></i> </h2>
+                            <span class="card-title">Twitter</span>
+
+                            <p class="light">For quick shoutouts.</p>
+                        </a>
+                    </div>
                 </div>
             </div>
 
         </div>
     </div>
 
-
-    <div class="parallax-container valign-wrapper">
+    <div class="parallax-container valign-wrapper scrollspy" id="resume">
         <div class="section no-pad-bot">
             <div class="container">
                 <div class="row center">
-                    <h5 class="header col s12 light">A modern responsive front-end framework based on Material Design</h5>
+                    <h5 class="header col s12 light">My Resume. Available in various formats, but if you want the complete picture, it's best to look in
+                        <a href="https://linkedin.com/in/trajano">my LinkedIn profile</a>.</h5>
                 </div>
             </div>
         </div>
-        <div class="parallax"><img src="images/background3.jpg" alt="Unsplashed background img 3"></div>
+        <div class="parallax"><img src="//lorempixel.com/1920/1080/cats/2" alt="Unsplashed background img 3"></div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <p>FYI TO RECRUITERS: My IT consulting rate is <b>$150/hr</b> within the Greater Toronto Area only. My development
+                        contracting rate is <b>$100/hr</b> (telecommute / work from home only). I am presently not open for
+                        long term business travel.</p>
+                    <div class="center">
+                        <p>
+                            <a class="waves-effect waves-light btn-large"><i class="fa fa-file-word-o left"> </i> Word</a>
+                            <a class="waves-effect waves-light btn-large"><i class="fa fa-file-pdf-o left"> </i> PDF</a>
+                            <a class="waves-effect waves-light btn-large" href="https://trajano.net/archimedes-trajano-resume/"><i class="fa fa-eye left"> </i> View online</a>
+                        </p>
+                        <p>
+                            <a class="waves-effect waves-light btn-large" href="https://linkedin.com/in/trajano"><i class="fa fa-linkedin left"> </i>  LinkedIn Profile</a>
+                            <a class="waves-effect waves-light btn-large" href="http://stackoverflow.com/users/story/242042"><i class="fa fa-stack-overflow left"> </i>  Stack Overflow Developer Story</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <footer class="page-footer">
