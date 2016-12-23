@@ -12,5 +12,8 @@ $(function () {
     $('.button-collapse').sideNav({
         edge: 'right'
     })
+    $('.scrollspy').scrollSpy({
+        scrollOffset: 0
+    })
     $('.parallax').parallax();
 })
