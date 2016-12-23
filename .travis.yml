@@ -6,8 +6,9 @@ before_install:
 - git config --global credential.helper store
 - git config --global user.email "travis@trajano.net"
 - git config --global user.name  "Travis Service Account"
+- git clone https://github.com/trajano/trajano-portfolio.git -b gh-pages --depth 1 dist
+- git -C dist rm -rf .
 after_success:
-- git -C dist add -A
+- git -C dist add .
 - git -C dist commit -a -m "Travis build"
-- git -C dist rebase origin/gh-pages
 - if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then git -C dist push origin HEAD:gh-pages; fi
