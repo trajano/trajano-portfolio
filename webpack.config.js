@@ -46,7 +46,8 @@ module.exports = {
             "window.jQuery": "jquery",
         }),
         new CopyWebpackPlugin([{
-            from: 'assets'
+            from: 'assets',
+            to: 'assets'
         }]),
         new HtmlWebpackPlugin({
             title: "Archimedes Trajano",
