@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
     <meta charset="utf-8">
     <meta name="Description" content="<%= htmlWebpackPlugin.options.description %>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,9 +20,13 @@
         <div class="section no-pad-bot">
             <div class="container">
                 <br><br>
-                <h1 class="header center -text text-lighten-2 thin"><%= htmlWebpackPlugin.options.title %></h1>
+                <h1 class="header center -text text-lighten-2 thin">
+                    <%= htmlWebpackPlugin.options.title %>
+                </h1>
                 <div class="row center">
-                    <h5 class="header col s12 light"><%= htmlWebpackPlugin.options.description  %></h5>
+                    <h5 class="header col s12 light">
+                        <%= htmlWebpackPlugin.options.description  %>
+                    </h5>
                 </div>
                 <div id="skip-to-content">
                     <a class="btn-floating btn-large waves-effect waves-light" href="#mainnav"><i class="material-icons">arrow_downward</i></a>
@@ -312,7 +318,7 @@
         <div class="parallax"><img src="http://lorempixel.com/1920/1080/cats/2" alt="Unsplashed background img 3"></div>
     </div>
 
-    <div class="container">
+    <div class="container hide-on-small-only">
         <div class="section">
 
             <div class="row">
@@ -333,6 +339,19 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="container hide-on-med-and-up">
+        <div class="section">
+
+            <div class="collection">
+                <a title="Archimedes Trajano Resume in Word Format" class="collection-item waves-effect waves-light " href="assets/Archimedes%20Trajano.docx"><i class="fa fa-file-word-o left"> </i> Word</a>
+                <a title="Archimedes Trajano Resume in PDF format" class="collection-item waves-effect waves-light " href="assets/Archimedes%20Trajano.pdf"><i class="fa fa-file-pdf-o left"> </i> PDF</a>
+                <a title="Archimedes Trajano Resume" class="collection-item waves-effect waves-light" href="https://trajano.net/archimedes-trajano-resume/"><i class="fa fa-eye left"> </i> View online</a>
+                <a class="waves-effect waves-light collection-item" href="http://stackoverflow.com/users/story/242042"><i class="fa fa-stack-overflow left"> </i>  Stack Overflow Developer Story</a>
+                <a class="waves-effect waves-light collection-item" href="https://linkedin.com/in/trajano"><i class="fa fa-linkedin left"> </i>  LinkedIn Profile</a>
+            </div>
+
         </div>
     </div>
 
