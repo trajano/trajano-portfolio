@@ -12,6 +12,6 @@ This is built using webpack.
 
 # Development mode
 
-`npm run dev`
+`npm start`
 
 This will start up a servver on http://localhost:8080/ that will show the portfolio site.  It is configured to automatically refresh the page when there is a change in the application.

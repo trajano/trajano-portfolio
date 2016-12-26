@@ -16,6 +16,11 @@ $(function () {
     })
     $('.parallax').parallax();
 
+    $('.card[data-href]').bind("click", function(event) {
+        event.preventDefault()
+        window.location.href = $(this).data("href")
+    })
+
     /* Obfuscate mailto and tel links */
     $(".obfuscate").each(function () {
         $(this).html($(this).html()
