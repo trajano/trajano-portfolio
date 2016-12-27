@@ -31,7 +31,7 @@ module.exports = {
             }
         ]
     },
-    entry: './app.js',
+    entry: './src/app.js',
     output: {
         path: './dist',
         filename: 'bundle.js'
@@ -52,7 +52,7 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: "Archimedes Trajano",
             description: "IT Consultant. Not a model or graphic designer so just using some random stock images of cats for now.",
-            template: './app.html',
+            template: './src/app.html',
             minify: {
                 removeAttributeQuotes: true,
                 collapseWhitespace: true,

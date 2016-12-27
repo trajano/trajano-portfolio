@@ -1,14 +1,33 @@
-language: node_js
+sudo: false
+language: java
+jdk:
+  - oraclejdk8
 node_js: node
+cache:
+  directories:
+  - "$HOME/.sonar/cache"
+addons:
+  sonarqube: true
+env:
+  global:
+  - secure: Q4pyY77WPO0Rp5ENomM2KgIAyMKP6jU2iK2ptN/rSjL09HdidmaJkYwvr0YzZfnIEr0iJVQ6Q0WFbqwyKJHvOQPBawzjIfcixLLE50aTqWaVbOyKUCU8HjLdXEUaUZCwu5l9ih9UBGjAq98zc/EmpCjj9M/mbmXGhS1BOiLe6PdUn77v9OcjJGDVVvPGf3I8eHR2WxCovNlXfmefVJskLpm20xrdbUd4MWgL5IuLZXNUc1fAxDel82JvPS8+ICqeaVk7KHsyIj7HDsZJpyJ8ydqeq9Oml9HTCoaFHg/NrZppBO8gPZHSV/tEnb387hMOc1qpXQ+1HjcNFORIWzyJUX6H4DXh8KjOVwYJBRoFDMSdm4ZhIAJpNpY+eh4NHJ6EvPe865NK9VDARvLtDj8SjqEcbnncu5Yzy7pwZyaRbm6/SJG9KM63v6fd87NhqMqcFh048opXyqRXWUAg8KvloLKI4ZyEaGuKfkNj8GqunfB++BkjafydP82a3Gv+cazCelnWZ8xIZiUeIeEoImClL9kG/b0kUSAtCjtK3/xwyI8wuSvwiHa6/zAwmlEu/Eqdc/TQ7Zkdsg0aBOM/EOE0cZA+N8puB8SkoaJppeHLorq4RVOCleM3kf6PdP1IRIjwF5AjmZ+oRSbiNihLQrmEqTPPILVNovOGK07y4mv4feU=
+  - secure: lMOkCZB6blmO7O8AThTXE3y3vnIugx/Na439ZpbVuNJHWbDU3StTXzoZmazaU/U6rQz1OMH+P1ySsBsO5n1UOk9vWnf9vTVGQ9yVoqN2B/MwSxnFRUiJvwkaH8MWPQYzWPbpKkF6h7768wb+daREnORnFAkCDcHHh6fNVE9Dckp2RICSuvl6ZWvWEqXNdDU+HVYAiSv8BwroNk4+iC2cHLWBZgK/kqxtLFRXBlVyC87yJxepdpJHK8+u3ffw+ScZ63gKa51L1EMeMfKerkLjv+hO92+NW4GpkDNtN2WZ4YmF5hYoeq6frvlUVWfJd3lJ7oxLkyxMKfkz7GhIjzSSLF3nVHSPFL92hHBvvpL5FxoRoSNvpXzACa3MEDxrfNJqO+GsQAtIotZnBv27HHbctbOPR/RfONbyC41sQbMqR/q5NqhH7YyO7XGpvcbSCes9+/RE6K0tLMhkznxTRMTjuCLEp9p35r5l8jg6u8Ht28S5sJ/65t/JYQfAXw/BXz5pbtStP1UkGe6BN1kr2dqEDMRCB8KSFp8J/KPHrMDSuNWJRomQNsLJMsSOzomipsJ5s93qBAt7C9hdm/CA46N3Zu6DGUdWk1MV17U34EzLlOT/QOuGdo7vK2KfZq70XMMV3orHhreADVTE3mbznkAD0HsnZVjO/YxNB45Z8EudwFA=
 before_install:
 - openssl aes-256-cbc -K $encrypted_8a3d438a572c_key -iv $encrypted_8a3d438a572c_iv
   -in .git-credentials.enc -out $HOME/.git-credentials -d
 - git config --global credential.helper store
 - git config --global user.email "travis@trajano.net"
 - git config --global user.name  "Travis Service Account"
-- git clone https://github.com/trajano/trajano-portfolio.git -b gh-pages --depth 1 dist
+- git clone https://github.com/trajano/trajano-portfolio.git -b gh-pages --depth 1
+  dist
 - git -C dist rm -rf .
+- nvm use node
+install:
+- npm install
+script:
+- sonar-scanner
 after_success:
 - git -C dist add .
 - git -C dist commit -a -m "Travis build"
-- if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then git -C dist push origin gh-pages; fi
+- if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then git -C dist push origin gh-pages;
+  fi
