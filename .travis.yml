@@ -21,7 +21,7 @@ before_install:
 - git clone https://github.com/trajano/trajano-portfolio.git -b gh-pages --depth 1
   dist
 - git -C dist rm -rf .
-- nvm use node
+- nvm install node
 install:
 - npm install
 script:
