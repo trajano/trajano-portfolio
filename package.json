@@ -2,7 +2,7 @@
   "name": "trajano-portfolio",
   "version": "1.0.0",
   "description": "Archimedes Trajano portfolio site.",
-  "main": "app.js",
+  "main": "src/app.js",
   "scripts": {
     "postinstall": "webpack -p",
     "start": "webpack-dev-server --open --inline"
