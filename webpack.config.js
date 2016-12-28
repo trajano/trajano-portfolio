@@ -17,10 +17,6 @@ module.exports = {
                 loaders: ["file-loader"]
             },
             {
-                test: /\.woff2|\.woff|\.ttf|\.eot|\.svg(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-                loaders: ["file-loader"]
-            },
-            {
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
                 loader: 'babel-loader',
