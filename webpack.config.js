@@ -1,16 +1,15 @@
 var webpack = require("webpack")
 var CopyWebpackPlugin = require('copy-webpack-plugin')
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
     module: {
         loaders: [
             {
                 test: /\.scss$/,
-                loaders: ["style-loader", "css-loader", "sass-loader"]
-            },
-            {
-                test: /\.css$/,
-                loaders: ["style-loader", "css-loader"]
+                loader: ExtractTextPlugin.extract([
+                    "css-loader?sourceMap", "sass-loader"
+                ])
             },
             {
                 test: /\.jpg|\.png$/,
@@ -31,7 +30,7 @@ module.exports = {
             }
         ]
     },
-    entry: './src/app.js',
+    entry: './src/app',
     output: {
         path: './dist',
         filename: 'bundle.js'
@@ -49,6 +48,7 @@ module.exports = {
             from: 'assets',
             to: 'assets'
         }]),
+        new ExtractTextPlugin("styles.css"),
         new HtmlWebpackPlugin({
             title: "Archimedes Trajano",
             description: "IT Consultant. Not a model or graphic designer so just using some random stock images of cats for now.",
