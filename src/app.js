@@ -1,5 +1,6 @@
 import './app.scss'
 import 'materialize-css/dist/js/materialize'
+import './icons'
 
 $(function () {
     Waves.displayEffect({ duration: 200 })

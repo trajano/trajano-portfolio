@@ -27,6 +27,10 @@ module.exports = {
                 query: {
                     presets: ['es2015']
                 }
+            },
+            {
+                test: /\.svg$/,
+                loader: 'svg-sprite-loader'
             }
         ]
     },
