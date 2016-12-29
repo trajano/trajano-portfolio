@@ -4,8 +4,7 @@
   "description": "Archimedes Trajano portfolio site.",
   "main": "src/app.js",
   "scripts": {
-    "postinstall": "webpack -p",
-    "start": "webpack-dev-server --open --inline"
+    "prepublish": "webpack -p"
   },
   "repository": {
     "type": "git",
