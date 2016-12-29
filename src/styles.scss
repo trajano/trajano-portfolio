@@ -111,7 +111,7 @@ html {
 }
 
 .parallax-container {
-    min-height: 38.19vh;
+    min-height: 38.1966vh;
     height: auto;
     color: white;
     .parallax {
@@ -131,6 +131,6 @@ p {
 }
 
 .darken {
-    background: $root-background-color;
-    filter: brightness(33%);
+    background: $main-background-color;
+    filter: brightness(38.1966%);
 }
