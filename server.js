@@ -11,15 +11,13 @@ var open = require("open")
 config.output.path = path.resolve(__dirname, config.output.path)
 
 var devServerOptions = {
-    // Bind to 0.0.0.0 to allow access from non-localhost
-    host: "0.0.0.0",
     hot: true,
     inline: true,
     port: 8080
 }
 
 // Start the server
-new Server(webpack(config), devServerOptions).listen()
+new Server(webpack(config), devServerOptions).listen(devServerOptions.port)
 
 // Open the default browser
 open("http://localhost:" + devServerOptions.port + "/")
