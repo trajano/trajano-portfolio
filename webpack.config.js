@@ -2,6 +2,9 @@ var webpack = require("webpack")
 var CopyWebpackPlugin = require('copy-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var yargs = require("yargs")
+
+var optimizeMinimize = yargs.alias('p', 'optimize-minimize').argv.optimizeMinimize;
 module.exports = {
     module: {
         loaders: [
@@ -49,9 +52,9 @@ module.exports = {
             description: "IT Consultant. Not a model or graphic designer so just using some random stock images of cats for now.",
             template: './src/app.html',
             minify: {
-                minifyJS: true,
-                removeAttributeQuotes: true,
-                collapseWhitespace: true,
+                minifyJS: optimizeMinimize,
+                removeAttributeQuotes: optimizeMinimize,
+                collapseWhitespace: optimizeMinimize,
                 html5: true
             }
         })
