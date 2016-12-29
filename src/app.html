@@ -18,23 +18,28 @@
 
 <body>
     <div id="top-banner" class="parallax-container">
-        <div class="section no-pad-bot">
+        <div class="section">
             <div class="container">
-                <br><br>
+                <br class="hide-on-small-only"><br class="hide-on-small-only">
                 <h1 class="header center -text text-lighten-2 thin">
                     <%= htmlWebpackPlugin.options.title %>
                 </h1>
                 <div class="row center">
-                    <h5 class="header col s12 light">
+                    <p class="col s12">
                         <%= htmlWebpackPlugin.options.description  %>
-                    </h5>
+                    </p>
+                </div>
+                <div class="row hide-on-large-only center">
+                    <a class="white-text obfuscate btn-flat btn-large" href="mailto:archie...trajano...net"><i class=" material-icons left">email</i> archie...trajano...net</a>
+                    <br class="hide-on-med-only">
+                    <a class="white-text obfuscate btn-flat" href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive"><i class="material-icons left">phone_iphone</i> FourOneSix-EightFiveSix-SixSixFiveFive</a>
                 </div>
                 <div id="skip-to-content">
-                    <a class="btn-floating btn-large waves-effect waves-light" href="#mainnav"><i class="material-icons">arrow_downward</i></a>
+                    <a class="btn-floating btn-large waves-effect waves-light hoverable" href="#mainnav"><i class="material-icons">arrow_downward</i></a>
                 </div>
             </div>
+            <div class="parallax"><img src="http://lorempixel.com/1920/1080/cats/1" alt="Unsplashed background img 1"></div>
         </div>
-        <div class="parallax"><img src="http://lorempixel.com/1920/1080/cats/1" alt="Unsplashed background img 1"></div>
     </div>
     <div id="mainnav" class="scrollspy">
         <nav role="navigation">
@@ -47,6 +52,7 @@
                     <li><a href="#social">Social</li>
                     <li><a href="#resume">Resume</a></li>
                     <li><a href="https://trajano.net/" title="Archimedes Trajano Blog">Blog</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
                     <!--<li><a href="#"><i class="material-icons">search</i></a></li>-->
                 </ul>
 
@@ -76,7 +82,7 @@
         </nav>
     </div>
 
-    <div class="container ">
+    <div class="container">
         <div class="section">
 
             <div class="row">
@@ -106,9 +112,32 @@
                         <h2 class="center brown-text"><i class="fa fa-linkedin fa-lg"></i> </h2>
                         <h5 class="center">I'm an IT polymath</h5>
 
-                        <p>Whatever comes comes, I learn and absorb new technologies for brunch very quickly.</p>
+                        <p>A person whose expertise spans a significant number of different subject areas; such a person is
+                            known to draw on complex bodies of knowledge to solve specific problems.</p>
                     </div>
                 </div>
+
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center brown-text"><i class="fa fa-linkedin fa-lg"></i> </h2>
+                        <h5 class="center">I'm agile</h5>
+
+                        <p>A person whose expertise spans a significant number of different subject areas; such a person is
+                            known to draw on complex bodies of knowledge to solve specific problems.</p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center brown-text"><i class="fa fa-linkedin fa-lg"></i> </h2>
+                        <h5 class="center">I'm an IT polymath</h5>
+
+                        <p>A person whose expertise spans a significant number of different subject areas; such a person is
+                            known to draw on complex bodies of knowledge to solve specific problems.</p>
+                    </div>
+                </div>
+
             </div>
 
         </div>
@@ -227,12 +256,12 @@
         <div class="parallax"><img src="http://lorempixel.com/1920/1080/cats/7"></div>
     </div>
 
-    <div class="container">
+    <div class="container hide-on-small-only">
         <div class="section">
 
             <div class="row">
-                <div class="col s12 m6 l4">
-                    <div class="card small" data-href="https://github.com/trajano/">
+                <div class="col m6 l4">
+                    <div class="card small hoverable" data-href="https://github.com/trajano/">
                         <div class="card-image waves-effect waves-block waves-light">
                             <img src="http://lorempixel.com/1920/1080/food/7">
                             <span class="card-title"><i class="fa fa-github fa-lg"></i> GitHub</span>
@@ -244,8 +273,8 @@
                     </div>
                 </div>
 
-                <div class="col s12 m6 l4">
-                    <div class="card small" data-href="https://linkedin.com/in/trajano">
+                <div class="col m6 l4">
+                    <div class="card small hoverable" data-href="https://linkedin.com/in/trajano">
                         <div class="card-image waves-effect waves-block waves-light">
                             <img src="http://lorempixel.com/1920/1080/food/1">
                             <span class="card-title"><i class="fa fa-linkedin fa-lg"></i> LinkedIn</span>
@@ -256,8 +285,8 @@
                     </div>
                 </div>
 
-                <div class="col s12 m6 l4">
-                    <div class="card small" data-href="https://trajano.yelp.com/">
+                <div class="col m6 l4">
+                    <div class="card small hoverable" data-href="https://trajano.yelp.com/">
                         <div class="card-image waves-effect waves-block waves-light">
                             <img src="http://lorempixel.com/1920/1080/food/5">
                             <span class="card-title"><i class="fa fa-yelp fa-lg"></i> Yelp</span>
@@ -268,8 +297,8 @@
                     </div>
                 </div>
 
-                <div class="col s12 m6 l4">
-                    <div class="card small" data-href="http://stackoverflow.com/story/trajano">
+                <div class="col m6 l4">
+                    <div class="card small hoverable" data-href="http://stackoverflow.com/story/trajano">
                         <div class="card-image waves-effect waves-block waves-light">
                             <img src="http://lorempixel.com/1920/1080/food/2">
                             <span class="card-title"><i class="fa fa-stack-overflow fa-lg"></i> Stack Overflow</span>
@@ -281,8 +310,8 @@
                     </a>
                 </div>
 
-                <div class="col s12 m6 l4">
-                    <div class="card small" data-href="https://www.facebook.com/archimedes.trajano">
+                <div class="col m6 l4">
+                    <div class="card small hoverable" data-href="https://www.facebook.com/archimedes.trajano">
                         <div class="card-image waves-effect waves-block waves-light">
                             <img src="http://lorempixel.com/1920/1080/food/6">
                             <span class="card-title"><i class="fa fa-facebook fa-lg"></i> Facebook</span>
@@ -293,8 +322,8 @@
                     </div>
                 </div>
 
-                <div class="col s12 m6 l4">
-                    <div class="card small" data-href="https://twitter.com/trajano">
+                <div class="col m6 l4">
+                    <div class="card small hoverable" data-href="https://twitter.com/trajano">
                         <div class="card-image waves-effect waves-block waves-light">
                             <img src="http://lorempixel.com/1920/1080/food/3">
                             <span class="card-title"><i class="fa fa-twitter fa-lg"></i> @trajano</span>
@@ -304,6 +333,21 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container hide-on-med-and-up">
+        <div class="section">
+
+            <div class="collection">
+                <a class="collection-item waves-effect waves-light" href="https://github.com/trajano/"><i class="fa fa-github fa-fw"></i>GitHub</a>
+                <a class="collection-item waves-effect waves-light" href="https://linkedin.com/in/trajano"><i class="fa fa-linkedin fa-fw"></i>LinkedIn</a>
+                <a class="collection-item waves-effect waves-light" href="https://trajano.yelp.com"><i class="fa fa-yelp fa-fw"></i>Yelp</a>
+                <a class="collection-item waves-effect waves-light" href="http://stackoverflow.com/story/trajano"><i class="fa fa-stack-overflow fa-fw"></i>Stack Overflow</a>
+                <a class="collection-item waves-effect waves-light" href="https://www.facebook.com/archimedes.trajano"><i class="fa fa-facebook fa-fw"></i>Facebook</a>
+                <a class="collection-item waves-effect waves-light" href="https://twitter.com/trajano"><i class="fa fa-twitter fa-fw"></i>@trajano</a>
             </div>
 
         </div>
@@ -344,18 +388,18 @@
         <div class="section">
 
             <div class="collection">
-                <a title="Archimedes Trajano Resume in Word Format" class="collection-item waves-effect waves-light " href="assets/Archimedes%20Trajano.docx"><i class="fa fa-file-word-o left"> </i> Word</a>
-                <a title="Archimedes Trajano Resume in PDF format" class="collection-item waves-effect waves-light " href="assets/Archimedes%20Trajano.pdf"><i class="fa fa-file-pdf-o left"> </i> PDF</a>
-                <a title="Archimedes Trajano Resume" class="collection-item waves-effect waves-light" href="https://trajano.net/archimedes-trajano-resume/"><i class="fa fa-eye left"> </i> View online</a>
+                <a title="Archimedes Trajano Resume in Word Format" class="collection-item waves-effect waves-light " href="assets/Archimedes%20Trajano.docx"><i class="fa fa-file-word-o fa-fw"> </i> Word</a>
+                <a title="Archimedes Trajano Resume in PDF format" class="collection-item waves-effect waves-light " href="assets/Archimedes%20Trajano.pdf"><i class="fa fa-file-pdf-o fa-fw"> </i> PDF</a>
+                <a title="Archimedes Trajano Resume" class="collection-item waves-effect waves-light" href="https://trajano.net/archimedes-trajano-resume/"><i class="fa fa-eye fa-fw"> </i> View online</a>
             </div>
 
         </div>
     </div>
 
-    <footer class="page-footer blue darken-2">
+    <footer class="page-footer blue darken-2 scrollspy" id="contact">
         <div class="container">
             <div class="row">
-                <div class="col l8 s12">
+                <div class="col m6 l8 hide-on-small-only">
                     <h5 class="white-text">Bio</h5>
                     <p class="grey-text text-lighten-4">Archimedes Trajano is an IT consultant and IT contractor with focus on Application Architecture and tooling
                         utilizing various industry standard technologies such as Java EE and Web Services.</p>
@@ -367,7 +411,7 @@
 
 
                 </div>
-                <div class="col l4 s12">
+                <div class="col m6 l4 s12">
                     <h5 class="white-text">Contact me</h5>
 
                     <p><a class="white-text waves-effect btn-flat obfuscate" href="mailto:archie...trajano...net"><i class=" material-icons left">email</i> archie...trajano...net</a></p>

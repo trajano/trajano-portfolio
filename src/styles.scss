@@ -35,6 +35,9 @@ html {
     &.parallax-container {
         min-height: calc(100vh - 64px);
     }
+    p {
+        @extend h5,.light;
+    }
     #skip-to-content {
         position: absolute;
         width: $button-floating-size;
@@ -115,9 +118,13 @@ html {
 }
 
 p {
-  line-height: 2rem;
+    line-height: 2rem;
 }
 
 .button-collapse {
-  color: #26a69a;
+    color: #26a69a;
+}
+
+.collection .collection-item i.fa {
+    padding-right: 2em;
 }
