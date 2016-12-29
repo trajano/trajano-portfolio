@@ -12,11 +12,6 @@ module.exports = {
                 ])
             },
             {
-                test: /\.jpg|\.png$/,
-                include: /images/,
-                loaders: ["file-loader"]
-            },
-            {
                 test: /\.woff2|\.woff|\.ttf|\.eot|\.svg(\?v=[0-9]\.[0-9]\.[0-9])?$/,
                 loaders: ["file-loader"]
             },
