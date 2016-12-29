@@ -3,9 +3,10 @@
 
 /* This is the main background color, I chose a light green tinge to give it a more earthy warm feel */
 
-$main-backgound-color: color("green", "lighten-5");
+$main-background-color: color("green", "lighten-5");
+$root-background-color: color("teal", "darken-4");
 html {
-    background-color: $main-backgound-color;
+    background-color: $main-background-color;
 }
 
 #mainnav {
@@ -15,7 +16,7 @@ html {
     }
     nav {
         z-index: 1000;
-        background-color: $main-backgound-color;
+        background-color: $main-background-color;
         .nav-wrapper .brand-logo img {
             height: $navbar-height;
             border: 10px solid transparent;
@@ -36,7 +37,8 @@ html {
         min-height: calc(100vh - 64px);
     }
     p {
-        @extend h5,.light;
+        @extend h5,
+        .light;
     }
     #skip-to-content {
         position: absolute;
@@ -113,7 +115,7 @@ html {
     height: auto;
     color: white;
     .parallax {
-        background: rgba(70, 72, 82, 0.3);
+        background-color: $root-background-color;
     }
 }
 
@@ -124,7 +126,11 @@ p {
 .button-collapse {
     color: #26a69a;
 }
-
 .collection .collection-item i.fa {
     padding-right: 2em;
+}
+
+.darken {
+    background: $root-background-color;
+    filter: brightness(33%);
 }
