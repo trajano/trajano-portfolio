@@ -70,4 +70,7 @@ module.exports = {
         new StyleExtHtmlWebpackPlugin("critical.css")
     ],
     devtool: 'source-map',
+    devServer: {
+        inline: true
+    }
 }
