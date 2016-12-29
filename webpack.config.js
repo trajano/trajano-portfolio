@@ -49,6 +49,7 @@ module.exports = {
             description: "IT Consultant. Not a model or graphic designer so just using some random stock images of cats for now.",
             template: './src/app.html',
             minify: {
+                minifyJS: true,
                 removeAttributeQuotes: true,
                 collapseWhitespace: true,
                 html5: true
