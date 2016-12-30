@@ -27,9 +27,17 @@ page.onResourceRequested = function (requestData) {
   if (requestData.url.match(/\.ttf(\?.*)?$/)) {
     requestData.as = "font"
   }
-  if (requestData.url != '/' && !requestData.url.match(/&/)) {
-    resourcesRequested.push(requestData);
+  if (requestData.url == '/') {
+    return
   }
+  if (requestData.url.match(/&/)) {
+    return
+  }
+  // do not preload stuff from wp-content, they could be responsive so let the browser decide when to get them.
+  if (requestData.url.match(/wp-content/)) {
+    return
+  }
+  resourcesRequested.push(requestData);
 };
 page.open('http://localhost:8080', function (status) {
   var s = ""
