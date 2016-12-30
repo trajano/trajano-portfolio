@@ -126,6 +126,7 @@ p {
 .button-collapse {
     color: #26a69a;
 }
+
 .collection .collection-item i.fa {
     padding-right: 2em;
 }
@@ -133,4 +134,18 @@ p {
 .darken {
     background: $main-background-color;
     filter: brightness(38.1966%);
+}
+
+.call-to-action {
+    @extend .white-text,
+    .btn-large,
+    .waves-effect,
+    .waves-light,
+    .hoverable;
+    text-transform: uppercase;
+    
+    background: color("green", "darken-2");
+    &:visited {
+        background: color("green", "darken-2");
+    }
 }
