@@ -4,8 +4,8 @@
   "description": "Archimedes Trajano portfolio site.",
   "main": "src/app.js",
   "scripts": {
-    "prepublish": "webpack -p && critical dist/index.html > src/critical.css && webpack -p",
-    "rebuild-critical-css": "critical dist/index.html > src/critical.css",
+    "prepublish": "webpack -p && node rebuild-critical-css.js > src/critical.css && webpack -p",
+    "rebuild-critical-css": "node rebuild-critical-css.js > src/critical.css",
     "start": "webpack-dev-server"
   },
   "repository": {
