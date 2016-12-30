@@ -56,7 +56,7 @@ module.exports = {
         new ExtractTextPlugin("styles.css"),
         new HtmlWebpackPlugin({
             title: "Archimedes Trajano",
-            description: "IT Consultant. Not a model or graphic designer so just using some random stock images of cats for now.",
+            description: "IT Polymath. Enterprise Consultant. Full-stack Coder.",
             template: './src/app.html',
             minify: {
                 minifyJS: optimizeMinimize,
