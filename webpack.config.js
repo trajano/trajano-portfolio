@@ -27,7 +27,7 @@ var plugins = [
         minify: {
             minifyJS: optimizeMinimize,
             minifyCSS: optimizeMinimize,
-            removeAttributeQuotes: optimizeMinimize,
+            removeAttributeQuotes: false,
             collapseWhitespace: optimizeMinimize,
             html5: true
         },
