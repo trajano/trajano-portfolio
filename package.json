@@ -4,9 +4,9 @@
   "description": "Archimedes Trajano portfolio site.",
   "main": "src/app.js",
   "scripts": {
-    "prepublish": "webpack -p",
+    "prepublish": "webpack -p && critical dist/index.html > src/critical.css && webpack -p",
     "rebuild-critical-css": "critical dist/index.html > src/critical.css",
-    "start" : "webpack-dev-server"
+    "start": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
     "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
+    "html-webpack-exclude-assets-plugin": "0.0.3",
     "html-webpack-plugin": "^2.24.1",
     "node-sass": "^4.1.1",
     "sass-loader": "^4.1.1",

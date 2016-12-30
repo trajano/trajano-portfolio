@@ -16,7 +16,7 @@ $(function () {
     })
     $('.parallax').parallax();
 
-    $('.card[data-href]').bind("click", function(event) {
+    $('.card[data-href]').bind("click", function (event) {
         event.preventDefault()
         window.location.href = $(this).data("href")
     })
@@ -48,4 +48,25 @@ $(function () {
             .replace(/Nine/g, "9")
             .replace(/Zero/g, "0"));
     });
+
+    // load stylesheet here
+    const styleSheetLink = document.createElement('link')
+    styleSheetLink.rel = 'stylesheet'
+    styleSheetLink.href = 'styles.css'
+    styleSheetLink.type = 'text/css'
+    const linkAnchor = document.getElementsByTagName('link')[0]
+    linkAnchor.parentNode.insertBefore(styleSheetLink, linkAnchor)
+
+    // Media.net ads
+    window._mNHandle = {
+        queue: [() => window._mNDetails.loadTag("152146877", "728x20", "152146877")]
+    }
+
+    const mediaNetLink = document.createElement("script")
+    mediaNetLink.type = "text/javascript"
+    mediaNetLink.src = '//contextual.media.net/dmedianet.js?cid=8CU21S9US&https=1'
+    mediaNetLink.async = "async";
+    const scriptAnchor = document.getElementsByTagName("script")[0]
+    scriptAnchor.parentNode.insertBefore(mediaNetLink, scriptAnchor)
+
 })
