@@ -3,6 +3,7 @@ var webpack = require("webpack")
 var CopyWebpackPlugin = require('copy-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var HtmlWebpackExcludeAssetsPlugin = require('html-webpack-exclude-assets-plugin');
 var StyleExtHtmlWebpackPlugin = require('style-ext-html-webpack-plugin')
 var yargs = require("yargs")
 
@@ -29,9 +30,10 @@ var plugins = [
             removeAttributeQuotes: optimizeMinimize,
             collapseWhitespace: optimizeMinimize,
             html5: true
-        }
+        },
+        excludeAssets: [/styles.css/] 
     }),
-
+    new HtmlWebpackExcludeAssetsPlugin()
 ]
 
 // Add critical.css if one is present
