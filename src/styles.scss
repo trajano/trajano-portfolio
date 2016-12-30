@@ -138,14 +138,15 @@ p {
 
 .call-to-action {
     @extend .white-text,
-    .btn-large,
+    .btn,
+    .light,
     .waves-effect,
     .waves-light,
     .hoverable;
-    text-transform: uppercase;
-    
-    background: color("green", "darken-2");
-    &:visited {
-        background: color("green", "darken-2");
+    height: $button-height * 2.0;
+    line-height: $button-height * 2.0;
+    font-size: 1.6rem;
+    i {
+        font-size: 1.6rem;
     }
 }
