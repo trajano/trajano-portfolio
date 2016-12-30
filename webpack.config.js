@@ -1,10 +1,20 @@
 var webpack = require("webpack")
 var CopyWebpackPlugin = require('copy-webpack-plugin')
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var StyleExtHtmlWebpackPlugin = require('style-ext-html-webpack-plugin')
+var yargs = require("yargs")
+
+var optimizeMinimize = yargs.alias('p', 'optimize-minimize').argv.optimizeMinimize;
 module.exports = {
     module: {
         loaders: [
+            {
+                test: /\critical.css$/,
+                loader: new ExtractTextPlugin("critical.css").extract([
+                    "css-loader?sourceMap"
+                ])
+            },
             {
                 test: /\.scss$/,
                 loader: ExtractTextPlugin.extract([
@@ -46,14 +56,21 @@ module.exports = {
         new ExtractTextPlugin("styles.css"),
         new HtmlWebpackPlugin({
             title: "Archimedes Trajano",
-            description: "IT Consultant. Not a model or graphic designer so just using some random stock images of cats for now.",
+            description: "IT Polymath. Hands-on Enterprise Consultant. Full-stack Coder.",
             template: './src/app.html',
             minify: {
-                removeAttributeQuotes: true,
-                collapseWhitespace: true,
+                minifyJS: optimizeMinimize,
+                minifyCSS: optimizeMinimize,
+                removeAttributeQuotes: optimizeMinimize,
+                collapseWhitespace: optimizeMinimize,
                 html5: true
             }
-        })
+        }),
+        new ExtractTextPlugin("critical.css"),
+        new StyleExtHtmlWebpackPlugin("critical.css")
     ],
     devtool: 'source-map',
+    devServer: {
+        inline: true
+    }
 }

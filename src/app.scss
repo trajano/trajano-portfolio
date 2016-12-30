@@ -1,7 +1,8 @@
 @import "~materialize-css/sass/components/mixins";
 @import "~materialize-css/sass/components/color";
 // Override variables in materializecss
-$secondary-color: color("blue", "lighten-1");
+$footer-bg-color: color("green", "darken-3");
+$secondary-color: color("teal", "darken-1");
 @import "~materialize-css/sass/components/variables";
 // Reset
 @import "~materialize-css/sass/components/normalize";

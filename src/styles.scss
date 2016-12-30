@@ -126,6 +126,7 @@ p {
 .button-collapse {
     color: #26a69a;
 }
+
 .collection .collection-item i.fa {
     padding-right: 2em;
 }
@@ -133,4 +134,19 @@ p {
 .darken {
     background: $main-background-color;
     filter: brightness(38.1966%);
+}
+
+.call-to-action {
+    @extend .white-text,
+    .btn,
+    .light,
+    .waves-effect,
+    .waves-light,
+    .hoverable;
+    height: $button-height * 2.0;
+    line-height: $button-height * 2.0;
+    font-size: 1.6rem;
+    i {
+        font-size: 1.6rem;
+    }
 }
