@@ -16,7 +16,7 @@ $(function () {
     })
     $('.parallax').parallax();
 
-    $('.card[data-href]').bind("click", function(event) {
+    $('.card[data-href]').bind("click", function (event) {
         event.preventDefault()
         window.location.href = $(this).data("href")
     })
@@ -48,4 +48,20 @@ $(function () {
             .replace(/Nine/g, "9")
             .replace(/Zero/g, "0"));
     });
+
+    // Media.net ads
+    window._mNHandle = {};
+    window._mNHandle.queue = [];
+    // medianet_versionId = "121199";
+    (function () {
+        var sct = document.createElement("script"),
+            sctHl = document.getElementsByTagName("script")[0]
+        sct.type = "text/javascript"
+        sct.src = 'https://contextual.media.net/dmedianet.js?cid=8CU21S9US&https=1'
+        sct.async = "async";
+        sctHl.parentNode.insertBefore(sct, sctHl);
+    })();
+    window._mNHandle.queue.push(function () {
+        window._mNDetails.loadTag("152146877", "728x20", "152146877");
+    })
 })
