@@ -1,3 +1,4 @@
+var fs = require('fs')
 var webpack = require("webpack")
 var CopyWebpackPlugin = require('copy-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
@@ -6,6 +7,40 @@ var StyleExtHtmlWebpackPlugin = require('style-ext-html-webpack-plugin')
 var yargs = require("yargs")
 
 var optimizeMinimize = yargs.alias('p', 'optimize-minimize').argv.optimizeMinimize;
+
+var plugins = [
+    new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery",
+        "window.jQuery": "jquery",
+    }),
+    new CopyWebpackPlugin([{
+        from: 'assets',
+        to: 'assets'
+    }]),
+    new ExtractTextPlugin("styles.css"),
+    new HtmlWebpackPlugin({
+        title: "Archimedes Trajano",
+        description: "IT Polymath. Hands-on Enterprise Consultant. Full-stack Coder.",
+        template: './src/app.html',
+        minify: {
+            minifyJS: optimizeMinimize,
+            minifyCSS: optimizeMinimize,
+            removeAttributeQuotes: optimizeMinimize,
+            collapseWhitespace: optimizeMinimize,
+            html5: true
+        }
+    }),
+
+]
+
+// Add critical.css if one is present
+if (fs.existsSync("src/critical.css")) {
+    plugins.push(
+        new ExtractTextPlugin("critical.css"),
+        new StyleExtHtmlWebpackPlugin("critical.css")
+    )
+}
 module.exports = {
     module: {
         loaders: [
@@ -43,32 +78,7 @@ module.exports = {
     externals: {
         "node-waves": "Waves",
     },
-    plugins: [
-        new webpack.ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery",
-            "window.jQuery": "jquery",
-        }),
-        new CopyWebpackPlugin([{
-            from: 'assets',
-            to: 'assets'
-        }]),
-        new ExtractTextPlugin("styles.css"),
-        new HtmlWebpackPlugin({
-            title: "Archimedes Trajano",
-            description: "IT Polymath. Hands-on Enterprise Consultant. Full-stack Coder.",
-            template: './src/app.html',
-            minify: {
-                minifyJS: optimizeMinimize,
-                minifyCSS: optimizeMinimize,
-                removeAttributeQuotes: optimizeMinimize,
-                collapseWhitespace: optimizeMinimize,
-                html5: true
-            }
-        }),
-        new ExtractTextPlugin("critical.css"),
-        new StyleExtHtmlWebpackPlugin("critical.css")
-    ],
+    plugins: plugins,
     devtool: 'source-map',
     devServer: {
         inline: true
