@@ -1,24 +1,16 @@
-var fs = require('fs')
 var webpack = require("webpack")
 var CopyWebpackPlugin = require('copy-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
-var HtmlWebpackExcludeAssetsPlugin = require('html-webpack-exclude-assets-plugin')
-var StyleExtHtmlWebpackPlugin = require('style-ext-html-webpack-plugin')
 var yargs = require("yargs")
 
 var optimizeMinimize = yargs.alias('p', 'optimize-minimize').argv.optimizeMinimize
 
-var internalCSS = new ExtractTextPlugin('internal.css')
 var externalCSS = new ExtractTextPlugin('styles.css')
 
 module.exports = {
     module: {
         loaders: [
-            {
-                test: /critical.css/,
-                loader: internalCSS.extract(["css-loader?sourceMap"])
-            },
             {
                 test: /\.scss$/,
                 loader: externalCSS.extract(["css-loader?sourceMap", "sass-loader"])
@@ -62,23 +54,11 @@ module.exports = {
                 collapseWhitespace: optimizeMinimize,
                 html5: true
             },
-            excludeAssets: optimizeMinimize ? [/styles.css/] : []
         }),
-        new HtmlWebpackExcludeAssetsPlugin(),
         externalCSS
     ],
     devtool: 'source-map',
     devServer: {
         inline: true
     }
-}
-
-
-// Add critical.css if one is present
-if (fs.existsSync("src/critical.css")) {
-    module.exports.entry.push('./src/critical.css')
-    module.exports.plugins.push(
-        internalCSS,
-        new StyleExtHtmlWebpackPlugin("internal.css")
-    )
 }
