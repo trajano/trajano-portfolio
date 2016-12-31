@@ -4,7 +4,7 @@ var page = webPage.create();
 var resourcesRequested = [];
 page.onResourceRequested = function (requestData) {
   requestData.url = requestData.url.replace(new RegExp("http://localhost:8080"), "")
-  requestData.url = requestData.url.replace(new RegExp("http://trajano.net"), "")
+  requestData.url = requestData.url.replace(new RegExp("https?://trajano.net"), "")
   requestData.url = requestData.url.replace(new RegExp("http://"), "https://")
   if (requestData.url.match(/\.svg$/)) {
     requestData.as = "image"
@@ -39,15 +39,15 @@ page.onResourceRequested = function (requestData) {
   }
   resourcesRequested.push(requestData);
 };
-page.open('http://localhost:8080', function (status) {
+page.open('http://trajano.net', function (status) {
   var s = ""
   resourcesRequested.forEach(function (resource, i) {
     s += ("<" + resource.url + ">;rel=preload;as=" + resource.as)
     if (i < resourcesRequested.length - 1) {
       s += (",")
     }
-    console.log("<link rel=\"preload\" href=\"" + resource.url + "\" as=\"" + resource.as + "\">")
+//    console.log("<link rel=\"preload\" href=\"" + resource.url + "\" as=\"" + resource.as + "\">")
   })
-  //  console.log("Header add Link " + s)
+  console.log(s)
   phantom.exit();
 });

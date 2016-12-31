@@ -62,7 +62,7 @@ module.exports = {
                 collapseWhitespace: optimizeMinimize,
                 html5: true
             },
-            excludeAssets: [/styles.css/]
+            excludeAssets: optimizeMinimize ? [/styles.css/] : []
         }),
         new HtmlWebpackExcludeAssetsPlugin(),
         externalCSS
