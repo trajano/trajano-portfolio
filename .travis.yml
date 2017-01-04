@@ -27,7 +27,7 @@ install:
 script:
 - sonar-scanner
 after_success:
-- git -C dist add .
+- git -C dist add -Av .
 - git -C dist commit -a -m "Travis build"
 - if [[ ! "$TRAVIS_PULL_REQUEST" =~ ^[0-9]+$ ]]; then git -C dist push origin gh-pages;
   fi
