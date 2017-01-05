@@ -2,6 +2,7 @@ var webpack = require("webpack")
 var CopyWebpackPlugin = require('copy-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
 var yargs = require("yargs")
 
 var optimizeMinimize = yargs.alias('p', 'optimize-minimize').argv.optimizeMinimize
@@ -43,6 +44,7 @@ module.exports = {
             from: 'assets',
             to: 'assets'
         }]),
+        externalCSS,
         new HtmlWebpackPlugin({
             title: "Archimedes Trajano",
             description: "IT Polymath. Hands-on Enterprise Consultant. Full-stack Coder.",
@@ -54,8 +56,9 @@ module.exports = {
                 collapseWhitespace: optimizeMinimize,
                 html5: true
             },
+            inlineSource: '.css$'
         }),
-        externalCSS
+        new HtmlWebpackInlineSourcePlugin()
     ],
     devtool: 'source-map',
     devServer: {
