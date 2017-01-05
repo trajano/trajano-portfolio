@@ -52,7 +52,7 @@ $(function () {
     // load stylesheet here
     const styleSheetLink = document.createElement('link')
     styleSheetLink.rel = 'stylesheet'
-    styleSheetLink.href = 'styles.css'
+    styleSheetLink.href = '//fonts.googleapis.com/icon?family=Material+Icons'
     styleSheetLink.type = 'text/css'
     const linkAnchor = document.getElementsByTagName('link')[0]
     linkAnchor.parentNode.insertBefore(styleSheetLink, linkAnchor)
