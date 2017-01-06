@@ -52,7 +52,7 @@ $(function () {
     // load stylesheet here
     const styleSheetLink = document.createElement('link')
     styleSheetLink.rel = 'stylesheet'
-    styleSheetLink.href = '//fonts.googleapis.com/icon?family=Material+Icons'
+    styleSheetLink.href = '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'
     styleSheetLink.type = 'text/css'
     const linkAnchor = document.getElementsByTagName('link')[0]
     linkAnchor.parentNode.insertBefore(styleSheetLink, linkAnchor)
