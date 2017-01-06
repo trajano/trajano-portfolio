@@ -1,0 +1,24 @@
+{
+    "@context": "http://schema.org",
+    "@type": "Person",
+    "name": "Archimedes Trajano",
+    "alternateName": "Archie",
+    "familyName": "Trajano",
+    "jobTitle": "IT Polymath. Hands-on Enterprise Consultant. Full-stack Coder.",
+    "additionalName": "Archie",
+    "url": "https://trajano.net",
+    "image": "https://en.gravatar.com/userimage/291884/5042730d41e772fe2a3729a921340c95.png",
+    "worksFor": {
+        "legalName": "Trajano",
+        "logo": "https://trajano.net/wp-content/uploads/2016/08/logo-with-text.png"
+    },
+    "sameAs": [
+        "https://facebook.com/archimedes.trajano",
+        "https://linkedin.com/in/trajano",
+        "https://plus.google.com/u/0/+ArchimedesTrajano",
+        "https://trajano.yelp.com",
+        "https://github.com/trajano/",
+        "https://stackoverflow.com/story/trajano",
+        "https://twitter.com/trajano"
+    ]
+}
