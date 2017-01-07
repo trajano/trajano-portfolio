@@ -46,8 +46,7 @@ module.exports = {
         }]),
         externalCSS,
         new HtmlWebpackPlugin({
-            title: "Archimedes Trajano",
-            description: "IT Polymath. Hands-on Enterprise Consultant. Full-stack Coder.",
+            data: require('./src/ld.json'),
             template: './src/app.html',
             minify: {
                 minifyJS: optimizeMinimize,
