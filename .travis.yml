@@ -8,6 +8,9 @@ cache:
   - "$HOME/.sonar/cache"
 addons:
   sonarqube: true
+branches:
+  only:
+  - master
 env:
   global:
   - secure: Q4pyY77WPO0Rp5ENomM2KgIAyMKP6jU2iK2ptN/rSjL09HdidmaJkYwvr0YzZfnIEr0iJVQ6Q0WFbqwyKJHvOQPBawzjIfcixLLE50aTqWaVbOyKUCU8HjLdXEUaUZCwu5l9ih9UBGjAq98zc/EmpCjj9M/mbmXGhS1BOiLe6PdUn77v9OcjJGDVVvPGf3I8eHR2WxCovNlXfmefVJskLpm20xrdbUd4MWgL5IuLZXNUc1fAxDel82JvPS8+ICqeaVk7KHsyIj7HDsZJpyJ8ydqeq9Oml9HTCoaFHg/NrZppBO8gPZHSV/tEnb387hMOc1qpXQ+1HjcNFORIWzyJUX6H4DXh8KjOVwYJBRoFDMSdm4ZhIAJpNpY+eh4NHJ6EvPe865NK9VDARvLtDj8SjqEcbnncu5Yzy7pwZyaRbm6/SJG9KM63v6fd87NhqMqcFh048opXyqRXWUAg8KvloLKI4ZyEaGuKfkNj8GqunfB++BkjafydP82a3Gv+cazCelnWZ8xIZiUeIeEoImClL9kG/b0kUSAtCjtK3/xwyI8wuSvwiHa6/zAwmlEu/Eqdc/TQ7Zkdsg0aBOM/EOE0cZA+N8puB8SkoaJppeHLorq4RVOCleM3kf6PdP1IRIjwF5AjmZ+oRSbiNihLQrmEqTPPILVNovOGK07y4mv4feU=
