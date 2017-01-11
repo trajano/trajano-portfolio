@@ -29,7 +29,7 @@ module.exports = {
     entry: ['./src/app'],
     output: {
         path: './dist',
-        filename: 'bundle.js'
+        filename: 'bundle.[hash].js'
     },
     externals: {
         "node-waves": "Waves",
