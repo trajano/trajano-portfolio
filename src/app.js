@@ -1,3 +1,4 @@
+import './font-faces.scss'
 import './app.scss'
 import 'materialize-css/dist/js/materialize'
 import $ from 'jquery'

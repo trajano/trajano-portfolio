@@ -13,8 +13,12 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.scss$/,
+                test: /app\.scss$/,
                 loader: externalCSS.extract(["css-loader?sourceMap", "sass-loader"])
+            },
+            {
+                test: /font-faces\.scss$/,
+                loaders: ["style-loader", "css-loader", "sass-loader"]
             },
             {
                 test: /\.js$/,
@@ -51,7 +55,7 @@ module.exports = {
                 collapseWhitespace: optimizeMinimize,
                 html5: true
             },
-            inlineSource: '.css$'
+            inlineSource: 'styles.css$'
         }),
         new HtmlWebpackInlineSourcePlugin()
     ],
