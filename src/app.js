@@ -1,5 +1,6 @@
 import './app.scss'
 import 'materialize-css/dist/js/materialize'
+import $ from 'jquery'
 
 $(window).resize(function () {
     $('#mainnav nav').pushpin('remove')

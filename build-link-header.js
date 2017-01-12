@@ -39,14 +39,14 @@ page.onResourceRequested = function (requestData) {
   }
   resourcesRequested.push(requestData);
 };
-page.open('http://trajano.net', function (status) {
+page.open('https://trajano.net', function (status) {
   var s = ""
   resourcesRequested.forEach(function (resource, i) {
-    s += ("<" + resource.url + ">;rel=preload;as=" + resource.as)
-    if (i < resourcesRequested.length - 1) {
-      s += (",")
+    if (resource.url.match(/^\//)) {
+      s += ("Header merge Link \"<" + resource.url + ">;rel=preload;as=" + resource.as + "\"\n")
+    } else {
+      console.log("<link rel=\"preload\" href=\"" + resource.url + "\" as=\"" + resource.as + "\">")
     }
-//    console.log("<link rel=\"preload\" href=\"" + resource.url + "\" as=\"" + resource.as + "\">")
   })
   console.log(s)
   phantom.exit();

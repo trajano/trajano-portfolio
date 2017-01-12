@@ -16,6 +16,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
     <link rel="shortcut icon" href="assets/favicon.png" />
     <link rel="apple-touch-icon" sizes="152x152" href="assets/apple-touch-icon.png" />
+    <link rel="preconnect" href="//code.jquery.com/jquery-2.2.4.min.js" crossorigin />
+    <link rel="preconnect" href="//netdna.bootstrapcdn.com" crossorigin />
+    <link rel="preconnect" href="//fonts.gstatic.com" crossorigin/>
+    <link rel="preload" href="//www.googletagmanager.com/gtm.js?id=GTM-KB96BNB" as="script" />
+    <link rel="preload" href="//www.google-analytics.com/analytics.js" as="script" />
     <%= require('html!./partials/google-tag-manager-head.html') %>
 <script type="application/ld+json"><%= JSON.stringify(htmlWebpackPlugin.options.data) %></script>
 </head>
@@ -425,7 +430,6 @@
             <div class="collection">
                 <a title="Archimedes Trajano Resume in Word Format" class="collection-item waves-effect waves-light " href="assets/Archimedes%20Trajano.docx"><i class="fa fa-file-word-o fa-fw"> </i> Word</a>
                 <a title="Archimedes Trajano Resume in PDF format" class="collection-item waves-effect waves-light " href="assets/Archimedes%20Trajano.pdf"><i class="fa fa-file-pdf-o fa-fw"> </i> PDF</a>
-                <a title="Archimedes Trajano Resume" class="collection-item waves-effect waves-light" href="https://trajano.net/archimedes-trajano-resume/"><i class="fa fa-eye fa-fw"> </i> View online</a>
             </div>
 
         </div>
@@ -457,6 +461,9 @@
             <div id="152146877" class="right"></div>
         </div>
     </footer>
+    <script src="//code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+		crossorigin="anonymous"></script>
 </body>
 
 </html>
