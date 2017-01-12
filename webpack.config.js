@@ -33,13 +33,9 @@ module.exports = {
     },
     externals: {
         "node-waves": "Waves",
+        "jquery": "jQuery"
     },
     plugins: [
-        new webpack.ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery",
-            "window.jQuery": "jquery",
-        }),
         new CopyWebpackPlugin([{
             from: 'assets',
             to: 'assets'
