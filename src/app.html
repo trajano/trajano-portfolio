@@ -34,9 +34,10 @@
     />
     <link rel="preload" href="//fonts.gstatic.com/s/lato/v11/1YwB1sO8YE1Lyjf12WNiUA.woff2" as="font" type="font/woff2" crossorigin
     />
-
     <%= require('html!./partials/google-tag-manager-head.html') %>
-        <script type="application/ld+json"><%= JSON.stringify(htmlWebpackPlugin.options.data) %></script>
+        <script type="application/ld+json">
+            <%= JSON.stringify(htmlWebpackPlugin.options.data) %>
+        </script>
 </head>
 
 <body>
@@ -55,9 +56,7 @@
                     </div>
                     <div class="row hide-on-med-and-down center">
                         <a class="call-to-action" href="#resume"><i class="fa fa-download fa-fw"></i> View My Resume and Contact Info</a>
-
                         <button class="call-to-action chatbutton" hidden><i class="fa fa-comment fa-fw"></i> Chat with me, I'm online</button>
-
                     </div>
                     <div class="row hide-on-large-only center">
                         <a class="white-text obfuscate btn-flat" href="mailto:archie...trajano...net"><i class="fa fa-fw fa-envelope-o left"></i> archie...trajano...net</a>
@@ -76,7 +75,6 @@
             <nav role="navigation" id="mainnav-nav">
                 <div class="nav-wrapper">
                     <a id="logo-container" href="#" class="brand-logo left"><img src="assets/portfolio-logo.png" alt="Trajano"></a>
-
                     <ul id="nav-desktop" class="right hide-on-med-and-down table-of-contents">
                         <li><a href="#mainnav">About Archie</li>
                     <li><a href="#projects">Personal Projects</li>
@@ -85,7 +83,6 @@
                         <li><a href="/blog/" title="Archimedes Trajano Blog">Blog</a></li>
                         <li><a href="#contact">Contact Me</a></li>
                     </ul>
-
                     <ul id="nav-mobile" class="side-nav table-of-contents">
                         <li>
                             <div class="userView z-depth-1">
@@ -111,39 +108,32 @@
                 </div>
             </nav>
         </div>
-
         <div class="container">
             <div class="section">
-
                 <div class="row">
                     <div class="col s12 m4">
                         <div class="icon-block">
                             <h2 class="center brown-text"><i class="fa fa-github fa-lg"></i> </h2>
                             <h5 class="center">I'm a full-stack coder</h5>
-
                             <p>I design and develop enterprise applications in a variety of languages including but not limited
                                 to Java, JavaScript and SQL. I work to make sure everything is integrated on the enterprise
                                 scale.
                             </p>
                         </div>
                     </div>
-
                     <div class="col s12 m4">
                         <div class="icon-block">
                             <h2 class="center brown-text"><i class="fa fa-building fa-lg"></i> </h2>
                             <h5 class="center">Hands-on enterprise consultant</h5>
-
                             <p>I architect solutions that scale up thinking on the enterprise level, but I also know enough
                                 about the development, deployment and application management processes to make sure they
                                 are doable and sustainable.</p>
                         </div>
                     </div>
-
                     <div class="col s12 m4">
                         <div class="icon-block">
                             <h2 class="center brown-text"><i class="fa fa-graduation-cap fa-lg"></i> </h2>
                             <h5 class="center">I'm an IT polymath</h5>
-
                             <p>A person whose expertise spans a significant number of different subject areas; such a person
                                 is known to draw on complex bodies of knowledge to solve specific problems. As such I get
                                 called upon to deal with integrating multiple technologies that are present in enterprise
@@ -151,48 +141,49 @@
                             </p>
                         </div>
                     </div>
-
                 </div>
                 <div class="row">
-
                     <div class="col s12 m4">
                         <div class="icon-block">
                             <h2 class="center brown-text"><i class="fa fa-bolt fa-lg"></i> </h2>
                             <h5 class="center">I'm agile</h5>
-
                             <p>I worked on projects using the Scrum methodology at varying degrees and work with others to use
                                 the methology effectively.
                             </p>
                         </div>
                     </div>
-
-
                     <div class="col s12 m4">
                         <div class="icon-block">
                             <h2 class="center brown-text"><i class="fa fa-users fa-lg"></i> </h2>
                             <h5 class="center">Cúram expert</h5>
-
                             <p>I've been working with the Curam Enterprise Framework since 2002 and primarily do programming
                                 and integrations with external systems.</p>
                         </div>
                     </div>
-
                     <div class="col s12 m4">
                         <div class="icon-block">
                             <h2 class="center brown-text"><i class="fa fa-cogs fa-lg"></i> </h2>
                             <h5 class="center">DevOps</h5>
-
                             <p>I do that too, I script whereever I can from development to deployment and circle back with ELK
                                 integration and analysis for production.</p>
                         </div>
                     </div>
-
                 </div>
-
+                <div class="row">
+                    <div class="col s12 m4">
+                        <div class="icon-block">
+                            <h2 class="center brown-text"><i class="fa fa-log fa-lg"></i> </h2>
+                            <h5 class="center">Leverages ELK</h5>
+                            <p>I've set up ELK stacks in both Windows and Unix systems where I do parsing of WebSphere, Pega,
+                                IIS, Apache, Unix syslog entries using logstash and visualize on Kibana for fun and profit.
+                                Combined with my breadth of skills I can help interpret and diagnose production issues and
+                                scale it down to development environments so problems are detected sooner.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
-
         <div class="parallax-container valign-wrapper scrollspy" id="projects">
             <div class="section no-pad-bot">
                 <div class="container">
@@ -204,11 +195,8 @@
             </div>
             <div class="parallax"><img class="darken" src="https://trajano.net/wp-content/uploads/2016/12/Archimedes-fossil.jpg" alt="Archimedes fossil"></div>
         </div>
-
         <div class="container">
             <div class="section">
-
-
                 <div class="row">
                     <div class="col s12 m6">
                         <div class="card small sticky-action">
@@ -231,7 +219,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col s12 m6">
                         <div class="card small sticky-action">
                             <div class="card-image waves-effect waves-block waves-light">
@@ -252,9 +239,7 @@
                                     looking at as my new front page.</p>
                             </div>
                         </div>
-
                     </div>
-
                     <div class="col s12 m6">
                         <div class="card small sticky-action">
                             <div class="card-image waves-effect waves-block waves-light">
@@ -276,10 +261,7 @@
                                     POM that defines common settings used by your organization.</p>
                             </div>
                         </div>
-
                     </div>
-
-
                     <div class="col s12 m6">
                         <div class="card small sticky-action">
                             <div class="card-image waves-effect waves-block waves-light">
@@ -298,13 +280,10 @@
                                 <p>A place where I channel my thoughts about the many things that interest me.</p>
                             </div>
                         </div>
-
                     </div>
                 </div>
-
             </div>
         </div>
-
         <div class="parallax-container valign-wrapper scrollspy" id="social">
             <div class="section no-pad-bot">
                 <div class="container">
@@ -315,10 +294,8 @@
             </div>
             <div class="parallax"><img class="darken" src="https://trajano.net/wp-content/uploads/2016/12/hearthstone.jpg" alt="Hearthstone"></div>
         </div>
-
         <div class="container hide-on-small-only">
             <div class="section">
-
                 <div class="row">
                     <div class="col m6 l4">
                         <div class="card small hoverable" data-href="https://github.com/trajano/">
@@ -333,7 +310,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col m6 l4">
                         <div class="card small hoverable" data-href="https://linkedin.com/in/trajano">
                             <div class="card-image waves-effect waves-block waves-light">
@@ -345,7 +321,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col m6 l4">
                         <div class="card small hoverable" data-href="https://trajano.yelp.com/">
                             <div class="card-image waves-effect waves-block waves-light">
@@ -357,7 +332,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col m6 l4">
                         <div class="card small hoverable" data-href="http://stackoverflow.com/story/trajano">
                             <div class="card-image waves-effect waves-block waves-light">
@@ -370,7 +344,6 @@
                         </div>
                         </a>
                     </div>
-
                     <div class="col m6 l4">
                         <div class="card small hoverable" data-href="https://www.facebook.com/archimedes.trajano">
                             <div class="card-image waves-effect waves-block waves-light">
@@ -382,7 +355,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col m6 l4">
                         <div class="card small hoverable" data-href="https://twitter.com/trajano">
                             <div class="card-image waves-effect waves-block waves-light">
@@ -395,13 +367,10 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
-
         <div class="container hide-on-med-and-up">
             <div class="section">
-
                 <div class="collection">
                     <a class="collection-item waves-effect waves-light" href="https://github.com/trajano/"><i class="fa fa-github fa-fw"></i>GitHub</a>
                     <a class="collection-item waves-effect waves-light" href="https://linkedin.com/in/trajano"><i class="fa fa-linkedin fa-fw"></i>LinkedIn</a>
@@ -410,10 +379,8 @@
                     <a class="collection-item waves-effect waves-light" href="https://www.facebook.com/archimedes.trajano"><i class="fa fa-facebook fa-fw"></i>Facebook</a>
                     <a class="collection-item waves-effect waves-light" href="https://twitter.com/trajano"><i class="fa fa-twitter fa-fw"></i>@trajano</a>
                 </div>
-
             </div>
         </div>
-
         <div class="parallax-container valign-wrapper scrollspy" id="resume">
             <div class="section no-pad-bot">
                 <div class="container">
@@ -426,10 +393,8 @@
             </div>
             <div class="parallax"><img class="darken" src="https://trajano.net/wp-content/uploads/2016/12/Top-Hair-cut-from-Conrad.jpg" alt="Hair cut from Conrad"></div>
         </div>
-
         <div class="container hide-on-small-only">
             <div class="section">
-
                 <div class="row">
                     <div class="col s12 m12 l12">
                         <p class="light"><i class="fa fa-exclamation-circle fa-fw" aria-hidden="true"></i>
@@ -449,15 +414,12 @@
         </div>
         <div class="container hide-on-med-and-up">
             <div class="section">
-
                 <div class="collection">
                     <a title="Archimedes Trajano Resume in Word Format" class="collection-item waves-effect waves-light " href="assets/Archimedes%20Trajano.docx"><i class="fa fa-file-word-o fa-fw"> </i> Word</a>
                     <a title="Archimedes Trajano Resume in PDF format" class="collection-item waves-effect waves-light " href="assets/Archimedes%20Trajano.pdf"><i class="fa fa-file-pdf-o fa-fw"> </i> PDF</a>
                 </div>
-
             </div>
         </div>
-
         <footer class="page-footer scrollspy" id="contact">
             <div class="container">
                 <div class="row">
@@ -470,15 +432,11 @@
                     </div>
                     <div class="col m6 l4 s12">
                         <h5 class="white-text">Contact me</h5>
-
                         <p><a class="white-text waves-effect btn-flat obfuscate" href="mailto:archie...trajano...net"><i class="fa fa-fw fa-envelope-o left"></i> archie...trajano...net</a></p>
-
                         <p>
                             <a class="white-text waves-effect btn-flat obfuscate" href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive"><i class="fa fa-fw fa-phone left"></i> FourOneSix-EightFiveSix-SixSixFiveFive</a></p>
                         <p>
                             <button class="white-text waves-effect btn-flat chatbutton" hidden><i class="fa fa-fw fa-comment left"></i> Chat with me I'm online</button></p>
-
-
                     </div>
                 </div>
             </div>
