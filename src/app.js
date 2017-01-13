@@ -1,9 +1,8 @@
 import './font-faces.scss'
 import './app.scss'
 import 'materialize-css/dist/js/materialize'
-import $ from 'jquery'
 
-$(window).resize(function () {
+$(window).resize(() => {
     $('#mainnav-nav').pushpin('remove')
     $('#mainnav-nav').pushpin({
         top: $('#mainnav').offset().top
@@ -38,7 +37,7 @@ $(function () {
     })
     $('.parallax').parallax();
 
-    $('.card[data-href]').bind("click", function (event) {
+    $('.card[data-href]').bind("click", (event) => {
         event.preventDefault()
         window.location.href = $(this).data("href")
     })
@@ -62,11 +61,32 @@ $(function () {
         queue: [() => window._mNDetails.loadTag("152146877", "728x20", "152146877")]
     }
 
-    const mediaNetLink = document.createElement("script")
-    mediaNetLink.type = "text/javascript"
-    mediaNetLink.src = '//contextual.media.net/dmedianet.js?cid=8CU21S9US&https=1'
-    mediaNetLink.async = "async"
-    const scriptAnchor = document.getElementsByTagName("script")[0]
-    scriptAnchor.parentNode.insertBefore(mediaNetLink, scriptAnchor)
+    $.ajax({
+        url: "//contextual.media.net/dmedianet.js?cid=8CU21S9US&https=1",
+        cache: true,
+        dataType: "script"
+    })
+
+    // Smartsupp Live Chat script
+    window._smartsupp = window._smartsupp || {};
+    window._smartsupp.key = '1164536eedc7355cdbbac4c037e82b31531fcd0f'
+
+    $.ajax({
+        url: "//www.smartsuppchat.com/loader.js",
+        cache: true,
+        dataType: "script",
+        success: () => {
+            smartsupp('on', 'status', status => {
+                if (status == 'online') {
+                    $('#chatbutton').show()
+                } else {
+                    $('#chatbutton').hide()
+                }
+            });
+            $("#chatbutton button").on("click", () => {
+                smartsupp('chat:open')
+            })
+        }
+    })
 
 })
