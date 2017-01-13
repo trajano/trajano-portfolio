@@ -78,12 +78,12 @@ $(function () {
         success: () => {
             smartsupp('on', 'status', status => {
                 if (status == 'online') {
-                    $('#chatbutton').show()
+                    $('.chatbutton').show()
                 } else {
-                    $('#chatbutton').hide()
+                    $('.chatbutton').hide()
                 }
             });
-            $("#chatbutton button").on("click", () => {
+            $(".chatbutton").on("click", () => {
                 smartsupp('chat:open')
             })
         }
