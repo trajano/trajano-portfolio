@@ -37,7 +37,7 @@ $(function () {
     })
     $('.parallax').parallax();
 
-    $('.card[data-href]').bind("click", (event) => {
+    $('.card[data-href]').bind("click", function (event) {
         event.preventDefault()
         window.location.href = $(this).data("href")
     })
