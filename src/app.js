@@ -72,7 +72,7 @@ $(function () {
     window._smartsupp.key = '1164536eedc7355cdbbac4c037e82b31531fcd0f'
 
     $.ajax({
-        url: "//www.smartsuppchat.com/loader.js?",
+        url: "//www.smartsuppchat.com/loader.js",
         cache: true,
         dataType: "script",
         success: () => {
