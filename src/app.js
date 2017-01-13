@@ -4,8 +4,8 @@ import 'materialize-css/dist/js/materialize'
 import $ from 'jquery'
 
 $(window).resize(function () {
-    $('#mainnav nav').pushpin('remove')
-    $('#mainnav nav').pushpin({
+    $('#mainnav-nav').pushpin('remove')
+    $('#mainnav-nav').pushpin({
         top: $('#mainnav').offset().top
     })
 })
@@ -25,7 +25,7 @@ function deobfuscate(e) {
 }
 $(function () {
     Waves.displayEffect({ duration: 200 })
-    $('#mainnav nav').pushpin({
+    $('#mainnav-nav').pushpin({
         top: $('#mainnav').offset().top
     })
 
