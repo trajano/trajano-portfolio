@@ -3,7 +3,7 @@ import './app.scss'
 import 'materialize-css/dist/js/materialize'
 
 // Declare variables that will be created asynchronously later.
-var Waves = undefined
+// var Waves = undefined
 var smartsupp = undefined
 
 $(window).resize(() => {
@@ -27,7 +27,7 @@ function deobfuscate(e) {
         .replace(/Zero/g, "0")
 }
 $(function () {
-    Waves.displayEffect({ duration: 200 })
+    //Waves.displayEffect({ duration: 200 })
     $('#mainnav-nav').pushpin({
         top: $('#mainnav').offset().top
     })
