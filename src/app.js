@@ -75,7 +75,7 @@ $(function () {
         url: "//www.smartsuppchat.com/loader.js",
         cache: true,
         dataType: "script",
-        success: () => function() {
+        success: function() {
             var smartsupp
             smartsupp('on', 'status', status => {
                 if (status == 'online') {
