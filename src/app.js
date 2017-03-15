@@ -2,10 +2,6 @@ import './font-faces.scss'
 import './app.scss'
 import 'materialize-css/dist/js/materialize'
 
-// Declare variables that will be created asynchronously later.
-// var Waves = undefined
-var smartsupp = undefined
-
 $(window).resize(() => {
     $('#mainnav-nav').pushpin('remove')
     $('#mainnav-nav').pushpin({
@@ -79,7 +75,8 @@ $(function () {
         url: "//www.smartsuppchat.com/loader.js",
         cache: true,
         dataType: "script",
-        success: () => {
+        success: () => function() {
+            var smartsupp
             smartsupp('on', 'status', status => {
                 if (status == 'online') {
                     $('.chatbutton').show()
