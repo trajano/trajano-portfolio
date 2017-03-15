@@ -76,7 +76,6 @@ $(function () {
         cache: true,
         dataType: "script",
         success: function() {
-            var smartsupp
             smartsupp('on', 'status', status => {
                 if (status == 'online') {
                     $('.chatbutton').show()
