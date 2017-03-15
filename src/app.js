@@ -76,7 +76,7 @@ $(function () {
         cache: true,
         dataType: "script",
         success: function() {
-            smartsupp('on', 'status', status => {
+            window.smartsupp('on', 'status', status => {
                 if (status == 'online') {
                     $('.chatbutton').show()
                 } else {
@@ -84,7 +84,7 @@ $(function () {
                 }
             });
             $(".chatbutton").on("click", () => {
-                smartsupp('chat:open')
+                window.smartsupp('chat:open')
             })
         }
     })
