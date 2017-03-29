@@ -18,6 +18,10 @@ module.exports = {
                 loader: externalCSS.extract(["css-loader?sourceMap", "sass-loader"])
             },
             {
+                test: /\.html$/,
+                loader: 'handlebars-loader'
+            },
+            {
                 test: /font-faces\.scss$/,
                 loaders: ["style-loader", "css-loader", "sass-loader"]
             },
