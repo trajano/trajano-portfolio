@@ -1,6 +1,7 @@
 var webpack = require("webpack")
 var CopyWebpackPlugin = require('copy-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
 var yargs = require("yargs")
@@ -40,6 +41,11 @@ module.exports = {
         "jquery": "jQuery"
     },
     plugins: [
+        new FaviconsWebpackPlugin({
+            logo: './src/logo-1024x1024.png',
+            background: '#216978',
+            title: 'Trajano'
+        }),
         new CopyWebpackPlugin([{
             from: 'assets',
             to: 'assets'
