@@ -48,8 +48,8 @@ module.exports = {
             icons: {
                 android: true,
                 appleIcon: { offset: 15 },
-                appleStartup: true,
-                coast: { offset: 25 },
+                appleStartup: false,
+                coast: false,
                 favicons: true,
                 firefox: true,
                 windows: true,
