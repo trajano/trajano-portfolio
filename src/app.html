@@ -3,10 +3,10 @@
 
 <head>
     <title>
-        <%= htmlWebpackPlugin.options.data.name %>
+        {{htmlWebpackPlugin.options.data.name}}
     </title>
     <meta charset="utf-8">
-    <meta name="Description" content="<%= htmlWebpackPlugin.options.data.jobTitle %>">
+    <meta name="Description" content="{{htmlWebpackPlugin.options.data.jobTitle}}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="robots" content="noindex" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
@@ -29,406 +29,399 @@
     <link rel="preload" href="//fonts.gstatic.com/s/lato/v11/EsvMC5un3kjyUhB9ZEPPwg.woff2" as="font" type="font/woff2" crossorigin
     />
     <link rel="preload" href="//fonts.gstatic.com/s/lato/v11/1YwB1sO8YE1Lyjf12WNiUA.woff2" as="font" type="font/woff2" crossorigin
-    />
-    <%= require('html!./partials/google-tag-manager-head.html') %>
-        <script type="application/ld+json">
-            <%= JSON.stringify(htmlWebpackPlugin.options.data) %>
-        </script>
+    /> {{> partials/google-tag-manager-head.html }} {{ld-json htmlWebpackPlugin.options.data}}
 </head>
 
 <body>
-    <%= require('html!./partials/google-tag-manager-noscript.html') %>
-        <div id="top-banner" class="parallax-container">
-            <div class="section">
-                <div class="container">
-                    <br class="hide-on-small-only"><br class="hide-on-small-only">
-                    <h1 class="header center -text text-lighten-2 thin">
-                        <%= htmlWebpackPlugin.options.data.name %>
-                    </h1>
-                    <div class="row center">
-                        <p class="col s12">
-                            <%= htmlWebpackPlugin.options.data.jobTitle %>
-                        </p>
-                    </div>
-                    <div class="row hide-on-med-and-down center">
-                        <a class="call-to-action" href="#resume"><i class="fa fa-download fa-fw"></i> View My Resume and Contact Info</a>
-                        <button class="call-to-action chatbutton" hidden><i class="fa fa-comment fa-fw"></i> Chat with me, I'm online</button>
-                    </div>
-                    <div class="row hide-on-large-only center">
-                        <a class="white-text obfuscate btn-flat" href="mailto:archie...trajano...net"><i class="fa fa-fw fa-envelope-o left"></i> archie...trajano...net</a>
-                        <br class="hide-on-med-only">
-                        <a class="white-text obfuscate btn-flat" href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive"><i class="fa fa-fw fa-phone left"></i> FourOneSix-EightFiveSix-SixSixFiveFive</a>
-                    </div>
-                    <div id="skip-to-content">
-                        <a class="btn-floating btn-large waves-effect waves-light hoverable" href="#mainnav"><i class="fa fa-arrow-down"></i></a>
-                    </div>
-                </div>
-                <div class="parallax"><img src="assets/hiro.jpg" alt="Hiro close-up"></div>
-            </div>
-        </div>
-        <div id="mainnav" class="scrollspy">
-            <nav role="navigation" id="mainnav-nav">
-                <div class="nav-wrapper">
-                    <a id="logo-container" href="#" class="brand-logo left"><img src="assets/portfolio-logo.png" alt="Trajano"></a>
-                    <ul id="nav-desktop" class="right hide-on-med-and-down table-of-contents">
-                        <li><a href="#mainnav">About Archie</li>
-                    <li><a href="#projects">Personal Projects</li>
-                    <li><a href="#social">Social</li>
-                    <li><a href="#resume">Resume</a></li>
-                        <li><a href="/blog/" title="Archimedes Trajano Blog">Blog</a></li>
-                        <li><a href="#contact">Contact Me</a></li>
-                    </ul>
-                    <ul id="nav-mobile" class="side-nav table-of-contents">
-                        <li>
-                            <div class="userView z-depth-1">
-                                <div class="background">
-                                    <img class="darken" src="https://trajano.net/wp-content/uploads/2016/12/Snow-in-Scarborough-1038x576.jpg" alt="Snow in Scarborough">
-                                </div>
-                                <img class="circle" src="assets/avatar.jpg" alt="Archimedes Trajano gravatar">
-                                <span class="white-text name">Archie</span>
-                                <a href="mailto:archie...trajano...net" class="obfuscate"><span class="white-text email">archie...trajano...net</span></a>
-                                <a href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive" class="obfuscate"><span class="white-text tel">FourOneSix-EightFiveSix-SixSixFiveFive</span></a>
-                            </div>
-                        </li>
-                        <li><a href="#mainnav">About Archie</li>
-                    <li><a href="#projects">Personal Projects</li>
-                    <li><a href="#social">Social</li>
-                    <li><a href="#resume">Resume</a></li>
-                        <li><a href="https://trajano.net/blog/" title="Archimedes Trajano Blog">Blog</a></li>
-                        <li>
-                            <div class="divider"></div>
-                        </li>
-                    </ul>
-                    <a href="#" data-activates="nav-mobile" class="button-collapse right"><i class="fa fa-bars"></i></a>
-                </div>
-            </nav>
-        </div>
-        <div class="container">
-            <div class="section">
-                <div class="row">
-                    <div class="col s12 m4">
-                        <div class="icon-block">
-                            <h2 class="center brown-text"><i class="fa fa-github fa-lg"></i> </h2>
-                            <h5 class="center">I'm a full-stack coder</h5>
-                            <p>I design and develop enterprise applications in a variety of languages including but not limited
-                                to Java, JavaScript and SQL. I work to make sure everything is integrated on the enterprise
-                                scale.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col s12 m4">
-                        <div class="icon-block">
-                            <h2 class="center brown-text"><i class="fa fa-building fa-lg"></i> </h2>
-                            <h5 class="center">Hands-on enterprise consultant</h5>
-                            <p>I architect solutions that scale up thinking on the enterprise level, but I also know enough
-                                about the development, deployment and application management processes to make sure they
-                                are doable and sustainable.</p>
-                        </div>
-                    </div>
-                    <div class="col s12 m4">
-                        <div class="icon-block">
-                            <h2 class="center brown-text"><i class="fa fa-graduation-cap fa-lg"></i> </h2>
-                            <h5 class="center">I'm an IT polymath</h5>
-                            <p>A person whose expertise spans a significant number of different subject areas; such a person
-                                is known to draw on complex bodies of knowledge to solve specific problems. As such I get
-                                called upon to deal with integrating multiple technologies that are present in enterprise
-                                systems.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col s12 m4">
-                        <div class="icon-block">
-                            <h2 class="center brown-text"><i class="fa fa-bolt fa-lg"></i> </h2>
-                            <h5 class="center">I'm agile</h5>
-                            <p>I worked on projects using the Scrum methodology at varying degrees and work with others to use
-                                the methology effectively.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col s12 m4">
-                        <div class="icon-block">
-                            <h2 class="center brown-text"><i class="fa fa-users fa-lg"></i> </h2>
-                            <h5 class="center">Cúram expert</h5>
-                            <p>I've been working with the Curam Enterprise Framework since 2002 and primarily do programming
-                                and integrations with external systems.</p>
-                        </div>
-                    </div>
-                    <div class="col s12 m4">
-                        <div class="icon-block">
-                            <h2 class="center brown-text"><i class="fa fa-cogs fa-lg"></i> </h2>
-                            <h5 class="center">DevOps</h5>
-                            <p>I do that too, I script whereever I can from development to deployment and circle back with ELK
-                                integration and analysis for production.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="parallax-container valign-wrapper scrollspy" id="projects">
-            <div class="section no-pad-bot">
-                <div class="container">
-                    <div class="row center">
-                        <h5 class="header col s12 light">My personal projects at least a sampling of it. Many more can be found in
-                            <a href="https://github.com/trajano" class="yellow-text">my GitHub profile</a>.</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="parallax"><img class="darken" src="https://trajano.net/wp-content/uploads/2016/12/Archimedes-fossil.jpg" alt="Archimedes fossil"></div>
-        </div>
-        <div class="container">
-            <div class="section">
-                <div class="row">
-                    <div class="col s12 m6">
-                        <div class="card small sticky-action">
-                            <div class="card-image waves-effect waves-block waves-light ">
-                                <img class="activator darken" src="https://trajano.net/wp-content/uploads/2016/11/triforce-672x340.png" alt="GitHub, Travis, SonarQube">
-                                <span class="activator card-title">GitHub, Travis-CI and SonarQube</span>
-                            </div>
-                            <div class="card-content">
-                                <p class="truncate activator">Lately, I wanted to rework my open source projects so it works end to end using free external
-                                    services rather than my own servers. So I am making my projects use the new tooling.
-                                </p>
-                            </div>
-                            <div class="card-action">
-                                <a href="https://trajano.net/2016/11/integrating-travis-sonarqube/">Blog post</a>
-                            </div>
-                            <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">GitHub, Travis-CI and SonarQube</span>
-                                <p>Lately, I wanted to rework my open source projects so it works end-to-end using the free
-                                    services rather than my own servers. So I am making my projects use the new tooling.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m6">
-                        <div class="card small sticky-action">
-                            <div class="card-image waves-effect waves-block waves-light">
-                                <img class="activator" src="assets/phoenix-hiro.jpg" alt="Phoenix and Hiro">
-                                <span class="activator card-title">My portfolio page</span>
-                            </div>
-                            <div class="card-content">
-                                <p class="truncate activator">Seeing as my site's main page was a standard blog, I decided to develop this page you are
-                                    looking at as my new front page.
-                                </p>
-                            </div>
-                            <div class="card-action">
-                                <a href="https://github.com/trajano/trajano-portfolio">GitHub project</a>
-                            </div>
-                            <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">My portfolio page</span>
-                                <p>Seeing as my site's main page was a standard blog, I decided to develop this page you are
-                                    looking at as my new front page.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m6">
-                        <div class="card small sticky-action">
-                            <div class="card-image waves-effect waves-block waves-light">
-                                <img class="activator darken" src="https://trajano.net/wp-content/uploads/2016/12/logo-with-maven-logo.png" alt="Trajano logo with Maven logo">
-                                <span class="activator card-title">Trajano Organizational POM</span>
-                            </div>
-                            <div class="card-content">
-                                <p class="light truncate activator">I use Maven on almost every Java project I work with and it is a good practice to have a
-                                    POM that defines common settings used by your organization.
-                                </p>
-                            </div>
-                            <div class="card-action">
-                                <a href="https://site.trajano.net/trajano/">Maven generated site</a>
-                                <a href="https://github.com/trajano/trajano">GitHub</a>
-                            </div>
-                            <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">Trajano Organizational POM</span>
-                                <p>I use Maven on almost every Java project I work with and it is a good practice to have a
-                                    POM that defines common settings used by your organization.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m6">
-                        <div class="card small sticky-action">
-                            <div class="card-image waves-effect waves-block waves-light">
-                                <img class="activator darken" src="https://trajano.net/wp-content/uploads/2016/12/logo-with-wordpress-logo.png" alt="Trajano logo with WordPress logo">
-                                <span class="activator card-title">My blog</span>
-                            </div>
-                            <div class="card-content">
-                                <p class="light truncate activator">A place where I channel my thoughts about the many things that interest me.
-                                </p>
-                            </div>
-                            <div class="card-action">
-                                <a href="/blog/">trajano.net/blog</a>
-                            </div>
-                            <div class="card-reveal">
-                                <span class="card-title grey-text text-darken-4">My blog</span>
-                                <p>A place where I channel my thoughts about the many things that interest me.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="parallax-container valign-wrapper scrollspy" id="social">
-            <div class="section no-pad-bot">
-                <div class="container">
-                    <div class="row center">
-                        <h5 class="header col s12 light">Social networking. My presence on the Internet.</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="parallax"><img class="darken" src="https://trajano.net/wp-content/uploads/2016/12/hearthstone.jpg" alt="Hearthstone"></div>
-        </div>
-        <div class="container hide-on-small-only">
-            <div class="section">
-                <div class="row">
-                    <div class="col m6 l4">
-                        <div class="card small hoverable" data-href="https://github.com/trajano/">
-                            <div class="card-image waves-effect waves-block waves-light">
-                                <img class="darken" src="https://trajano.net/wp-content/uploads/2016/11/vsto-300x208.png" alt="Visual Studio">
-                                <span class="card-title"><i class="fa fa-github fa-lg"></i> GitHub</span>
-                            </div>
-                            <div class="card-content">
-                                <p >Where I have my open source projects hosted on including this portfolio design. Feel free
-                                    to fork it.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col m6 l4">
-                        <div class="card small hoverable" data-href="https://linkedin.com/in/trajano">
-                            <div class="card-image waves-effect waves-block waves-light">
-                                <img class="darken" src="https://trajano.net/wp-content/uploads/2016/11/business-card-front.png" alt="Archimedes Trajano business card">
-                                <span class="card-title"><i class="fa fa-linkedin fa-lg"></i> LinkedIn</span>
-                            </div>
-                            <div class="card-content">
-                                <p >My professional profile where I keep the most complete and up to date work experience.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col m6 l4">
-                        <div class="card small hoverable" data-href="https://trajano.yelp.com/">
-                            <div class="card-image waves-effect waves-block waves-light">
-                                <img class="darken" src="https://trajano.net/wp-content/uploads/2016/07/o-1-225x300.jpg" alt="T-Swirl Crepe">
-                                <span class="card-title"><i class="fa fa-yelp fa-lg"></i> Yelp</span>
-                            </div>
-                            <div class="card-content">
-                                <p >I use this so I don't need to remember whether I like a place or not.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col m6 l4">
-                        <div class="card small hoverable" data-href="http://stackoverflow.com/story/trajano">
-                            <div class="card-image waves-effect waves-block waves-light">
-                                <img class="darken" src="https://trajano.net/wp-content/uploads/2016/12/My-old-drive-array-300x300.jpg" alt="My old drive array">
-                                <span class="card-title"><i class="fa fa-stack-overflow fa-lg"></i> Stack Overflow</span>
-                            </div>
-                            <div class="card-content">
-                                <p >This is the Q &amp; A site I generally frequent andd contribute to.</p>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <div class="col m6 l4">
-                        <div class="card small hoverable" data-href="https://www.facebook.com/archimedes.trajano">
-                            <div class="card-image waves-effect waves-block waves-light">
-                                <img src="assets/aya.jpg" alt="Aya">
-                                <span class="card-title"><i class="fa fa-facebook fa-lg"></i> Facebook</span>
-                            </div>
-                            <div class="card-content">
-                                <p >I have a separate persona for cross posting my blog.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col m6 l4">
-                        <div class="card small hoverable" data-href="https://twitter.com/trajano">
-                            <div class="card-image waves-effect waves-block waves-light">
-                                <img class="darken" src="https://trajano.net/wp-content/uploads/2016/12/ostrich-300x225.jpg" alt="Ostrich">
-                                <span class="card-title"><i class="fa fa-twitter fa-lg"></i> @trajano</span>
-                            </div>
-                            <div class="card-content">
-                                <p >For quick shoutouts.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container hide-on-med-and-up">
-            <div class="section">
-                <div class="collection">
-                    <a class="collection-item waves-effect waves-light" href="https://github.com/trajano/"><i class="fa fa-github fa-fw"></i>GitHub</a>
-                    <a class="collection-item waves-effect waves-light" href="https://linkedin.com/in/trajano"><i class="fa fa-linkedin fa-fw"></i>LinkedIn</a>
-                    <a class="collection-item waves-effect waves-light" href="https://trajano.yelp.com"><i class="fa fa-yelp fa-fw"></i>Yelp</a>
-                    <a class="collection-item waves-effect waves-light" href="http://stackoverflow.com/story/trajano"><i class="fa fa-stack-overflow fa-fw"></i>Stack Overflow</a>
-                    <a class="collection-item waves-effect waves-light" href="https://www.facebook.com/archimedes.trajano"><i class="fa fa-facebook fa-fw"></i>Facebook</a>
-                    <a class="collection-item waves-effect waves-light" href="https://twitter.com/trajano"><i class="fa fa-twitter fa-fw"></i>@trajano</a>
-                </div>
-            </div>
-        </div>
-        <div class="parallax-container valign-wrapper scrollspy" id="resume">
-            <div class="section no-pad-bot">
-                <div class="container">
-                    <div class="row center">
-                        <h5 class="header col s12 light">My resume... available in various formats, but if you want the complete picture, it's best to look
-                            in
-                            <a href="https://linkedin.com/in/trajano" class="yellow-text">my LinkedIn profile</a>.</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="parallax"><img src="assets/phoenix-hiro.jpg" alt="Phoenix and Hiro"></div>
-        </div>
-        <div class="container hide-on-small-only">
-            <div class="section">
-                <div class="row">
-                    <div class="col s12 m12 l12">
-                        <p ><i class="fa fa-exclamation-circle fa-fw" aria-hidden="true"></i>
-                            <strong>FYI TO RECRUITERS:</strong> My IT consulting rate is <strong>$150/hr</strong> within
-                            the Greater Toronto Area only. My development contracting rate is <strong>$100/hr</strong> (telecommute
-                            / work from home only). I am presently not open for long term business travel.</p>
-                        <div class="center">
-                            <p>
-                                <a title="Archimedes Trajano Resume in Word Format" class="waves-effect waves-light btn-large" href="assets/Archimedes%20Trajano.docx"><i class="fa fa-file-word-o left"> </i> Word</a>
-                                <a title="Archimedes Trajano Resume in PDF format" class="waves-effect waves-light btn-large" href="assets/Archimedes%20Trajano.pdf"><i class="fa fa-file-pdf-o left"> </i> PDF</a>
-                                <a title="Archimedes Trajano Resume" class="waves-effect waves-light btn-large btn-primary" href="https://trajano.net/archimedes-trajano-resume/"><i class="fa fa-eye left"> </i> View online</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container hide-on-med-and-up">
-            <div class="section">
-                <div class="collection">
-                    <a title="Archimedes Trajano Resume in Word Format" class="collection-item waves-effect waves-light " href="assets/Archimedes%20Trajano.docx"><i class="fa fa-file-word-o fa-fw"> </i> Word</a>
-                    <a title="Archimedes Trajano Resume in PDF format" class="collection-item waves-effect waves-light " href="assets/Archimedes%20Trajano.pdf"><i class="fa fa-file-pdf-o fa-fw"> </i> PDF</a>
-                </div>
-            </div>
-        </div>
-        <footer class="page-footer scrollspy" id="contact">
+    {{> partials/google-tag-manager-noscript.html }}
+    <div id="top-banner" class="parallax-container">
+        <div class="section">
             <div class="container">
-                <div class="row">
-                    <div class="col m6 l8 hide-on-small-only">
-                        <h5 class="white-text">Bio</h5>
-                        <p class="grey-text text-lighten-4">Archie has been working professionally over 16 years. He enjoys programming, playing video games
-                            on his 3DS and sucking badly at Heroes of the Storm. About the only "normal" thing he likes doing
-                            is eating food.
+                <br class="hide-on-small-only"><br class="hide-on-small-only">
+                <h1 class="header center -text text-lighten-2 thin">
+                    {{ htmlWebpackPlugin.options.data.name }}
+                </h1>
+                <div class="row center">
+                    <p class="col s12">
+                        {{ htmlWebpackPlugin.options.data.jobTitle }}
+                    </p>
+                </div>
+                <div class="row hide-on-med-and-down center">
+                    <a class="call-to-action" href="#resume"><i class="fa fa-download fa-fw"></i> View My Resume and Contact Info</a>
+                    <button class="call-to-action chatbutton" hidden><i class="fa fa-comment fa-fw"></i> Chat with me, I'm online</button>
+                </div>
+                <div class="row hide-on-large-only center">
+                    <a class="white-text obfuscate btn-flat" href="mailto:archie...trajano...net"><i class="fa fa-fw fa-envelope-o left"></i> archie...trajano...net</a>
+                    <br class="hide-on-med-only">
+                    <a class="white-text obfuscate btn-flat" href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive"><i class="fa fa-fw fa-phone left"></i> FourOneSix-EightFiveSix-SixSixFiveFive</a>
+                </div>
+                <div id="skip-to-content">
+                    <a class="btn-floating btn-large waves-effect waves-light hoverable" href="#mainnav"><i class="fa fa-arrow-down"></i></a>
+                </div>
+            </div>
+            <div class="parallax"><img src="assets/hiro.jpg" alt="Hiro close-up"></div>
+        </div>
+    </div>
+    <div id="mainnav" class="scrollspy">
+        <nav role="navigation" id="mainnav-nav">
+            <div class="nav-wrapper">
+                <a id="logo-container" href="#" class="brand-logo left"><img src="assets/portfolio-logo.png" alt="Trajano"></a>
+                <ul id="nav-desktop" class="right hide-on-med-and-down table-of-contents">
+                    <li><a href="#mainnav">About Archie</li>
+                    <li><a href="#projects">Personal Projects</li>
+                    <li><a href="#social">Social</li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="/blog/" title="Archimedes Trajano Blog">Blog</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
+                </ul>
+                <ul id="nav-mobile" class="side-nav table-of-contents">
+                    <li>
+                        <div class="userView z-depth-1">
+                            <div class="background">
+                                <img class="darken" src="https://trajano.net/wp-content/uploads/2016/12/Snow-in-Scarborough-1038x576.jpg" alt="Snow in Scarborough">
+                            </div>
+                            <img class="circle" src="assets/avatar.jpg" alt="Archimedes Trajano gravatar">
+                            <span class="white-text name">Archie</span>
+                            <a href="mailto:archie...trajano...net" class="obfuscate"><span class="white-text email">archie...trajano...net</span></a>
+                            <a href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive" class="obfuscate"><span class="white-text tel">FourOneSix-EightFiveSix-SixSixFiveFive</span></a>
+                        </div>
+                    </li>
+                    <li><a href="#mainnav">About Archie</li>
+                    <li><a href="#projects">Personal Projects</li>
+                    <li><a href="#social">Social</li>
+                    <li><a href="#resume">Resume</a></li>
+                    <li><a href="https://trajano.net/blog/" title="Archimedes Trajano Blog">Blog</a></li>
+                    <li>
+                        <div class="divider"></div>
+                    </li>
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse right"><i class="fa fa-bars"></i></a>
+            </div>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="section">
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center brown-text"><i class="fa fa-github fa-lg"></i> </h2>
+                        <h5 class="center">I'm a full-stack coder</h5>
+                        <p>I design and develop enterprise applications in a variety of languages including but not limited
+                            to Java, JavaScript and SQL. I work to make sure everything is integrated on the enterprise scale.
                         </p>
                     </div>
-                    <div class="col m6 l4 s12">
-                        <h5 class="white-text">Contact me</h5>
-                        <p><a class="white-text waves-effect btn-flat obfuscate" href="mailto:archie...trajano...net"><i class="fa fa-fw fa-envelope-o left"></i> archie...trajano...net</a></p>
-                        <p>
-                            <a class="white-text waves-effect btn-flat obfuscate" href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive"><i class="fa fa-fw fa-phone left"></i> FourOneSix-EightFiveSix-SixSixFiveFive</a></p>
-                        <p>
-                            <button class="white-text waves-effect btn-flat chatbutton" hidden><i class="fa fa-fw fa-comment left"></i> Chat with me I'm online</button></p>
+                </div>
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center brown-text"><i class="fa fa-building fa-lg"></i> </h2>
+                        <h5 class="center">Hands-on enterprise consultant</h5>
+                        <p>I architect solutions that scale up thinking on the enterprise level, but I also know enough about
+                            the development, deployment and application management processes to make sure they are doable
+                            and sustainable.</p>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center brown-text"><i class="fa fa-graduation-cap fa-lg"></i> </h2>
+                        <h5 class="center">I'm an IT polymath</h5>
+                        <p>A person whose expertise spans a significant number of different subject areas; such a person is
+                            known to draw on complex bodies of knowledge to solve specific problems. As such I get called
+                            upon to deal with integrating multiple technologies that are present in enterprise systems.
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="footer-copyright">
-                <div>© 2016 Trajano. <a class="yellow-text" href="https://trajano.net/privacy-policy">Privacy policy</a>
-                    <div id="152146877" class="right"></div>
+            <div class="row">
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center brown-text"><i class="fa fa-bolt fa-lg"></i> </h2>
+                        <h5 class="center">I'm agile</h5>
+                        <p>I worked on projects using the Scrum methodology at varying degrees and work with others to use the
+                            methology effectively.
+                        </p>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center brown-text"><i class="fa fa-users fa-lg"></i> </h2>
+                        <h5 class="center">Cúram expert</h5>
+                        <p>I've been working with the Curam Enterprise Framework since 2002 and primarily do programming and
+                            integrations with external systems.</p>
+                    </div>
+                </div>
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="center brown-text"><i class="fa fa-cogs fa-lg"></i> </h2>
+                        <h5 class="center">DevOps</h5>
+                        <p>I do that too, I script whereever I can from development to deployment and circle back with ELK integration
+                            and analysis for production.</p>
+                    </div>
                 </div>
             </div>
-        </footer>
-        <script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        </div>
+    </div>
+    <div class="parallax-container valign-wrapper scrollspy" id="projects">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <div class="row center">
+                    <h5 class="header col s12 light">My personal projects at least a sampling of it. Many more can be found in
+                        <a href="https://github.com/trajano" class="yellow-text">my GitHub profile</a>.</h5>
+                </div>
+            </div>
+        </div>
+        <div class="parallax"><img class="darken" src="https://trajano.net/wp-content/uploads/2016/12/Archimedes-fossil.jpg" alt="Archimedes fossil"></div>
+    </div>
+    <div class="container">
+        <div class="section">
+            <div class="row">
+                <div class="col s12 m6">
+                    <div class="card small sticky-action">
+                        <div class="card-image waves-effect waves-block waves-light ">
+                            <img class="activator darken" src="https://trajano.net/wp-content/uploads/2016/11/triforce-672x340.png" alt="GitHub, Travis, SonarQube">
+                            <span class="activator card-title">GitHub, Travis-CI and SonarQube</span>
+                        </div>
+                        <div class="card-content">
+                            <p class="truncate activator">Lately, I wanted to rework my open source projects so it works end to end using free external
+                                services rather than my own servers. So I am making my projects use the new tooling.
+                            </p>
+                        </div>
+                        <div class="card-action">
+                            <a href="https://trajano.net/2016/11/integrating-travis-sonarqube/">Blog post</a>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">GitHub, Travis-CI and SonarQube</span>
+                            <p>Lately, I wanted to rework my open source projects so it works end-to-end using the free services
+                                rather than my own servers. So I am making my projects use the new tooling.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m6">
+                    <div class="card small sticky-action">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="assets/phoenix-hiro.jpg" alt="Phoenix and Hiro">
+                            <span class="activator card-title">My portfolio page</span>
+                        </div>
+                        <div class="card-content">
+                            <p class="truncate activator">Seeing as my site's main page was a standard blog, I decided to develop this page you are looking
+                                at as my new front page.
+                            </p>
+                        </div>
+                        <div class="card-action">
+                            <a href="https://github.com/trajano/trajano-portfolio">GitHub project</a>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">My portfolio page</span>
+                            <p>Seeing as my site's main page was a standard blog, I decided to develop this page you are looking
+                                at as my new front page.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m6">
+                    <div class="card small sticky-action">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator darken" src="https://trajano.net/wp-content/uploads/2016/12/logo-with-maven-logo.png" alt="Trajano logo with Maven logo">
+                            <span class="activator card-title">Trajano Organizational POM</span>
+                        </div>
+                        <div class="card-content">
+                            <p class="light truncate activator">I use Maven on almost every Java project I work with and it is a good practice to have a POM
+                                that defines common settings used by your organization.
+                            </p>
+                        </div>
+                        <div class="card-action">
+                            <a href="https://site.trajano.net/trajano/">Maven generated site</a>
+                            <a href="https://github.com/trajano/trajano">GitHub</a>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Trajano Organizational POM</span>
+                            <p>I use Maven on almost every Java project I work with and it is a good practice to have a POM
+                                that defines common settings used by your organization.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m6">
+                    <div class="card small sticky-action">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator darken" src="https://trajano.net/wp-content/uploads/2016/12/logo-with-wordpress-logo.png" alt="Trajano logo with WordPress logo">
+                            <span class="activator card-title">My blog</span>
+                        </div>
+                        <div class="card-content">
+                            <p class="light truncate activator">A place where I channel my thoughts about the many things that interest me.
+                            </p>
+                        </div>
+                        <div class="card-action">
+                            <a href="/blog/">trajano.net/blog</a>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">My blog</span>
+                            <p>A place where I channel my thoughts about the many things that interest me.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="parallax-container valign-wrapper scrollspy" id="social">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <div class="row center">
+                    <h5 class="header col s12 light">Social networking. My presence on the Internet.</h5>
+                </div>
+            </div>
+        </div>
+        <div class="parallax"><img class="darken" src="https://trajano.net/wp-content/uploads/2016/12/hearthstone.jpg" alt="Hearthstone"></div>
+    </div>
+    <div class="container hide-on-small-only">
+        <div class="section">
+            <div class="row">
+                <div class="col m6 l4">
+                    <div class="card small hoverable" data-href="https://github.com/trajano/">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="darken" src="https://trajano.net/wp-content/uploads/2016/11/vsto-300x208.png" alt="Visual Studio">
+                            <span class="card-title"><i class="fa fa-github fa-lg"></i> GitHub</span>
+                        </div>
+                        <div class="card-content">
+                            <p>Where I have my open source projects hosted on including this portfolio design. Feel free to
+                                fork it.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col m6 l4">
+                    <div class="card small hoverable" data-href="https://linkedin.com/in/trajano">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="darken" src="https://trajano.net/wp-content/uploads/2016/11/business-card-front.png" alt="Archimedes Trajano business card">
+                            <span class="card-title"><i class="fa fa-linkedin fa-lg"></i> LinkedIn</span>
+                        </div>
+                        <div class="card-content">
+                            <p>My professional profile where I keep the most complete and up to date work experience.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col m6 l4">
+                    <div class="card small hoverable" data-href="https://trajano.yelp.com/">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="darken" src="https://trajano.net/wp-content/uploads/2016/07/o-1-225x300.jpg" alt="T-Swirl Crepe">
+                            <span class="card-title"><i class="fa fa-yelp fa-lg"></i> Yelp</span>
+                        </div>
+                        <div class="card-content">
+                            <p>I use this so I don't need to remember whether I like a place or not.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col m6 l4">
+                    <div class="card small hoverable" data-href="http://stackoverflow.com/story/trajano">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="darken" src="https://trajano.net/wp-content/uploads/2016/12/My-old-drive-array-300x300.jpg" alt="My old drive array">
+                            <span class="card-title"><i class="fa fa-stack-overflow fa-lg"></i> Stack Overflow</span>
+                        </div>
+                        <div class="card-content">
+                            <p>This is the Q &amp; A site I generally frequent andd contribute to.</p>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                <div class="col m6 l4">
+                    <div class="card small hoverable" data-href="https://www.facebook.com/archimedes.trajano">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img src="assets/aya.jpg" alt="Aya">
+                            <span class="card-title"><i class="fa fa-facebook fa-lg"></i> Facebook</span>
+                        </div>
+                        <div class="card-content">
+                            <p>I have a separate persona for cross posting my blog.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col m6 l4">
+                    <div class="card small hoverable" data-href="https://twitter.com/trajano">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="darken" src="https://trajano.net/wp-content/uploads/2016/12/ostrich-300x225.jpg" alt="Ostrich">
+                            <span class="card-title"><i class="fa fa-twitter fa-lg"></i> @trajano</span>
+                        </div>
+                        <div class="card-content">
+                            <p>For quick shoutouts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container hide-on-med-and-up">
+        <div class="section">
+            <div class="collection">
+                <a class="collection-item waves-effect waves-light" href="https://github.com/trajano/"><i class="fa fa-github fa-fw"></i>GitHub</a>
+                <a class="collection-item waves-effect waves-light" href="https://linkedin.com/in/trajano"><i class="fa fa-linkedin fa-fw"></i>LinkedIn</a>
+                <a class="collection-item waves-effect waves-light" href="https://trajano.yelp.com"><i class="fa fa-yelp fa-fw"></i>Yelp</a>
+                <a class="collection-item waves-effect waves-light" href="http://stackoverflow.com/story/trajano"><i class="fa fa-stack-overflow fa-fw"></i>Stack Overflow</a>
+                <a class="collection-item waves-effect waves-light" href="https://www.facebook.com/archimedes.trajano"><i class="fa fa-facebook fa-fw"></i>Facebook</a>
+                <a class="collection-item waves-effect waves-light" href="https://twitter.com/trajano"><i class="fa fa-twitter fa-fw"></i>@trajano</a>
+            </div>
+        </div>
+    </div>
+    <div class="parallax-container valign-wrapper scrollspy" id="resume">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <div class="row center">
+                    <h5 class="header col s12 light">My resume... available in various formats, but if you want the complete picture, it's best to look in
+                        <a href="https://linkedin.com/in/trajano" class="yellow-text">my LinkedIn profile</a>.</h5>
+                </div>
+            </div>
+        </div>
+        <div class="parallax"><img src="assets/phoenix-hiro.jpg" alt="Phoenix and Hiro"></div>
+    </div>
+    <div class="container hide-on-small-only">
+        <div class="section">
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <p><i class="fa fa-exclamation-circle fa-fw" aria-hidden="true"></i>
+                        <strong>FYI TO RECRUITERS:</strong> My IT consulting rate is <strong>$150/hr</strong> within the
+                        Greater Toronto Area only. My development contracting rate is <strong>$100/hr</strong> (telecommute
+                        / work from home only). I am presently not open for long term business travel.</p>
+                    <div class="center">
+                        <p>
+                            <a title="Archimedes Trajano Resume in Word Format" class="waves-effect waves-light btn-large" href="assets/Archimedes%20Trajano.docx"><i class="fa fa-file-word-o left"> </i> Word</a>
+                            <a title="Archimedes Trajano Resume in PDF format" class="waves-effect waves-light btn-large" href="assets/Archimedes%20Trajano.pdf"><i class="fa fa-file-pdf-o left"> </i> PDF</a>
+                            <a title="Archimedes Trajano Resume" class="waves-effect waves-light btn-large btn-primary" href="https://trajano.net/archimedes-trajano-resume/"><i class="fa fa-eye left"> </i> View online</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container hide-on-med-and-up">
+        <div class="section">
+            <div class="collection">
+                <a title="Archimedes Trajano Resume in Word Format" class="collection-item waves-effect waves-light " href="assets/Archimedes%20Trajano.docx"><i class="fa fa-file-word-o fa-fw"> </i> Word</a>
+                <a title="Archimedes Trajano Resume in PDF format" class="collection-item waves-effect waves-light " href="assets/Archimedes%20Trajano.pdf"><i class="fa fa-file-pdf-o fa-fw"> </i> PDF</a>
+            </div>
+        </div>
+    </div>
+    <footer class="page-footer scrollspy" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col m6 l8 hide-on-small-only">
+                    <h5 class="white-text">Bio</h5>
+                    <p class="grey-text text-lighten-4">Archie has been working professionally over 16 years. He enjoys programming, playing video games on his
+                        3DS and sucking badly at Heroes of the Storm. About the only "normal" thing he likes doing is eating
+                        food.
+                    </p>
+                </div>
+                <div class="col m6 l4 s12">
+                    <h5 class="white-text">Contact me</h5>
+                    <p><a class="white-text waves-effect btn-flat obfuscate" href="mailto:archie...trajano...net"><i class="fa fa-fw fa-envelope-o left"></i> archie...trajano...net</a></p>
+                    <p>
+                        <a class="white-text waves-effect btn-flat obfuscate" href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive"><i class="fa fa-fw fa-phone left"></i> FourOneSix-EightFiveSix-SixSixFiveFive</a></p>
+                    <p>
+                        <button class="white-text waves-effect btn-flat chatbutton" hidden><i class="fa fa-fw fa-comment left"></i> Chat with me I'm online</button></p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div>© 2016 Trajano. <a class="yellow-text" href="https://trajano.net/privacy-policy">Privacy policy</a>
+                <div id="152146877" class="right"></div>
+            </div>
+        </div>
+    </footer>
+    <script src="//code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 </body>
 
 </html>
