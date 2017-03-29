@@ -17,9 +17,3 @@ This will run `webpack -p` to build the resulting site in the `dist` folder.
 `npm start`
 
 This will start up a server on http://localhost:8080/ that will show the portfolio site.  It is configured to automatically refresh the page when there is a change in the application.
-
-# Building critical CSS
-
-`npm run rebuild-critical-css`
-
-This will execute critical on the dist folder and update the `src/critical.css` file.
