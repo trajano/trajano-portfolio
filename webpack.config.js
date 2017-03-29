@@ -44,7 +44,17 @@ module.exports = {
         new FaviconsWebpackPlugin({
             logo: './src/logo-1024x1024.png',
             background: '#216978',
-            title: 'Trajano'
+            title: 'Trajano',
+            icons: {
+                android: true,
+                appleIcon: { offset: 15 },
+                appleStartup: true,
+                coast: { offset: 25 },
+                favicons: true,
+                firefox: true,
+                windows: true,
+                yandex: true
+            }
         }),
         new CopyWebpackPlugin([{
             from: 'assets',
