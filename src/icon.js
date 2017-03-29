@@ -9,5 +9,5 @@ module.exports = function () {
             className += " fa-" + arguments[i]
         }
     }
-    return new Handlebars.SafeString('<i class="' + className + '" aria-hidden="true"></i>')
+    return new Handlebars.SafeString(`<i class="${className}" aria-hidden="true"></i>`)
 }
