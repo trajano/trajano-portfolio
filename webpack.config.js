@@ -44,6 +44,7 @@ module.exports = {
         new FaviconsWebpackPlugin({
             logo: './src/logo-1024x1024.png',
             background: '#216978',
+            prefix: 'f-[hash]-',
             title: 'Trajano',
             icons: {
                 android: true,
