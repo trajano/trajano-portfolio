@@ -4,7 +4,7 @@
   "description": "Archimedes Trajano portfolio site.",
   "main": "src/app.js",
   "scripts": {
-    "prepublish": "webpack -p",
+    "prepare": "webpack -p",
     "start": "webpack-dev-server"
   },
   "repository": {
