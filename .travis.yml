@@ -1,8 +1,5 @@
 sudo: false
 language: node_js
-node_js:
-  - "node"
-  - "7"
 node_js: node
 cache:
   yarn: true
@@ -10,18 +7,17 @@ cache:
   - "$HOME/.sonar/cache"
 addons:
   apt:
-   packages:
-   - oracle-java8-set-default
-  sonarqube: true
+    packages:
+    - oracle-java8-set-default
+  sonarqube:
+    token:
+      secure: eXtBZT9bMoAUHwVxP2g0zyN0S1AbnqzizgwyfQlMq19jpmcHwmhfscRxbG8+/b2ETVPCt70fFp3tputlq+BwyUCOCMstix1ErPRAyxYtoa9JkkRsCn1em1rE71RbVLWJDjL7HtYWl4NxBvR2yr/L/DsrhL/kzQUT/9p/Xr2hDaY8sJMAj7VUpDuJsLTaYUmIiuP7DOoJLx6NzHgHsC/divUNtRspj5slO7sVhtZkeZNq67NOgNZ3UO/2LYSDM+XUMpoK4W1mq2B8qMGss9X+PTqDdz2TcJJUGXKZnNf/5UhXdxrORYPsdbQhaHTN/kTVz5ND4a84I4ccb+/4KJxPV9HPUSrekI4eACsbuXyxFNkfEUvKuQRGoC2FCVu3Ro191JrEex8n5x/GMyoOxR8qAZGJl6Qqx5MSGGYGZWugG9j6O/tt2y/zB9rnXnZAw15ntg6orb5n2AdHWrivsZbc5UNBECpsEANg/hPKOg9O1EM5FpeqIX+WYm03TGg4cZisoOASZkq3G/2Hz6H0iqM2i6P3rRsdXe6VqOdC3hvtshMNUgdFQ0eSIQaY0Mz3Y63vOrwi3NizEtFckmLv/sX7B8aXG0rxaZg9oJvBT3VkEhHqPtbCdSmjAPzl8qiMiWjlFaWKKwg6/A5tzubCxFzP9SgFNA373TplKb+vH/eBRvg=
 branches:
   only:
   - master
 env:
   global:
-  - secure: Q4pyY77WPO0Rp5ENomM2KgIAyMKP6jU2iK2ptN/rSjL09HdidmaJkYwvr0YzZfnIEr0iJVQ6Q0WFbqwyKJHvOQPBawzjIfcixLLE50aTqWaVbOyKUCU8HjLdXEUaUZCwu5l9ih9UBGjAq98zc/EmpCjj9M/mbmXGhS1BOiLe6PdUn77v9OcjJGDVVvPGf3I8eHR2WxCovNlXfmefVJskLpm20xrdbUd4MWgL5IuLZXNUc1fAxDel82JvPS8+ICqeaVk7KHsyIj7HDsZJpyJ8ydqeq9Oml9HTCoaFHg/NrZppBO8gPZHSV/tEnb387hMOc1qpXQ+1HjcNFORIWzyJUX6H4DXh8KjOVwYJBRoFDMSdm4ZhIAJpNpY+eh4NHJ6EvPe865NK9VDARvLtDj8SjqEcbnncu5Yzy7pwZyaRbm6/SJG9KM63v6fd87NhqMqcFh048opXyqRXWUAg8KvloLKI4ZyEaGuKfkNj8GqunfB++BkjafydP82a3Gv+cazCelnWZ8xIZiUeIeEoImClL9kG/b0kUSAtCjtK3/xwyI8wuSvwiHa6/zAwmlEu/Eqdc/TQ7Zkdsg0aBOM/EOE0cZA+N8puB8SkoaJppeHLorq4RVOCleM3kf6PdP1IRIjwF5AjmZ+oRSbiNihLQrmEqTPPILVNovOGK07y4mv4feU=
-  - secure: lMOkCZB6blmO7O8AThTXE3y3vnIugx/Na439ZpbVuNJHWbDU3StTXzoZmazaU/U6rQz1OMH+P1ySsBsO5n1UOk9vWnf9vTVGQ9yVoqN2B/MwSxnFRUiJvwkaH8MWPQYzWPbpKkF6h7768wb+daREnORnFAkCDcHHh6fNVE9Dckp2RICSuvl6ZWvWEqXNdDU+HVYAiSv8BwroNk4+iC2cHLWBZgK/kqxtLFRXBlVyC87yJxepdpJHK8+u3ffw+ScZ63gKa51L1EMeMfKerkLjv+hO92+NW4GpkDNtN2WZ4YmF5hYoeq6frvlUVWfJd3lJ7oxLkyxMKfkz7GhIjzSSLF3nVHSPFL92hHBvvpL5FxoRoSNvpXzACa3MEDxrfNJqO+GsQAtIotZnBv27HHbctbOPR/RfONbyC41sQbMqR/q5NqhH7YyO7XGpvcbSCes9+/RE6K0tLMhkznxTRMTjuCLEp9p35r5l8jg6u8Ht28S5sJ/65t/JYQfAXw/BXz5pbtStP1UkGe6BN1kr2dqEDMRCB8KSFp8J/KPHrMDSuNWJRomQNsLJMsSOzomipsJ5s93qBAt7C9hdm/CA46N3Zu6DGUdWk1MV17U34EzLlOT/QOuGdo7vK2KfZq70XMMV3orHhreADVTE3mbznkAD0HsnZVjO/YxNB45Z8EudwFA=
-install:
-- yarn
+  - secure: oT7xfu5SSZ7Nxcg1Lcp0zuay9IKZKbOzdu1Ug5/cljsDuWiGyBrvIEKjyA+j5F0PrT1oT9jXARYEXh55BF8RJFKhDdHz+uII+dhCuTo+8QVYL2GzkqL8yMEDhpoqQGyj+PSzXxkxm4/Jg5eyEPGVYsi2puOhOR/hzwaoagxwxZs9Fseqxa7LV4A9W9TEFP2/o+/oE2o+g8sgk1bNn4/3Rcqc9FTCP63aXzNfO7aV8gjxlWnO8lExhNr6XApDKrQAZ4fGBA68m+uWg+VSvQdLcZ6hlhSVn96ZLLNNVst38e4ehusqS2KlqUL7l+in1u1dNTgyhejpzaRCLTPZxQMMi9qwFr0uUl4jV4IFn5klQ7tkXnO9yTeE54IQIncdDxGoYuPAX3oTzVHiYHsQkP9jQupwAMPF7W6H7nBjspDVCakh2yR/+felX3ex/ls7UCR0c749swb7+/LEXiz3hu0r0vOyIv79JwvD6PHZEfOgVW6wYefndZEXtXEmd7K6UrO7os+lOPDjgw27HCdHLdnDmDSy3lHXLWm0SWipZ4KDlfnyDkxmRjRa0MTmfoCARiCNMbOtZZSCNFzRSXALcQygpticO7g+sPhkVwccVpZuujr+xAmQE9vYadGrd7Xh32fd7lLG6mPCQp62AqJdoKhUnsFMvBL2o2c2/bZqUqhem7I=
 script:
 - export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 - sonar-scanner
@@ -29,7 +25,7 @@ deploy:
   provider: pages
   local_dir: dist
   skip_cleanup: true
-  github_token: ${SONAR_GITHUB_TOKEN}
+  github_token: "${SONAR_GITHUB_TOKEN}"
   on:
     branch: master
-    node_js: "node"
+    node_js: node
