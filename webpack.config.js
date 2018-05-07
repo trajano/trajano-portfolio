@@ -38,7 +38,7 @@ module.exports = {
     },
     entry: ['./src/app'],
     output: {
-        path: path.resolve(__dirname,'./dist'),
+        path: path.resolve(__dirname, './dist'),
         filename: 'bundle.[hash].js'
     },
     externals: {
@@ -80,6 +80,11 @@ module.exports = {
         }),
         new HtmlWebpackInlineSourcePlugin()
     ],
+    resolve: {
+        alias: {
+            'handlebars': 'handlebars/runtime.js'
+        }
+    },
     devtool: 'source-map',
     devServer: {
         inline: true
