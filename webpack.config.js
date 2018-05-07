@@ -5,6 +5,7 @@ var FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
 var yargs = require("yargs")
+var path = require('path')
 
 var optimizeMinimize = yargs.alias('p', 'optimize-minimize').argv.optimizeMinimize
 
@@ -37,7 +38,7 @@ module.exports = {
     },
     entry: ['./src/app'],
     output: {
-        path: './dist',
+        path: path.resolve(__dirname,'./dist'),
         filename: 'bundle.[hash].js'
     },
     externals: {
