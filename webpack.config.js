@@ -41,10 +41,7 @@ module.exports = {
     historyApiFallback: true,
     noInfo: false,
   },
-  devtool: '#eval-source-map',
-  plugins: [
-    new WebappWebpackPlugin('./src/logo-2048x2048.png')
-  ]
+  devtool: '#eval-source-map'
 }
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'
@@ -56,9 +53,8 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new HtmlWebpackPlugin({
       title: 'Archimedes Trajano',
-      template: 'index.html',
-      filename: path.resolve(__dirname, 'dist/index.html'),
-      favicon: 'favicon.ico'
+      template: 'src/app.html',
+      filename: path.resolve(__dirname, 'dist/index.html')
     }),
     new PrerenderSPAPlugin({
       staticDir: path.join(__dirname, 'dist'),
@@ -83,9 +79,12 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new HtmlWebpackPlugin({
       title: 'DEVELOPMENT trajano-portfolio',
-      template: 'index.html',
-      filename: 'index.html',
-      favicon: 'favicon.ico'
+      template: 'src/app.html',
+      filename: 'index.html'
     }),
   ])
 }
+
+module.exports.plugins = (module.exports.plugins).concat([
+  new WebappWebpackPlugin('./src/logo-2048x2048.png')
+])
