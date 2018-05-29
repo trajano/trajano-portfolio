@@ -43,9 +43,10 @@
     "yargs": "^11.0.0"
   },
   "dependencies": {
-    "vue": "^2.5.16",
-    "vue-router": "^3.0.1",
+    "googletagmanager": "^1.0.2",
     "jquery": "^3.3.1",
-    "materialize-css": "^0.100.2"
+    "materialize-css": "^0.100.2",
+    "vue": "^2.5.16",
+    "vue-router": "^3.0.1"
   }
 }
