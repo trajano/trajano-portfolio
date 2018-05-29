@@ -1,92 +1,91 @@
-var webpack = require("webpack")
-var CopyWebpackPlugin = require('copy-webpack-plugin')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var FaviconsWebpackPlugin = require('favicons-webpack-plugin')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
-var HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
-var yargs = require("yargs")
 var path = require('path')
-
-var optimizeMinimize = yargs.alias('p', 'optimize-minimize').argv.optimizeMinimize
-
-var externalCSS = new ExtractTextPlugin('styles.css')
+var webpack = require('webpack')
+var HtmlWebpackPlugin = require('html-webpack-plugin')
+const PrerenderSPAPlugin = require('prerender-spa-plugin')
+const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
+const WebappWebpackPlugin = require('webapp-webpack-plugin')
 
 module.exports = {
-    module: {
-        loaders: [
-            {
-                test: /app\.scss$/,
-                loader: externalCSS.extract(["css-loader?sourceMap", "sass-loader"])
-            },
-            {
-                test: /\.html$/,
-                loader: 'handlebars-loader'
-            },
-            {
-                test: /font-faces\.scss$/,
-                loaders: ["style-loader", "css-loader", "sass-loader"]
-            },
-            {
-                test: /\.js$/,
-                exclude: /(node_modules|bower_components)/,
-                loader: 'babel-loader',
-                query: {
-                    presets: ['es2015']
-                }
-            }
-        ]
-    },
-    entry: ['./src/app'],
-    output: {
-        path: path.resolve(__dirname, './dist'),
-        filename: 'bundle.[hash].js'
-    },
-    externals: {
-        "node-waves": "Waves",
-        "jquery": "jQuery"
-    },
-    plugins: [
-        new FaviconsWebpackPlugin({
-            logo: './src/logo-2048x2048.png',
-            background: '#216978',
-            title: 'Trajano',
-            icons: {
-                android: true,
-                appleIcon: { offset: 15 },
-                appleStartup: false,
-                coast: false,
-                favicons: true,
-                firefox: false,
-                windows: false,
-                yandex: false
-            }
-        }),
-        new CopyWebpackPlugin([{
-            from: 'assets',
-            to: 'assets'
-        }]),
-        externalCSS,
-        new HtmlWebpackPlugin({
-            data: require('./src/ld.json'),
-            template: './src/app.html',
-            minify: {
-                minifyJS: optimizeMinimize,
-                minifyCSS: optimizeMinimize,
-                removeAttributeQuotes: false,
-                collapseWhitespace: optimizeMinimize,
-                html5: true
-            },
-            inlineSource: 'styles.css$'
-        }),
-        new HtmlWebpackInlineSourcePlugin()
-    ],
-    resolve: {
-        alias: {
-            'handlebars': 'handlebars/runtime.js'
+  entry: './src/main.js',
+  output: {
+    path: path.resolve(__dirname, './dist'),
+    publicPath: '/',
+    filename: 'build.js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      },
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]?[hash]'
         }
-    },
-    devtool: 'source-map',
-    devServer: {
-        inline: true
+      }
+    ]
+  },
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js'
     }
+  },
+  devServer: {
+    historyApiFallback: true,
+    noInfo: false,
+  },
+  devtool: '#eval-source-map',
+  plugins: [
+    new WebappWebpackPlugin('./src/logo-2048x2048.png')
+  ]
+}
+if (process.env.NODE_ENV === 'production') {
+  module.exports.devtool = '#source-map'
+  module.exports.plugins = (module.exports.plugins || []).concat([
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"production"'
+      }
+    }),
+    new HtmlWebpackPlugin({
+      title: 'Archimedes Trajano',
+      template: 'index.html',
+      filename: path.resolve(__dirname, 'dist/index.html'),
+      favicon: 'favicon.ico'
+    }),
+    new PrerenderSPAPlugin({
+      staticDir: path.join(__dirname, 'dist'),
+      routes: [ '/', '/about', '/contact' ],
+
+      renderer: new Renderer({
+        inject: {
+          foo: 'bar'
+        },
+        headless: false,
+        renderAfterDocumentEvent: 'render-event'
+      })
+    })
+  ])
+} else {
+  // NODE_ENV === 'development'
+  module.exports.plugins = (module.exports.plugins || []).concat([
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"development"'
+      }
+    }),
+    new HtmlWebpackPlugin({
+      title: 'DEVELOPMENT trajano-portfolio',
+      template: 'index.html',
+      filename: 'index.html',
+      favicon: 'favicon.ico'
+    }),
+  ])
 }
