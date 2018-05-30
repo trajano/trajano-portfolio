@@ -53,7 +53,7 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new HtmlWebpackPlugin({
       title: 'Archimedes Trajano',
-      template: 'src/app.html',
+      template: 'src/index.html',
       filename: path.resolve(__dirname, 'dist/index.html')
     }),
     new PrerenderSPAPlugin({
@@ -79,7 +79,7 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new HtmlWebpackPlugin({
       title: 'DEVELOPMENT trajano-portfolio',
-      template: 'src/app.html',
+      template: 'src/index.html',
       filename: 'index.html'
     }),
   ])
