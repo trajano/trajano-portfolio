@@ -1,70 +1,8 @@
 <template>
   <div id="app">
-    <div id="top-banner" class="parallax-container">
-        <div class="section">
-            <div class="container">
-                <br class="hide-on-small-only"><br class="hide-on-small-only">
-                <h1 class="header center -text text-lighten-2 thin">
-                    [[ htmlWebpackPlugin.options.data.name ]]
-                </h1>
-                <div class="row center">
-                    <p class="col s12">
-                        [[ htmlWebpackPlugin.options.data.jobTitle ]]
-                    </p>
-                </div>
-                <div class="row hide-on-med-and-down center">
-                    <a class="call-to-action" href="#resume">[[icon "download" "fw"]] View My Resume and Contact Info</a>
-                    <button class="call-to-action chatbutton" hidden>[[icon "comment" "fw"]] Chat with me, I'm online</button>
-                </div>
-                <div class="row hide-on-large-only center">
-                    <a class="white-text obfuscate btn-flat" href="mailto:archie...trajano...net">[[icon "envelope-o" "fw" "left"]] archie...trajano...net</a>
-                    <br class="hide-on-med-only">
-                    <a class="white-text obfuscate btn-flat" href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive">[[icon "phone" "fw" "left"]]  FourOneSix-EightFiveSix-SixSixFiveFive</a>
-                </div>
-                <div id="skip-to-content">
-                    <a class="btn-floating btn-large waves-effect waves-light hoverable" href="#mainnav">[[icon "arrow-down"]]</a>
-                </div>
-            </div>
-            <div class="parallax"><img src="/assets/hiro.jpg" alt="Hiro close-up"></div>
-        </div>
-    </div>
-    <div id="mainnav" class="scrollspy">
-        <nav role="navigation" id="mainnav-nav">
-            <div class="nav-wrapper">
-                <a id="logo-container" href="#" class="brand-logo left"><img src="/assets/portfolio-logo.png" alt="Trajano"></a>
-                <ul id="nav-desktop" class="right hide-on-med-and-down table-of-contents">
-                    <li><a href="#mainnav">About Archie</a></li>
-                    <li><a href="#projects">Personal Projects</a></li>
-                    <li><a href="#social">Social</a></li>
-                    <li><a href="#resume">Resume</a></li>
-                    <li><a href="/blog/" title="Archimedes Trajano Blog">Blog</a></li>
-                    <li><a href="#contact">Contact Me</a></li>
-                </ul>
-                <ul id="nav-mobile" class="side-nav table-of-contents">
-                    <li>
-                        <div class="userView z-depth-1">
-                            <div class="background">
-                                [[dimg "https://trajano.net/wp-content/uploads/2016/12/Snow-in-Scarborough-1038x576.jpg" "Snow in Scarborough" "darken"]]
-                            </div>
-                            [[dimg "assets/avatar.jpg" "Archimedes Trajano gravatar" "circle"]]
-                            <span class="white-text name">Archie</span>
-                            <a href="mailto:archie...trajano...net" class="obfuscate"><span class="white-text email">archie...trajano...net</span></a>
-                            <a href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive" class="obfuscate"><span class="white-text tel">FourOneSix-EightFiveSix-SixSixFiveFive</span></a>
-                        </div>
-                    </li>
-                    <li><a href="#mainnav">About Archie</a></li>
-                    <li><a href="#projects">Personal Projects</a></li>
-                    <li><a href="#social">Social</a></li>
-                    <li><a href="#resume">Resume</a></li>
-                    <li><a href="https://trajano.net/blog/" title="Archimedes Trajano Blog">Blog</a></li>
-                    <li>
-                        <div class="divider"></div>
-                    </li>
-                </ul>
-                <a href="#" data-activates="nav-mobile" class="button-collapse right">[[icon "bars"]]</a>
-            </div>
-        </nav>
-    </div>
+    <TopBanner></TopBanner>
+    <MainNav></MainNav>
+   
     <div class="container">
         <div class="section">
             <div class="row">
@@ -393,8 +331,15 @@
 </template>
 
 <script>
+import TopBanner from './TopBanner.vue'
+import MainNav from './MainNav.vue'
+
 export default {
   name: 'app',
+  components: {
+      TopBanner,
+      MainNav
+  },
   data () {
     return {
       msg: 'Welcome to your prerender-spa-plugin Vuejs 2.0 demo app!'

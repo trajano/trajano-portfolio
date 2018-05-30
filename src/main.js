@@ -1,9 +1,13 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Vuetify from 'vuetify'
+ 
 import App from './App.vue'
 
-Vue.use(VueRouter)
+import 'vuetify/dist/vuetify.min.css'
 
+Vue.use(Vuetify)
+Vue.use(VueRouter)
 
 const Home = { template: '<div><h2>Home Page</h2></div>' }
 const About = { template: '<div><h2>About Page</h2></div>' }
