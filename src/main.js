@@ -1,13 +1,15 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Vuetify from 'vuetify'
- 
+import Vuetify from 'vuetify' 
+import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+
 import App from './App.vue'
 
 import 'vuetify/dist/vuetify.min.css'
 
 Vue.use(Vuetify)
 Vue.use(VueRouter)
+Vue.use(FontAwesomeIcon)
 
 const Home = { template: '<div><h2>Home Page</h2></div>' }
 const About = { template: '<div><h2>About Page</h2></div>' }
