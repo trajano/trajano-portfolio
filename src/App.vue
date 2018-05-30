@@ -8,16 +8,16 @@
             <div class="row">
                 <div class="col s12 m4">
                     <div class="icon-block">
-                        <h2 class="center brown-text">[[icon "github" "lg"]] </h2>
+                        <h2 class="center brown-text"><font-awesome-icon :icon="['fab','github']" size="lg"/></h2>
                         <h5 class="center">I'm a full-stack coder</h5>
-                        <p>I design and develop enterprise applications in a variety of languages including but not limited
+                        <p>I design and develop enterprise applications in a variety of technologies including but not limited
                             to Java, JavaScript and SQL. I work to make sure everything is integrated on the enterprise scale.
                         </p>
                     </div>
                 </div>
                 <div class="col s12 m4">
                     <div class="icon-block">
-                        <h2 class="center brown-text">[[icon "building" "lg"]] </h2>
+                        <h2 class="center brown-text"><font-awesome-icon icon="building" size="lg"/></h2>
                         <h5 class="center">Hands-on enterprise consultant</h5>
                         <p>I architect solutions that scale up thinking on the enterprise level, but I also know enough about
                             the development, deployment and application management processes to make sure they are doable
@@ -26,7 +26,7 @@
                 </div>
                 <div class="col s12 m4">
                     <div class="icon-block">
-                        <h2 class="center brown-text">[[icon "graduation-cap" "lg"]]</h2>
+                        <h2 class="center brown-text"><font-awesome-icon icon="graduation-cap" size="lg"/></h2>
                         <h5 class="center">I'm an IT polymath</h5>
                         <p>A person whose expertise spans a significant number of different subject areas; such a person is
                             known to draw on complex bodies of knowledge to solve specific problems. As such I get called
@@ -38,7 +38,7 @@
             <div class="row">
                 <div class="col s12 m4">
                     <div class="icon-block">
-                        <h2 class="center brown-text">[[icon "bolt" "lg"]]</h2>
+                        <h2 class="center brown-text"><font-awesome-icon icon="bolt" size="lg"/></h2>
                         <h5 class="center">I'm agile</h5>
                         <p>I worked on projects using the Scrum methodology at varying degrees and work with others to use the
                             methology effectively.
@@ -47,7 +47,7 @@
                 </div>
                 <div class="col s12 m4">
                     <div class="icon-block">
-                        <h2 class="center brown-text">[[icon "users" "lg"]]</h2>
+                        <h2 class="center brown-text"><font-awesome-icon icon="users" size="lg"/></h2>
                         <h5 class="center">Cúram expert</h5>
                         <p>I've been working with the Curam Enterprise Framework since 2002 and primarily do programming and
                             integrations with external systems.</p>
@@ -55,10 +55,9 @@
                 </div>
                 <div class="col s12 m4">
                     <div class="icon-block">
-                        <h2 class="center brown-text">[[icon "cogs" "lg"]]</h2>
+                        <h2 class="center brown-text"><font-awesome-icon icon="cogs" size="lg"/></h2>
                         <h5 class="center">DevOps</h5>
-                        <p>I do that too, I script whereever I can from development to deployment and circle back with ELK integration
-                            and analysis for production.</p>
+                        <p>I set up automation from development to production systems utilizing various technologies such as Sonatype Nexus, Docker and Jenkins.</p>
                     </div>
                 </div>
             </div>
