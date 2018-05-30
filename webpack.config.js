@@ -1,9 +1,10 @@
-var path = require('path')
-var webpack = require('webpack')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path')
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const PrerenderSPAPlugin = require('prerender-spa-plugin')
 const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
 const WebappWebpackPlugin = require('webapp-webpack-plugin')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: './src/main.js',
@@ -12,6 +13,14 @@ module.exports = {
     publicPath: '/',
     filename: 'build.js'
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: "[name]-[contenthash].css",
+      chunkFilename: "[id].css"
+    })
+  ],
   module: {
     rules: [
       {
@@ -25,7 +34,10 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'css-loader'
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader'
+        ]
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
