@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+  <v-app>
     <TopBanner></TopBanner>
     <MainNav></MainNav>
    
@@ -326,6 +327,7 @@
             </div>
         </div>
     </footer>
+  </v-app>
   </div>
 </template>
 

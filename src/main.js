@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Vuetify from 'vuetify' 
+import 'babel-polyfill'
 import './icons'
 
 import App from './App.vue'
