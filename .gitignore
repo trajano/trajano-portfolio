@@ -39,3 +39,4 @@ jspm_packages
 .git-credentials
 dist/
 src/critical.css
+.wwp-cache/

@@ -1,7 +1,7 @@
 var webpack = require("webpack")
 var CopyWebpackPlugin = require('copy-webpack-plugin')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
-var FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const WebappWebpackPlugin = require('webapp-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
 var yargs = require("yargs")
@@ -13,7 +13,7 @@ var externalCSS = new ExtractTextPlugin('styles.css')
 
 module.exports = {
     module: {
-        loaders: [
+        rules: [
             {
                 test: /app\.scss$/,
                 loader: externalCSS.extract(["css-loader?sourceMap", "sass-loader"])
@@ -46,7 +46,7 @@ module.exports = {
         "jquery": "jQuery"
     },
     plugins: [
-        new FaviconsWebpackPlugin({
+        new WebappWebpackPlugin({
             logo: './src/logo-2048x2048.png',
             background: '#216978',
             title: 'Trajano',
