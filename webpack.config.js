@@ -1,6 +1,6 @@
 var webpack = require("webpack")
 var CopyWebpackPlugin = require('copy-webpack-plugin')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const WebappWebpackPlugin = require('webapp-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
@@ -9,14 +9,16 @@ var path = require('path')
 
 var optimizeMinimize = yargs.alias('p', 'optimize-minimize').argv.optimizeMinimize
 
-var externalCSS = new ExtractTextPlugin('styles.css')
-
 module.exports = {
     module: {
         rules: [
             {
                 test: /app\.scss$/,
-                loader: externalCSS.extract(["css-loader?sourceMap", "sass-loader"])
+                use: [
+                  MiniCssExtractPlugin.loader,
+                  "css-loader",
+                  "sass-loader"
+                ]
             },
             {
                 test: /\.html$/,
@@ -65,7 +67,10 @@ module.exports = {
             from: 'assets',
             to: 'assets'
         }]),
-        externalCSS,
+        new MiniCssExtractPlugin({
+          filename: '[name].css',
+          chunkFilename: '[id].css'
+        }),
         new HtmlWebpackPlugin({
             data: require('./src/ld.json'),
             template: './src/app.html',
