@@ -350,6 +350,9 @@ export default {
 </script>
 
 <style>
+
+</style>
+<!--
 #app {
   font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -372,4 +375,4 @@ li {
 a {
   color: #42b983;
 }
-</style>
+-->

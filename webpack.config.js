@@ -5,13 +5,14 @@ const PrerenderSPAPlugin = require('prerender-spa-plugin')
 const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
 const WebappWebpackPlugin = require('webapp-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/',
-    filename: 'build.js'
+    filename: 'build-[hash].js'
   },
   plugins: [
     new MiniCssExtractPlugin({
@@ -19,7 +20,8 @@ module.exports = {
       // both options are optional
       filename: "[name]-[contenthash].css",
       chunkFilename: "[id].css"
-    })
+    }),
+    new VueLoaderPlugin()
   ],
   module: {
     rules: [
@@ -34,8 +36,10 @@ module.exports = {
       },
       {
         test: /\.css$/,
+        //        loader: 'css-loader'
         use: [
-          MiniCssExtractPlugin.loader,
+          //        MiniCssExtractPlugin.loader,
+          'vue-style-loader',
           'css-loader'
         ]
       },
@@ -62,11 +66,11 @@ module.exports = {
 if (process.env.NODE_ENV === 'production') {
   module.exports.devtool = '#source-map'
   module.exports.plugins = (module.exports.plugins || []).concat([
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: '"production"'
-      }
-    }),
+    // new webpack.DefinePlugin({
+    //   'process.env': {
+    //     NODE_ENV: '"production"'
+    //   }
+    // }),
     new HtmlWebpackPlugin({
       title: 'Archimedes Trajano',
       template: 'src/index.html',
@@ -74,11 +78,11 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new PrerenderSPAPlugin({
       staticDir: path.join(__dirname, 'dist'),
-      routes: [ '/', '/about', '/contact' ],
+      routes: ['/', '/about', '/contact'],
 
       renderer: new Renderer({
         inject: {
-          foo: 'bar'
+          // foo: 'bar'
         },
         headless: false,
         renderAfterDocumentEvent: 'render-event'
@@ -88,11 +92,11 @@ if (process.env.NODE_ENV === 'production') {
 } else {
   // NODE_ENV === 'development'
   module.exports.plugins = (module.exports.plugins || []).concat([
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: '"development"'
-      }
-    }),
+    // new webpack.DefinePlugin({
+    //   'process.env': {
+    //     NODE_ENV: '"development"'
+    //   }
+    // }),
     new HtmlWebpackPlugin({
       title: 'DEVELOPMENT trajano-portfolio',
       template: 'src/index.html',

@@ -1,5 +1,5 @@
 <template>
-    <v-parallax id="top-banner" src="/assets/hiro.jpg" alt="Hiro close-up" v-bind:height="windowHeight">
+    <v-parallax id="top-banner" src="/assets/hiro.jpg" alt="Hiro close-up" :height="parallaxHeight">
         <v-layout column align-center justify-center>           
                         [[ htmlWebpackPlugin.options.data.name ]]
         </v-layout>
@@ -12,14 +12,14 @@ export default {
   name: "top-banner",
   data() {
     return {
-      windowHeight: window.innerHeight,
+      parallaxHeight: window.innerHeight - 64,
     }
   },
   mounted() {
     let that = this;
     this.$nextTick(function() {
       window.addEventListener('resize', function(e) {
-        that.windowHeight = window.innerHeight
+        that.parallaxHeight = window.innerHeight - 64
       });
     })
   }
@@ -27,4 +27,7 @@ export default {
 </script>
 
 <style>
+#top-banner {
+    border: 1px solid yellow;
+}
 </style>
