@@ -4,8 +4,8 @@
   "description": "Archimedes Trajano portfolio site.",
   "main": "src/app.js",
   "scripts": {
-    "prepare": "webpack -p",
-    "start": "webpack-dev-server"
+    "prepare": "webpack --mode=production",
+    "start": "webpack-dev-server --mode=development"
   },
   "repository": {
     "type": "git",
@@ -18,27 +18,28 @@
   },
   "homepage": "https://github.com/trajano/trajano-portfolio#readme",
   "devDependencies": {
-    "ajv": "^6.4.0",
+    "ajv": "^6.5.0",
     "ajv-keywords": "^3.2.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-preset-es2015": "^6.22.0",
     "copy-webpack-plugin": "^4.5.1",
-    "css-loader": "^0.26.1",
-    "extract-text-webpack-plugin": "^3.0.2",
-    "favicons-webpack-plugin": "0.0.7",
-    "file-loader": "^0.9.0",
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
     "handlebars": "^4.0.11",
     "handlebars-loader": "^1.7.0",
-    "html-loader": "^0.4.4",
-    "html-webpack-inline-source-plugin": "0.0.6",
+    "html-loader": "^0.5.5",
+    "html-webpack-inline-source-plugin": "0.0.10",
     "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.9.0",
+    "optimize-css-assets-webpack-plugin": "^4.0.2",
     "sass-loader": "^7.0.1",
-    "style-loader": "^0.13.1",
-    "webpack": "^3.11.0",
-    "webpack-dev-server": "^2.11.2",
-    "yargs": "^11.0.0"
+    "style-loader": "^0.21.0",
+    "webapp-webpack-plugin": "^2.1.0",
+    "webpack": "^4.10.2",
+    "webpack-cli": "^2.1.4",
+    "webpack-dev-server": "^3.1.4"
   },
   "dependencies": {
     "jquery": "^3.3.1",
