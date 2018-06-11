@@ -1,6 +1,15 @@
+import Vue from 'vue'
 import './font-faces.scss'
 import './app.scss'
 import 'materialize-css/dist/js/materialize'
+
+new Vue({
+  el: '#app',
+  mounted () {
+    // You'll need this for renderAfterDocumentEvent.
+    document.dispatchEvent(new Event('render-event'))
+  }
+})
 
 $(window).resize(() => {
     $('#mainnav-nav').pushpin('remove')

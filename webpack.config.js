@@ -4,10 +4,13 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const PrerenderSPAPlugin = require('prerender-spa-plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const WebappWebpackPlugin = require('webapp-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
 var path = require('path')
+
+const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
 
 module.exports = (env, argv) => {
   const optimization = {
@@ -100,8 +103,30 @@ module.exports = (env, argv) => {
       template: './src/app.html',
       inlineSource: 'main.css$'
     }),
-    new HtmlWebpackInlineSourcePlugin()
+    new HtmlWebpackInlineSourcePlugin(),
+    new VueLoaderPlugin()
   ]
+
+  if (argv.mode === "production") {
+    plugins.push(
+      new PrerenderSPAPlugin({
+        // Index.html is in the root directory.
+        staticDir: path.join(__dirname, 'dist'),
+        routes: ['/'],
+        // Optional minification.
+        minify: {
+          collapseBooleanAttributes: true,
+          collapseWhitespace: true,
+          decodeEntities: true,
+          keepClosingSlash: true,
+          sortAttributes: true
+        },
+
+        renderer: new Renderer({
+          renderAfterDocumentEvent: 'render-event'
+        })
+      }))
+  }
   const resolve = {
     alias: {
       'handlebars': 'handlebars/runtime.js',
