@@ -3,13 +3,14 @@ var CopyWebpackPlugin = require('copy-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const PrerenderSPAPlugin = require('prerender-spa-plugin')
 const WebappWebpackPlugin = require('webapp-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
 var path = require('path')
 
-module.exports = {
-  optimization: {
+module.exports = (env, argv) => {
+  const optimization = {
     minimizer: [
       new UglifyJsPlugin({
         cache: true,
@@ -18,12 +19,11 @@ module.exports = {
       }),
       new OptimizeCSSAssetsPlugin({})
     ]
-  },
-  module: {
-    rules: [
-      {
+  }
+  const module = {
+    rules: [{
         test: /app\.scss$/,
-        loaders: [
+        use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader'
@@ -38,6 +38,14 @@ module.exports = {
         loaders: ['style-loader', 'css-loader', 'sass-loader']
       },
       {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        options: {
+          loaders: {}
+          // other vue-loader options go here
+        }
+      },
+      {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
         loader: 'babel-loader',
@@ -46,17 +54,17 @@ module.exports = {
         }
       }
     ]
-  },
-  entry: ['./src/app'],
-  output: {
+  }
+  const entry = ['./src/app']
+  const output = {
     path: path.resolve(__dirname, './dist'),
     filename: 'bundle.[hash].js'
-  },
-  externals: {
+  }
+  const externals = {
     'node-waves': 'Waves',
     'jquery': 'jQuery'
-  },
-  plugins: [
+  }
+  const plugins = [
     new WebappWebpackPlugin({
       logo: './src/logo-2048x2048.png',
       favicons: {
@@ -67,7 +75,9 @@ module.exports = {
         background: '#216978',
         icons: {
           android: true,
-          appleIcon: { offset: 15 },
+          appleIcon: {
+            offset: 15
+          },
           appleStartup: false,
           coast: false,
           favicons: true,
@@ -91,13 +101,25 @@ module.exports = {
       inlineSource: 'main.css$'
     }),
     new HtmlWebpackInlineSourcePlugin()
-  ],
-  resolve: {
+  ]
+  const resolve = {
     alias: {
-      'handlebars': 'handlebars/runtime.js'
-    }
-  },
-  devServer: {
+      'handlebars': 'handlebars/runtime.js',
+      'vue$': 'vue/dist/vue.esm.js'
+    },
+    extensions: ['*', '.js', '.vue', '.json']
+  }
+  const devServer = {
     inline: true
+  }
+  return {
+    optimization,
+    module,
+    entry,
+    output,
+    externals,
+    plugins,
+    resolve,
+    devServer
   }
 }
