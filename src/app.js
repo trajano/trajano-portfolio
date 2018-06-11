@@ -3,8 +3,11 @@ import './font-faces.scss'
 import './app.scss'
 import 'materialize-css/dist/js/materialize'
 
+import App from './components/App'
+
 new Vue({
   el: '#app',
+  render: h => h(App),
   mounted () {
     // You'll need this for renderAfterDocumentEvent.
     document.dispatchEvent(new Event('render-event'))
