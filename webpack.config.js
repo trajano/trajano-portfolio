@@ -1,4 +1,3 @@
-var webpack = require('webpack')
 var CopyWebpackPlugin = require('copy-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -27,7 +26,7 @@ module.exports = (env, argv) => {
     rules: [{
         test: /app\.scss$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          'style-loader',
           'css-loader',
           'sass-loader'
         ]
@@ -94,10 +93,6 @@ module.exports = (env, argv) => {
       from: 'assets',
       to: 'assets'
     }]),
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css'
-    }),
     new HtmlWebpackPlugin({
       data: require('./src/ld.json'),
       template: './src/app.html',
@@ -108,7 +103,15 @@ module.exports = (env, argv) => {
   ]
 
   if (argv.mode === "production") {
+    module.rules[0].use = [MiniCssExtractPlugin.loader,
+      'css-loader',
+      'sass-loader'
+    ]
     plugins.push(
+      new MiniCssExtractPlugin({
+        filename: '[name].css',
+        chunkFilename: '[id].css'
+      }),
       new PrerenderSPAPlugin({
         // Index.html is in the root directory.
         staticDir: path.join(__dirname, 'dist'),
