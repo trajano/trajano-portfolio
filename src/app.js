@@ -1,6 +1,18 @@
+import Vue from 'vue'
 import './font-faces.scss'
 import './app.scss'
 import 'materialize-css/dist/js/materialize'
+import './icons'
+import App from './components/App'
+
+new Vue({
+    el: '#app',
+    render: h => h(App),
+    mounted() {
+        // You'll need this for renderAfterDocumentEvent.
+        document.dispatchEvent(new Event('render-event'))
+    }
+})
 
 $(window).resize(() => {
     $('#mainnav-nav').pushpin('remove')
@@ -8,6 +20,7 @@ $(window).resize(() => {
         top: $('#mainnav').offset().top
     })
 })
+
 function deobfuscate(e) {
     return e.replace("...", "@")
         .replace(/\.\.\./g, ".")
@@ -42,19 +55,13 @@ $(function () {
         window.location.href = $(this).data("href")
     })
 
-    /* Deobfuscate mailto and tel links */
-    $("a.obfuscate").each(function () {
-        $(this).html(deobfuscate($(this).html()))
-        $(this).attr("href", deobfuscate($(this).attr("href")))
-    })
-
-    // load stylesheet here
-    const styleSheetLink = document.createElement('link')
-    styleSheetLink.rel = 'stylesheet'
-    styleSheetLink.href = '//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'
-    styleSheetLink.type = 'text/css'
-    const linkAnchor = document.getElementsByTagName('link')[0]
-    linkAnchor.parentNode.insertBefore(styleSheetLink, linkAnchor)
+    if (!window.__PRERENDER_INJECTED) {
+        /* Deobfuscate mailto and tel links */
+        $("a.obfuscate").each(function () {
+            $(this).html(deobfuscate($(this).html()))
+            $(this).attr("href", deobfuscate($(this).attr("href")))
+        })
+    }
 
     // Media.net ads
     window._mNHandle = {
@@ -75,7 +82,7 @@ $(function () {
         url: "//www.smartsuppchat.com/loader.js",
         cache: true,
         dataType: "script",
-        success: function() {
+        success: function () {
             window.smartsupp('on', 'status', status => {
                 if (status == 'online') {
                     $('.chatbutton').show()
@@ -87,9 +94,5 @@ $(function () {
                 window.smartsupp('chat:open')
             })
         }
-    })
-
-    $("img[data-src]").each(function () {
-        $(this).attr("src", $(this).attr("data-src"))
     })
 })
