@@ -2,7 +2,7 @@ import Vue from 'vue'
 import './font-faces.scss'
 import './app.scss'
 import 'materialize-css/dist/js/materialize'
-
+import './icons'
 import App from './components/App'
 
 new Vue({
@@ -56,17 +56,10 @@ $(function () {
 
     /* Deobfuscate mailto and tel links */
     $("a.obfuscate").each(function () {
+        console.log("vue", Vue)
         $(this).html(deobfuscate($(this).html()))
         $(this).attr("href", deobfuscate($(this).attr("href")))
     })
-
-    // load stylesheet here
-    const styleSheetLink = document.createElement('link')
-    styleSheetLink.rel = 'stylesheet'
-    styleSheetLink.href = '//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'
-    styleSheetLink.type = 'text/css'
-    const linkAnchor = document.getElementsByTagName('link')[0]
-    linkAnchor.parentNode.insertBefore(styleSheetLink, linkAnchor)
 
     // Media.net ads
     window._mNHandle = {

@@ -6,16 +6,18 @@
                     <br class="hide-on-small-only">
                     <br class="hide-on-small-only">
                     <h1 class="header center -text text-lighten-2 thin">
-                        [[ htmlWebpackPlugin.options.data.name ]]
+                        {{ld.name}}
                     </h1>
                     <div class="row center">
                         <p class="col s12">
-                            [[ htmlWebpackPlugin.options.data.jobTitle ]]
+                            {{ld.jobTitle}}
                         </p>
                     </div>
                     <div class="row hide-on-med-and-down center">
-                        <a class="call-to-action" href="#resume">[[icon "download" "fw"]] View My Resume and Contact Info</a>
-                        <button class="call-to-action chatbutton" hidden>[[icon "comment" "fw"]] Chat with me, I'm online</button>
+                        <a class="call-to-action" href="#resume">
+                            <font-awesome-icon icon="download" /> View My Resume and Contact Info</a>
+                        <button class="call-to-action chatbutton" hidden>
+                            <font-awesome-icon icon="comment" /> Chat with me, I'm online</button>
                     </div>
                     <div class="row hide-on-large-only center">
                         <a class="white-text obfuscate btn-flat" href="mailto:archie...trajano...net">[[icon "envelope-o" "fw" "left"]] archie...trajano...net</a>
@@ -23,7 +25,7 @@
                         <a class="white-text obfuscate btn-flat" href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive">[[icon "phone" "fw" "left"]] FourOneSix-EightFiveSix-SixSixFiveFive</a>
                     </div>
                     <div id="skip-to-content">
-                        <a class="btn-floating btn-large waves-effect waves-light hoverable" href="#mainnav">[[icon "arrow-down"]]</a>
+                        <a class="btn-floating btn-large waves-effect waves-light hoverable" href="#mainnav"><font-awesome-icon icon="arrow-down" size="lg" /></a>
                     </div>
                 </div>
                 <div class="parallax">
@@ -101,7 +103,9 @@
                 <div class="row">
                     <div class="col s12 m4">
                         <div class="icon-block">
-                            <h2 class="center brown-text">[[icon "github" "lg"]] </h2>
+                            <h2 class="center brown-text">
+                                <font-awesome-icon :icon="['fab', 'github']" size="lg" />
+                            </h2>
                             <h5 class="center">I'm a full-stack coder</h5>
                             <p>I design and develop enterprise applications in a variety of languages including but not limited to Java, JavaScript and SQL. I work to make sure everything is integrated on the enterprise scale.
                             </p>
@@ -109,14 +113,18 @@
                     </div>
                     <div class="col s12 m4">
                         <div class="icon-block">
-                            <h2 class="center brown-text">[[icon "building" "lg"]] </h2>
+                            <h2 class="center brown-text">
+                                <font-awesome-icon icon="building" size="lg" />
+                            </h2>
                             <h5 class="center">Hands-on enterprise consultant</h5>
                             <p>I architect solutions that scale up thinking on the enterprise level, but I also know enough about the development, deployment and application management processes to make sure they are doable and sustainable.</p>
                         </div>
                     </div>
                     <div class="col s12 m4">
                         <div class="icon-block">
-                            <h2 class="center brown-text">[[icon "graduation-cap" "lg"]]</h2>
+                            <h2 class="center brown-text">
+                                <font-awesome-icon icon="graduation-cap" size="lg" />
+                            </h2>
                             <h5 class="center">I'm an IT polymath</h5>
                             <p>A person whose expertise spans a significant number of different subject areas; such a person is known to draw on complex bodies of knowledge to solve specific problems. As such I get called upon to deal with integrating multiple technologies that are present in enterprise systems.
                             </p>
@@ -126,7 +134,9 @@
                 <div class="row">
                     <div class="col s12 m4">
                         <div class="icon-block">
-                            <h2 class="center brown-text">[[icon "bolt" "lg"]]</h2>
+                            <h2 class="center brown-text">
+                                <font-awesome-icon icon="bolt" size="lg" />
+                            </h2>
                             <h5 class="center">I'm agile</h5>
                             <p>I worked on projects using the Scrum methodology at varying degrees and work with others to use the methology effectively.
                             </p>
@@ -134,14 +144,18 @@
                     </div>
                     <div class="col s12 m4">
                         <div class="icon-block">
-                            <h2 class="center brown-text">[[icon "users" "lg"]]</h2>
+                            <h2 class="center brown-text">
+                                <font-awesome-icon icon="users" size="lg" />
+                            </h2>
                             <h5 class="center">Cúram expert</h5>
                             <p>I've been working with the Curam Enterprise Framework since 2002 and primarily do programming and integrations with external systems.</p>
                         </div>
                     </div>
                     <div class="col s12 m4">
                         <div class="icon-block">
-                            <h2 class="center brown-text">[[icon "cogs" "lg"]]</h2>
+                            <h2 class="center brown-text">
+                                <font-awesome-icon icon="cogs" size="lg" />
+                            </h2>
                             <h5 class="center">DevOps</h5>
                             <p>I do that too, I script whereever I can from development to deployment and circle back with ELK integration and analysis for production.</p>
                         </div>
@@ -357,10 +371,11 @@
             <div class="section">
                 <div class="row">
                     <div class="col s12 m12 l12">
-                        <p>[[icon "exclamation-circle" "fw"]]
+                        <p>
+                            <font-awesome-icon icon="exclamation-circle" />
                             <strong>FYI TO RECRUITERS:</strong> My IT consulting rate is
-                            <strong>$150/hr</strong> within the Greater Toronto Area only. My development contracting rate is
-                            <strong>$100/hr</strong> (telecommute / work from home only). I am presently not open for long term business travel.
+                            <strong>$175/hr</strong> within the Greater Toronto Area only. My development contracting rate is
+                            <strong>$125/hr</strong> (telecommute / work from home only). I am presently not open for long term business travel.
                         </p>
                         <div class="center">
                             <p>
@@ -392,13 +407,13 @@
                     <div class="col m6 l4 s12">
                         <h5 class="white-text">Contact me</h5>
                         <p>
-                            <a class="white-text waves-effect btn-flat obfuscate" href="mailto:archie...trajano...net">[[icon "envelope-o" "fw" "left"]] archie...trajano...net</a>
+                            <a class="white-text waves-effect btn-flat obfuscate" href="mailto:archie...trajano...net"><font-awesome-icon icon="envelope" :fixed-width="true" /> archie...trajano...net</a>
                         </p>
                         <p>
-                            <a class="white-text waves-effect btn-flat obfuscate" href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive">[[icon "phone" "fw" "left"]] FourOneSix-EightFiveSix-SixSixFiveFive</a>
+                            <a class="white-text waves-effect btn-flat obfuscate" href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive"><font-awesome-icon icon="phone" :fixed-width="true"/> FourOneSix-EightFiveSix-SixSixFiveFive</a>
                         </p>
                         <p>
-                            <button class="white-text waves-effect btn-flat chatbutton" hidden>[[icon "comment" "fw" "left"]] Chat with me I'm online</button>
+                            <button class="white-text waves-effect btn-flat chatbutton" hidden><font-awesome-icon icon="comment" :fixed-width="true" x-pull="left"/> Chat with me I'm online</button>
                         </p>
                     </div>
                 </div>
@@ -413,10 +428,14 @@
     </div>
 </template>
 <script>
+import ld from "../ld.json";
+
 export default {
   name: "App",
   data() {
-    return {};
+    return {
+      ld
+    };
   }
 };
 </script>
