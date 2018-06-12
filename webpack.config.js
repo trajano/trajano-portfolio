@@ -123,6 +123,9 @@ module.exports = (env, argv) => {
         },
 
         renderer: new Renderer({
+          inject: {
+            prerendering: true
+          },
           renderAfterDocumentEvent: 'render-event'
         })
       }))

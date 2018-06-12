@@ -6,12 +6,12 @@ import './icons'
 import App from './components/App'
 
 new Vue({
-  el: '#app',
-  render: h => h(App),
-  mounted () {
-    // You'll need this for renderAfterDocumentEvent.
-    document.dispatchEvent(new Event('render-event'))
-  }
+    el: '#app',
+    render: h => h(App),
+    mounted() {
+        // You'll need this for renderAfterDocumentEvent.
+        document.dispatchEvent(new Event('render-event'))
+    }
 })
 
 $(window).resize(() => {
@@ -20,6 +20,7 @@ $(window).resize(() => {
         top: $('#mainnav').offset().top
     })
 })
+
 function deobfuscate(e) {
     return e.replace("...", "@")
         .replace(/\.\.\./g, ".")
@@ -54,12 +55,13 @@ $(function () {
         window.location.href = $(this).data("href")
     })
 
-    /* Deobfuscate mailto and tel links */
-    $("a.obfuscate").each(function () {
-        console.log("vue", Vue)
-        $(this).html(deobfuscate($(this).html()))
-        $(this).attr("href", deobfuscate($(this).attr("href")))
-    })
+    if (!window.__PRERENDER_INJECTED) {
+        /* Deobfuscate mailto and tel links */
+        $("a.obfuscate").each(function () {
+            $(this).html(deobfuscate($(this).html()))
+            $(this).attr("href", deobfuscate($(this).attr("href")))
+        })
+    }
 
     // Media.net ads
     window._mNHandle = {
@@ -80,7 +82,7 @@ $(function () {
         url: "//www.smartsuppchat.com/loader.js",
         cache: true,
         dataType: "script",
-        success: function() {
+        success: function () {
             window.smartsupp('on', 'status', status => {
                 if (status == 'online') {
                     $('.chatbutton').show()
