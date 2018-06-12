@@ -399,7 +399,7 @@
                             <a class="white-text waves-effect btn-flat obfuscate" href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive"><font-awesome-icon icon="mobile-alt" :fixed-width="true"/> FourOneSix-EightFiveSix-SixSixFiveFive</a>
                         </p>
                         <p>
-                            <button class="white-text waves-effect btn-flat chatbutton" hidden><font-awesome-icon icon="comment" :fixed-width="true" x-pull="left"/> Chat with me I'm online</button>
+                            <button class="white-text waves-effect btn-flat chatbutton" hidden><font-awesome-icon icon="comment" :fixed-width="true"/> Chat with me I'm online</button>
                         </p>
                     </div>
                 </div>
