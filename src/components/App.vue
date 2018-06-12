@@ -94,7 +94,7 @@
                             <div class="divider"></div>
                         </li>
                     </ul>
-                    <a href="#" data-activates="nav-mobile" class="button-collapse right">[[icon "bars"]]</a>
+                    <a href="#" data-activates="nav-mobile" class="button-collapse right"><font-awesome-icon icon="bars"/></a>
                 </div>
             </nav>
         </div>
