@@ -20,7 +20,10 @@ module.exports = (env, argv) => {
         sourceMap: true // set to true if you want JS source maps
       }),
       new OptimizeCSSAssetsPlugin({})
-    ]
+    ],
+    splitChunks: {
+      chunks: 'all'
+    }
   }
   const module = {
     rules: [{

@@ -4,6 +4,7 @@ import fontawesome from '@fortawesome/fontawesome'
 
 fontawesome.library.add(
     require('@fortawesome/fontawesome-free-brands/faGithub'),
+    require('@fortawesome/fontawesome-free-brands/faLinkedin'),
     require('@fortawesome/fontawesome-free-brands/faStackOverflow'),
     require('@fortawesome/fontawesome-free-regular/faEnvelope'),
     require('@fortawesome/fontawesome-free-regular/faFilePdf'),

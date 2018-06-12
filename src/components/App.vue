@@ -25,7 +25,9 @@
                         <a class="white-text obfuscate btn-flat" href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive">[[icon "phone" "fw" "left"]] FourOneSix-EightFiveSix-SixSixFiveFive</a>
                     </div>
                     <div id="skip-to-content">
-                        <a class="btn-floating btn-large waves-effect waves-light hoverable" href="#mainnav"><font-awesome-icon icon="arrow-down" size="lg" /></a>
+                        <a class="btn-floating btn-large waves-effect waves-light hoverable" href="#mainnav">
+                            <font-awesome-icon icon="arrow-down" size="lg" />
+                        </a>
                     </div>
                 </div>
                 <div class="parallax">
@@ -63,9 +65,9 @@
                         <li>
                             <div class="userView z-depth-1">
                                 <div class="background">
-                                    [[dimg "/assets/snow-in-scarborough.jpg" "Snow in Scarborough" "darken"]]
+                                    <d-img src="/assets/snow-in-scarborough.jpg" alt="Snow in Scarborough" class="darken" />
                                 </div>
-                                [[dimg "assets/avatar.jpg" "Archimedes Trajano gravatar" "circle"]]
+                                <d-img src="/assets/avatar.jpg" alt="Archimedes Trajano gravatar" class="circle" />
                                 <span class="white-text name">Archie</span>
                                 <a href="mailto:archie...trajano...net" class="obfuscate">
                                     <span class="white-text email">archie...trajano...net</span>
@@ -94,7 +96,9 @@
                             <div class="divider"></div>
                         </li>
                     </ul>
-                    <a href="#" data-activates="nav-mobile" class="button-collapse right"><font-awesome-icon icon="bars"/></a>
+                    <a href="#" data-activates="nav-mobile" class="button-collapse right">
+                        <font-awesome-icon icon="bars" />
+                    </a>
                 </div>
             </nav>
         </div>
@@ -182,7 +186,7 @@
                     <div class="col s12 m6">
                         <div class="card small sticky-action">
                             <div class="card-image waves-effect waves-block waves-light ">
-                                [[dimg "https://trajano.net/wp-content/uploads/2016/11/triforce-672x340.png" "GitHub, Travis, SonarQube" "activator darken"]]
+                                <d-img src="https://trajano.net/wp-content/uploads/2016/11/triforce-672x340.png" alt="GitHub, Travis, SonarQube" class="activator darken" />
                                 <span class="activator card-title">GitHub, Travis-CI and SonarQube</span>
                             </div>
                             <div class="card-content">
@@ -201,7 +205,7 @@
                     <div class="col s12 m6">
                         <div class="card small sticky-action">
                             <div class="card-image waves-effect waves-block waves-light">
-                                [[dimg "assets/phoenix-hiro.jpg" "Phoenix and Hiro" "activator"]]
+                                <d-img src="assets/phoenix-hiro.jpg" alt="Phoenix and Hiro" class="activator" />
                                 <span class="activator card-title">My portfolio page</span>
                             </div>
                             <div class="card-content">
@@ -220,7 +224,7 @@
                     <div class="col s12 m6">
                         <div class="card small sticky-action">
                             <div class="card-image waves-effect waves-block waves-light">
-                                [[dimg "https://trajano.net/wp-content/uploads/2016/12/logo-with-maven-logo.png" "Trajano logo with Maven logo" "activator darken"]]
+                                <d-img src="https://trajano.net/wp-content/uploads/2016/12/logo-with-maven-logo.png" alt="Trajano logo with Maven logo" class="activator darken" />
                                 <span class="activator card-title">Trajano Organizational POM</span>
                             </div>
                             <div class="card-content">
@@ -240,7 +244,7 @@
                     <div class="col s12 m6">
                         <div class="card small sticky-action">
                             <div class="card-image waves-effect waves-block waves-light">
-                                [[dimg "https://trajano.net/wp-content/uploads/2016/12/logo-with-wordpress-logo.png" "Trajano logo with WordPress logo" "activator darken"]]
+                                <d-img src="https://trajano.net/wp-content/uploads/2016/12/logo-with-wordpress-logo.png" alt="Trajano logo with WordPress logo" class="activator darken" />
                                 <span class="activator card-title">My blog</span>
                             </div>
                             <div class="card-content">
@@ -277,8 +281,9 @@
                     <div class="col m6 l4">
                         <div class="card small hoverable" data-href="https://github.com/trajano/">
                             <div class="card-image waves-effect waves-block waves-light">
-                                [[dimg "https://trajano.net/wp-content/uploads/2016/11/vsto-300x208.png" "Visual Studio" "darken"]]
-                                <span class="card-title">[[icon "github" "lg"]] GitHub</span>
+                                <d-img src="https://trajano.net/wp-content/uploads/2016/11/vsto-300x208.png" alt="Visual Studio" class="darken" />
+                                <span class="card-title">
+                                    <font-awesome-icon :icon="['fab','github']" size="lg" /> GitHub</span>
                             </div>
                             <div class="card-content">
                                 <p>Where I have my open source projects hosted on including this portfolio design. Feel free to fork it.
@@ -289,8 +294,9 @@
                     <div class="col m6 l4">
                         <div class="card small hoverable" data-href="https://linkedin.com/in/trajano">
                             <div class="card-image waves-effect waves-block waves-light">
-                                [[dimg "https://trajano.net/wp-content/uploads/2017/02/img_589a945a82d79.png" "Archimedes Trajano resume preview" "darken"]]
-                                <span class="card-title">[[icon "linkedin" "lg"]] LinkedIn</span>
+                                <d-img src="https://trajano.net/wp-content/uploads/2017/02/img_589a945a82d79.png" alt="Archimedes Trajano resume preview" class="darken" />
+                                <span class="card-title">
+                                    <font-awesome-icon :icon="['fab', 'linkedin']" size="lg" /> LinkedIn</span>
                             </div>
                             <div class="card-content">
                                 <p>My professional profile where I keep the most complete and up to date work experience.</p>
@@ -298,46 +304,14 @@
                         </div>
                     </div>
                     <div class="col m6 l4">
-                        <div class="card small hoverable" data-href="https://trajano.yelp.com/">
-                            <div class="card-image waves-effect waves-block waves-light">
-                                [[dimg "https://trajano.net/wp-content/uploads/2016/07/o-1-225x300.jpg" "T-Swirl Crepe" "darken"]]
-                                <span class="card-title">[[icon "yelp" "lg"]] Yelp</span>
-                            </div>
-                            <div class="card-content">
-                                <p>I use this so I don't need to remember whether I like a place or not.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col m6 l4">
                         <div class="card small hoverable" data-href="http://stackoverflow.com/story/trajano">
                             <div class="card-image waves-effect waves-block waves-light">
-                                [[dimg "https://trajano.net/wp-content/uploads/2016/12/My-old-drive-array-300x300.jpg" "My old drive array" "darken"]]
-                                <span class="card-title">[[icon "stack-overflow" "lg"]] Stack Overflow</span>
+                                <d-img src="https://trajano.net/wp-content/uploads/2016/12/My-old-drive-array-300x300.jpg" alt="My old drive array" class="darken" />
+                                <span class="card-title">
+                                    <font-awesome-icon :icon="['fab', 'stack-overflow']" size="lg" /> Stack Overflow</span>
                             </div>
                             <div class="card-content">
-                                <p>This is the Q &amp; A site I generally frequent andd contribute to.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col m6 l4">
-                        <div class="card small hoverable" data-href="https://www.facebook.com/archimedes.trajano">
-                            <div class="card-image waves-effect waves-block waves-light">
-                                [[dimg "assets/aya.jpg" "Aya"]]
-                                <span class="card-title">[[icon "facebook" "lg"]] Facebook</span>
-                            </div>
-                            <div class="card-content">
-                                <p>I have a separate persona for cross posting my blog.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col m6 l4">
-                        <div class="card small hoverable" data-href="https://twitter.com/trajano">
-                            <div class="card-image waves-effect waves-block waves-light">
-                                [[dimg "https://trajano.net/wp-content/uploads/2016/12/ostrich-300x225.jpg" "Ostrich" "darken"]]
-                                <span class="card-title">[[icon "twitter" "lg"]] @trajano</span>
-                            </div>
-                            <div class="card-content">
-                                <p>For quick shoutouts.</p>
+                                <p>This is the Q &amp; A site I generally frequent and contribute to.</p>
                             </div>
                         </div>
                     </div>
@@ -365,7 +339,7 @@
                     </div>
                 </div>
             </div>
-            <div class="parallax">[[dimg "assets/phoenix-hiro.jpg" "Phoenix and Hiro"]]</div>
+            <div class="parallax"><d-img src="assets/phoenix-hiro.jpg" alt="Phoenix and Hiro" /></div>
         </div>
         <div class="container hide-on-small-only">
             <div class="section">
@@ -393,13 +367,16 @@
                     <div class="col m6 l4 s12">
                         <h5 class="white-text">Contact me</h5>
                         <p>
-                            <a class="white-text waves-effect btn-flat obfuscate" href="mailto:archie...trajano...net"><font-awesome-icon :icon="['far', 'envelope']" :fixed-width="true" /> archie...trajano...net</a>
+                            <a class="white-text waves-effect btn-flat obfuscate" href="mailto:archie...trajano...net">
+                                <font-awesome-icon :icon="['far', 'envelope']" :fixed-width="true" /> archie...trajano...net</a>
                         </p>
                         <p>
-                            <a class="white-text waves-effect btn-flat obfuscate" href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive"><font-awesome-icon icon="mobile-alt" :fixed-width="true"/> FourOneSix-EightFiveSix-SixSixFiveFive</a>
+                            <a class="white-text waves-effect btn-flat obfuscate" href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive">
+                                <font-awesome-icon icon="mobile-alt" :fixed-width="true" /> FourOneSix-EightFiveSix-SixSixFiveFive</a>
                         </p>
                         <p>
-                            <button class="white-text waves-effect btn-flat chatbutton" hidden><font-awesome-icon icon="comment" :fixed-width="true"/> Chat with me I'm online</button>
+                            <button class="white-text waves-effect btn-flat chatbutton" hidden>
+                                <font-awesome-icon icon="comment" :fixed-width="true" /> Chat with me I'm online</button>
                         </p>
                     </div>
                 </div>
@@ -415,11 +392,12 @@
 </template>
 <script>
 import ld from "../ld.json";
-import RecuriterAndResumeBlock from './RecruiterAndResumeBlock'
+import RecuriterAndResumeBlock from "./RecruiterAndResumeBlock";
+import DImg from "./DImg";
 
 export default {
-  name: 'App',
-  components: {RecuriterAndResumeBlock},
+  name: "App",
+  components: { DImg, RecuriterAndResumeBlock },
   data() {
     return {
       ld
