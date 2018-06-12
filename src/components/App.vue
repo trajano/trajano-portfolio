@@ -370,21 +370,7 @@
         <div class="container hide-on-small-only">
             <div class="section">
                 <div class="row">
-                    <div class="col s12 m12 l12">
-                        <p>
-                            <font-awesome-icon icon="exclamation-circle" />
-                            <strong>FYI TO RECRUITERS:</strong> My IT consulting rate is
-                            <strong>$175/hr</strong> within the Greater Toronto Area only. My development contracting rate is
-                            <strong>$125/hr</strong> (telecommute / work from home only). I am presently not open for long term business travel.
-                        </p>
-                        <div class="center">
-                            <p>
-                                <a title="Archimedes Trajano Resume in Word Format" class="waves-effect waves-light btn-large" href="assets/Archimedes%20Trajano.docx">[[icon "file-word-o" "left"]] Word</a>
-                                <a title="Archimedes Trajano Resume in PDF format" class="waves-effect waves-light btn-large" href="assets/Archimedes%20Trajano.pdf">[[icon "file-pdf-o" "left"]] PDF</a>
-                                <a title="Archimedes Trajano Developer Story" class="waves-effect waves-light btn-large btn-primary" href="assets/Archimedes%20Trajano%20(DS).pdf">[[icon "stack-overflow" "left"]] Developer Story</a>
-                            </p>
-                        </div>
-                    </div>
+                    <RecuriterAndResumeBlock class="col s12 m12 l12"></RecuriterAndResumeBlock>
                 </div>
             </div>
         </div>
@@ -407,10 +393,10 @@
                     <div class="col m6 l4 s12">
                         <h5 class="white-text">Contact me</h5>
                         <p>
-                            <a class="white-text waves-effect btn-flat obfuscate" href="mailto:archie...trajano...net"><font-awesome-icon icon="envelope" :fixed-width="true" /> archie...trajano...net</a>
+                            <a class="white-text waves-effect btn-flat obfuscate" href="mailto:archie...trajano...net"><font-awesome-icon :icon="['far', 'envelope']" :fixed-width="true" /> archie...trajano...net</a>
                         </p>
                         <p>
-                            <a class="white-text waves-effect btn-flat obfuscate" href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive"><font-awesome-icon icon="phone" :fixed-width="true"/> FourOneSix-EightFiveSix-SixSixFiveFive</a>
+                            <a class="white-text waves-effect btn-flat obfuscate" href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive"><font-awesome-icon icon="mobile-alt" :fixed-width="true"/> FourOneSix-EightFiveSix-SixSixFiveFive</a>
                         </p>
                         <p>
                             <button class="white-text waves-effect btn-flat chatbutton" hidden><font-awesome-icon icon="comment" :fixed-width="true" x-pull="left"/> Chat with me I'm online</button>
@@ -429,9 +415,11 @@
 </template>
 <script>
 import ld from "../ld.json";
+import RecuriterAndResumeBlock from './RecruiterAndResumeBlock'
 
 export default {
-  name: "App",
+  name: 'App',
+  components: {RecuriterAndResumeBlock},
   data() {
     return {
       ld
