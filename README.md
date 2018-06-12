@@ -4,13 +4,13 @@
 
 My portfolio site of Archimedes Trajano.
 
-This is built using webpack and [MaterializeCSS](http://materializecss.com/).
+This is built using VueJS, webpack and [MaterializeCSS](http://materializecss.com/).
 
 # Installation
 
 `npm install`
 
-This will run `webpack -p` to build the resulting site in the `dist` folder.
+This will run `webpack --mode=production` to build the resulting site in the `dist` folder.
 
 # Development mode
 
