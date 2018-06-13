@@ -20,9 +20,9 @@
                             <font-awesome-icon icon="comment" /> Chat with me, I'm online</button>
                     </div>
                     <div class="row hide-on-large-only center">
-                        <a class="white-text obfuscate btn-flat" href="mailto:archie...trajano...net">[[icon "envelope-o" "fw" "left"]] archie...trajano...net</a>
+                        <a class="white-text btn-flat" v-deobfuscate href="mailto:archie...trajano...net">[[icon "envelope-o" "fw" "left"]] archie...trajano...net</a>
                         <br class="hide-on-med-only">
-                        <a class="white-text obfuscate btn-flat" href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive">[[icon "phone" "fw" "left"]] FourOneSix-EightFiveSix-SixSixFiveFive</a>
+                        <a class="white-text btn-flat" v-deobfuscate href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive">[[icon "phone" "fw" "left"]] FourOneSix-EightFiveSix-SixSixFiveFive</a>
                     </div>
                     <div id="skip-to-content">
                         <a class="btn-floating btn-large waves-effect waves-light hoverable" href="#mainnav">
@@ -69,10 +69,10 @@
                                 </div>
                                 <d-img src="/assets/avatar.jpg" alt="Archimedes Trajano gravatar" class="circle" />
                                 <span class="white-text name">Archie</span>
-                                <a href="mailto:archie...trajano...net" class="obfuscate">
+                                <a href="mailto:archie...trajano...net" v-deobfuscate>
                                     <span class="white-text email">archie...trajano...net</span>
                                 </a>
-                                <a href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive" class="obfuscate">
+                                <a href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive" v-deobfuscate>
                                     <span class="white-text tel">FourOneSix-EightFiveSix-SixSixFiveFive</span>
                                 </a>
                             </div>
@@ -318,11 +318,11 @@
                     <div class="col m6 l4 s12">
                         <h5 class="white-text">Contact me</h5>
                         <p>
-                            <a class="white-text waves-effect btn-flat obfuscate" href="mailto:archie...trajano...net">
+                            <a class="white-text waves-effect btn-flat" v-deobfuscate href="mailto:archie...trajano...net">
                                 <font-awesome-icon :icon="['far', 'envelope']" :fixed-width="true" /> archie...trajano...net</a>
                         </p>
                         <p>
-                            <a class="white-text waves-effect btn-flat obfuscate" href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive">
+                            <a class="white-text waves-effect btn-flat" v-deobfuscate href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive">
                                 <font-awesome-icon icon="mobile-alt" :fixed-width="true" /> FourOneSix-EightFiveSix-SixSixFiveFive</a>
                         </p>
                         <p>

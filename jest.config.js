@@ -14,7 +14,10 @@ module.exports = {
       '.*\\.(vue)$': 'vue-jest'
     },
     //snapshotSerializers: ['<rootDir>/node_modules/jest-serializer-vue'],
-    //setupFiles: ['<rootDir>/test/unit/setup'],
+    setupFiles: [
+      '<rootDir>/icons',
+      '<rootDir>/directives'
+    ],
     //coverageDirectory: '<rootDir>/test/unit/coverage',
     coverageDirectory: '<rootDir>/../coverage',
     collectCoverageFrom: [

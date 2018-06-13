@@ -3,6 +3,7 @@ import './font-faces.scss'
 import './app.scss'
 import 'materialize-css'
 import './icons'
+import './directives'
 import App from './components/App'
 
 new Vue({
@@ -21,20 +22,6 @@ $(window).resize(() => {
     })
 })
 
-function deobfuscate(e) {
-    return e.replace("...", "@")
-        .replace(/\.\.\./g, ".")
-        .replace(/One/g, "1")
-        .replace(/Two/g, "2")
-        .replace(/Three/g, "3")
-        .replace(/Four/g, "4")
-        .replace(/Five/g, "5")
-        .replace(/Six/g, "6")
-        .replace(/Seven/g, "7")
-        .replace(/Eight/g, "8")
-        .replace(/Nine/g, "9")
-        .replace(/Zero/g, "0")
-}
 $(function () {
     //Waves.displayEffect({ duration: 200 })
     $('#mainnav-nav').pushpin({
@@ -54,14 +41,6 @@ $(function () {
         event.preventDefault()
         window.location.href = $(this).data("href")
     })
-
-    if (!window.__PRERENDER_INJECTED) {
-        /* Deobfuscate mailto and tel links */
-        $("a.obfuscate").each(function () {
-            $(this).html(deobfuscate($(this).html()))
-            $(this).attr("href", deobfuscate($(this).attr("href")))
-        })
-    }
 
     // Media.net ads
     window._mNHandle = {
