@@ -177,7 +177,7 @@
                 </div>
             </div>
             <div class="parallax">
-                <img class="darken" src="https://trajano.net/wp-content/uploads/2016/12/Archimedes-fossil.jpg" alt="Archimedes fossil">
+                <d-img class="darken" src="https://trajano.net/wp-content/uploads/2016/12/Archimedes-fossil.jpg" alt="Archimedes fossil" />
             </div>
         </div>
         <div class="container">
@@ -272,7 +272,7 @@
                 </div>
             </div>
             <div class="parallax">
-                <img class="darken" src="https://trajano.net/wp-content/uploads/2016/12/hearthstone.jpg" alt="Hearthstone">
+                <d-img class="darken" src="https://trajano.net/wp-content/uploads/2016/12/hearthstone.jpg" alt="Hearthstone" />
             </div>
         </div>
         <div class="container hide-on-small-only">
