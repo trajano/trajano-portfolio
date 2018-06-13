@@ -19,11 +19,11 @@
 </template>
 <script>
 export default {
-  name: "RecruiterAndResumeBlock",
+  name: 'RecruiterAndResumeBlock',
   data() {
     return {
       rate: 125
-    };
+    }
   }
-};
+}
 </script>

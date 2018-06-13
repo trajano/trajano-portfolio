@@ -7,7 +7,9 @@
     "prepare": "webpack --mode=production",
     "start": "webpack-dev-server --mode=development --hot",
     "unit": "jest --coverage --watch",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "lint": "eslint --ext .js,.vue src",
+    "fix": "eslint --ext .js,.vue --fix src"
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,7 @@
   "homepage": "https://github.com/trajano/trajano-portfolio#readme",
   "devDependencies": {
     "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
     "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-loader": "^7.1.4",
     "babel-plugin-syntax-jsx": "^6.18.0",
@@ -31,6 +34,14 @@
     "babel-preset-stage-2": "^6.24.1",
     "copy-webpack-plugin": "^4.5.1",
     "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-html": "^4.0.3",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "eslint-plugin-vue": "^4.5.0",
     "file-loader": "^1.1.11",
     "handlebars": "^4.0.11",
     "handlebars-loader": "^1.7.0",

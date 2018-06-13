@@ -5,7 +5,7 @@ import '@/icons'
 describe('PortfolioFooter.vue', () => {
   it('should not crash', () => {
     const Constructor = Vue.extend(PortfolioFooter)
-    const vm = new Constructor({
+    new Constructor({
       propsData: {}
     }).$mount()
   })

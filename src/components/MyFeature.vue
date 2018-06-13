@@ -16,7 +16,7 @@
  * My Feature.
  */
 export default {
-  name: "MyFeature",
+  name: 'MyFeature',
   props: {
     heading: {
       type: String,
@@ -29,7 +29,7 @@ export default {
   },
   data() {
     return {
-    };
+    }
   }
-};
+}
 </script>

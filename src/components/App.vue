@@ -270,12 +270,9 @@
         <div class="container hide-on-med-and-up">
             <div class="section">
                 <div class="collection">
-                    <a class="collection-item waves-effect waves-light" href="https://github.com/trajano/">[[icon "github" "fw"]]GitHub</a>
-                    <a class="collection-item waves-effect waves-light" href="https://linkedin.com/in/trajano">[[icon "linkedin" "fw"]]LinkedIn</a>
-                    <a class="collection-item waves-effect waves-light" href="https://trajano.yelp.com">[[icon "yelp" "fw"]]Yelp</a>
-                    <a class="collection-item waves-effect waves-light" href="http://stackoverflow.com/story/trajano">[[icon "stack-overflow" "fw"]]Stack Overflow</a>
-                    <a class="collection-item waves-effect waves-light" href="https://www.facebook.com/archimedes.trajano">[[icon "facebook" "fw"]]Facebook</a>
-                    <a class="collection-item waves-effect waves-light" href="https://twitter.com/trajano">[[icon "twitter" "fw"]]@trajano</a>
+                    <a class="collection-item waves-effect waves-light" href="https://github.com/trajano/"><font-awesome-icon :icon="['fab', 'github']" full-width="true" />GitHub</a>
+                    <a class="collection-item waves-effect waves-light" href="https://linkedin.com/in/trajano"><font-awesome-icon :icon="['fab', 'linkedin']" full-width="true" />LinkedIn</a>
+                      <a class="collection-item waves-effect waves-light" href="http://stackoverflow.com/story/trajano"><font-awesome-icon :icon="['fab', 'stack-overflow']" full-width="true" />Stack Overflow</a>
                 </div>
             </div>
         </div>
@@ -311,72 +308,72 @@
     </div>
 </template>
 <script>
-import ld from "../ld.json";
-import RecuriterAndResumeBlock from "./RecruiterAndResumeBlock";
-import MyFeature from "./MyFeature";
-import DImg from "./DImg";
-import PortfolioFooter from "./PortfolioFooter";
-import $script from "scriptjs";
-import $ from "jquery";
+import ld from '../ld.json'
+import RecuriterAndResumeBlock from './RecruiterAndResumeBlock'
+import MyFeature from './MyFeature'
+import DImg from './DImg'
+import PortfolioFooter from './PortfolioFooter'
+import $script from 'scriptjs'
+import $ from 'jquery'
 
 export default {
-  name: "App",
+  name: 'App',
   components: { DImg, MyFeature, PortfolioFooter, RecuriterAndResumeBlock },
   data() {
-    const currentYear = new Date().getFullYear();
+    const currentYear = new Date().getFullYear()
     return {
       ld,
       currentYear
-    };
+    }
   },
   mounted() {
     if (global.__PRERENDER_INJECTED) {
-      return;
+      return
     }
 
-    $("#mainnav-nav").pushpin({
-      top: $("#mainnav").offset().top
-    });
+    $('#mainnav-nav').pushpin({
+      top: $('#mainnav').offset().top
+    })
 
-    $(".button-collapse").sideNav({
-      edge: "right",
+    $('.button-collapse').sideNav({
+      edge: 'right',
       closeOnClick: true
-    });
-    $(".scrollspy").scrollSpy({
+    })
+    $('.scrollspy').scrollSpy({
       scrollOffset: 0
-    });
-    $(".parallax").parallax();
+    })
+    $('.parallax').parallax()
 
-    $(".card[data-href]").bind("click", function(event) {
-      event.preventDefault();
-      window.location.href = $(this).data("href");
-    });
+    $('.card[data-href]').bind('click', function(event) {
+      event.preventDefault()
+      window.location.href = $(this).data('href')
+    })
 
     // Media.net ads
     global._mNHandle = {
       queue: [
-        () => window._mNDetails.loadTag("152146877", "728x20", "152146877")
+        () => window._mNDetails.loadTag('152146877', '728x20', '152146877')
       ]
-    };
+    }
 
-    $script("//contextual.media.net/dmedianet.js?cid=8CU21S9US&https=1");
+    $script('//contextual.media.net/dmedianet.js?cid=8CU21S9US&https=1')
 
     // Smartsupp Live Chat script
-    global._smartsupp = global._smartsupp || {};
-    global._smartsupp.key = "1164536eedc7355cdbbac4c037e82b31531fcd0f";
+    global._smartsupp = global._smartsupp || {}
+    global._smartsupp.key = '1164536eedc7355cdbbac4c037e82b31531fcd0f'
 
-    $script("//www.smartsuppchat.com/loader.js", () => {
-      global.smartsupp("on", "status", status => {
-        if (status == "online") {
-          $(".chatbutton").show();
+    $script('//www.smartsuppchat.com/loader.js', () => {
+      global.smartsupp('on', 'status', status => {
+        if (status === 'online') {
+          $('.chatbutton').show()
         } else {
-          $(".chatbutton").hide();
+          $('.chatbutton').hide()
         }
-      });
-      $(".chatbutton").on("click", () => {
-        window.smartsupp("chat:open");
-      });
-    });
+      })
+      $('.chatbutton').on('click', () => {
+        window.smartsupp('chat:open')
+      })
+    })
   }
-};
+}
 </script>

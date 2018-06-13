@@ -34,16 +34,16 @@
 </template>
 <script>
 export default {
-  name: "PortfolioFooter",
+  name: 'PortfolioFooter',
   data() {
-    const currentYear = new Date().getFullYear();
-    const yearsWorked = currentYear - 1996;
+    const currentYear = new Date().getFullYear()
+    const yearsWorked = currentYear - 1996
     return {
       currentYear,
       yearsWorked
-    };
+    }
   }
-};
+}
 </script>
 <style lang="scss">
 footer.page-footer {
