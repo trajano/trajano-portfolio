@@ -147,7 +147,6 @@ module.exports = (env, argv) => {
   const devServer = {
     inline: true
   }
-  console.log(path.resolve(__dirname, './src'))
   return {
     optimization,
     module,
