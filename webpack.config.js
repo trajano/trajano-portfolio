@@ -27,37 +27,37 @@ module.exports = (env, argv) => {
   }
   const module = {
     rules: [{
-        test: /app\.scss$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader'
-        ]
-      },
-      {
-        test: /\.html$/,
-        loader: 'handlebars-loader'
-      },
-      {
-        test: /font-faces\.scss$/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader']
-      },
-      {
-        test: /\.vue$/,
-        loader: 'vue-loader',
-        options: {
-          loaders: {}
-          // other vue-loader options go here
-        }
-      },
-      {
-        test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['es2015']
-        }
+      test: /app\.scss$/,
+      use: [
+        'style-loader',
+        'css-loader',
+        'sass-loader'
+      ]
+    },
+    {
+      test: /\.html$/,
+      loader: 'handlebars-loader'
+    },
+    {
+      test: /font-faces\.scss$/,
+      loaders: ['style-loader', 'css-loader', 'sass-loader']
+    },
+    {
+      test: /\.vue$/,
+      loader: 'vue-loader',
+      options: {
+        loaders: {}
+        // other vue-loader options go here
       }
+    },
+    {
+      test: /\.js$/,
+      exclude: /(node_modules|bower_components)/,
+      loader: 'babel-loader',
+      query: {
+        presets: ['es2015']
+      }
+    }
     ]
   }
   const entry = ['./src/app']
@@ -139,13 +139,15 @@ module.exports = (env, argv) => {
   const resolve = {
     alias: {
       'handlebars': 'handlebars/runtime.js',
-      'vue$': 'vue/dist/vue.esm.js'
+      'vue$': 'vue/dist/vue.esm.js',
+      '@': path.resolve(__dirname, './src')
     },
     extensions: ['*', '.js', '.vue', '.json']
   }
   const devServer = {
     inline: true
   }
+  console.log(path.resolve(__dirname, './src'))
   return {
     optimization,
     module,

@@ -3,7 +3,7 @@
 // we are also using it with karma-webpack
 //   https://github.com/webpack/karma-webpack
 
-module.exports = function karmaConfig (config) {
+module.exports = config => {
   config.set({
     // to run in additional browsers:
     // 1. install corresponding karma launcher
@@ -12,15 +12,18 @@ module.exports = function karmaConfig (config) {
     browsers: ['PhantomJS'],
     frameworks: ['mocha', 'sinon-chai', 'phantomjs-shim'],
     reporters: ['spec', 'coverage'],
-    files: ['./index.js'],
+    files: ['./test/unit/index.js'],
     preprocessors: {
-      './index.js': ['webpack', 'sourcemap']
+      './test/unit/index.js': ['webpack', 'sourcemap']
     },
+    webpack: Object.assign({}, require('./webpack.config'), {
+      mode: 'development'
+    }),
     webpackMiddleware: {
       noInfo: true
     },
     coverageReporter: {
-      dir: './coverage',
+      dir: './test/unit/coverage',
       reporters: [
         { type: 'lcov', subdir: '.' },
         { type: 'text-summary' }

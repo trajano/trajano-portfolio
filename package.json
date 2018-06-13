@@ -6,7 +6,8 @@
   "scripts": {
     "prepare": "webpack --mode=production",
     "start": "webpack-dev-server --mode=development --hot",
-    "test": "karma start test/unit/karma.conf.js --single-run"
+    "unit": "jest --coverage",
+    "test": "karma start --single-run"
   },
   "repository": {
     "type": "git",
@@ -45,6 +46,7 @@
     "jest-serializer": "^23.0.1",
     "jest-serializer-vue": "^2.0.2",
     "karma": "^2.0.2",
+    "karma-babel-preprocessor": "^7.0.0",
     "karma-coverage": "^1.1.2",
     "karma-mocha": "^1.3.0",
     "karma-phantomjs-launcher": "^1.0.4",
@@ -81,6 +83,7 @@
     "@fortawesome/vue-fontawesome": "0.0.23",
     "babel-polyfill": "^6.26.0",
     "jquery": "^3.3.1",
+    "karma-es6-shim": "^1.0.0",
     "materialize-css": "^0.100.2"
   }
 }
