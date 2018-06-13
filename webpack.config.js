@@ -65,12 +65,17 @@ module.exports = (env, argv) => {
       },
       {
         test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
           presets: ['es2015']
         }
-      }
+      },
+      {
+        test: /\.(js|vue)$/,
+        exclude: /node_modules/,
+        loader: 'eslint-loader',
+      },
     ]
   }
   const entry = ['./src/app']
