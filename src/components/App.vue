@@ -333,7 +333,7 @@
                 </div>
             </div>
             <div class="footer-copyright">
-                <div>© 2016 Trajano.
+                <div>© 2016-{{currentYear}} Trajano.
                     <a class="yellow-text" href="https://trajano.net/privacy-policy">Privacy policy</a>
                     <div id="152146877" class="right"></div>
                 </div>
@@ -351,9 +351,22 @@ export default {
   name: "App",
   components: { DImg, MyFeature, RecuriterAndResumeBlock },
   data() {
+    const currentYear = (new Date()).getFullYear()
     return {
-      ld
+      ld,
+      currentYear
     };
   }
 };
 </script>
+<style lang="scss">
+footer.page-footer {
+    .footer-copyright {
+        background-color: color("green", "darken-4");
+        padding: 0 1.6rem;
+    }
+    .footer-copyright > div {
+        width: 100%;
+    }
+}
+</style>

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import './font-faces.scss'
 import './app.scss'
-import 'materialize-css/dist/js/materialize'
+import 'materialize-css'
 import './icons'
 import App from './components/App'
 
