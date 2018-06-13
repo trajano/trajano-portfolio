@@ -6,8 +6,8 @@
   "scripts": {
     "prepare": "webpack --mode=production",
     "start": "webpack-dev-server --mode=development --hot",
-    "unit": "jest --coverage",
-    "test": "karma start --single-run"
+    "unit": "jest --coverage --watch",
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
