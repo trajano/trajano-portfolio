@@ -2,6 +2,6 @@ version: '3.4'
 services:
   portfolio:
     build: .
-    image: trajano.net/portfolio
+    image: trajano/portfolio
     ports:
     - "4000:80"
