@@ -347,6 +347,7 @@ import RecuriterAndResumeBlock from "./RecruiterAndResumeBlock";
 import MyFeature from "./MyFeature";
 import DImg from "./DImg";
 import $script from "scriptjs";
+import $ from "jquery";
 
 export default {
   name: "App",
