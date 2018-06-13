@@ -346,27 +346,46 @@ import ld from "../ld.json";
 import RecuriterAndResumeBlock from "./RecruiterAndResumeBlock";
 import MyFeature from "./MyFeature";
 import DImg from "./DImg";
+import $script from "scriptjs";
 
 export default {
   name: "App",
   components: { DImg, MyFeature, RecuriterAndResumeBlock },
   data() {
-    const currentYear = (new Date()).getFullYear()
+    const currentYear = new Date().getFullYear();
     return {
       ld,
       currentYear
     };
+  },
+  mounted() {
+    // Smartsupp Live Chat script
+    global._smartsupp = global._smartsupp || {};
+    global._smartsupp.key = "1164536eedc7355cdbbac4c037e82b31531fcd0f";
+
+    $script("//www.smartsuppchat.com/loader.js", () => {
+      global.smartsupp("on", "status", status => {
+        if (status == "online") {
+          $(".chatbutton").show();
+        } else {
+          $(".chatbutton").hide();
+        }
+      });
+      $(".chatbutton").on("click", () => {
+        window.smartsupp("chat:open");
+      });
+    });
   }
 };
 </script>
 <style lang="scss">
 footer.page-footer {
-    .footer-copyright {
-        background-color: color("green", "darken-4");
-        padding: 0 1.6rem;
-    }
-    .footer-copyright > div {
-        width: 100%;
-    }
+  .footer-copyright {
+    background-color: color("green", "darken-4");
+    padding: 0 1.6rem;
+  }
+  .footer-copyright > div {
+    width: 100%;
+  }
 }
 </style>

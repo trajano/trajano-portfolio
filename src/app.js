@@ -53,25 +53,4 @@ $(function () {
         dataType: "script"
     })
 
-    // Smartsupp Live Chat script
-    window._smartsupp = window._smartsupp || {};
-    window._smartsupp.key = '1164536eedc7355cdbbac4c037e82b31531fcd0f'
-
-    $.ajax({
-        url: "//www.smartsuppchat.com/loader.js",
-        cache: true,
-        dataType: "script",
-        success: function () {
-            window.smartsupp('on', 'status', status => {
-                if (status == 'online') {
-                    $('.chatbutton').show()
-                } else {
-                    $('.chatbutton').hide()
-                }
-            });
-            $(".chatbutton").on("click", () => {
-                window.smartsupp('chat:open')
-            })
-        }
-    })
 })
