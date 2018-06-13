@@ -362,6 +362,34 @@ export default {
     if (global.__PRERENDER_INJECTED) {
       return;
     }
+
+    $("#mainnav-nav").pushpin({
+      top: $("#mainnav").offset().top
+    });
+
+    $(".button-collapse").sideNav({
+      edge: "right",
+      closeOnClick: true
+    });
+    $(".scrollspy").scrollSpy({
+      scrollOffset: 0
+    });
+    $(".parallax").parallax();
+
+    $(".card[data-href]").bind("click", function(event) {
+      event.preventDefault();
+      window.location.href = $(this).data("href");
+    });
+
+    // Media.net ads
+    global._mNHandle = {
+      queue: [
+        () => window._mNDetails.loadTag("152146877", "728x20", "152146877")
+      ]
+    };
+
+    $script("//contextual.media.net/dmedianet.js?cid=8CU21S9US&https=1");
+
     // Smartsupp Live Chat script
     global._smartsupp = global._smartsupp || {};
     global._smartsupp.key = "1164536eedc7355cdbbac4c037e82b31531fcd0f";
