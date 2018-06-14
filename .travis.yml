@@ -1,4 +1,6 @@
-sudo: false
+sudo: required
+services:
+- docker
 language: node_js
 node_js: node
 cache:
@@ -21,11 +23,17 @@ env:
 script:
 - export JAVA_HOME=/usr/lib/jvm/java-8-oracle
 - sonar-scanner
+- docker-compose build
 deploy:
-  provider: pages
+- provider: pages
   local_dir: dist
   skip_cleanup: true
   github_token: "${SONAR_GITHUB_TOKEN}"
+  on:
+    branch: master
+    node_js: node
+- provider: script
+  script: docker-compose push
   on:
     branch: master
     node_js: node
