@@ -16,7 +16,7 @@
                     <div class="row hide-on-med-and-down center">
                         <a class="call-to-action" href="#resume">
                             <font-awesome-icon icon="download" /> View My Resume and Contact Info</a>
-                        <button class="call-to-action chatbutton" hidden>
+                        <button class="call-to-action" :class="{ hide: !smartSuppOnline }" v-on:click="openSmartSupp">
                             <font-awesome-icon icon="comment" /> Chat with me, I'm online</button>
                     </div>
                     <div class="row hide-on-large-only center">
@@ -305,6 +305,7 @@
             </div>
         </div>
         <portfolio-footer />
+        <smart-supp client-key="1164536eedc7355cdbbac4c037e82b31531fcd0f"/>
     </div>
 </template>
 <script>
@@ -313,17 +314,29 @@ import RecuriterAndResumeBlock from './RecruiterAndResumeBlock'
 import MyFeature from './MyFeature'
 import DImg from './DImg'
 import PortfolioFooter from './PortfolioFooter'
+import SmartSupp from './SmartSupp'
 import $script from 'scriptjs'
 import $ from 'jquery'
+import '../store'
+import {mapState} from 'vuex'
 
 export default {
   name: 'App',
-  components: { DImg, MyFeature, PortfolioFooter, RecuriterAndResumeBlock },
+  components: { DImg, MyFeature, PortfolioFooter, RecuriterAndResumeBlock, SmartSupp },
+
   data() {
     const currentYear = new Date().getFullYear()
     return {
       ld,
       currentYear
+    }
+  },
+  computed: {
+    ...mapState(['smartSuppOnline'])
+  },
+  methods: {
+    openSmartSupp() {
+      global.smartsupp('chat:open')
     }
   },
   mounted() {
@@ -357,23 +370,6 @@ export default {
     }
 
     $script('//contextual.media.net/dmedianet.js?cid=8CU21S9US&https=1')
-
-    // Smartsupp Live Chat script
-    global._smartsupp = global._smartsupp || {}
-    global._smartsupp.key = '1164536eedc7355cdbbac4c037e82b31531fcd0f'
-
-    $script('//www.smartsuppchat.com/loader.js', () => {
-      global.smartsupp('on', 'status', status => {
-        if (status === 'online') {
-          $('.chatbutton').show()
-        } else {
-          $('.chatbutton').hide()
-        }
-      })
-      $('.chatbutton').on('click', () => {
-        window.smartsupp('chat:open')
-      })
-    })
   }
 }
 </script>
