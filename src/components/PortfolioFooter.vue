@@ -46,13 +46,5 @@ export default {
 }
 </script>
 <style lang="scss">
-footer.page-footer {
-  .footer-copyright {
-    background-color: color("green", "darken-4");
-    padding: 0 1.6rem;
-  }
-  .footer-copyright > div {
-    width: 100%;
-  }
-}
+
 </style>
