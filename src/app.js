@@ -6,6 +6,9 @@ import './icons'
 import './directives'
 import App from './components/App'
 import $ from 'jquery'
+import Vuex from 'vuex'
+
+Vue.use(Vuex)
 
 /* eslint-disable no-new */
 new Vue({
