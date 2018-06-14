@@ -305,7 +305,6 @@
             </div>
         </div>
         <portfolio-footer />
-        <smart-supp client-key="1164536eedc7355cdbbac4c037e82b31531fcd0f"/>
     </div>
 </template>
 <script>
@@ -314,16 +313,15 @@ import RecuriterAndResumeBlock from './RecruiterAndResumeBlock'
 import MyFeature from './MyFeature'
 import DImg from './DImg'
 import PortfolioFooter from './PortfolioFooter'
-import SmartSupp from './SmartSupp'
 import $script from 'scriptjs'
 import $ from 'jquery'
 import '../store'
 import {mapState} from 'vuex'
+import smartSupp from '../smartSupp'
 
 export default {
   name: 'App',
-  components: { DImg, MyFeature, PortfolioFooter, RecuriterAndResumeBlock, SmartSupp },
-
+  components: { DImg, MyFeature, PortfolioFooter, RecuriterAndResumeBlock },
   data() {
     const currentYear = new Date().getFullYear()
     return {
@@ -370,6 +368,7 @@ export default {
     }
 
     $script('//contextual.media.net/dmedianet.js?cid=8CU21S9US&https=1')
+    smartSupp('1164536eedc7355cdbbac4c037e82b31531fcd0f')
   }
 }
 </script>
