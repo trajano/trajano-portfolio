@@ -33,7 +33,7 @@ deploy:
     branch: master
     node_js: node
 - provider: script
-  script: docker-compose push
+  script: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD && docker-compose push
   on:
     branch: master
     node_js: node
