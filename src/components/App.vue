@@ -20,9 +20,9 @@
                             <font-awesome-icon icon="comment" /> Chat with me, I'm online</button>
                     </div>
                     <div class="row hide-on-large-only center">
-                        <a class="white-text btn-flat" v-deobfuscate href="mailto:archie...trajano...net">[[icon "envelope-o" "fw" "left"]] archie...trajano...net</a>
+                        <a class="white-text btn-flat" v-deobfuscate href="mailto:archie...trajano...net"><font-awesome-icon :icon="['far', 'envelope']" fixed-width /> archie...trajano...net</a>
                         <br class="hide-on-med-only">
-                        <a class="white-text btn-flat" v-deobfuscate href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive">[[icon "phone" "fw" "left"]] FourOneSix-EightFiveSix-SixSixFiveFive</a>
+                        <a class="white-text btn-flat" v-deobfuscate href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive"><font-awesome-icon icon="mobile-alt" fixed-width /> FourOneSix-EightFiveSix-SixSixFiveFive</a>
                     </div>
                     <div id="skip-to-content">
                         <a class="btn-floating btn-large waves-effect waves-light hoverable" href="#mainnav">
@@ -299,8 +299,8 @@
         <div class="container hide-on-med-and-up">
             <div class="section">
                 <div class="collection">
-                    <a title="Archimedes Trajano Resume in Word Format" class="collection-item waves-effect waves-light " href="assets/Archimedes%20Trajano.docx">[[icon "file-word-o" "fw"]] Word</a>
-                    <a title="Archimedes Trajano Resume in PDF format" class="collection-item waves-effect waves-light " href="assets/Archimedes%20Trajano.pdf">[[icon "file-pdf-o" "fw"]] PDF</a>
+                    <a title="Archimedes Trajano Resume in Word Format" class="collection-item waves-effect waves-light " href="assets/Archimedes%20Trajano.docx"><font-awesome-icon :icon="['far', 'file-word']" fixed-width /> Word</a>
+                    <a title="Archimedes Trajano Resume in PDF format" class="collection-item waves-effect waves-light " href="assets/Archimedes%20Trajano.pdf"><font-awesome-icon :icon="['far', 'file-pdf']" fixed-width /> PDF</a>
                 </div>
             </div>
         </div>
