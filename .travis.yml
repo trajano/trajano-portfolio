@@ -21,8 +21,8 @@ env:
   global:
   - secure: oT7xfu5SSZ7Nxcg1Lcp0zuay9IKZKbOzdu1Ug5/cljsDuWiGyBrvIEKjyA+j5F0PrT1oT9jXARYEXh55BF8RJFKhDdHz+uII+dhCuTo+8QVYL2GzkqL8yMEDhpoqQGyj+PSzXxkxm4/Jg5eyEPGVYsi2puOhOR/hzwaoagxwxZs9Fseqxa7LV4A9W9TEFP2/o+/oE2o+g8sgk1bNn4/3Rcqc9FTCP63aXzNfO7aV8gjxlWnO8lExhNr6XApDKrQAZ4fGBA68m+uWg+VSvQdLcZ6hlhSVn96ZLLNNVst38e4ehusqS2KlqUL7l+in1u1dNTgyhejpzaRCLTPZxQMMi9qwFr0uUl4jV4IFn5klQ7tkXnO9yTeE54IQIncdDxGoYuPAX3oTzVHiYHsQkP9jQupwAMPF7W6H7nBjspDVCakh2yR/+felX3ex/ls7UCR0c749swb7+/LEXiz3hu0r0vOyIv79JwvD6PHZEfOgVW6wYefndZEXtXEmd7K6UrO7os+lOPDjgw27HCdHLdnDmDSy3lHXLWm0SWipZ4KDlfnyDkxmRjRa0MTmfoCARiCNMbOtZZSCNFzRSXALcQygpticO7g+sPhkVwccVpZuujr+xAmQE9vYadGrd7Xh32fd7lLG6mPCQp62AqJdoKhUnsFMvBL2o2c2/bZqUqhem7I=
 script:
-- export JAVA_HOME=/usr/lib/jvm/java-8-oracle
-- sonar-scanner
+- npm test
+- JAVA_HOME=/usr/lib/jvm/java-8-oracle sonar-scanner
 - docker-compose build
 deploy:
 - provider: pages
