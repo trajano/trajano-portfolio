@@ -1,14 +1,14 @@
 import ImageminPlugin from 'imagemin-webpack-plugin'
-var CopyWebpackPlugin = require('copy-webpack-plugin')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const PrerenderSPAPlugin = require('prerender-spa-plugin')
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
-const WebappWebpackPlugin = require('webapp-webpack-plugin')
-var HtmlWebpackPlugin = require('html-webpack-plugin')
-var HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin')
-var path = require('path')
+import CopyWebpackPlugin from 'copy-webpack-plugin'
+import UglifyJsPlugin from 'uglifyjs-webpack-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin'
+import PrerenderSPAPlugin from 'prerender-spa-plugin'
+import VueLoaderPlugin from 'vue-loader/lib/plugin'
+import WebappWebpackPlugin from 'webapp-webpack-plugin'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import HtmlWebpackInlineSourcePlugin from 'html-webpack-inline-source-plugin'
+import path from 'path'
 
 const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
 
@@ -129,7 +129,16 @@ module.exports = (env, argv) => {
       from: 'assets',
       to: 'assets'
     }]),
-    new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }),
+    new ImageminPlugin(
+      { 
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        options: {
+          jpegtran: {
+            progressive: true
+          }
+        }
+      }
+    ),
     new HtmlWebpackPlugin({
       data: require('./src/ld.json'),
       template: './src/app.html',
