@@ -134,7 +134,8 @@ module.exports = (env, argv) => {
         test: /\.(jpe?g|png|gif|svg)$/i,
         options: {
           jpegtran: {
-            progressive: true
+            arithmetic: true,
+            progressive: true,
           }
         }
       }
