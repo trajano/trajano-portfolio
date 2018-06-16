@@ -4,6 +4,7 @@ import '@/icons'
 
 describe('PortfolioFooter.vue', () => {
   it('should not crash', () => {
+    // const mockStore = jest.fn()
     const Constructor = Vue.extend(PortfolioFooter)
     new Constructor({
       propsData: {}

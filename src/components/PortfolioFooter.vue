@@ -2,11 +2,7 @@
     <footer class="page-footer scrollspy" id="contact">
         <div class="container">
             <div class="row">
-                <div class="col m6 l8 hide-on-small-only">
-                    <h5 class="white-text">Bio</h5>
-                    <p class="grey-text text-lighten-4">Archie has been working professionally over {{yearsWorked}} years. He enjoys programming and playing Heroes of the Storm. About the only "normal" thing he likes doing is eating food.
-                    </p>
-                </div>
+                <bio-or-blog class="col m6 l8 hide-on-small-only" />
                 <div class="col m6 l4 s12">
                     <h5 class="white-text">Contact me</h5>
                     <p>
@@ -33,9 +29,13 @@
     </footer>
 </template>
 <script>
+import BioOrBlog from './BioOrBlog'
 import {mapState} from 'vuex'
 export default {
   name: 'PortfolioFooter',
+  components: {
+    BioOrBlog
+  },
   computed: {
     ...mapState(['smartSuppOnline'])
   },
