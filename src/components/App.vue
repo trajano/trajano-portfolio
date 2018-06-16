@@ -255,7 +255,7 @@
                     <div class="col m6 l4">
                         <div class="card small hoverable" data-href="http://stackoverflow.com/story/trajano">
                             <div class="card-image waves-effect waves-block waves-light">
-                                <d-img src="https://trajano.net/wp-content/uploads/2016/12/My-old-drive-array-300x300.jpg" alt="My old drive array" class="darken" />
+                                <d-img :src="require('../assets/pc-build-2018.jpg?size=800')" alt="My old drive array" class="darken" />
                                 <span class="card-title">
                                     <font-awesome-icon :icon="['fab', 'stack-overflow']" size="lg" /> Stack Overflow</span>
                             </div>

@@ -1,3 +1,4 @@
+import ImageminPlugin from 'imagemin-webpack-plugin'
 var CopyWebpackPlugin = require('copy-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -75,6 +76,20 @@ module.exports = (env, argv) => {
         test: /\.(js|vue)$/,
         exclude: /node_modules/,
         loader: 'eslint-loader',
+      },   
+      {
+        test: /\.(jpe?g|png)$/i,
+        loader: 'responsive-loader',
+        options: {
+          name: '[path][name]-[hash]-[width].[ext]',
+        }
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name]-[hash].[ext]',
+        }
       },
     ]
   }
@@ -89,7 +104,7 @@ module.exports = (env, argv) => {
   }
   const plugins = [
     new WebappWebpackPlugin({
-      logo: './src/logo-2048x2048.png',
+      logo: './src/assets/logo-2048x2048.png',
       favicons: {
         appName: 'Trajano',
         appDescription: 'Archimedes Trajano',
@@ -114,6 +129,7 @@ module.exports = (env, argv) => {
       from: 'assets',
       to: 'assets'
     }]),
+    new ImageminPlugin({ test: /\.(jpe?g|png|gif|svg)$/i }),
     new HtmlWebpackPlugin({
       data: require('./src/ld.json'),
       template: './src/app.html',
