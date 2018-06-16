@@ -154,7 +154,7 @@
                     <div class="col s12 m6">
                         <div class="card small sticky-action">
                             <div class="card-image waves-effect waves-block waves-light">
-                                <d-img src="assets/phoenix-hiro.jpg" alt="Phoenix and Hiro" class="activator" />
+                                <d-img :src="require('../assets/phoenix-cap.jpg?size=800')" alt="Phoenix and Hiro" class="activator" />
                                 <span class="activator card-title">My portfolio page</span>
                             </div>
                             <div class="card-content">
