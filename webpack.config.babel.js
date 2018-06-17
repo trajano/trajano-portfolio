@@ -81,14 +81,16 @@ module.exports = (env, argv) => {
         test: /\.(jpe?g|png)$/i,
         loader: 'responsive-loader',
         options: {
-          name: '[path][name]-[hash]-[width].[ext]',
+          name: '[path][name]-[hash:6]-[width].[ext]',
+          context: './src/'
         }
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'file-loader',
         options: {
-          name: '[path][name]-[hash].[ext]',
+          name: '[path][name]-[hash:6].[ext]',
+          context: './src/'
         }
       },
     ]
@@ -96,7 +98,7 @@ module.exports = (env, argv) => {
   const entry = ['./src/app']
   const output = {
     path: path.resolve(__dirname, './dist'),
-    filename: 'bundle.[hash].js'
+    filename: 'bundle.[hash:6].js'
   }
   const externals = {
     'node-waves': 'Waves',
