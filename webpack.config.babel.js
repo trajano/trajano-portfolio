@@ -132,11 +132,9 @@ module.exports = (env, argv) => {
     new ImageminPlugin(
       { 
         test: /\.(jpe?g|png|gif|svg)$/i,
-        options: {
-          jpegtran: {
-            arithmetic: true,
-            progressive: true,
-          }
+        jpegtran: {
+          arithmetic: true,
+          progressive: true,
         }
       }
     ),
