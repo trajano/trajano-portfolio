@@ -65,9 +65,9 @@
                         <li>
                             <div class="userView z-depth-1">
                                 <div class="background">
-                                    <d-img src="/assets/snow-in-scarborough.jpg" alt="Snow in Scarborough" class="darken" />
+                                    <d-img :src="require('../assets/snow-in-scarborough.jpg?size=500')" alt="Snow in Scarborough" class="darken" />
                                 </div>
-                                <d-img src="/assets/avatar.jpg" alt="Archimedes Trajano gravatar" class="circle" />
+                                <d-img :src="require('../assets/avatar.jpg?size=250')" alt="Archimedes Trajano gravatar" class="circle" />
                                 <span class="white-text name">Archie</span>
                                 <a href="mailto:archie...trajano...net" v-deobfuscate>
                                     <span class="white-text email">archie...trajano...net</span>
