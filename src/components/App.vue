@@ -39,7 +39,7 @@
             <nav role="navigation" id="mainnav-nav">
                 <div class="nav-wrapper">
                     <a id="logo-container" href="#" class="brand-logo left">
-                        <img src="/assets/portfolio-logo.png" alt="Trajano">
+                        <img src="../assets/portfolio-logo.png" alt="Trajano">
                     </a>
                     <ul id="nav-desktop" class="right hide-on-med-and-down table-of-contents">
                         <li>
@@ -154,7 +154,7 @@
                     <div class="col s12 m6">
                         <div class="card small sticky-action">
                             <div class="card-image waves-effect waves-block waves-light">
-                                <d-img :src="require('../assets/phoenix-cap.jpg?size=800')" alt="Phoenix and Hiro" class="activator" />
+                                <d-img :src="require('../assets/phoenix-cap.jpg?size=800')" alt="Phoenix and Hiro" class="activator darken" />
                                 <span class="activator card-title">My portfolio page</span>
                             </div>
                             <div class="card-content">
@@ -286,7 +286,7 @@
                 </div>
             </div>
             <div class="parallax">
-                <d-img src="assets/phoenix-hiro.jpg" alt="Phoenix and Hiro" />
+                <d-img :src="require('../assets/phoenix-hiro.jpg')" alt="Phoenix and Hiro" />
             </div>
         </div>
         <div class="container hide-on-small-only">
