@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="parallax">
-                    <img src="/assets/hiro.jpg" alt="Hiro close-up">
+                    <img src="../assets/hiro.jpg" alt="Hiro close-up">
                 </div>
             </div>
         </div>
