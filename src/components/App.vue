@@ -370,14 +370,11 @@ export default {
 
     Promise.all(
       [new FontFaceObserver('Lato', {
-        style: 'normal',
         weight: 100
       }).load(), new FontFaceObserver('Lato', {
-        style: 'normal',
         weight: 300
       }).load(),
       new FontFaceObserver('Lato', {
-        style: 'normal',
         weight: 400
       }).load()]).then(() => {
       document.documentElement.classList.add('font-loaded')
