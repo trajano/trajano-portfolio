@@ -368,6 +368,12 @@ export default {
       ]
     }
 
+    global.dataLayer = global.dataLayer || []
+    global.dataLayer.push({
+      'gtm.start': new Date().getTime(),
+      event: 'gtm.js'
+    })
+
     Promise.all(
       [new FontFaceObserver('Lato', {
         weight: 100
@@ -379,6 +385,8 @@ export default {
       }).load()]).then(() => {
       document.documentElement.classList.add('font-loaded')
     })
+
+    $script('//www.googletagmanager.com/gtm.js?id=GTM-KB96BNB')
     $script('//contextual.media.net/dmedianet.js?cid=8CU21S9US&https=1')
     smartSupp('1164536eedc7355cdbbac4c037e82b31531fcd0f')
   }
