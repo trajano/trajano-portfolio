@@ -318,6 +318,7 @@ import $ from 'jquery'
 import '../store'
 import {mapState} from 'vuex'
 import smartSupp from '../smartSupp'
+import FontFaceObserver from 'fontfaceobserver'
 
 export default {
   name: 'App',
@@ -367,6 +368,20 @@ export default {
       ]
     }
 
+    Promise.all(
+      [new FontFaceObserver('Lato', {
+        style: 'normal',
+        weight: 100
+      }).load(), new FontFaceObserver('Lato', {
+        style: 'normal',
+        weight: 300
+      }).load(),
+      new FontFaceObserver('Lato', {
+        style: 'normal',
+        weight: 400
+      }).load()]).then(() => {
+      document.documentElement.classList.add('font-loaded')
+    })
     $script('//contextual.media.net/dmedianet.js?cid=8CU21S9US&https=1')
     smartSupp('1164536eedc7355cdbbac4c037e82b31531fcd0f')
   }

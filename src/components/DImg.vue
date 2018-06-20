@@ -14,7 +14,7 @@ export default {
   name: 'DImg',
   props: {
     src: {
-      type: String,
+      type: [String, Object],
       required: true
     }
   },

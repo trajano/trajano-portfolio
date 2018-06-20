@@ -79,6 +79,7 @@
     "@fortawesome/vue-fontawesome": "0.0.23",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-polyfill": "^6.26.0",
+    "fontfaceobserver": "^2.0.13",
     "jquery": "^3.3.1",
     "materialize-css": "^0.100.2",
     "scriptjs": "^2.5.8",
