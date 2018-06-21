@@ -7,7 +7,7 @@
     </div>
     <div v-else>
         <h5 class="white-text">Bio</h5>
-        <p class="grey-text text-lighten-4">Archie has been working professionally over {{yearsWorked}} years. He enjoys programming and playing Heroes of the Storm. About the only "normal" thing he likes doing is eating food.
+        <p class="grey-text text-lighten-4">Archie has been working professionally {{yearsWorked}} years. He enjoys programming and playing Heroes of the Storm. About the only "normal" thing he likes doing is eating food.
         </p>
     </div>
 </template>
