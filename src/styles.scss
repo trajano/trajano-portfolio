@@ -33,8 +33,9 @@ html {
 }
 
 #top-banner {
-    &.parallax-container {
+    & {
         min-height: calc(100vh - 64px);
+        color: white;
     }
     p {
         @extend h5,
@@ -48,7 +49,7 @@ html {
         right: $navbar-height;
     }
     @media #{$medium-and-down} {
-        &.parallax-container {
+        & {
             min-height: calc(100vh - 56px);
         }
         #skip-to-content {

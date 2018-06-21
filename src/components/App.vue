@@ -1,6 +1,6 @@
 ﻿<template>
     <div id="app">
-        <div id="top-banner" class="parallax-container">
+        <v-parallax id="top-banner" :src="require('../assets/hiro.jpg')" alt="Hiro close-up">
             <div class="section">
                 <div class="container">
                     <br class="hide-on-small-only">
@@ -30,11 +30,8 @@
                         </a>
                     </div>
                 </div>
-                <div class="parallax">
-                    <img src="../assets/hiro.jpg" alt="Hiro close-up">
-                </div>
             </div>
-        </div>
+        </v-parallax>
         <main-nav />
         <div class="container">
             <div class="section">
@@ -50,7 +47,7 @@
                 </div>
             </div>
         </div>
-        <div class="parallax-container valign-wrapper scrollspy" id="projects">
+        <v-parallax class="valign-wrapper scrollspy" id="projects" imageClass="darken" src="//trajano.net/wp-content/uploads/2016/12/Archimedes-fossil.jpg" alt="Archimedes fossil" >
             <div class="section no-pad-bot">
                 <div class="container">
                     <div class="row center">
@@ -59,10 +56,7 @@
                     </div>
                 </div>
             </div>
-            <div class="parallax">
-                <d-img class="darken" src="https://trajano.net/wp-content/uploads/2016/12/Archimedes-fossil.jpg" alt="Archimedes fossil" />
-            </div>
-        </div>
+        </v-parallax>
         <div class="container">
             <div class="section">
                 <div class="row">
@@ -146,7 +140,7 @@
                 </div>
             </div>
         </div>
-        <div class="parallax-container valign-wrapper scrollspy" id="social">
+        <v-parallax class="valign-wrapper scrollspy" id="social" imageClass="darken" src="https://trajano.net/wp-content/uploads/2016/12/hearthstone.jpg" alt="Hearthstone" >
             <div class="section no-pad-bot">
                 <div class="container">
                     <div class="row center">
@@ -154,10 +148,7 @@
                     </div>
                 </div>
             </div>
-            <div class="parallax">
-                <d-img class="darken" src="https://trajano.net/wp-content/uploads/2016/12/hearthstone.jpg" alt="Hearthstone" />
-            </div>
-        </div>
+        </v-parallax>
         <div class="container hide-on-small-only">
             <div class="section">
                 <div class="row">
@@ -210,7 +201,7 @@
                 </div>
             </div>
         </div>
-        <div class="parallax-container valign-wrapper scrollspy" id="resume">
+        <v-parallax class="valign-wrapper scrollspy" id="resume" :src="require('../assets/phoenix-hiro.jpg')" alt="Phoenix and Hiro" >
             <div class="section no-pad-bot">
                 <div class="container">
                     <div class="row center">
@@ -219,10 +210,7 @@
                     </div>
                 </div>
             </div>
-            <div class="parallax">
-                <d-img :src="require('../assets/phoenix-hiro.jpg')" alt="Phoenix and Hiro" />
-            </div>
-        </div>
+        </v-parallax>
         <div class="container hide-on-small-only">
             <div class="section">
                 <div class="row">
@@ -254,10 +242,11 @@ import '../store'
 import {mapState} from 'vuex'
 import smartSupp from '../smartSupp'
 import FontFaceObserver from 'fontfaceobserver'
+import VParallax from './VParallax'
 
 export default {
   name: 'App',
-  components: { DImg, MainNav, MyFeature, PortfolioFooter, RecuriterAndResumeBlock },
+  components: { DImg, MainNav, MyFeature, PortfolioFooter, RecuriterAndResumeBlock, VParallax },
   data() {
     const currentYear = new Date().getFullYear()
     return {
@@ -285,7 +274,6 @@ export default {
     $('.scrollspy').scrollSpy({
       scrollOffset: 0
     })
-    $('.parallax').parallax()
 
     $('.card[data-href]').bind('click', function(event) {
       event.preventDefault()
