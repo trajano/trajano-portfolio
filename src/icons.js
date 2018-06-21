@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub'
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedIn'
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedin'
 import { faStackOverflow } from '@fortawesome/free-brands-svg-icons/faStackOverflow'
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons/faEnvelope'
 import { faFilePdf } from '@fortawesome/free-regular-svg-icons/faFilePdf'
