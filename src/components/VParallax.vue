@@ -2,17 +2,13 @@
   <div class="parallax-container">
     <slot />
     <div class="parallax">
-      <img :src="src" :alt="alt" @load="imageLoaded" :class="imageClass"/>
+      <img :src="dataSrc" :alt="alt" @load="imageLoaded" :class="imageClass"/>
     </div>
   </div>
 </template>
 <script>
-import DImg from './DImg'
 export default {
   name: 'VParallax',
-  components: {
-    DImg
-  },
   props: {
     src: {
       type: [String, Object],
@@ -24,7 +20,8 @@ export default {
   data() {
     return {
       imgHeight: 1,
-      img: undefined
+      img: undefined,
+      dataSrc: 'data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='
     }
   },
   methods: {
@@ -62,7 +59,15 @@ export default {
     global.removeEventListener('scroll', this.updateParallax)
     global.removeEventListener('resize', this.updateParallax)
   },
+  beforeMount() {
+    if (!global.__PRERENDER_INJECTED) {
+      this.dataSrc = this.src
+    }
+  },
   mounted() {
+    if (global.__PRERENDER_INJECTED) {
+      return
+    }
     this.containerHeight = this.$el.offsetHeight || 500
     this.top = this.$el.getBoundingClientRect().top
     this.bottom = this.top + this.containerHeight
