@@ -1,25 +1,30 @@
 import Vue from 'vue'
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
-import fontawesome from '@fortawesome/fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub'
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons/faLinkedIn'
+import { faStackOverflow } from '@fortawesome/free-brands-svg-icons/faStackOverflow'
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons/faEnvelope'
+import { faFilePdf } from '@fortawesome/free-regular-svg-icons/faFilePdf'
+import { faFileWord } from '@fortawesome/free-regular-svg-icons/faFileWord'
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons/faArrowDown'
+import { faBars } from '@fortawesome/free-solid-svg-icons/faBars'
+import { faBolt } from '@fortawesome/free-solid-svg-icons/faBolt'
+import { faBuilding } from '@fortawesome/free-solid-svg-icons/faBuilding'
+import { faCogs } from '@fortawesome/free-solid-svg-icons/faCogs'
+import { faComment } from '@fortawesome/free-solid-svg-icons/faComment'
+import { faDownload } from '@fortawesome/free-solid-svg-icons/faDownload'
+import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclamationCircle'
+import { faGraduationCap } from '@fortawesome/free-solid-svg-icons/faGraduationCap'
+import { faMobileAlt } from '@fortawesome/free-solid-svg-icons/faMobileAlt'
+import { faUsers } from '@fortawesome/free-solid-svg-icons/faUsers'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-fontawesome.library.add(
-  require('@fortawesome/fontawesome-free-brands/faGithub'),
-  require('@fortawesome/fontawesome-free-brands/faLinkedin'),
-  require('@fortawesome/fontawesome-free-brands/faStackOverflow'),
-  require('@fortawesome/fontawesome-free-regular/faEnvelope'),
-  require('@fortawesome/fontawesome-free-regular/faFilePdf'),
-  require('@fortawesome/fontawesome-free-regular/faFileWord'),
-  require('@fortawesome/fontawesome-free-solid/faArrowDown'),
-  require('@fortawesome/fontawesome-free-solid/faBars'),
-  require('@fortawesome/fontawesome-free-solid/faBolt'),
-  require('@fortawesome/fontawesome-free-solid/faBuilding'),
-  require('@fortawesome/fontawesome-free-solid/faCogs'),
-  require('@fortawesome/fontawesome-free-solid/faComment'),
-  require('@fortawesome/fontawesome-free-solid/faDownload'),
-  require('@fortawesome/fontawesome-free-solid/faGraduationCap'),
-  require('@fortawesome/fontawesome-free-solid/faExclamationCircle'),
-  require('@fortawesome/fontawesome-free-solid/faMobileAlt'),
-  require('@fortawesome/fontawesome-free-solid/faUsers')
+library.add(
+  faGithub,
+  faLinkedin,
+  faStackOverflow,
+  faEnvelope, faFilePdf, faFileWord,
+  faArrowDown, faBars, faBolt, faBuilding, faCogs, faComment, faDownload, faGraduationCap, faExclamationCircle, faMobileAlt, faUsers
 )
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)

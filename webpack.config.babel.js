@@ -5,6 +5,7 @@ import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin'
 import PrerenderSPAPlugin from 'prerender-spa-plugin'
 import VueLoaderPlugin from 'vue-loader/lib/plugin'
 import WebappWebpackPlugin from 'webapp-webpack-plugin'
+import WebpackCdnPlugin from 'webpack-cdn-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import HtmlWebpackInlineSourcePlugin from 'html-webpack-inline-source-plugin'
 import path from 'path'
@@ -27,33 +28,21 @@ module.exports = (env, argv) => {
   }
   const module = {
     rules: [{
-        test: /app\.scss$/,
+        test: /\.scss$/,
         use: [
-          'style-loader',
-          'css-loader',
+          'vue-style-loader',
+          {
+            loader: "css-loader",
+            options: {
+              minimize: true
+            }
+          },
           'sass-loader'
         ]
       },
       {
         test: /\.html$/,
         loader: 'handlebars-loader'
-      },
-      {
-        test: /font-face\.scss$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader'
-        ]
-      },
-      {
-        test: /\.scss$/,
-        use: [
-          'vue-style-loader',
-          'css-loader',
-          'sass-loader'
-        ],
-        exclude: [/app\.scss$/, /font-face\.scss$/]
       },
       {
         test: /\.vue$/,
@@ -75,7 +64,7 @@ module.exports = (env, argv) => {
         test: /\.(js|vue)$/,
         exclude: /node_modules/,
         loader: 'eslint-loader',
-      },   
+      },
       {
         test: /\.(jpe?g|png)$/i,
         loader: 'responsive-loader',
@@ -99,10 +88,7 @@ module.exports = (env, argv) => {
     path: path.resolve(__dirname, './dist'),
     filename: 'bundle.[hash:6].js'
   }
-  const externals = {
-    'node-waves': 'Waves',
-    'jquery': 'jQuery'
-  }
+  let externals = {}
   const plugins = [
     new WebappWebpackPlugin({
       logo: './src/assets/logo-2048x2048.png',
@@ -130,22 +116,18 @@ module.exports = (env, argv) => {
       from: 'assets',
       to: 'assets'
     }]),
-    new ImageminPlugin(
-      { 
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        jpegtran: {
-          arithmetic: false,
-          progressive: true,
-        }
+    new ImageminPlugin({
+      test: /\.(jpe?g|png|gif|svg)$/i,
+      jpegtran: {
+        arithmetic: false,
+        progressive: true,
       }
-    ),
+    }),
     new HtmlWebpackPlugin({
       data: require('./src/ld.json'),
-      template: './src/app.html',
-      inlineSource: 'main.css$'
+      template: './src/app.html'
     }),
-    new HtmlWebpackInlineSourcePlugin(),
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
   ]
 
   if (argv.mode === "production") {
@@ -170,7 +152,35 @@ module.exports = (env, argv) => {
           },
           renderAfterDocumentEvent: 'render-event'
         })
-      }))
+      }),
+      new WebpackCdnPlugin({
+        modules: [{
+            name: 'jquery',
+            var: 'jQuery',
+            path: 'dist/jquery.min.js'
+          },
+          {
+            name: 'vue',
+            var: 'Vue',
+            path: 'dist/vue.min.js'
+          },
+          {
+            name: 'vuex',
+            var: 'Vuex',
+            path: 'dist/vuex.min.js'
+          },
+        ],
+        //         publicPath: '/node_modules'
+      })
+    )
+
+    externals = {
+      'node-waves': 'Waves',
+      'vue': 'Vue',
+      'vuex': 'Vuex',
+      'jquery': 'jQuery',
+//      '@fortawesome/fontawesome': 'fontawesome'
+    }
   }
   const resolve = {
     alias: {
