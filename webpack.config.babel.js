@@ -1,7 +1,6 @@
 import ImageminPlugin from 'imagemin-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin'
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin'
 import PrerenderSPAPlugin from 'prerender-spa-plugin'
 import VueLoaderPlugin from 'vue-loader/lib/plugin'
@@ -150,15 +149,7 @@ module.exports = (env, argv) => {
   ]
 
   if (argv.mode === "production") {
-    module.rules[0].use = [MiniCssExtractPlugin.loader,
-      'css-loader',
-      'sass-loader'
-    ]
     plugins.push(
-      new MiniCssExtractPlugin({
-        filename: '[name].css',
-        chunkFilename: '[id].css'
-      }),
       new PrerenderSPAPlugin({
         // Index.html is in the root directory.
         staticDir: path.join(__dirname, 'dist'),
@@ -169,7 +160,8 @@ module.exports = (env, argv) => {
           collapseWhitespace: true,
           decodeEntities: true,
           keepClosingSlash: true,
-          sortAttributes: true
+          sortAttributes: true,
+          minifyCSS: true
         },
 
         renderer: new Renderer({
