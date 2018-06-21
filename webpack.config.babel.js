@@ -1,13 +1,14 @@
-import ImageminPlugin from 'imagemin-webpack-plugin'
 import CopyWebpackPlugin from 'copy-webpack-plugin'
-import UglifyJsPlugin from 'uglifyjs-webpack-plugin'
+import HtmlWebpackInlineSourcePlugin from 'html-webpack-inline-source-plugin'
+import HtmlWebpackPlugin from 'html-webpack-plugin'
+import ImageminPlugin from 'imagemin-webpack-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin'
 import PrerenderSPAPlugin from 'prerender-spa-plugin'
+import UglifyJsPlugin from 'uglifyjs-webpack-plugin'
 import VueLoaderPlugin from 'vue-loader/lib/plugin'
 import WebappWebpackPlugin from 'webapp-webpack-plugin'
 import WebpackCdnPlugin from 'webpack-cdn-plugin'
-import HtmlWebpackPlugin from 'html-webpack-plugin'
-import HtmlWebpackInlineSourcePlugin from 'html-webpack-inline-source-plugin'
 import path from 'path'
 
 const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
@@ -29,8 +30,10 @@ module.exports = (env, argv) => {
   const module = {
     rules: [{
         test: /\.scss$/,
-        use: [
-          'vue-style-loader',
+        use: [{
+            loader: 'vue-style-loader',
+            options: {}
+          },
           {
             loader: "css-loader",
             options: {
@@ -132,6 +135,9 @@ module.exports = (env, argv) => {
 
   if (argv.mode === "production") {
     plugins.push(
+      new MiniCssExtractPlugin({
+        filename: '[name].[hash:6].css',
+      }),
       new PrerenderSPAPlugin({
         // Index.html is in the root directory.
         staticDir: path.join(__dirname, 'dist'),
@@ -143,7 +149,7 @@ module.exports = (env, argv) => {
           decodeEntities: true,
           keepClosingSlash: true,
           sortAttributes: true,
-          minifyCSS: true
+          removeComments: true,
         },
 
         renderer: new Renderer({
@@ -170,16 +176,16 @@ module.exports = (env, argv) => {
             path: 'dist/vuex.min.js'
           },
         ],
-        //         publicPath: '/node_modules'
       })
     )
+
+    module.rules[0].use[0] = MiniCssExtractPlugin.loader
 
     externals = {
       'node-waves': 'Waves',
       'vue': 'Vue',
       'vuex': 'Vuex',
       'jquery': 'jQuery',
-//      '@fortawesome/fontawesome': 'fontawesome'
     }
   }
   const resolve = {

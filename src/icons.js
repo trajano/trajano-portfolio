@@ -17,7 +17,7 @@ import { faExclamationCircle } from '@fortawesome/free-solid-svg-icons/faExclama
 import { faGraduationCap } from '@fortawesome/free-solid-svg-icons/faGraduationCap'
 import { faMobileAlt } from '@fortawesome/free-solid-svg-icons/faMobileAlt'
 import { faUsers } from '@fortawesome/free-solid-svg-icons/faUsers'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import FontAwesomeIcon from './components/FontAwesomeIcon'
 
 library.add(
   faGithub,
