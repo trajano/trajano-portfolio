@@ -23,7 +23,7 @@
         <div class="footer-copyright">
             <div>© 2016-{{currentYear}} Trajano.
                 <a class="yellow-text" href="https://trajano.net/privacy-policy">Privacy policy</a>
-                <div id="152146877" class="right"></div>
+                <div id="152146877" class="right hide-on-small-only"></div>
             </div>
         </div>
     </footer>
