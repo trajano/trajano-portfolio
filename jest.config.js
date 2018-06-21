@@ -7,7 +7,8 @@ module.exports = {
     ],
     rootDir: path.resolve(__dirname, './src'),
     moduleNameMapper: {
-      '^@/(.*)$': '<rootDir>/$1'
+      '^@/(.*)$': '<rootDir>/$1',
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)(\\?size=\\d+)?$": "<rootDir>/__mocks__/fileMock.js",
     },
     transform: {
       '^.+\\.js$': 'babel-jest',

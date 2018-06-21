@@ -1,13 +1,21 @@
-import Vue from 'vue'
+import Vuex from 'vuex'
+import { shallowMount, createLocalVue } from '@vue/test-utils'
 import PortfolioFooter from '@/components/PortfolioFooter'
 import '@/icons'
 
+const localVue = createLocalVue()
+localVue.use(Vuex)
+
 describe('PortfolioFooter.vue', () => {
   it('should not crash', () => {
-    // const mockStore = jest.fn()
-    const Constructor = Vue.extend(PortfolioFooter)
-    new Constructor({
-      propsData: {}
-    }).$mount()
+    const wrapper = shallowMount(PortfolioFooter, {
+      mocks: {
+        $store: {
+          state: {}
+        }
+      },
+      localVue
+    })
+    wrapper.html()
   })
 })
