@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    smartSuppOnline: false
+    smartSuppOnline: false,
+    scrollSpies: []
   },
   getters: {
     smartSuppOnline: state => {
@@ -18,6 +19,9 @@ const store = new Vuex.Store({
     },
     smartSuppOffline (state) {
       state.smartSuppOnline = false
+    },
+    addScrollSpy (state, { scrollSpyElement }) {
+      state.scrollSpies.push(scrollSpyElement)
     }
   }
 })
