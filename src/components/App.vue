@@ -1,4 +1,4 @@
-﻿<template>
+<template>
     <div id="app">
         <v-parallax id="top-banner" :src="require('../assets/hiro.jpg')" alt="Hiro close-up">
             <div class="section">
@@ -37,7 +37,7 @@
             <div class="section">
                 <div class="row">
                     <my-feature :icon="['fab', 'github']" heading="I'm a full-stack coder">I design and develop enterprise applications in a variety of languages including but not limited to Java, JavaScript and SQL. I work to make sure everything is integrated on the enterprise scale.</my-feature>
-                    <my-feature icon="building" heading="Hands-on enterprise consultant">I architect solutions that scale up thinking on the enterprise level, but I also know enough about the development, deployment and application management processes to make sure they are doable and sustainable.</my-feature>
+                    <my-feature icon="building" heading="Hands-on enterprise architect">I architect solutions that scale up thinking on the enterprise level, but I also know enough about the development, deployment and application management processes to make sure they are doable and sustainable.</my-feature>
                     <my-feature icon="graduation-cap" heading="I'm an IT polymath">A person whose expertise spans a significant number of different subject areas; such a person is known to draw on complex bodies of knowledge to solve specific problems. As such I get called upon to deal with integrating multiple technologies that are present in enterprise systems.</my-feature>
                 </div>
                 <div class="row">
@@ -47,7 +47,7 @@
                 </div>
             </div>
         </div>
-        <v-parallax class="valign-wrapper scrollspy" id="projects" imageClass="darken" src="//trajano.net/wp-content/uploads/2016/12/Archimedes-fossil.jpg" alt="Archimedes fossil" >
+        <v-parallax class="valign-wrapper scrollspy" id="projects" v-scroll-spy imageClass="darken" src="//trajano.net/wp-content/uploads/2016/12/Archimedes-fossil.jpg" alt="Archimedes fossil" >
             <div class="section no-pad-bot">
                 <div class="container">
                     <div class="row center">
@@ -140,7 +140,7 @@
                 </div>
             </div>
         </div>
-        <v-parallax class="valign-wrapper scrollspy" id="social" imageClass="darken" src="https://trajano.net/wp-content/uploads/2016/12/hearthstone.jpg" alt="Hearthstone" >
+        <v-parallax class="valign-wrapper scrollspy" v-scroll-spy id="social" imageClass="darken" src="https://trajano.net/wp-content/uploads/2016/12/hearthstone.jpg" alt="Hearthstone" >
             <div class="section no-pad-bot">
                 <div class="container">
                     <div class="row center">
@@ -201,7 +201,7 @@
                 </div>
             </div>
         </div>
-        <v-parallax class="valign-wrapper scrollspy" id="resume" :src="require('../assets/phoenix-hiro.jpg')" alt="Phoenix and Hiro" >
+        <v-parallax class="valign-wrapper scrollspy" v-scroll-spy id="resume" :src="require('../assets/phoenix-hiro.jpg')" alt="Phoenix and Hiro" >
             <div class="section no-pad-bot">
                 <div class="container">
                     <div class="row center">
@@ -255,7 +255,9 @@ export default {
     }
   },
   computed: {
-    ...mapState(['smartSuppOnline'])
+    ...mapState({
+      smartSuppOnline: state => state.SmartSupp.smartSuppOnline
+    })
   },
   methods: {
     openSmartSupp() {

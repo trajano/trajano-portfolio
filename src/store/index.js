@@ -1,24 +1,12 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import SmartSupp from './smartSupp'
 
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
-  state: {
-    smartSuppOnline: false
-  },
-  getters: {
-    smartSuppOnline: state => {
-      return state.smartSuppOnline && !global.__PRERENDER_INJECTED
-    }
-  },
-  mutations: {
-    smartSuppOnline (state) {
-      state.smartSuppOnline = true
-    },
-    smartSuppOffline (state) {
-      state.smartSuppOnline = false
-    }
+  modules: {
+    SmartSupp
   }
 })
 export default store

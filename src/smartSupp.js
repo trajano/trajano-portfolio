@@ -11,9 +11,9 @@ function smartSupp(clientKey) {
   $script('//www.smartsuppchat.com/loader.js', () => {
     global.smartsupp('on', 'status', status => {
       if (status === 'online') {
-        store.commit('smartSuppOnline')
+        store.dispatch('smartSuppOnline')
       } else {
-        store.commit('smartSuppOffline')
+        store.dispatch('smartSuppOffline')
       }
     })
   })

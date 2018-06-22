@@ -1,5 +1,5 @@
 <template>
-    <div id="mainnav" class="scrollspy">
+    <div id="mainnav" class="scrollspy" v-scroll-spy>
         <nav role="navigation" id="mainnav-nav">
             <div class="nav-wrapper">
                 <a id="logo-container" href="#" class="brand-logo left">
