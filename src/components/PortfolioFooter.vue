@@ -1,5 +1,5 @@
 <template>
-    <footer class="page-footer scrollspy" id="contact">
+    <footer class="page-footer" id="contact" v-scroll-spy>
         <div class="container">
             <div class="row">
                 <bio-or-blog class="col m6 l8 hide-on-small-only" />

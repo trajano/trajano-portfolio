@@ -1,4 +1,4 @@
-﻿<template>
+<template>
     <div id="app">
         <v-parallax id="top-banner" :src="require('../assets/hiro.jpg')" alt="Hiro close-up">
             <div class="section">
@@ -14,7 +14,7 @@
                         </p>
                     </div>
                     <div class="row hide-on-med-and-down center">
-                        <a class="call-to-action" href="#resume">
+                        <a class="call-to-action" href="#resume" @click.prevent="scrollTo('resume')">
                             <font-awesome-icon icon="download" /> View My Resume and Contact Info</a>
                         <button class="call-to-action" :class="{ hide: !smartSuppOnline }" v-on:click="openSmartSupp">
                             <font-awesome-icon icon="comment" /> Chat with me, I'm online</button>
@@ -37,7 +37,7 @@
             <div class="section">
                 <div class="row">
                     <my-feature :icon="['fab', 'github']" heading="I'm a full-stack coder">I design and develop enterprise applications in a variety of languages including but not limited to Java, JavaScript and SQL. I work to make sure everything is integrated on the enterprise scale.</my-feature>
-                    <my-feature icon="building" heading="Hands-on enterprise consultant">I architect solutions that scale up thinking on the enterprise level, but I also know enough about the development, deployment and application management processes to make sure they are doable and sustainable.</my-feature>
+                    <my-feature icon="building" heading="Hands-on enterprise architect">I architect solutions that scale up thinking on the enterprise level, but I also know enough about the development, deployment and application management processes to make sure they are doable and sustainable.</my-feature>
                     <my-feature icon="graduation-cap" heading="I'm an IT polymath">A person whose expertise spans a significant number of different subject areas; such a person is known to draw on complex bodies of knowledge to solve specific problems. As such I get called upon to deal with integrating multiple technologies that are present in enterprise systems.</my-feature>
                 </div>
                 <div class="row">
@@ -47,7 +47,7 @@
                 </div>
             </div>
         </div>
-        <v-parallax class="valign-wrapper scrollspy" id="projects" imageClass="darken" src="//trajano.net/wp-content/uploads/2016/12/Archimedes-fossil.jpg" alt="Archimedes fossil" >
+        <v-parallax class="valign-wrapper scrollspy" id="projects" v-scroll-spy imageClass="darken" src="//trajano.net/wp-content/uploads/2016/12/Archimedes-fossil.jpg" alt="Archimedes fossil" >
             <div class="section no-pad-bot">
                 <div class="container">
                     <div class="row center">
@@ -140,7 +140,7 @@
                 </div>
             </div>
         </div>
-        <v-parallax class="valign-wrapper scrollspy" id="social" imageClass="darken" src="https://trajano.net/wp-content/uploads/2016/12/hearthstone.jpg" alt="Hearthstone" >
+        <v-parallax class="valign-wrapper scrollspy" v-scroll-spy id="social" imageClass="darken" src="https://trajano.net/wp-content/uploads/2016/12/hearthstone.jpg" alt="Hearthstone" >
             <div class="section no-pad-bot">
                 <div class="container">
                     <div class="row center">
@@ -201,7 +201,7 @@
                 </div>
             </div>
         </div>
-        <v-parallax class="valign-wrapper scrollspy" id="resume" :src="require('../assets/phoenix-hiro.jpg')" alt="Phoenix and Hiro" >
+        <v-parallax class="valign-wrapper scrollspy" v-scroll-spy id="resume" :src="require('../assets/phoenix-hiro.jpg')" alt="Phoenix and Hiro" >
             <div class="section no-pad-bot">
                 <div class="container">
                     <div class="row center">
@@ -238,7 +238,7 @@ import DImg from './DImg'
 import PortfolioFooter from './PortfolioFooter'
 import $script from 'scriptjs'
 import $ from 'jquery'
-import '../store'
+import store from '../store'
 import {mapState} from 'vuex'
 import smartSupp from '../smartSupp'
 import FontFaceObserver from 'fontfaceobserver'
@@ -255,24 +255,50 @@ export default {
     }
   },
   computed: {
-    ...mapState(['smartSuppOnline'])
+    ...mapState({
+      smartSuppOnline: state => state.SmartSupp.smartSuppOnline
+    })
   },
   methods: {
     openSmartSupp() {
       global.smartsupp('chat:open')
+    },
+    onResize() {
+      store.dispatch('Window/onResize')
+    },
+    onScroll() {
+      store.dispatch('Window/onScroll')
+    },
+    scrollTo(id) {
+      this.$store.state.ScrollSpy.scrollPoints.forEach(v => {
+        if (v.id === id) {
+          global.scroll({
+            top: v.offsetTop,
+            left: 0,
+            behavior: 'smooth'
+          })
+        }
+      })
     }
+  },
+  created() {
+    global.addEventListener('scroll', this.onScroll)
+    global.addEventListener('resize', this.onResize)
+  },
+  destroyed() {
+    global.removeEventListener('scroll', this.onScroll)
+    global.removeEventListener('resize', this.onResize)
   },
   mounted() {
     if (global.__PRERENDER_INJECTED) {
       return
     }
+    store.dispatch('Window/onResize')
+    store.dispatch('Window/onScroll')
 
     $('.button-collapse').sideNav({
       edge: 'right',
       closeOnClick: true
-    })
-    $('.scrollspy').scrollSpy({
-      scrollOffset: 0
     })
 
     $('.card[data-href]').bind('click', function(event) {
