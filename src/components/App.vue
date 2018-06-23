@@ -238,7 +238,7 @@ import DImg from './DImg'
 import PortfolioFooter from './PortfolioFooter'
 import $script from 'scriptjs'
 import $ from 'jquery'
-import '../store'
+import store from '../store'
 import {mapState} from 'vuex'
 import smartSupp from '../smartSupp'
 import FontFaceObserver from 'fontfaceobserver'
@@ -262,12 +262,28 @@ export default {
   methods: {
     openSmartSupp() {
       global.smartsupp('chat:open')
+    },
+    onResize() {
+      store.dispatch('Window/onResize')
+    },
+    onScroll() {
+      store.dispatch('Window/onScroll')
     }
+  },
+  created() {
+    global.addEventListener('scroll', this.onScroll)
+    global.addEventListener('resize', this.onResize)
+  },
+  destroyed() {
+    global.removeEventListener('scroll', this.onScroll)
+    global.removeEventListener('resize', this.onResize)
   },
   mounted() {
     if (global.__PRERENDER_INJECTED) {
       return
     }
+    store.dispatch('Window/onResize')
+    store.dispatch('Window/onScroll')
 
     $('.button-collapse').sideNav({
       edge: 'right',

@@ -7,6 +7,8 @@
   </div>
 </template>
 <script>
+import {mapState} from 'vuex'
+
 export default {
   name: 'VParallax',
   props: {
@@ -24,6 +26,11 @@ export default {
       dataSrc: 'data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='
     }
   },
+  computed: {
+    ...mapState({
+      scrollTop: state => state.Window.scrollTop
+    })
+  },
   methods: {
     imageLoaded() {
       this.img.style.opacity = 1
@@ -31,10 +38,7 @@ export default {
       this.updateParallax()
     },
     updateParallax() {
-      const scrollTop =
-        global.pageYOffset ||
-        document.documentElement.scrollTop ||
-        document.body.scrollTop
+      const scrollTop = this.scrollTop
 
       const windowHeight = global.innerHeight
       const windowBottom = scrollTop + windowHeight
@@ -48,17 +52,9 @@ export default {
       if (this.bottom > scrollTop && this.top < scrollTop + windowHeight) {
         this.img.style.transform = `translate3D(-50%, ${parallax}px, 0)`
       }
-      this.scrollTop = scrollTop
     }
   },
-  created() {
-    global.addEventListener('scroll', this.updateParallax)
-    global.addEventListener('resize', this.updateParallax)
-  },
-  destroyed() {
-    global.removeEventListener('scroll', this.updateParallax)
-    global.removeEventListener('resize', this.updateParallax)
-  },
+
   beforeMount() {
     if (!global.__PRERENDER_INJECTED) {
       this.dataSrc = this.src
@@ -68,7 +64,7 @@ export default {
     if (global.__PRERENDER_INJECTED) {
       return
     }
-    this.containerHeight = this.$el.offsetHeight || 500
+    this.containerHeight = this.$el.offsetHeight
     this.top = this.$el.getBoundingClientRect().top
     this.bottom = this.top + this.containerHeight
     this.img = this.$el.children
