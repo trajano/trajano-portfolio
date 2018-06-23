@@ -1,6 +1,6 @@
 <template>
     <div id="mainnav" class="scrollspy" v-scroll-spy>
-        <nav role="navigation" id="mainnav-nav">
+        <nav role="navigation" id="mainnav-nav" :class="{pinned}">
             <div class="nav-wrapper">
                 <a id="logo-container" href="#" class="brand-logo left">
                     <img src="../assets/portfolio-logo.png" alt="Trajano">
@@ -54,7 +54,7 @@
                         <a href="#resume">Resume</a>
                     </li>
                     <li>
-                        <a href="https://trajano.net/blog/" title="Archimedes Trajano Blog">Blog</a>
+                        <a href="/blog/" title="Archimedes Trajano Blog">Blog</a>
                     </li>
                     <li>
                         <div class="divider"></div>
@@ -68,20 +68,37 @@
     </div>
 </template>
 <script>
-import $ from 'jquery'
 import DImg from './DImg'
 export default {
   name: 'MainNav',
   components: {
     DImg
   },
+  data() {
+    return { pinned: false }
+  },
   mounted() {
     if (global.__PRERENDER_INJECTED) {
       return
     }
-    this.top = this.$el.getBoundingClientRect().top
-//    $('#mainnav-nav').pushpin({
-  //    top: this.$el.getBoundingClientRect().top
-   // })
-  }}
+    const top = this.$el.getBoundingClientRect().top
+    this.unwatchVuex = this.$store.watch(
+      state => {
+        return state.Window.scrollTop
+      },
+      scrollTop => {
+        this.pinned = scrollTop >= top
+      }
+    )
+  },
+  beforeDestroy() {
+    this.unwatchVuex()
+  }
+}
 </script>
+<style lang="scss" scoped>
+.pinned {
+  position: fixed !important;
+  top: 0px;
+}
+</style>

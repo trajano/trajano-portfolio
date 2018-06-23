@@ -26,9 +26,7 @@ export default {
     }
   },
   beforeDestroy() {
-    if (this.unwatchVuex) {
-      this.unwatchVuex()
-    }
+    this.unwatchVuex()
   },
   methods: {
     imageLoaded() {
@@ -55,7 +53,6 @@ export default {
     this.dataSrc = this.src
     this.containerHeight = this.$el.offsetHeight
     this.top = this.$el.getBoundingClientRect().top
-    this.bottom = this.top + this.containerHeight
     this.img = this.$el.children
       .item(this.$el.children.length - 1)
       .children.item(0)
@@ -65,11 +62,7 @@ export default {
         return state.Window
       },
       windowState => {
-        const scrollTop = windowState.scrollTop
-
-        const windowHeight = windowState.windowHeight
-
-        this.updateParallax({scrollTop, windowHeight})
+        this.updateParallax(windowState)
       },
       { deep: true }
     )
