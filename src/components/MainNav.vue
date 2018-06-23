@@ -7,22 +7,22 @@
                 </a>
                 <ul id="nav-desktop" class="right hide-on-med-and-down table-of-contents">
                     <li>
-                        <a href="#mainnav">About Archie</a>
+                        <a href="#mainnav" @click.prevent="scrollTo('mainnav')" :class="{active: on('mainnav')}">About Archie</a>
                     </li>
                     <li>
-                        <a href="#projects">Personal Projects</a>
+                        <a href="#projects" @click.prevent="scrollTo('projects')" :class="{active: on('projects')}">Personal Projects</a>
                     </li>
                     <li>
-                        <a href="#social">Social</a>
+                        <a href="#social" @click.prevent="scrollTo('social')" :class="{active: on('social')}">Social</a>
                     </li>
                     <li>
-                        <a href="#resume">Resume</a>
+                        <a href="#resume" @click.prevent="scrollTo('resume')" :class="{active: on('resume')}">Resume</a>
                     </li>
                     <li>
                         <a href="/blog/" title="Archimedes Trajano Blog">Blog</a>
                     </li>
                     <li>
-                        <a href="#contact">Contact Me</a>
+                        <a href="#contact" @click.prevent="scrollTo('contact')" :class="{active: on('contact')}">Contact Me</a>
                     </li>
                 </ul>
                 <ul id="nav-mobile" class="side-nav table-of-contents">
@@ -75,7 +75,26 @@ export default {
     DImg
   },
   data() {
-    return { pinned: false }
+    return {
+      pinned: false,
+      currentId: 'mainnav'
+    }
+  },
+  methods: {
+    on(id) {
+      return id === this.currentId
+    },
+    scrollTo(id) {
+      this.$store.state.ScrollSpy.scrollPoints.forEach(v => {
+        if (v.id === id) {
+          global.scroll({
+            top: v.offsetTop,
+            left: 0,
+            behavior: 'smooth'
+          })
+        }
+      })
+    }
   },
   mounted() {
     if (global.__PRERENDER_INJECTED) {
@@ -87,6 +106,11 @@ export default {
         return state.Window.scrollTop
       },
       scrollTop => {
+        this.$store.state.ScrollSpy.scrollPoints.forEach(v => {
+          if (scrollTop >= v.offsetTop) {
+            this.currentId = v.id
+          }
+        })
         this.pinned = scrollTop >= top
       }
     )

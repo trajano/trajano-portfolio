@@ -14,7 +14,7 @@
                         </p>
                     </div>
                     <div class="row hide-on-med-and-down center">
-                        <a class="call-to-action" href="#resume">
+                        <a class="call-to-action" href="#resume" @click.prevent="scrollTo('resume')">
                             <font-awesome-icon icon="download" /> View My Resume and Contact Info</a>
                         <button class="call-to-action" :class="{ hide: !smartSuppOnline }" v-on:click="openSmartSupp">
                             <font-awesome-icon icon="comment" /> Chat with me, I'm online</button>
@@ -268,6 +268,17 @@ export default {
     },
     onScroll() {
       store.dispatch('Window/onScroll')
+    },
+    scrollTo(id) {
+      this.$store.state.ScrollSpy.scrollPoints.forEach(v => {
+        if (v.id === id) {
+          global.scroll({
+            top: v.offsetTop,
+            left: 0,
+            behavior: 'smooth'
+          })
+        }
+      })
     }
   },
   created() {
@@ -288,9 +299,6 @@ export default {
     $('.button-collapse').sideNav({
       edge: 'right',
       closeOnClick: true
-    })
-    $('.scrollspy').scrollSpy({
-      scrollOffset: 0
     })
 
     $('.card[data-href]').bind('click', function(event) {

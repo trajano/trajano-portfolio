@@ -13,7 +13,8 @@ export const Window = {
     onScroll (state, { scrollTop }) {
       state.scrollTop = scrollTop
     },
-    onResize (state, { windowHeight }) {
+    onResize (state, { scrollTop, windowHeight }) {
+      state.scrollTop = scrollTop
       state.windowHeight = windowHeight
     }
   },
@@ -27,8 +28,13 @@ export const Window = {
       commit('onScroll', { scrollTop })
     },
     onResize({ commit }) {
+      const scrollTop =
+      global.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop
+
       const windowHeight = global.innerHeight
-      commit('onResize', { windowHeight })
+      commit('onResize', { scrollTop, windowHeight })
     }
   }
 }
