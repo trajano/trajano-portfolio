@@ -2,9 +2,12 @@ export const Window = {
   namespaced: true,
   state: {
     scrollTop: 0,
-    windowHeight: 0
+    windowHeight: global.innerHeight
   },
   getters: {
+    windowBottom({ scrollTop, windowHeight }) {
+      return scrollTop + windowHeight
+    }
   },
   mutations: {
     onScroll (state, { scrollTop }) {

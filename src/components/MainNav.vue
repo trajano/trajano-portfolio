@@ -79,8 +79,9 @@ export default {
     if (global.__PRERENDER_INJECTED) {
       return
     }
-    $('#mainnav-nav').pushpin({
-      top: this.$el.getBoundingClientRect().top
-    })
+    this.top = this.$el.getBoundingClientRect().top
+//    $('#mainnav-nav').pushpin({
+  //    top: this.$el.getBoundingClientRect().top
+   // })
   }}
 </script>
