@@ -185,11 +185,11 @@
             <div class="section">
                 <div class="collection">
                     <a class="collection-item waves-effect waves-light" href="https://github.com/trajano/">
-                        <font-awesome-icon :icon="['fab', 'github']" full-width="true" />GitHub</a>
+                        <font-awesome-icon :icon="['fab', 'github']" fixed-width /> GitHub</a>
                     <a class="collection-item waves-effect waves-light" href="https://linkedin.com/in/trajano">
-                        <font-awesome-icon :icon="['fab', 'linkedin']" full-width="true" />LinkedIn</a>
+                        <font-awesome-icon :icon="['fab', 'linkedin']" fixed-width /> LinkedIn</a>
                     <a class="collection-item waves-effect waves-light" href="http://stackoverflow.com/story/trajano">
-                        <font-awesome-icon :icon="['fab', 'stack-overflow']" full-width="true" />Stack Overflow</a>
+                        <font-awesome-icon :icon="['fab', 'stack-overflow']" fixed-width /> Stack Overflow</a>
                 </div>
             </div>
         </div>
