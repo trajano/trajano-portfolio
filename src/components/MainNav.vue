@@ -85,7 +85,7 @@ export default {
       return id === this.currentId
     },
     scrollTo(id) {
-      this.$store.state.ScrollSpy.scrollPoints.forEach(v => {
+      this.$store.state.ScrollSpy.scrollElements.forEach(v => {
         if (v.id === id) {
           global.scroll({
             top: v.offsetTop,
@@ -100,14 +100,14 @@ export default {
     if (global.__PRERENDER_INJECTED) {
       return
     }
-    const top = this.$el.getBoundingClientRect().top
     this.unwatchVuex = this.$store.watch(
       state => {
         return state.Window.scrollTop
       },
       scrollTop => {
-        this.$store.state.ScrollSpy.scrollPoints.forEach(v => {
-          if (scrollTop >= v.offsetTop) {
+        const top = this.$el.offsetTop
+        this.$store.state.ScrollSpy.scrollElements.forEach(v => {
+          if ((scrollTop + this.$el.offsetHeight) >= v.offsetTop) {
             this.currentId = v.id
           }
         })

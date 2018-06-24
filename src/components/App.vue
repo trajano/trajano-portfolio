@@ -27,7 +27,7 @@
                             <font-awesome-icon icon="mobile-alt" fixed-width /> FourOneSix-EightFiveSix-SixSixFiveFive</a>
                     </div>
                     <div id="skip-to-content">
-                        <a class="btn-floating btn-large waves-effect waves-light hoverable" href="#mainnav">
+                        <a class="btn-floating btn-large waves-effect waves-light hoverable" href="#mainnav" @click.prevent="scrollTo('mainnav')">
                             <font-awesome-icon icon="arrow-down" size="lg" />
                         </a>
                     </div>
@@ -273,7 +273,7 @@ export default {
       store.dispatch('Window/onScroll')
     },
     scrollTo(id) {
-      this.$store.state.ScrollSpy.scrollPoints.forEach(v => {
+      this.$store.state.ScrollSpy.scrollElements.forEach(v => {
         if (v.id === id) {
           global.scroll({
             top: v.offsetTop,

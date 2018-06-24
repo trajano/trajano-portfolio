@@ -1,19 +1,16 @@
 export const ScrollSpy = {
   namespaced: true,
   state: {
-    scrollPoints: []
+    scrollElements: []
   },
   mutations: {
-    addScrollPoint (state, { el }) {
-      state.scrollPoints.push({
-        id: el.id,
-        offsetTop: el.offsetTop
-      })
+    addScrollSpy (state, { el }) {
+      state.scrollElements.push(el)
     }
   },
   actions: {
     addScrollSpy({ commit }, payload) {
-      commit('addScrollPoint', { el: payload.el })
+      commit('addScrollSpy', { el: payload.el })
     }
   }
 }
