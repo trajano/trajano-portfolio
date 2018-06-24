@@ -56,7 +56,9 @@ export default {
       const percentScrolled =
         (windowBottom - containerTop) / (containerHeight + windowHeight)
       const parallax = parallaxDist * percentScrolled
-      this.transform = `translate(-50%, ${parallax}px)`
+      if (scrollTop <= containerBottom && containerTop <= windowBottom) {
+        this.transform = `translate(-50%, ${parallax}px)`
+      }
     }
   },
   mounted() {
