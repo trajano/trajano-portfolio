@@ -20,9 +20,11 @@
                             <font-awesome-icon icon="comment" /> Chat with me, I'm online</button>
                     </div>
                     <div class="row hide-on-large-only center">
-                        <a class="white-text btn-flat" v-deobfuscate href="mailto:archie...trajano...net"><font-awesome-icon :icon="['far', 'envelope']" fixed-width /> archie...trajano...net</a>
+                        <a class="white-text btn-flat" v-deobfuscate href="mailto:archie...trajano...net">
+                            <font-awesome-icon :icon="['far', 'envelope']" fixed-width /> archie...trajano...net</a>
                         <br class="hide-on-med-only">
-                        <a class="white-text btn-flat" v-deobfuscate href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive"><font-awesome-icon icon="mobile-alt" fixed-width /> FourOneSix-EightFiveSix-SixSixFiveFive</a>
+                        <a class="white-text btn-flat" v-deobfuscate href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive">
+                            <font-awesome-icon icon="mobile-alt" fixed-width /> FourOneSix-EightFiveSix-SixSixFiveFive</a>
                     </div>
                     <div id="skip-to-content">
                         <a class="btn-floating btn-large waves-effect waves-light hoverable" href="#mainnav">
@@ -47,7 +49,7 @@
                 </div>
             </div>
         </div>
-        <v-parallax class="valign-wrapper scrollspy" id="projects" v-scroll-spy imageClass="darken" src="//trajano.net/wp-content/uploads/2016/12/Archimedes-fossil.jpg" alt="Archimedes fossil" >
+        <v-parallax class="valign-wrapper scrollspy" id="projects" v-scroll-spy imageClass="darken" src="//trajano.net/wp-content/uploads/2016/12/Archimedes-fossil.jpg" alt="Archimedes fossil">
             <div class="section no-pad-bot">
                 <div class="container">
                     <div class="row center">
@@ -140,7 +142,7 @@
                 </div>
             </div>
         </div>
-        <v-parallax class="valign-wrapper scrollspy" v-scroll-spy id="social" imageClass="darken" src="https://trajano.net/wp-content/uploads/2016/12/hearthstone.jpg" alt="Hearthstone" >
+        <v-parallax class="valign-wrapper scrollspy" v-scroll-spy id="social" imageClass="darken" src="https://trajano.net/wp-content/uploads/2016/12/hearthstone.jpg" alt="Hearthstone">
             <div class="section no-pad-bot">
                 <div class="container">
                     <div class="row center">
@@ -153,41 +155,28 @@
             <div class="section">
                 <div class="row">
                     <div class="col m6 l4">
-                        <div class="card small hoverable" data-href="https://github.com/trajano/">
-                            <div class="card-image waves-effect waves-block waves-light">
-                                <d-img src="https://trajano.net/wp-content/uploads/2016/11/vsto-300x208.png" alt="Visual Studio" class="darken" />
-                                <span class="card-title">
-                                    <font-awesome-icon :icon="['fab','github']" size="lg" /> GitHub</span>
-                            </div>
-                            <div class="card-content">
-                                <p>Where I have my open source projects hosted on including this portfolio design. Feel free to fork it.
-                                </p>
-                            </div>
-                        </div>
+                        <Card href="https://github.com/trajano/" bg-src="https://trajano.net/wp-content/uploads/2016/11/vsto-300x208.png" alt="Visual Studio" bg-class="darken">
+                            <template slot="title">
+                                <font-awesome-icon :icon="['fab','github']" size="lg" /> GitHub
+                            </template>
+                            <p>Where I have my open source projects hosted on including this portfolio design. Feel free to fork it.</p>
+                        </Card>
                     </div>
                     <div class="col m6 l4">
-                        <div class="card small hoverable" data-href="https://linkedin.com/in/trajano">
-                            <div class="card-image waves-effect waves-block waves-light">
-                                <d-img src="https://trajano.net/wp-content/uploads/2017/02/img_589a945a82d79.png" alt="Archimedes Trajano resume preview" class="darken" />
-                                <span class="card-title">
-                                    <font-awesome-icon :icon="['fab', 'linkedin']" size="lg" /> LinkedIn</span>
-                            </div>
-                            <div class="card-content">
-                                <p>My professional profile where I keep the most complete and up to date work experience.</p>
-                            </div>
-                        </div>
+                        <Card href="https://linkedin.com/in/trajano" bg-src="https://trajano.net/wp-content/uploads/2017/02/img_589a945a82d79.png" alt="Archimedes Trajano resume preview" bg-class="darken">
+                            <template slot="title">
+                                <font-awesome-icon :icon="['fab', 'linkedin']" size="lg" /> LinkedIn
+                            </template>
+                            <p>My professional profile where I keep the most complete and up to date work experience.</p>
+                        </Card>
                     </div>
                     <div class="col m6 l4">
-                        <div class="card small hoverable" data-href="http://stackoverflow.com/story/trajano">
-                            <div class="card-image waves-effect waves-block waves-light">
-                                <d-img :src="require('../assets/pc-build-2018.jpg?size=800')" alt="My old drive array" class="darken" />
-                                <span class="card-title">
-                                    <font-awesome-icon :icon="['fab', 'stack-overflow']" size="lg" /> Stack Overflow</span>
-                            </div>
-                            <div class="card-content">
-                                <p>This is the Q &amp; A site I generally frequent and contribute to.</p>
-                            </div>
-                        </div>
+                        <Card href="http://stackoverflow.com/story/trajano" :bg-src="require('../assets/pc-build-2018.jpg?size=800')" alt="My old drive array" bg-class="darken">
+                            <template slot="title">
+                                <font-awesome-icon :icon="['fab', 'stack-overflow']" size="lg" /> Stack Overflow
+                            </template>
+                            <p>This is the Q &amp; A site I generally frequent and contribute to.</p>
+                        </Card>
                     </div>
                 </div>
             </div>
@@ -195,13 +184,16 @@
         <div class="container hide-on-med-and-up">
             <div class="section">
                 <div class="collection">
-                    <a class="collection-item waves-effect waves-light" href="https://github.com/trajano/"><font-awesome-icon :icon="['fab', 'github']" full-width="true" />GitHub</a>
-                    <a class="collection-item waves-effect waves-light" href="https://linkedin.com/in/trajano"><font-awesome-icon :icon="['fab', 'linkedin']" full-width="true" />LinkedIn</a>
-                      <a class="collection-item waves-effect waves-light" href="http://stackoverflow.com/story/trajano"><font-awesome-icon :icon="['fab', 'stack-overflow']" full-width="true" />Stack Overflow</a>
+                    <a class="collection-item waves-effect waves-light" href="https://github.com/trajano/">
+                        <font-awesome-icon :icon="['fab', 'github']" full-width="true" />GitHub</a>
+                    <a class="collection-item waves-effect waves-light" href="https://linkedin.com/in/trajano">
+                        <font-awesome-icon :icon="['fab', 'linkedin']" full-width="true" />LinkedIn</a>
+                    <a class="collection-item waves-effect waves-light" href="http://stackoverflow.com/story/trajano">
+                        <font-awesome-icon :icon="['fab', 'stack-overflow']" full-width="true" />Stack Overflow</a>
                 </div>
             </div>
         </div>
-        <v-parallax class="valign-wrapper scrollspy" v-scroll-spy id="resume" :src="require('../assets/phoenix-hiro.jpg')" alt="Phoenix and Hiro" >
+        <v-parallax class="valign-wrapper scrollspy" v-scroll-spy id="resume" :src="require('../assets/phoenix-hiro.jpg')" alt="Phoenix and Hiro">
             <div class="section no-pad-bot">
                 <div class="container">
                     <div class="row center">
@@ -221,8 +213,10 @@
         <div class="container hide-on-med-and-up">
             <div class="section">
                 <div class="collection">
-                    <a title="Archimedes Trajano Resume in Word Format" class="collection-item waves-effect waves-light " href="assets/Archimedes%20Trajano.docx"><font-awesome-icon :icon="['far', 'file-word']" fixed-width /> Word</a>
-                    <a title="Archimedes Trajano Resume in PDF format" class="collection-item waves-effect waves-light " href="assets/Archimedes%20Trajano.pdf"><font-awesome-icon :icon="['far', 'file-pdf']" fixed-width /> PDF</a>
+                    <a title="Archimedes Trajano Resume in Word Format" class="collection-item waves-effect waves-light " href="assets/Archimedes%20Trajano.docx">
+                        <font-awesome-icon :icon="['far', 'file-word']" fixed-width /> Word</a>
+                    <a title="Archimedes Trajano Resume in PDF format" class="collection-item waves-effect waves-light " href="assets/Archimedes%20Trajano.pdf">
+                        <font-awesome-icon :icon="['far', 'file-pdf']" fixed-width /> PDF</a>
                 </div>
             </div>
         </div>
@@ -231,6 +225,7 @@
 </template>
 <script>
 import ld from '../ld.json'
+import Card from './Card'
 import MainNav from './MainNav'
 import RecuriterAndResumeBlock from './RecruiterAndResumeBlock'
 import MyFeature from './MyFeature'
@@ -239,14 +234,22 @@ import PortfolioFooter from './PortfolioFooter'
 import $script from 'scriptjs'
 import $ from 'jquery'
 import store from '../store'
-import {mapState} from 'vuex'
+import { mapState } from 'vuex'
 import smartSupp from '../smartSupp'
 import FontFaceObserver from 'fontfaceobserver'
 import VParallax from './VParallax'
 
 export default {
   name: 'App',
-  components: { DImg, MainNav, MyFeature, PortfolioFooter, RecuriterAndResumeBlock, VParallax },
+  components: {
+    Card,
+    DImg,
+    MainNav,
+    MyFeature,
+    PortfolioFooter,
+    RecuriterAndResumeBlock,
+    VParallax
+  },
   data() {
     const currentYear = new Date().getFullYear()
     return {
@@ -301,11 +304,6 @@ export default {
       closeOnClick: true
     })
 
-    $('.card[data-href]').bind('click', function(event) {
-      event.preventDefault()
-      window.location.href = $(this).data('href')
-    })
-
     // Media.net ads
     global._mNHandle = {
       queue: [
@@ -319,15 +317,17 @@ export default {
       event: 'gtm.js'
     })
 
-    Promise.all(
-      [new FontFaceObserver('Lato', {
+    Promise.all([
+      new FontFaceObserver('Lato', {
         weight: 100
-      }).load(), new FontFaceObserver('Lato', {
+      }).load(),
+      new FontFaceObserver('Lato', {
         weight: 300
       }).load(),
       new FontFaceObserver('Lato', {
         weight: 400
-      }).load()]).then(() => {
+      }).load()
+    ]).then(() => {
       document.documentElement.classList.add('font-loaded')
     })
 
