@@ -108,4 +108,9 @@ export default {
     }
   }
 }
+@media screen and (max-height: 950px) {
+  .vue-parallax-container {
+    min-height: 40vh;
+  }
+}
 </style>

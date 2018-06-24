@@ -68,7 +68,9 @@
     </div>
 </template>
 <script>
+import { mapState } from 'vuex'
 import DImg from './DImg'
+
 export default {
   name: 'MainNav',
   components: {
@@ -79,6 +81,11 @@ export default {
       pinned: false,
       currentId: 'mainnav'
     }
+  },
+  computed: {
+    ...mapState({
+      scrollTop: state => state.Window.scrollTop
+    })
   },
   methods: {
     on(id) {
@@ -94,6 +101,15 @@ export default {
           })
         }
       })
+    },
+    updateCurrentId(scrollTop) {
+      const top = this.$el.offsetTop
+      this.$store.state.ScrollSpy.scrollElements.forEach(v => {
+        if ((scrollTop + this.$el.offsetHeight) >= v.offsetTop) {
+          this.currentId = v.id
+        }
+      })
+      this.pinned = scrollTop >= top
     }
   },
   mounted() {
@@ -105,15 +121,10 @@ export default {
         return state.Window.scrollTop
       },
       scrollTop => {
-        const top = this.$el.offsetTop
-        this.$store.state.ScrollSpy.scrollElements.forEach(v => {
-          if ((scrollTop + this.$el.offsetHeight) >= v.offsetTop) {
-            this.currentId = v.id
-          }
-        })
-        this.pinned = scrollTop >= top
+        this.updateCurrentId(scrollTop)
       }
     )
+    this.updateCurrentId(this.scrollTop)
   },
   beforeDestroy() {
     this.unwatchVuex()
