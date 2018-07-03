@@ -49,7 +49,7 @@
                 </div>
             </div>
         </div>
-        <v-parallax class="valign-wrapper scrollspy" id="projects" v-scroll-spy imageClass="darken" :src="require('../assets/Archimedes-fossil.jpg')" alt="Archimedes fossil">
+        <v-parallax class="valign-wrapper scrollspy" id="projects" v-scroll-spy imageClass="darken" :src="require('../assets/archimedes-fossil.jpg')" alt="Archimedes fossil">
             <div class="section no-pad-bot">
                 <div class="container">
                     <div class="row center">
