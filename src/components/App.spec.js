@@ -14,7 +14,11 @@ describe('App.vue', () => {
     const wrapper = shallowMount(App, {
       mocks: {
         $store: {
-          state: {}
+          state: {
+            SmartSupp: {
+              online: false
+            }
+          }
         }
       },
       localVue
