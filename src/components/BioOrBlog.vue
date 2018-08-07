@@ -2,7 +2,7 @@
     <div v-if="posts.length > 0">
         <h5 class="white-text">Recent blog posts</h5>
         <p v-for="post in posts" :key="post.id">
-            <a class="white-text waves-effect btn-flat" :href="post.link">{{post.title.rendered}}</a>
+            <a class="white-text waves-effect btn-flat" :href="post.link" v-html="post.title.rendered"></a>
         </p>
     </div>
     <div v-else>
