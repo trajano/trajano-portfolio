@@ -22,16 +22,9 @@ export default {
       imgHeight: 1,
       img: undefined,
       dataSrc: 'data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=',
-      transform: undefined
+      transform: 'translate(-50%, 0px)'
     }
   },
-  // computed: {
-  //   imgHeight() {
-  //     if (this.img) {
-  //       return this.img.offsetHeight
-  //     }
-  //   }
-  // },
   beforeDestroy() {
     this.unwatchVuex()
   },
@@ -98,7 +91,7 @@ export default {
     right: 0;
     bottom: 0;
     z-index: -1;
-  
+
     img {
       position: absolute;
       left: 50%;
