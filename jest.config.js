@@ -5,6 +5,7 @@ module.exports = {
       'json',
       'vue'
     ],
+    testURL: "https://trajano.net/",
     rootDir: path.resolve(__dirname, './src'),
     moduleNameMapper: {
       '^@/(.*)$': '<rootDir>/$1',
@@ -29,4 +30,3 @@ module.exports = {
 //      '!app.js',
     ],
   }
-  
