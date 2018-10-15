@@ -8,7 +8,7 @@
     <div class="center">
       <p>
         <a title="Archimedes Trajano Resume in HTML Format" class="waves-effect waves-light btn-large" href="assets/Archimedes%20Trajano.html">
-          <font-awesome-icon :icon="['far', 'file-word']" :fixed-width="true" size="lg" /> HTML</a>
+          <font-awesome-icon :icon="['fab', 'html5']" :fixed-width="true" size="lg" /> HTML</a>
         <a title="Archimedes Trajano Resume in PDF format" class="waves-effect waves-light btn-large" href="assets/Archimedes%20Trajano.pdf">
           <font-awesome-icon :icon="['far', 'file-pdf']" :fixed-width="true" size="lg" /> PDF</a>
       </p>
