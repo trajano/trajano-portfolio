@@ -2,286 +2,296 @@
 <html>
 
 <head>
-    <meta charset="utf8" />
-    <link href="https://meyerweb.com/eric/tools/css/reset/reset.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
-        crossorigin="anonymous">
-    <style>
-        body {
-            display: grid;
-            grid-template-columns: 61.8034% auto;
-            grid-template-rows: min-content auto;
-            /* grid-template-rows: 1 auto; */
-            background-color: #F1F8E9;
-            font-family: 'Lato', sans-serif;
-            line-height: 120%;
-            border-bottom: 0.25in solid #00695C;
-        }
+  <meta charset="utf8" />
+  <link href="https://meyerweb.com/eric/tools/css/reset/reset.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
+  <style>
+    body {
+      display: grid;
+      grid-template-columns: 61.8034% auto;
+      grid-template-rows: min-content auto;
+      /* grid-template-rows: 1 auto; */
+      background-color: #F1F8E9;
+      font-family: 'Lato', sans-serif;
+      line-height: 120%;
+      border-bottom: 0.25in solid #00695C;
+    }
 
-        .profile-image {
-            width: 90%;
-            clip-path: circle(50% at center);
-        }
+    .profile-image {
+      width: 90%;
+      clip-path: circle(50% at center);
+    }
 
-        header {
-            display: grid;
-            grid-column: 1/3;
-            grid-template-areas:
-                "name     contact"
-                "headline contact";
-            grid-row-gap: 1ch;
-            grid-template-columns: 1fr auto;
-            background-color: #00695C;
-            padding-top: 0.5in;
-            padding-left: 0.5in;
-            padding-right: 0.5in;
-            padding-bottom: 0.25in;
-            color: white;
-        }
+    header {
+      display: grid;
+      grid-column: 1/3;
+      grid-template-areas:
+        "name     contact"
+        "headline contact";
+      grid-row-gap: 1ch;
+      grid-template-columns: 1fr auto;
+      background-color: #00695C;
+      padding-top: 0.5in;
+      padding-left: 0.5in;
+      padding-right: 0.5in;
+      padding-bottom: 0.25in;
+      color: white;
+    }
 
-        header h1 {
-            grid-area: name;
-            font-weight: 300;
-            font-size: 24pt;
-            /* border: 1px solid black; */
-        }
+    header h1 {
+      grid-area: name;
+      font-weight: 300;
+      font-size: 24pt;
+      /* border: 1px solid black; */
+    }
 
-        header .headline {
-            grid-area: headline;
-            font-weight: 300;
-            font-size: 12pt;
-            /* border: 1px solid black; */
-        }
+    header .headline {
+      grid-area: headline;
+      font-weight: 300;
+      font-size: 12pt;
+      /* border: 1px solid black; */
+    }
 
-        section h1 {
-            font-weight: 300;
-            font-size: 16pt;
-            padding-bottom: 1em;
-        }
+    section h1 {
+      font-weight: 300;
+      font-size: 16pt;
+      padding-bottom: 1em;
+    }
 
-        aside h1 {
-            font-weight: 300;
-            font-size: 14pt;
-            padding-bottom: 1em;
-        }
+    aside h1 {
+      font-weight: 300;
+      font-size: 14pt;
+      padding-bottom: 1em;
+    }
 
-        #experience {
-            margin-top: 0.25in;
-            margin-bottom: 0.25in;
-            margin-right: 0.25in;
-            margin-left: 0.5in;
-            display: flex;
-            flex-direction: column;
-        }
+    #experience {
+      margin-top: 0.25in;
+      margin-bottom: 0.25in;
+      margin-right: 0.25in;
+      margin-left: 0.5in;
+      display: flex;
+      flex-direction: column;
+    }
 
-        #skills {
-            margin-top: 0.25in;
-            margin-bottom: 0.25in;
-            margin-right: 0.50in;
-            margin-left: 0;
-            padding-left: 0.25in;
-            border-left: 1px solid #00695C;
-        }
+    #skills {
+      margin-top: 0.25in;
+      margin-bottom: 0.25in;
+      margin-right: 0.50in;
+      margin-left: 0;
+      padding-left: 0.25in;
+      border-left: 1px solid #00695C;
+    }
 
-        #experience h2,
-        #experience h3 {
-            margin-left: -0.5in;
-            padding-left: 0.25in;
-            border-left: 0.25in solid red;
-        }
+    #experience h2,
+    #experience h3 {
+      margin-left: -0.5in;
+      padding-left: 0.25in;
+      border-left: 0.25in solid red;
+    }
 
-        #experience h2 {
-            font-weight: bold;
-            padding-bottom: 0;
-        }
+    #experience h2 {
+      font-weight: bold;
+      padding-bottom: 0;
+    }
 
-        #experience h3 {
-            font-weight: thin;
-            margin-bottom: 1ch;
-        }
+    #experience h3 {
+      font-weight: thin;
+      margin-bottom: 1ch;
+    }
 
-        p {
-            text-align: justify;
-        }
+    p {
+      text-align: justify;
+    }
 
-        em {
-            font-style: italic;
-        }
+    em {
+      font-style: italic;
+    }
 
-        li:not(:last-child),
-        p:not(:last-child) {
-            margin-bottom: 0.5em;
-        }
+    li:not(:last-child),
+    p:not(:last-child) {
+      margin-bottom: 0.5em;
+    }
 
-        #experience article {
-            flex-grow: 1;
-        }
+    #experience article {
+      flex-grow: 1;
+    }
 
-        #skills h1:not(:first-child) {
-            margin-top: 2em;
-        }
+    #skills h1:not(:first-child) {
+      margin-top: 2em;
+    }
 
-        #contact {
-            align-content: end;
-            grid-area: contact;
-            display: grid;
-            grid-template-columns: 1em auto;
-            grid-column-gap: 0.75ch;
-            grid-row-gap: 0.75ch;
-            font-weight: 300;
-            background-color: #00695C;
-            font-size: 10pt;
-            color: white;
-            align-items: center;
-            align-self: center;
-        }
+    #contact {
+      align-content: end;
+      grid-area: contact;
+      display: grid;
+      grid-template-columns: 1em auto;
+      grid-column-gap: 0.75ch;
+      grid-row-gap: 0.75ch;
+      font-weight: 300;
+      background-color: #00695C;
+      font-size: 10pt;
+      color: white;
+      align-items: center;
+      align-self: center;
+    }
 
-        @media screen {
-            html {
-                display: table;
-                margin: auto;
-                background-color: #004D40;
-            }
-            body {
-              width: 8.5in;
-            }
-        }
+    #contact a {
+      color: white;
+      text-decoration: none;
+    }
 
-        @media print {
-            @page {
-                size: auto;
-                margin: 0;
-            }
+    @media screen {
+      html {
+        display: table;
+        margin: auto;
+        background-color: #004D40;
+      }
 
-            body {
-              width: 8.5in;
-              height: 10.75in;
-              font-size: 12pt;
-              -webkit-print-color-adjust: exact;
-            }
-        }
-    </style>
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-KB96BNB');</script>
+      body {
+        width: 8.5in;
+      }
+    }
+
+    @media print {
+      @page {
+        size: auto;
+        margin: 0;
+      }
+
+      body {
+        width: 8.5in;
+        height: 10.75in;
+        font-size: 12pt;
+        -webkit-print-color-adjust: exact;
+      }
+    }
+  </style>
+  <script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-KB96BNB');</script>
 </head>
 
 <body>
-    <header>
-        <h1>Archimedes Trajano</h1>
-        <div class="headline">Hands-on IT Architect and Full Stack Coder</div>
-        <aside id="contact">
-            <i class="fas fa-fw fa-mobile-alt"></i>
-            <div class="phone">416-856-6655</div>
-            <i class="far fa-fw fa-envelope"></i>
-            <div class="email">archie@trajano.net</div>
-            <i class="fas fa-fw fa-globe"></i>
-            <div class="email">www.trajano.net</div>
-        </aside>
-    </header>
-
-    <section id="experience">
-        <h1>Relevant work experience</h1>
-
-        <h2>VP, Technology</h2>
-        <h3>Learning Jungle</h3>
-
-        <article>
-            <p><em>Responsible for all things tech in the company.</em> Driving the initiative to utilize machine
-                learning
-                techniques to optimize observation based learning for early childhood and up.</p>
-            <p>Led the modernizing of the existing infratructure with DevOps based approach using Docker container
-                solutions with microservices on AWS.</p>
-            <p>Automated infrastructure setup using Terraform and deployments on Azure DevOps.</p>
-        </article>
-
-        <h2>Cúram/Full Stack JEE Developer and Senior Technical Lead</h2>
-        <h3>Ministry of Children, Community and Social Services</h3>
-
-        <article>
-            <p><em>Best value for your tax dollars.</em> Intimate understanding of the Cúram framework including automating
-                unit tests that include login changes, deferred processing and workflow.  Developed SOAP integration with Spring Boot microservices.</p>
-
-            <p>Developed a JEE standard framework that provided an agile development lifecycle with a very small
-                team that got from inception to production in a matter of weeks instead of the typical months. Yet,
-                still made sure that the people who take over the project can go on.</p>
-        </article>
-
-        <h2>Technical Advisor</h2>
-        <h3>TD Canada Trust</h3>
-
-        <article>
-            <p><em>Trusted analysis of technical solutions.</em> Evaluated technologies for the program director while
-                assisting with operations and improving development practices for multiple projects in the on-line
-                sales and onboarding sphere.</p>
-        </article>
-
-
-        <h2>Advisory IT Specialist</h2>
-        <h3>IBM Canada</h3>
-
-        <article>
-            <p>Worked <em>over 13 years</em> in various roles from development to operations
-                for different projects and different industries
-                using various technologies and
-                methodologies
-                providing solutions culminating from diverse experience.</p>
-        </article>
-
-    </section>
-    <aside id="skills">
-        <img src="http://www.gravatar.com/avatar/a798a3d661375ece15776f83fbb80c2c?s=512" class="profile-image" />
-        <h1>Skills</h1>
-        <ul class="fa-ul">
-            <li><span class="fa-li"><i class="fas fa-code"></i></span>
-                Java EE
-            </li>
-            <li><span class="fa-li"><i class="fas fa-code"></i></span>
-                Spring Boot
-            </li>
-            <li><span class="fa-li"><i class="fas fa-code"></i></span>
-                JavaScript / ECMAScript
-            </li>
-            <li><span class="fa-li"><i class="fas fa-code"></i></span>
-                Maven
-            </li>
-            <li><span class="fa-li"><i class="fas fa-code"></i></span>
-                HTML5
-            </li>
-            <li><span class="fa-li"><i class="fas fa-code-branch"></i></span>
-                Git
-            </li>
-            <li><span class="fa-li"><i class="fas fa-code-branch"></i></span>
-                Azure DevOps
-            </li>
-            <li><span class="fa-li"><i class="fas fa-cloud"></i></span>
-                Docker
-            </li>
-            <li><span class="fa-li"><i class="fas fa-cloud"></i></span>
-                Amazon Web Services
-            </li>
-        </ul>
-
-        <h1>Certification and Education</h1>
-        <ul class="fa-ul">
-            <li><span class="fa-li"><i class="fas fa-certificate"></i></span>
-                <div>Cúram Software</div>
-                <div>Certified Application Developer</div>
-            </li>
-            <li><span class="fa-li"><i class="fas fa-certificate"></i></span>
-                <div>CLC Toronto East</div>
-                <div>Christopher Leadership Course</div>
-            </li>
-            <li><span class="fa-li"><i class="fas fa-graduation-cap"></i></span>
-                <div>York University</div>
-                <div>Bachelor's Degree in Computer Science</div>
-            </li>
-        </ul>
-
+  <header>
+    <h1>Archimedes Trajano</h1>
+    <div class="headline">Hands-on IT Architect and Full Stack Coder</div>
+    <aside id="contact">
+      <i class="fas fa-fw fa-mobile-alt"></i>
+      <div class="phone"><a href="tel:+1-416-856-6655">416-856-6655</a></div>
+      <i class="far fa-fw fa-envelope"></i>
+      <div class="email"><a href="mailto:archie@trajano.net">archie@trajano.net</a></div>
+      <i class="fas fa-fw fa-globe"></i>
+      <div class="email"><a href="https://trajano.net">www.trajano.net</a></div>
     </aside>
+  </header>
+
+  <section id="experience">
+    <h1>Relevant work experience</h1>
+
+    <h2>VP, Technology</h2>
+    <h3>Learning Jungle</h3>
+
+    <article>
+      <p><em>Responsible for all things tech in the company.</em> Driving the initiative to utilize machine
+        learning
+        techniques to optimize observation based learning for early childhood and up.</p>
+      <p>Led the modernizing of the existing infratructure with DevOps based approach using Docker container
+        solutions with microservices on AWS.</p>
+      <p>Automated infrastructure setup using Terraform and deployments on Azure DevOps.</p>
+    </article>
+
+    <h2>Cúram/Full Stack JEE Developer and Senior Technical Lead</h2>
+    <h3>Ministry of Children, Community and Social Services</h3>
+
+    <article>
+      <p><em>Best value for your tax dollars.</em> Intimate understanding of the Cúram framework including automating
+        unit tests that include login changes, deferred processing and workflow. Developed SOAP integration with Spring
+        Boot microservices.</p>
+
+      <p>Developed a JEE standard framework that provided an agile development lifecycle with a very small
+        team that got from inception to production in a matter of weeks instead of the typical months. Yet,
+        still made sure that the people who take over the project can go on.</p>
+    </article>
+
+    <h2>Technical Advisor</h2>
+    <h3>TD Canada Trust</h3>
+
+    <article>
+      <p><em>Trusted analysis of technical solutions.</em> Evaluated technologies for the program director while
+        assisting with operations and improving development practices for multiple projects in the on-line
+        sales and onboarding sphere.</p>
+    </article>
+
+
+    <h2>Advisory IT Specialist</h2>
+    <h3>IBM Canada</h3>
+
+    <article>
+      <p>Worked <em>over 13 years</em> in various roles from development to operations
+        for different projects and different industries
+        using various technologies and
+        methodologies
+        providing solutions culminating from diverse experience.</p>
+    </article>
+
+  </section>
+  <aside id="skills">
+    <img src="http://www.gravatar.com/avatar/a798a3d661375ece15776f83fbb80c2c?s=512" class="profile-image" />
+    <h1>Skills</h1>
+    <ul class="fa-ul">
+      <li><span class="fa-li"><i class="fas fa-code"></i></span>
+        Java EE
+      </li>
+      <li><span class="fa-li"><i class="fas fa-code"></i></span>
+        Spring Boot
+      </li>
+      <li><span class="fa-li"><i class="fas fa-code"></i></span>
+        ECMAScript
+      </li>
+      <li><span class="fa-li"><i class="fas fa-code"></i></span>
+        Maven
+      </li>
+      <li><span class="fa-li"><i class="fas fa-code"></i></span>
+        HTML5
+      </li>
+      <li><span class="fa-li"><i class="fas fa-code-branch"></i></span>
+        Git
+      </li>
+      <li><span class="fa-li"><i class="fas fa-code-branch"></i></span>
+        Azure DevOps
+      </li>
+      <li><span class="fa-li"><i class="fas fa-cloud"></i></span>
+        Docker
+      </li>
+      <li><span class="fa-li"><i class="fas fa-cloud"></i></span>
+        Amazon Web Services
+      </li>
+    </ul>
+
+    <h1>Certification and Education</h1>
+    <ul class="fa-ul">
+      <li><span class="fa-li"><i class="fas fa-certificate"></i></span>
+        <div>Cúram Software</div>
+        <div>Certified Application Developer</div>
+      </li>
+      <li><span class="fa-li"><i class="fas fa-certificate"></i></span>
+        <div>CLC Toronto East</div>
+        <div>Christopher Leadership Course</div>
+      </li>
+      <li><span class="fa-li"><i class="fas fa-graduation-cap"></i></span>
+        <div>York University</div>
+        <div>Bachelor's Degree in Computer Science</div>
+      </li>
+    </ul>
+
+  </aside>
 </body>
 
 </html>
