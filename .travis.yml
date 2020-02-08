@@ -8,9 +8,9 @@ cache:
   - "$HOME/.sonar/cache"
   - "$HOME/.npm"
 addons:
-  apt:
-    packages:
-    - oracle-java8-set-default
+  # apt:
+  #   packages:
+  #   - oracle-java8-set-default
   sonarqube:
     token:
       secure: eXtBZT9bMoAUHwVxP2g0zyN0S1AbnqzizgwyfQlMq19jpmcHwmhfscRxbG8+/b2ETVPCt70fFp3tputlq+BwyUCOCMstix1ErPRAyxYtoa9JkkRsCn1em1rE71RbVLWJDjL7HtYWl4NxBvR2yr/L/DsrhL/kzQUT/9p/Xr2hDaY8sJMAj7VUpDuJsLTaYUmIiuP7DOoJLx6NzHgHsC/divUNtRspj5slO7sVhtZkeZNq67NOgNZ3UO/2LYSDM+XUMpoK4W1mq2B8qMGss9X+PTqDdz2TcJJUGXKZnNf/5UhXdxrORYPsdbQhaHTN/kTVz5ND4a84I4ccb+/4KJxPV9HPUSrekI4eACsbuXyxFNkfEUvKuQRGoC2FCVu3Ro191JrEex8n5x/GMyoOxR8qAZGJl6Qqx5MSGGYGZWugG9j6O/tt2y/zB9rnXnZAw15ntg6orb5n2AdHWrivsZbc5UNBECpsEANg/hPKOg9O1EM5FpeqIX+WYm03TGg4cZisoOASZkq3G/2Hz6H0iqM2i6P3rRsdXe6VqOdC3hvtshMNUgdFQ0eSIQaY0Mz3Y63vOrwi3NizEtFckmLv/sX7B8aXG0rxaZg9oJvBT3VkEhHqPtbCdSmjAPzl8qiMiWjlFaWKKwg6/A5tzubCxFzP9SgFNA373TplKb+vH/eBRvg=
