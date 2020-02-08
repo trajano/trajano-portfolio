@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <v-parallax id="top-banner" :src="require('../assets/sushi-small.jpg')" alt="Sushi">
+        <v-parallax id="top-banner" :src="require('../assets/aerial-view-of-city-buildings-3640993.jpg')" alt="Buildings by sergio souza">
             <div class="section">
                 <div class="container">
                     <br class="hide-on-small-only">
