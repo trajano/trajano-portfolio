@@ -142,7 +142,7 @@
                 </div>
             </div>
         </div>
-        <v-parallax class="valign-wrapper scrollspy" v-scroll-spy id="social" imageClass="darken" src="https://trajano.net/wp-content/uploads/2016/12/hearthstone.jpg" alt="Hearthstone">
+        <v-parallax class="valign-wrapper scrollspy" v-scroll-spy id="social" imageClass="darken" :src="require('../assets/snow-in-scarborough.jpg')" alt="Snow in Scarborough">
             <div class="section no-pad-bot">
                 <div class="container">
                     <div class="row center">
