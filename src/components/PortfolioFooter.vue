@@ -13,10 +13,6 @@
                         <a class="white-text waves-effect btn-flat" v-deobfuscate href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive">
                             <font-awesome-icon icon="mobile-alt" :fixed-width="true" /> FourOneSix-EightFiveSix-SixSixFiveFive</a>
                     </p>
-                    <p>
-                        <button class="white-text waves-effect btn-flat" :class="{ hide: !smartSuppOnline }" v-on:click="openSmartSupp">
-                            <font-awesome-icon icon="comment" :fixed-width="true" /> Chat with me I'm online</button>
-                    </p>
                 </div>
             </div>
         </div>
@@ -30,19 +26,14 @@
 </template>
 <script>
 import BioOrBlog from './BioOrBlog'
-import {mapState} from 'vuex'
 export default {
   name: 'PortfolioFooter',
   components: {
     BioOrBlog
   },
   computed: {
-    ...mapState(['smartSuppOnline'])
   },
   methods: {
-    openSmartSupp() {
-      global.smartsupp('chat:open')
-    }
   },
   data() {
     const currentYear = new Date().getFullYear()

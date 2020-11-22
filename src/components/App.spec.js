@@ -15,9 +15,6 @@ describe('App.vue', () => {
       mocks: {
         $store: {
           state: {
-            SmartSupp: {
-              online: false
-            }
           }
         }
       },

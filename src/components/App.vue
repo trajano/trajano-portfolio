@@ -16,8 +16,6 @@
                     <div class="row hide-on-med-and-down center">
                         <a class="call-to-action" href="#resume" @click.prevent="scrollTo('resume')">
                             <font-awesome-icon icon="download" /> View My Resume and Contact Info</a>
-                        <button class="call-to-action" :class="{ hide: !smartSuppOnline }" v-on:click="openSmartSupp">
-                            <font-awesome-icon icon="comment" /> Chat with me, I'm online</button>
                     </div>
                     <div class="row hide-on-large-only center">
                         <a class="white-text btn-flat" v-deobfuscate href="mailto:archie...trajano...net">
@@ -234,8 +232,6 @@ import PortfolioFooter from './PortfolioFooter'
 import $script from 'scriptjs'
 import $ from 'jquery'
 import store from '../store'
-import { mapState } from 'vuex'
-import smartSupp from '../smartSupp'
 import FontFaceObserver from 'fontfaceobserver'
 import VParallax from './VParallax'
 
@@ -258,14 +254,8 @@ export default {
     }
   },
   computed: {
-    ...mapState({
-      smartSuppOnline: state => state.SmartSupp.smartSuppOnline
-    })
   },
   methods: {
-    openSmartSupp() {
-      global.smartsupp('chat:open')
-    },
     onResize() {
       store.dispatch('Window/onResize')
     },
@@ -333,7 +323,6 @@ export default {
 
     $script('//www.googletagmanager.com/gtm.js?id=GTM-KB96BNB')
     $script('//contextual.media.net/dmedianet.js?cid=8CU21S9US&https=1')
-    smartSupp('1164536eedc7355cdbbac4c037e82b31531fcd0f')
   }
 }
 </script>
