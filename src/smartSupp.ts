@@ -4,12 +4,12 @@
 import $script from "scriptjs";
 import store from "./store";
 
-function smartSupp(clientKey) {
-  global._smartsupp = global._smartsupp || {};
-  global._smartsupp.key = clientKey;
+function smartSupp(clientKey: string) {
+  (window as any)._smartsupp = (window as any)._smartsupp || {};
+  (window as any)._smartsupp.key = clientKey;
 
   $script("//www.smartsuppchat.com/loader.js", () => {
-    global.smartsupp("on", "status", status => {
+    (window as any).smartsupp("on", "status", (status: string) => {
       if (status === "online") {
         store.dispatch("smartSuppOnline");
       } else {

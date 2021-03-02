@@ -1,8 +1,9 @@
+import { ActionContext, Module } from "vuex";
 interface WindowState {
   scrollTop: number;
   windowHeight: number;
 }
-export const Window = {
+export const Window: Module<WindowState, WindowState> = {
   namespaced: true,
   state: {
     scrollTop: 0,
@@ -14,16 +15,16 @@ export const Window = {
     }
   },
   mutations: {
-    onScroll(state, { scrollTop }: WindowState) {
+    onScroll(state: WindowState, { scrollTop }: WindowState) {
       state.scrollTop = scrollTop;
     },
-    onResize(state, { scrollTop, windowHeight }: WindowState) {
+    onResize(state: WindowState, { scrollTop, windowHeight }: WindowState) {
       state.scrollTop = scrollTop;
       state.windowHeight = windowHeight;
     }
   },
   actions: {
-    onScroll({ commit }) {
+    onScroll({ commit }: ActionContext<WindowState, WindowState>) {
       const scrollTop =
         window.pageYOffset ||
         document.documentElement.scrollTop ||
@@ -31,7 +32,7 @@ export const Window = {
 
       commit("onScroll", { scrollTop });
     },
-    onResize({ commit }) {
+    onResize({ commit }: ActionContext<WindowState, WindowState>) {
       const scrollTop =
         window.pageYOffset ||
         document.documentElement.scrollTop ||

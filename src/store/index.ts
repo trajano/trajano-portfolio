@@ -5,7 +5,7 @@ import Window from "./window";
 
 Vue.use(Vuex);
 
-const store = new Vuex.Store({
+const store = new Vuex.Store<any>({
   modules: {
     ScrollSpy,
     Window

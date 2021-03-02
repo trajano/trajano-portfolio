@@ -1,4 +1,9 @@
-export const ScrollSpy = {
+import { ActionContext, Module } from "vuex";
+
+interface ScrollSpyState {
+  scrollElements: HTMLElement[];
+}
+export const ScrollSpy: Module<ScrollSpyState, ScrollSpyState> = {
   namespaced: true,
   state: {
     scrollElements: []

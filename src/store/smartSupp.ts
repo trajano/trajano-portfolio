@@ -1,10 +1,16 @@
-export const SmartSupp = {
+import { ActionContext, Module } from "vuex";
+
+interface SmartSuppState {
+  smartSuppOnline: boolean;
+}
+export const SmartSupp: Module<SmartSuppState, SmartSuppState> = {
   state: {
     smartSuppOnline: false
   },
   getters: {
-    smartSuppOnline: state => {
-      return state.smartSuppOnline && !global.__PRERENDER_INJECTED;
+    smartSuppOnline: (state: SmartSuppState) => {
+      // return state.smartSuppOnline && !window.__PRERENDER_INJECTED;
+      return state.smartSuppOnline;
     }
   },
   mutations: {
@@ -13,10 +19,12 @@ export const SmartSupp = {
     }
   },
   actions: {
-    smartSuppOnline({ commit }) {
+    smartSuppOnline({ commit }: ActionContext<SmartSuppState, SmartSuppState>) {
       commit("smartSuppOnline", { online: true });
     },
-    smartSuppOffline({ commit }) {
+    smartSuppOffline({
+      commit
+    }: ActionContext<SmartSuppState, SmartSuppState>) {
       commit("smartSuppOnline", { online: false });
     }
   }
