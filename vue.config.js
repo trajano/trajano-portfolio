@@ -1,6 +1,6 @@
 module.exports = {
   // outputDir: "www",
-  publicPath: "",
+  publicPath: '',
 
   configureWebpack: {
     performance: {
