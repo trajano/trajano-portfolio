@@ -2,28 +2,38 @@
   "name": "trajano-portfolio",
   "version": "2.0.0",
   "description": "Archimedes Trajano portfolio site.",
-  "main": "src/app.js",
+  "author": "Archimedes Trajano <developer@trajano.net>",
   "scripts": {
     "build": "vue-cli-service build",
-    "x-build": "webpack --mode=production",
-    "start": "webpack-dev-server --mode=development --hot",
-    "unit": "jest --coverage --watch",
-    "test": "jest --coverage",
     "lint": "eslint --ext .js,.vue src",
-    "fix": "eslint --ext .js,.vue --fix src"
+    "fix": "eslint --ext .js,.vue --fix src",
+    "start": "webpack-dev-server --mode=development --hot",
+    "test": "jest --coverage",
+    "unit": "jest --coverage --watch",
+    "x-build": "webpack --mode=production"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/trajano/trajano-portfolio.git"
+  "main": "src/app.js",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.2",
+    "@fortawesome/free-brands-svg-icons": "^5.2.0",
+    "@fortawesome/free-regular-svg-icons": "^5.2.0",
+    "@fortawesome/free-solid-svg-icons": "^5.2.0",
+    "@fortawesome/vue-fontawesome": "^0.1.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-polyfill": "^6.26.0",
+    "core-js": "^3.6.5",
+    "fontfaceobserver": "^2.0.13",
+    "jquery": "^3.5.1",
+    "materialize-css": "^0.100.2",
+    "scriptjs": "^2.5.8",
+    "vue": "^2.5.17",
+    "vue-directive-waves": "^2.0.2",
+    "vue2-scrollspy": "^2.3.1",
+    "vuex": "^3.0.1"
   },
-  "author": "Archimedes Trajano <developer@trajano.net>",
-  "license": "EPL-2.0",
-  "bugs": {
-    "url": "https://github.com/trajano/trajano-portfolio/issues"
-  },
-  "homepage": "https://github.com/trajano/trajano-portfolio#readme",
   "devDependencies": {
     "@vue/cli": "^4.5.11",
+    "@vue/cli-plugin-babel": "^4.5.11",
     "@vue/cli-service": "^4.5.11",
     "@vue/test-utils": "^1.0.0-beta.24",
     "babel-core": "^6.26.3",
@@ -78,24 +88,16 @@
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
   },
-  "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.2",
-    "@fortawesome/free-brands-svg-icons": "^5.2.0",
-    "@fortawesome/free-regular-svg-icons": "^5.2.0",
-    "@fortawesome/free-solid-svg-icons": "^5.2.0",
-    "@fortawesome/vue-fontawesome": "^0.1.1",
-    "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-polyfill": "^6.26.0",
-    "fontfaceobserver": "^2.0.13",
-    "jquery": "^3.5.1",
-    "materialize-css": "^0.100.2",
-    "scriptjs": "^2.5.8",
-    "vue": "^2.5.17",
-    "vue-directive-waves": "^2.0.2",
-    "vue2-scrollspy": "^2.3.1",
-    "vuex": "^3.0.1"
+  "bugs": {
+    "url": "https://github.com/trajano/trajano-portfolio/issues"
   },
   "cssnano": {
     "preset": "advanced"
+  },
+  "homepage": "https://github.com/trajano/trajano-portfolio#readme",
+  "license": "EPL-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trajano/trajano-portfolio.git"
   }
 }
