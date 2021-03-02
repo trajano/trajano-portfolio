@@ -1,11 +1,12 @@
 FROM chromedp/headless-shell as chrome
-FROM node as build
-WORKDIR /work
-COPY package.json package-lock.json /work/
-RUN npm ci
-COPY . /work/
-RUN npm run prepare
+FROM node:latest as build-stage
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY ./ .
+RUN npm run buildgi
 
-FROM nginx:alpine
-COPY conf.d /etc/nginx/conf.d/
-COPY --from=build /work/dist/ /usr/share/nginx/html/
+FROM nginx as production-stage
+RUN mkdir /app
+COPY --from=build-stage /app/dist /app
+COPY nginx.conf /etc/nginx/nginx.conf
