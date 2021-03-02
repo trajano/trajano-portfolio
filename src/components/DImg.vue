@@ -11,7 +11,7 @@
  * prerendering is being performed.
  */
 export default {
-  name: 'DImg',
+  name: "DImg",
   props: {
     src: {
       type: [String, Object],
@@ -20,13 +20,13 @@ export default {
   },
   data() {
     return {
-      dataSrc: 'data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs='
-    }
+      dataSrc: "data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+    };
   },
   mounted() {
     if (!global.__PRERENDER_INJECTED) {
-      this.dataSrc = this.src
+      this.dataSrc = this.src;
     }
   }
-}
+};
 </script>

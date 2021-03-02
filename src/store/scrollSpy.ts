@@ -4,14 +4,14 @@ export const ScrollSpy = {
     scrollElements: []
   },
   mutations: {
-    addScrollSpy (state, { el }) {
-      state.scrollElements.push(el)
+    addScrollSpy(state, { el }) {
+      state.scrollElements.push(el);
     }
   },
   actions: {
     addScrollSpy({ commit }, payload) {
-      commit('addScrollSpy', { el: payload.el })
+      commit("addScrollSpy", { el: payload.el });
     }
   }
-}
-export default ScrollSpy
+};
+export default ScrollSpy;

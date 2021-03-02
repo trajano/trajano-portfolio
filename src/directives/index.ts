@@ -1,2 +1,2 @@
-import './deobfuscate'
-import './scrollSpy'
+import "./deobfuscate";
+import "./scrollSpy";

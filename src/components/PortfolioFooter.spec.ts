@@ -1,13 +1,13 @@
-import Vuex from 'vuex'
-import { shallowMount, createLocalVue } from '@vue/test-utils'
-import PortfolioFooter from '@/components/PortfolioFooter'
-import '@/icons'
+import Vuex from "vuex";
+import { shallowMount, createLocalVue } from "@vue/test-utils";
+import PortfolioFooter from "@/components/PortfolioFooter";
+import "@/icons";
 
-const localVue = createLocalVue()
-localVue.use(Vuex)
+const localVue = createLocalVue();
+localVue.use(Vuex);
 
-describe('PortfolioFooter.vue', () => {
-  it('should not crash', () => {
+describe("PortfolioFooter.vue", () => {
+  it("should not crash", () => {
     const wrapper = shallowMount(PortfolioFooter, {
       mocks: {
         $store: {
@@ -15,7 +15,7 @@ describe('PortfolioFooter.vue', () => {
         }
       },
       localVue
-    })
-    wrapper.html()
-  })
-})
+    });
+    wrapper.html();
+  });
+});

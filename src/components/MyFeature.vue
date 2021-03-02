@@ -4,7 +4,7 @@
       <h2 class="center brown-text">
         <font-awesome-icon :icon="icon" size="lg" />
       </h2>
-      <h5 class="center">{{heading}}</h5>
+      <h5 class="center">{{ heading }}</h5>
       <p>
         <slot></slot>
       </p>
@@ -16,7 +16,7 @@
  * My Feature.
  */
 export default {
-  name: 'MyFeature',
+  name: "MyFeature",
   props: {
     heading: {
       type: String,
@@ -28,8 +28,7 @@ export default {
     }
   },
   data() {
-    return {
-    }
+    return {};
   }
-}
+};
 </script>

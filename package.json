@@ -7,7 +7,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "fix": "eslint --ext .js,.vue --fix src",
-    "start": "webpack-dev-server --mode=development --hot",
+    "serve": "vue-cli-service serve",
     "test": "jest --coverage",
     "unit": "jest --coverage --watch",
     "x-build": "webpack --mode=production"
@@ -41,13 +41,13 @@
     "@vue/cli-service": "^4.5.11",
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/eslint-config-typescript": "^5.0.2",
-    "@vue/test-utils": "^1.0.0-beta.24",
+    "@vue/test-utils": "^1.1.3",
     "babel-eslint": "^10.1.0",
     "browserslist": "^4.8.6",
     "copy-webpack-plugin": "^4.5.2",
     "css-loader": "^1.0.0",
     "cssnano-preset-advanced": "^4.0.0",
-    "eslint": "^7.21.0",
+    "eslint": "^6.7.2",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-html": "^4.0.5",
     "eslint-plugin-import": "^2.22.1",
@@ -55,8 +55,7 @@
     "eslint-plugin-prettier": "^3.1.3",
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
-    "eslint-plugin-vue": "^7.6.0",
-    "eslint-webpack-plugin": "^2.5.2",
+    "eslint-plugin-vue": "^6.2.2",
     "file-loader": "^1.1.11",
     "handlebars": "^4.7.6",
     "handlebars-loader": "^1.7.0",
@@ -68,6 +67,7 @@
     "jest": "^23.4.2",
     "jest-serializer-vue": "^2.0.2",
     "jimp": "^0.12.1",
+    "lint-staged": "^9.5.0",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.14.1",
     "optimize-css-assets-webpack-plugin": "^5.0.0",
@@ -94,8 +94,17 @@
   "cssnano": {
     "preset": "advanced"
   },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
   "homepage": "https://github.com/trajano/trajano-portfolio#readme",
   "license": "EPL-2.0",
+  "lint-staged": {
+    "*.{js,jsx,vue,ts,tsx}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/trajano/trajano-portfolio.git"

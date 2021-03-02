@@ -1,6 +1,6 @@
 module.exports = {
   // outputDir: "www",
-  publicPath: '',
+  publicPath: "",
 
   configureWebpack: {
     performance: {
@@ -10,6 +10,7 @@ module.exports = {
   },
 
   css: {
-    sourceMap: true
+    sourceMap: true,
+    extract: false
   }
 };

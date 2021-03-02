@@ -4,21 +4,21 @@ export const SmartSupp = {
   },
   getters: {
     smartSuppOnline: state => {
-      return state.smartSuppOnline && !global.__PRERENDER_INJECTED
+      return state.smartSuppOnline && !global.__PRERENDER_INJECTED;
     }
   },
   mutations: {
-    smartSuppOnline (state, { online }) {
-      state.smartSuppOnline = online
+    smartSuppOnline(state, { online }) {
+      state.smartSuppOnline = online;
     }
   },
   actions: {
     smartSuppOnline({ commit }) {
-      commit('smartSuppOnline', { online: true })
+      commit("smartSuppOnline", { online: true });
     },
     smartSuppOffline({ commit }) {
-      commit('smartSuppOnline', { online: false })
+      commit("smartSuppOnline", { online: false });
     }
   }
-}
-export default SmartSupp
+};
+export default SmartSupp;

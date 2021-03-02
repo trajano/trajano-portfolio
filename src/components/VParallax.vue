@@ -2,13 +2,19 @@
   <div class="vue-parallax-container">
     <slot />
     <div class="vue-parallax">
-      <img :src="dataSrc" :alt="alt" @load="imageLoaded" :class="imageClass" :style="{transform}"/>
+      <img
+        :src="dataSrc"
+        :alt="alt"
+        @load="imageLoaded"
+        :class="imageClass"
+        :style="{ transform }"
+      />
     </div>
   </div>
 </template>
 <script>
 export default {
-  name: 'VParallax',
+  name: "VParallax",
   props: {
     src: {
       type: [String, Object],
@@ -21,59 +27,59 @@ export default {
     return {
       imgHeight: 1,
       img: undefined,
-      dataSrc: 'data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=',
-      transform: 'translate(-50%, 0px)'
-    }
+      dataSrc: "data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=",
+      transform: "translate(-50%, 0px)"
+    };
   },
   beforeDestroy() {
-    this.unwatchVuex()
+    this.unwatchVuex();
   },
   methods: {
     imageLoaded() {
-      this.img.style.opacity = 1
+      this.img.style.opacity = 1;
 
-      this.updateParallax(this.$store.state.Window)
+      this.updateParallax(this.$store.state.Window);
     },
-    updateParallax({scrollTop, windowHeight}) {
+    updateParallax({ scrollTop, windowHeight }) {
       if (!this.img) {
-        return
+        return;
       }
-      const containerTop = this.$el.offsetTop
-      const containerHeight = this.$el.offsetHeight
-      const containerBottom = containerTop + containerHeight
+      const containerTop = this.$el.offsetTop;
+      const containerHeight = this.$el.offsetHeight;
+      const containerBottom = containerTop + containerHeight;
 
-      const imgHeight = this.img.offsetHeight
-      const windowBottom = scrollTop + windowHeight
-      const parallaxDist = imgHeight - containerHeight
+      const imgHeight = this.img.offsetHeight;
+      const windowBottom = scrollTop + windowHeight;
+      const parallaxDist = imgHeight - containerHeight;
 
       const percentScrolled =
-        (windowBottom - containerTop) / (containerHeight + windowHeight)
-      const parallax = parallaxDist * percentScrolled
+        (windowBottom - containerTop) / (containerHeight + windowHeight);
+      const parallax = parallaxDist * percentScrolled;
       if (scrollTop <= containerBottom && containerTop <= windowBottom) {
-        this.transform = `translate(-50%, ${parallax}px)`
+        this.transform = `translate(-50%, ${parallax}px)`;
       }
     }
   },
   mounted() {
     if (global.__PRERENDER_INJECTED) {
-      return
+      return;
     }
-    this.dataSrc = this.src
+    this.dataSrc = this.src;
     this.img = this.$el.children
       .item(this.$el.children.length - 1)
-      .children.item(0)
-    this.img.style.display = 'block'
+      .children.item(0);
+    this.img.style.display = "block";
     this.unwatchVuex = this.$store.watch(
       state => {
-        return state.Window
+        return state.Window;
       },
       windowState => {
-        this.updateParallax(windowState)
+        this.updateParallax(windowState);
       },
       { deep: true }
-    )
+    );
   }
-}
+};
 </script>
 <style lang="scss" scoped>
 .vue-parallax-container {
@@ -82,7 +88,7 @@ export default {
   min-height: 380px;
   line-height: 0;
   height: auto;
-  color: rgba(255,255,255,.9);
+  color: rgba(255, 255, 255, 0.9);
 
   .vue-parallax {
     position: absolute;
