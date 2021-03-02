@@ -2,9 +2,9 @@ FROM chromedp/headless-shell as chrome
 FROM node:latest as build-stage
 WORKDIR /app
 COPY package*.json ./
-RUN npm install
+RUN npm ci
 COPY ./ .
-RUN npm run buildgi
+RUN npm run build
 
 FROM nginx as production-stage
 RUN mkdir /app
