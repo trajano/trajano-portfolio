@@ -1,5 +1,5 @@
 import Vue from "vue";
-import MyFeature from "@/components/MyFeature";
+import MyFeature from "@/components/MyFeature.vue";
 import "@/icons";
 
 describe("MyFeature.vue", () => {

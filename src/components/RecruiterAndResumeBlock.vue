@@ -37,13 +37,11 @@
     </div>
   </div>
 </template>
-<script>
-export default {
-  name: "RecruiterAndResumeBlock",
-  data() {
-    return {
-      rate: 125
-    };
-  }
-};
+<script lang="ts">
+import Vue from "vue";
+import Component from "vue-class-component";
+@Component
+export default class RecruiterAndResumeBlock extends Vue {
+  rate = 125;
+}
 </script>

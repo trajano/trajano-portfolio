@@ -24,9 +24,9 @@ export default {
     };
   },
   mounted() {
-    if (!global.__PRERENDER_INJECTED) {
-      this.dataSrc = this.src;
-    }
+    //if (!global.__PRERENDER_INJECTED) {
+    this.dataSrc = this.src;
+    //}
   }
 };
 </script>

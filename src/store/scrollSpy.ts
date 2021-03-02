@@ -1,4 +1,4 @@
-import { ActionContext, Module } from "vuex";
+import { Module } from "vuex";
 
 interface ScrollSpyState {
   scrollElements: HTMLElement[];
@@ -14,7 +14,7 @@ export const ScrollSpy: Module<ScrollSpyState, ScrollSpyState> = {
     }
   },
   actions: {
-    addScrollSpy({ commit }, payload) {
+    addScrollSpy({ commit }, payload: { el: HTMLElement }) {
       commit("addScrollSpy", { el: payload.el });
     }
   }

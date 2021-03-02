@@ -1,6 +1,6 @@
 import Vuex from "vuex";
 import { shallowMount, createLocalVue } from "@vue/test-utils";
-import PortfolioFooter from "@/components/PortfolioFooter";
+import PortfolioFooter from "@/components/PortfolioFooter.vue";
 import "@/icons";
 
 const localVue = createLocalVue();

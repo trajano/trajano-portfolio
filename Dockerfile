@@ -1,5 +1,5 @@
 FROM chromedp/headless-shell as chrome
-FROM node:latest as build-stage
+FROM node:12 as build-stage
 WORKDIR /app
 COPY package*.json ./
 RUN npm ci

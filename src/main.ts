@@ -4,7 +4,7 @@ import "./app.scss";
 import "materialize-css";
 import "./icons";
 import "./directives";
-import App from "./components/App";
+import App from "@/components/App.vue";
 import store from "./store";
 
 /* eslint-disable no-new */

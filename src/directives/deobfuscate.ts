@@ -1,6 +1,6 @@
 import Vue from "vue";
 
-function deobfuscate(e) {
+function deobfuscate(e: string) {
   return e
     .replace("...", "@")
     .replace(/\.\.\./g, ".")
@@ -18,10 +18,14 @@ function deobfuscate(e) {
 
 Vue.directive("deobfuscate", {
   inserted(el) {
-    if (!global.__PRERENDER_INJECTED) {
-      /* Deobfuscate mailto and tel links */
-      el.innerHTML = deobfuscate(el.innerHTML);
-      el.href = deobfuscate(el.href);
+    // if (!global.__PRERENDER_INJECTED) {
+    /* Deobfuscate mailto and tel links */
+    el.innerHTML = deobfuscate(el.innerHTML);
+    if (el.hasAttribute("href")) {
+      (el as HTMLAnchorElement).href = deobfuscate(
+        (el as HTMLAnchorElement).href
+      );
     }
+    // }
   }
 });
