@@ -9,11 +9,7 @@ import store from "./store";
 
 /* eslint-disable no-new */
 new Vue({
-  el: "#app",
   store,
   render: h => h(App),
-  mounted() {
-    // You'll need this for renderAfterDocumentEvent.
-    document.dispatchEvent(new Event("render-event"));
-  }
-});
+  mounted: () => document.dispatchEvent(new Event("x-app-rendered"))
+}).$mount("#app");

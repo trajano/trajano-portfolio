@@ -2,8 +2,9 @@
   <div id="app">
     <v-parallax
       id="top-banner"
-      :src="require('../assets/buildings.jpg')"
-      alt="Buildings by sergio souza"
+      imageClass="image"
+      :src="require('../assets/snow-in-scarborough-576p-moz.jpg')"
+      alt="Snow in Scarborough by Archimedes Trajano"
     >
       <div class="section">
         <div class="container">
@@ -525,3 +526,8 @@ export default {
   }
 };
 </script>
+<style>
+#top-banner .image {
+  filter: brightness(20%);
+}
+</style>

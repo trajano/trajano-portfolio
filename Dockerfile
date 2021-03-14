@@ -1,5 +1,9 @@
-FROM chromedp/headless-shell as chrome
-FROM node:12 as build-stage
+# FROM chromedp/headless-shell as chrome
+# FROM node:12 as build-stage
+# RUN apt-get update \
+#  && apt-get install -y libgtk2.0-0 libgtk-3-0 libgbm-dev libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 libxtst6 xauth xvfb \
+#  && rm -rf /var/lib/apt/lists/*
+FROM cypress/base:12 as build-stage
 WORKDIR /app
 COPY package*.json ./
 RUN npm ci
