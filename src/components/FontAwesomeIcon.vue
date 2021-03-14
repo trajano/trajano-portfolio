@@ -1,11 +1,16 @@
 <template>
-    <fa-icon v-if="!prerendering" :icon="icon" :size="size" :fixed-width="fixedWidth"/>
+  <fa-icon
+    v-if="!prerendering"
+    :icon="icon"
+    :size="size"
+    :fixed-width="fixedWidth"
+  />
 </template>
 <script>
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 export default {
-  name: 'FontAwesomeIcon',
+  name: "FontAwesomeIcon",
   props: {
     icon: [String, Array],
     size: String,
@@ -17,8 +22,7 @@ export default {
   data() {
     return {
       prerendering: !!global.__PRERENDER_INJECTED
-    }
+    };
   }
-}
+};
 </script>
-

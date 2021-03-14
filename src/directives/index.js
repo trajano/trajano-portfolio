@@ -1,2 +1,0 @@
-import './deobfuscate'
-import './scrollSpy'
