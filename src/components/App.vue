@@ -403,7 +403,7 @@
         <div class="collection">
           <a
             title="Archimedes Trajano Resume in Word Format"
-            class="collection-item waves-effect waves-light "
+            class="collection-item waves-effect waves-light"
             href="assets/Archimedes%20Trajano.docx"
           >
             <font-awesome-icon :icon="['far', 'file-word']" fixed-width />
@@ -411,7 +411,7 @@
           >
           <a
             title="Archimedes Trajano Resume in PDF format"
-            class="collection-item waves-effect waves-light "
+            class="collection-item waves-effect waves-light"
             href="assets/Archimedes%20Trajano.pdf"
           >
             <font-awesome-icon :icon="['far', 'file-pdf']" fixed-width /> PDF</a
