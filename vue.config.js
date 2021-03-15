@@ -11,12 +11,11 @@ module.exports = {
 
   css: {
     sourceMap: false,
-    extract: false
+    extract: true
   },
 
   pluginOptions: {
     prerenderSpa: {
-      registry: undefined,
       renderRoutes: ["/"],
       useRenderEvent: true,
       headless: true,

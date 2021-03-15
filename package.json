@@ -75,7 +75,6 @@
     "lint-staged": "^9.5.0",
     "mini-css-extract-plugin": "^0.9.0",
     "optimize-css-assets-webpack-plugin": "^5.0.0",
-    "prerender-spa-plugin": "^3.4.0",
     "prettier": "^1.19.1",
     "responsive-loader": "^1.1.0",
     "sass": "^1.32.8",
@@ -84,7 +83,7 @@
     "transform-runtime": "0.0.0",
     "typescript": "~3.9.3",
     "uglifyjs-webpack-plugin": "^2.2.0",
-    "vue-cli-plugin-prerender-spa": "~1.1.6",
+    "vue-cli-plugin-prerender-spa": "^1.1.6",
     "vue-jest": "^2.6.0",
     "vue-template-compiler": "^2.5.17",
     "webapp-webpack-plugin": "^2.3.0"

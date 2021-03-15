@@ -42,3 +42,4 @@ src/critical.css
 .wwp-cache/
 /test/unit/coverage/
 .scannerwork/
+.vscode/

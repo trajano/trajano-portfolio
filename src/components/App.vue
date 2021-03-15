@@ -483,7 +483,7 @@ export default {
     global.removeEventListener("resize", this.onResize);
   },
   mounted() {
-    if (global.__PRERENDER_INJECTED) {
+    if (global.__PRERENDER_STATUS) {
       return;
     }
     store.dispatch("Window/onResize");
