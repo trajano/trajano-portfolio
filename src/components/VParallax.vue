@@ -5,9 +5,9 @@
       <img
         :src="dataSrc"
         :alt="alt"
-        @load="imageLoaded"
         :class="imageClass"
         :style="{ transform }"
+        @load="imageLoaded"
       />
     </div>
   </div>
@@ -34,6 +34,25 @@ export default {
   beforeDestroy() {
     this.unwatchVuex();
   },
+  mounted() {
+    if (global.__PRERENDER_INJECTED) {
+      return;
+    }
+    this.dataSrc = this.src;
+    this.img = this.$el.children
+      .item(this.$el.children.length - 1)
+      .children.item(0);
+    this.img.style.display = "block";
+    this.unwatchVuex = this.$store.watch(
+      state => {
+        return state.Window;
+      },
+      windowState => {
+        this.updateParallax(windowState);
+      },
+      { deep: true }
+    );
+  },
   methods: {
     imageLoaded() {
       this.img.style.opacity = 1;
@@ -59,25 +78,6 @@ export default {
         this.transform = `translate(-50%, ${parallax}px)`;
       }
     }
-  },
-  mounted() {
-    if (global.__PRERENDER_INJECTED) {
-      return;
-    }
-    this.dataSrc = this.src;
-    this.img = this.$el.children
-      .item(this.$el.children.length - 1)
-      .children.item(0);
-    this.img.style.display = "block";
-    this.unwatchVuex = this.$store.watch(
-      state => {
-        return state.Window;
-      },
-      windowState => {
-        this.updateParallax(windowState);
-      },
-      { deep: true }
-    );
   }
 };
 </script>

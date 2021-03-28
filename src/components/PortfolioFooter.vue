@@ -1,5 +1,5 @@
 <template>
-  <footer class="page-footer" id="contact" v-scroll-spy>
+  <footer id="contact" v-scroll-spy class="page-footer">
     <div class="container">
       <div class="row">
         <bio-or-blog class="col m6 l8 hide-on-small-only" />
@@ -7,8 +7,8 @@
           <h5 class="white-text">Contact me</h5>
           <p>
             <a
-              class="white-text waves-effect btn-flat"
               v-deobfuscate
+              class="white-text waves-effect btn-flat"
               href="mailto:archie...trajano...net"
             >
               <font-awesome-icon
@@ -20,8 +20,8 @@
           </p>
           <p>
             <a
-              class="white-text waves-effect btn-flat"
               v-deobfuscate
+              class="white-text waves-effect btn-flat"
               href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive"
             >
               <font-awesome-icon icon="mobile-alt" :fixed-width="true" />
@@ -49,8 +49,6 @@ export default {
   components: {
     BioOrBlog
   },
-  computed: {},
-  methods: {},
   data() {
     const currentYear = new Date().getFullYear();
     const yearsWorked = currentYear - 1996;
@@ -58,7 +56,9 @@ export default {
       currentYear,
       yearsWorked
     };
-  }
+  },
+  computed: {},
+  methods: {}
 };
 </script>
 <style lang="scss"></style>

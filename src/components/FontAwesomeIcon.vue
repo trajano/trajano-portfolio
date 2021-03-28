@@ -11,13 +11,13 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 export default {
   name: "FontAwesomeIcon",
+  components: {
+    faIcon: FontAwesomeIcon
+  },
   props: {
     icon: [String, Array],
     size: String,
     fixedWidth: Boolean
-  },
-  components: {
-    faIcon: FontAwesomeIcon
   },
   data() {
     return {

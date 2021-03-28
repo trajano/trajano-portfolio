@@ -2,7 +2,7 @@
   <div id="app">
     <v-parallax
       id="top-banner"
-      imageClass="image"
+      image-class="image"
       :src="require('../assets/snow-in-scarborough-576p-moz.jpg')"
       alt="Snow in Scarborough by Archimedes Trajano"
     >
@@ -30,8 +30,8 @@
           </div>
           <div class="row hide-on-large-only center">
             <a
-              class="white-text btn-flat"
               v-deobfuscate
+              class="white-text btn-flat"
               href="mailto:archie...trajano...net"
             >
               <font-awesome-icon :icon="['far', 'envelope']" fixed-width />
@@ -39,8 +39,8 @@
             >
             <br class="hide-on-med-only" />
             <a
-              class="white-text btn-flat"
               v-deobfuscate
+              class="white-text btn-flat"
               href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive"
             >
               <font-awesome-icon icon="mobile-alt" fixed-width />
@@ -101,10 +101,10 @@
       </div>
     </div>
     <v-parallax
-      class="valign-wrapper scrollspy"
       id="projects"
       v-scroll-spy
-      imageClass="darken"
+      class="valign-wrapper scrollspy"
+      image-class="darken"
       :src="require('../assets/archimedes-fossil.jpg')"
       alt="Archimedes fossil"
     >
@@ -263,10 +263,10 @@
       </div>
     </div>
     <v-parallax
-      class="valign-wrapper scrollspy"
-      v-scroll-spy
       id="social"
-      imageClass="darken"
+      v-scroll-spy
+      class="valign-wrapper scrollspy"
+      image-class="darken"
       :src="require('../assets/snow-in-scarborough.jpg')"
       alt="Snow in Scarborough"
     >
@@ -367,9 +367,9 @@
       </div>
     </div>
     <v-parallax
-      class="valign-wrapper scrollspy"
-      v-scroll-spy
       id="resume"
+      v-scroll-spy
+      class="valign-wrapper scrollspy"
       :src="require('../assets/phoenix-hiro.jpg')"
       alt="Phoenix and Hiro"
     >
@@ -455,25 +455,6 @@ export default {
     };
   },
   computed: {},
-  methods: {
-    onResize() {
-      store.dispatch("Window/onResize");
-    },
-    onScroll() {
-      store.dispatch("Window/onScroll");
-    },
-    scrollTo(id) {
-      this.$store.state.ScrollSpy.scrollElements.forEach(v => {
-        if (v.id === id) {
-          global.scroll({
-            top: v.offsetTop,
-            left: 0,
-            behavior: "smooth"
-          });
-        }
-      });
-    }
-  },
   created() {
     global.addEventListener("scroll", this.onScroll);
     global.addEventListener("resize", this.onResize);
@@ -523,6 +504,25 @@ export default {
 
     $script("//www.googletagmanager.com/gtm.js?id=GTM-KB96BNB");
     $script("//contextual.media.net/dmedianet.js?cid=8CU21S9US&https=1");
+  },
+  methods: {
+    onResize() {
+      store.dispatch("Window/onResize");
+    },
+    onScroll() {
+      store.dispatch("Window/onScroll");
+    },
+    scrollTo(id) {
+      this.$store.state.ScrollSpy.scrollElements.forEach(v => {
+        if (v.id === id) {
+          global.scroll({
+            top: v.offsetTop,
+            left: 0,
+            behavior: "smooth"
+          });
+        }
+      });
+    }
   }
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
-  <div id="mainnav" class="scrollspy" v-scroll-spy>
-    <nav role="navigation" id="mainnav-nav" :class="{ pinned }">
+  <div id="mainnav" v-scroll-spy class="scrollspy">
+    <nav id="mainnav-nav" role="navigation" :class="{ pinned }">
       <div class="nav-wrapper">
         <a id="logo-container" href="#" class="brand-logo left">
           <img src="../assets/portfolio-logo.png" alt="Trajano" />
@@ -12,32 +12,32 @@
           <li>
             <a
               href="#mainnav"
-              @click.prevent="scrollTo('mainnav')"
               :class="{ active: on('mainnav') }"
+              @click.prevent="scrollTo('mainnav')"
               >About Archie</a
             >
           </li>
           <li>
             <a
               href="#projects"
-              @click.prevent="scrollTo('projects')"
               :class="{ active: on('projects') }"
+              @click.prevent="scrollTo('projects')"
               >Personal Projects</a
             >
           </li>
           <li>
             <a
               href="#social"
-              @click.prevent="scrollTo('social')"
               :class="{ active: on('social') }"
+              @click.prevent="scrollTo('social')"
               >Social</a
             >
           </li>
           <li>
             <a
               href="#resume"
-              @click.prevent="scrollTo('resume')"
               :class="{ active: on('resume') }"
+              @click.prevent="scrollTo('resume')"
               >Resume</a
             >
           </li>
@@ -47,8 +47,8 @@
           <li>
             <a
               href="#contact"
-              @click.prevent="scrollTo('contact')"
               :class="{ active: on('contact') }"
+              @click.prevent="scrollTo('contact')"
               >Contact Me</a
             >
           </li>
@@ -69,12 +69,12 @@
                 class="circle"
               />
               <span class="white-text name">Archie</span>
-              <a href="mailto:archie...trajano...net" v-deobfuscate>
+              <a v-deobfuscate href="mailto:archie...trajano...net">
                 <span class="white-text email">archie...trajano...net</span>
               </a>
               <a
-                href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive"
                 v-deobfuscate
+                href="tel:+One FourOneSix-EightFiveSix-SixSixFiveFive"
               >
                 <span class="white-text tel"
                   >FourOneSix-EightFiveSix-SixSixFiveFive</span
@@ -128,6 +128,23 @@ export default {
       scrollTop: state => state.Window.scrollTop
     })
   },
+  mounted() {
+    if (global.__PRERENDER_INJECTED) {
+      return;
+    }
+    this.unwatchVuex = this.$store.watch(
+      state => {
+        return state.Window.scrollTop;
+      },
+      scrollTop => {
+        this.updateCurrentId(scrollTop);
+      }
+    );
+    this.updateCurrentId(this.scrollTop);
+  },
+  beforeDestroy() {
+    this.unwatchVuex();
+  },
   methods: {
     on(id) {
       return id === this.currentId;
@@ -152,23 +169,6 @@ export default {
       });
       this.pinned = scrollTop >= top;
     }
-  },
-  mounted() {
-    if (global.__PRERENDER_INJECTED) {
-      return;
-    }
-    this.unwatchVuex = this.$store.watch(
-      state => {
-        return state.Window.scrollTop;
-      },
-      scrollTop => {
-        this.updateCurrentId(scrollTop);
-      }
-    );
-    this.updateCurrentId(this.scrollTop);
-  },
-  beforeDestroy() {
-    this.unwatchVuex();
   }
 };
 </script>

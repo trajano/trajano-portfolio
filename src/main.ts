@@ -10,6 +10,6 @@ import store from "./store";
 /* eslint-disable no-new */
 new Vue({
   store,
-  render: h => h(App),
-  mounted: () => document.dispatchEvent(new Event("x-app-rendered"))
+  mounted: () => document.dispatchEvent(new Event("x-app-rendered")),
+  render: h => h(App)
 }).$mount("#app");
