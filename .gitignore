@@ -43,3 +43,4 @@ src/critical.css
 /test/unit/coverage/
 .scannerwork/
 .vscode/
+storybook-static/
