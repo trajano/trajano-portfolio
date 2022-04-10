@@ -4,8 +4,8 @@
       <font-awesome-icon icon="exclamation-circle" />
       <strong>FYI TO RECRUITERS:</strong> I am only interested in
       telecommute/remote work within the Greater Toronto Area. My consulting
-      rate is <b>${{ rate }} per hour</b>. My resume is only available in HTML
-      or PDF, no Word format is available.
+      rate is <strong>${{ rate }} per hour</strong>. My resume is only available
+      in HTML or PDF, no Word format is available.
     </p>
     <div class="center">
       <p>
@@ -42,6 +42,6 @@ import Vue from "vue";
 import Component from "vue-class-component";
 @Component
 export default class RecruiterAndResumeBlock extends Vue {
-  rate = 125;
+  rate = 175;
 }
 </script>
