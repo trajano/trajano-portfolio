@@ -101,8 +101,7 @@
   "license": "EPL-2.0",
   "lint-staged": {
     "*.{js,jsx,vue,ts,tsx}": [
-      "vue-cli-service lint",
-      "git add"
+      "vue-cli-service lint"
     ]
   },
   "repository": {
