@@ -1,6 +1,5 @@
 import Vue from "vue";
 import DImg from "@/components/DImg.vue";
-import { expect } from "chai";
 
 describe("DImg.vue", () => {
   it("should change to the src url after the next tick", () => {
@@ -10,11 +9,11 @@ describe("DImg.vue", () => {
         src: "https://trajano.net/",
       },
     }).$mount();
-    expect((vm.$el as HTMLImageElement).src).eq(
+    expect((vm.$el as HTMLImageElement).src).toEqual(
       "data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
     );
     vm.$nextTick(() => {
-      expect((vm.$el as HTMLImageElement).src).eq("https://trajano.net/");
+      expect((vm.$el as HTMLImageElement).src).toEqual("https://trajano.net/");
     });
   });
 
@@ -26,11 +25,11 @@ describe("DImg.vue", () => {
         src: "https://trajano.net/",
       },
     }).$mount();
-    expect((vm.$el as HTMLImageElement).src).eq(
+    expect((vm.$el as HTMLImageElement).src).toEqual(
       "data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
     );
     vm.$nextTick(() => {
-      expect((vm.$el as HTMLImageElement).src).eq(
+      expect((vm.$el as HTMLImageElement).src).toEqual(
         "data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
       );
     });

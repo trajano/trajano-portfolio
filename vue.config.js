@@ -22,4 +22,6 @@ module.exports = {
       onlyProduction: true,
     },
   },
+
+  transpileDependencies: true,
 };

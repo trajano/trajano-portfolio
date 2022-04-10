@@ -7,6 +7,7 @@ module.exports = {
 
   parserOptions: {
     ecmaVersion: 2020,
+    parser: "@typescript-eslint/parser",
   },
 
   rules: {
@@ -51,6 +52,15 @@ module.exports = {
         mocha: true,
       },
     },
+    {
+      files: [
+        "**/__tests__/*.{j,t}s?(x)",
+        "**/tests/unit/**/*.spec.{j,t}s?(x)",
+      ],
+      env: {
+        jest: true,
+      },
+    },
   ],
 
   extends: [
@@ -61,5 +71,6 @@ module.exports = {
     "@vue/prettier/@typescript-eslint",
     "plugin:vue/essential",
     "plugin:prettier/recommended",
+    "@vue/typescript",
   ],
 };
