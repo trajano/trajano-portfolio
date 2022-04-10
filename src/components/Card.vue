@@ -13,23 +13,24 @@
 </template>
 <script>
 export default {
+  // eslint-disable-next-line vue/multi-word-component-names
   name: "Card",
   props: {
     bgSrc: {
       type: [String, Object],
-      required: true
+      required: true,
     },
     alt: String,
     bgClass: String,
     href: {
       type: [String, Object],
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
       img: undefined,
-      dataSrc: "data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+      dataSrc: "data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=",
     };
   },
   mounted() {
@@ -40,7 +41,7 @@ export default {
   methods: {
     click() {
       global.location.href = this.href;
-    }
-  }
+    },
+  },
 };
 </script>

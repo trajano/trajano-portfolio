@@ -47,18 +47,18 @@ import BioOrBlog from "./BioOrBlog";
 export default {
   name: "PortfolioFooter",
   components: {
-    BioOrBlog
+    BioOrBlog,
   },
   data() {
     const currentYear = new Date().getFullYear();
     const yearsWorked = currentYear - 1996;
     return {
       currentYear,
-      yearsWorked
+      yearsWorked,
     };
   },
   computed: {},
-  methods: {}
+  methods: {},
 };
 </script>
 <style lang="scss"></style>

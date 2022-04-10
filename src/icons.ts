@@ -41,4 +41,4 @@ library.add(
   faUsers
 );
 
-Vue.component("font-awesome-icon", FontAwesomeIcon);
+Vue.component("FontAwesomeIcon", FontAwesomeIcon);

@@ -6,12 +6,12 @@ module.exports = {
     performance: {
       // maxEntrypointSize: 512000,
       // maxAssetSize: 512000
-    }
+    },
   },
 
   css: {
     sourceMap: false,
-    extract: true
+    extract: true,
   },
 
   pluginOptions: {
@@ -19,7 +19,7 @@ module.exports = {
       renderRoutes: ["/"],
       useRenderEvent: true,
       headless: true,
-      onlyProduction: true
-    }
-  }
+      onlyProduction: true,
+    },
+  },
 };

@@ -27,5 +27,5 @@ Vue.directive("deobfuscate", {
       );
     }
     // }
-  }
+  },
 });

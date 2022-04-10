@@ -7,8 +7,8 @@ describe("DImg.vue", () => {
     const Constructor = Vue.extend(DImg);
     const vm = new Constructor({
       propsData: {
-        src: "https://trajano.net/"
-      }
+        src: "https://trajano.net/",
+      },
     }).$mount();
     expect((vm.$el as HTMLImageElement).src).eq(
       "data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
@@ -23,8 +23,8 @@ describe("DImg.vue", () => {
     const Constructor = Vue.extend(DImg);
     const vm = new Constructor({
       propsData: {
-        src: "https://trajano.net/"
-      }
+        src: "https://trajano.net/",
+      },
     }).$mount();
     expect((vm.$el as HTMLImageElement).src).eq(
       "data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="

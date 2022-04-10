@@ -115,28 +115,28 @@ import DImg from "./DImg";
 export default {
   name: "MainNav",
   components: {
-    DImg
+    DImg,
   },
   data() {
     return {
       pinned: false,
-      currentId: "mainnav"
+      currentId: "mainnav",
     };
   },
   computed: {
     ...mapState({
-      scrollTop: state => state.Window.scrollTop
-    })
+      scrollTop: (state) => state.Window.scrollTop,
+    }),
   },
   mounted() {
     if (global.__PRERENDER_INJECTED) {
       return;
     }
     this.unwatchVuex = this.$store.watch(
-      state => {
+      (state) => {
         return state.Window.scrollTop;
       },
-      scrollTop => {
+      (scrollTop) => {
         this.updateCurrentId(scrollTop);
       }
     );
@@ -150,26 +150,26 @@ export default {
       return id === this.currentId;
     },
     scrollTo(id) {
-      this.$store.state.ScrollSpy.scrollElements.forEach(v => {
+      this.$store.state.ScrollSpy.scrollElements.forEach((v) => {
         if (v.id === id) {
           global.scroll({
             top: v.offsetTop,
             left: 0,
-            behavior: "smooth"
+            behavior: "smooth",
           });
         }
       });
     },
     updateCurrentId(scrollTop) {
       const top = this.$el.offsetTop;
-      this.$store.state.ScrollSpy.scrollElements.forEach(v => {
+      this.$store.state.ScrollSpy.scrollElements.forEach((v) => {
         if (scrollTop + this.$el.offsetHeight >= v.offsetTop) {
           this.currentId = v.id;
         }
       });
       this.pinned = scrollTop >= top;
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>

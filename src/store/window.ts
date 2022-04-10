@@ -7,12 +7,12 @@ export const Window: Module<WindowState, WindowState> = {
   namespaced: true,
   state: {
     scrollTop: 0,
-    windowHeight: window.innerHeight
+    windowHeight: window.innerHeight,
   },
   getters: {
     windowBottom({ scrollTop, windowHeight }: WindowState) {
       return scrollTop + windowHeight;
-    }
+    },
   },
   mutations: {
     onScroll(state: WindowState, { scrollTop }: WindowState) {
@@ -21,7 +21,7 @@ export const Window: Module<WindowState, WindowState> = {
     onResize(state: WindowState, { scrollTop, windowHeight }: WindowState) {
       state.scrollTop = scrollTop;
       state.windowHeight = windowHeight;
-    }
+    },
   },
   actions: {
     onScroll({ commit }: ActionContext<WindowState, WindowState>) {
@@ -40,7 +40,7 @@ export const Window: Module<WindowState, WindowState> = {
 
       const windowHeight = window.innerHeight;
       commit("onResize", { scrollTop, windowHeight });
-    }
-  }
+    },
+  },
 };
 export default Window;

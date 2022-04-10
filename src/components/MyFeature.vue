@@ -20,15 +20,15 @@ export default {
   props: {
     heading: {
       type: String,
-      required: true
+      required: true,
     },
     icon: {
       type: [String, Array],
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {};
-  }
+  },
 };
 </script>

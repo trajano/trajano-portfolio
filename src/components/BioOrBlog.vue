@@ -27,7 +27,7 @@ export default {
     return {
       currentYear,
       yearsWorked,
-      posts: []
+      posts: [],
     };
   },
   async mounted() {
@@ -38,6 +38,6 @@ export default {
       "https://trajano.net/wp-json/wp/v2/posts?per_page=3"
     );
     this.posts = await postsRequest.json();
-  }
+  },
 };
 </script>

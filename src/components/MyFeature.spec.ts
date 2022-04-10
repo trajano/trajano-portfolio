@@ -8,8 +8,8 @@ describe("MyFeature.vue", () => {
     new Constructor({
       propsData: {
         heading: "test",
-        icon: "building"
-      }
+        icon: "building",
+      },
     }).$mount();
   });
 
@@ -18,8 +18,8 @@ describe("MyFeature.vue", () => {
     new Constructor({
       propsData: {
         heading: "test",
-        icon: ["fab", "github"]
-      }
+        icon: ["fab", "github"],
+      },
     }).$mount();
   });
 });

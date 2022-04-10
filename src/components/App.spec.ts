@@ -14,10 +14,10 @@ describe("App.vue", () => {
     const wrapper = shallowMount(App, {
       mocks: {
         $store: {
-          state: {}
-        }
+          state: {},
+        },
       },
-      localVue
+      localVue,
     });
     wrapper.html();
   });

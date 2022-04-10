@@ -127,7 +127,7 @@
         <div class="row">
           <div class="col s12 m6">
             <div class="card small sticky-action">
-              <div class="card-image waves-effect waves-block waves-light ">
+              <div class="card-image waves-effect waves-block waves-light">
                 <d-img
                   src="https://trajano.net/wp-content/uploads/2016/11/triforce-672x340.png"
                   alt="GitHub, Travis, SonarQube"
@@ -445,13 +445,13 @@ export default {
     MyFeature,
     PortfolioFooter,
     RecuriterAndResumeBlock,
-    VParallax
+    VParallax,
   },
   data() {
     const currentYear = new Date().getFullYear();
     return {
       ld,
-      currentYear
+      currentYear,
     };
   },
   computed: {},
@@ -472,32 +472,32 @@ export default {
 
     $(".button-collapse").sideNav({
       edge: "right",
-      closeOnClick: true
+      closeOnClick: true,
     });
 
     // Media.net ads
     global._mNHandle = {
       queue: [
-        () => window._mNDetails.loadTag("152146877", "728x20", "152146877")
-      ]
+        () => window._mNDetails.loadTag("152146877", "728x20", "152146877"),
+      ],
     };
 
     global.dataLayer = global.dataLayer || [];
     global.dataLayer.push({
       "gtm.start": new Date().getTime(),
-      event: "gtm.js"
+      event: "gtm.js",
     });
 
     Promise.all([
       new FontFaceObserver("Lato", {
-        weight: 100
+        weight: 100,
       }).load(),
       new FontFaceObserver("Lato", {
-        weight: 300
+        weight: 300,
       }).load(),
       new FontFaceObserver("Lato", {
-        weight: 400
-      }).load()
+        weight: 400,
+      }).load(),
     ]).then(() => {
       document.documentElement.classList.add("font-loaded");
     });
@@ -513,17 +513,17 @@ export default {
       store.dispatch("Window/onScroll");
     },
     scrollTo(id) {
-      this.$store.state.ScrollSpy.scrollElements.forEach(v => {
+      this.$store.state.ScrollSpy.scrollElements.forEach((v) => {
         if (v.id === id) {
           global.scroll({
             top: v.offsetTop,
             left: 0,
-            behavior: "smooth"
+            behavior: "smooth",
           });
         }
       });
-    }
-  }
+    },
+  },
 };
 </script>
 <style>

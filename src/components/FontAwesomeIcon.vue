@@ -12,17 +12,17 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 export default {
   name: "FontAwesomeIcon",
   components: {
-    faIcon: FontAwesomeIcon
+    faIcon: FontAwesomeIcon,
   },
   props: {
     icon: [String, Array],
     size: String,
-    fixedWidth: Boolean
+    fixedWidth: Boolean,
   },
   data() {
     return {
-      prerendering: !!global.__PRERENDER_INJECTED
+      prerendering: !!global.__PRERENDER_INJECTED,
     };
-  }
+  },
 };
 </script>

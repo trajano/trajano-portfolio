@@ -18,17 +18,17 @@ export default {
   props: {
     src: {
       type: [String, Object],
-      required: true
+      required: true,
     },
     alt: String,
-    imageClass: String
+    imageClass: String,
   },
   data() {
     return {
       imgHeight: 1,
       img: undefined,
       dataSrc: "data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=",
-      transform: "translate(-50%, 0px)"
+      transform: "translate(-50%, 0px)",
     };
   },
   beforeDestroy() {
@@ -44,10 +44,10 @@ export default {
       .children.item(0);
     this.img.style.display = "block";
     this.unwatchVuex = this.$store.watch(
-      state => {
+      (state) => {
         return state.Window;
       },
-      windowState => {
+      (windowState) => {
         this.updateParallax(windowState);
       },
       { deep: true }
@@ -77,8 +77,8 @@ export default {
       if (scrollTop <= containerBottom && containerTop <= windowBottom) {
         this.transform = `translate(-50%, ${parallax}px)`;
       }
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="scss" scoped>

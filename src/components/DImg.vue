@@ -15,18 +15,18 @@ export default {
   props: {
     src: {
       type: [String, Object],
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
-      dataSrc: "data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+      dataSrc: "data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=",
     };
   },
   mounted() {
     //if (!global.__PRERENDER_INJECTED) {
     this.dataSrc = this.src;
     //}
-  }
+  },
 };
 </script>

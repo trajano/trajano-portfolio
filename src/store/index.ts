@@ -8,7 +8,7 @@ Vue.use(Vuex);
 const store = new Vuex.Store<any>({
   modules: {
     ScrollSpy,
-    Window
-  }
+    Window,
+  },
 });
 export default store;

@@ -11,10 +11,10 @@ describe("PortfolioFooter.vue", () => {
     const wrapper = shallowMount(PortfolioFooter, {
       mocks: {
         $store: {
-          state: {}
-        }
+          state: {},
+        },
       },
-      localVue
+      localVue,
     });
     wrapper.html();
   });

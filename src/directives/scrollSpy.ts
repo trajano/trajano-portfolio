@@ -5,5 +5,5 @@ Vue.directive("scroll-spy", {
     //if (!global.__PRERENDER_INJECTED) {
     store.dispatch("ScrollSpy/addScrollSpy", { el });
     //}
-  }
+  },
 });

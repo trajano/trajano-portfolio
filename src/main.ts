@@ -11,5 +11,5 @@ import store from "./store";
 new Vue({
   store,
   mounted: () => document.dispatchEvent(new Event("x-app-rendered")),
-  render: h => h(App)
+  render: (h) => h(App),
 }).$mount("#app");
