@@ -418,17 +418,17 @@
 </template>
 <script>
 import ld from "../ld.json";
-import Card from "./Card";
-import MainNav from "./MainNav";
-import RecuriterAndResumeBlock from "./RecruiterAndResumeBlock";
-import MyFeature from "./MyFeature";
-import DImg from "./DImg";
-import PortfolioFooter from "./PortfolioFooter";
+import Card from "./Card.vue";
+import MainNav from "./MainNav.vue";
+import RecuriterAndResumeBlock from "./RecruiterAndResumeBlock.vue";
+import MyFeature from "./MyFeature.vue";
+import DImg from "./DImg.vue";
+import PortfolioFooter from "./PortfolioFooter.vue";
 import $script from "scriptjs";
 import $ from "jquery";
 import store from "../store";
 import FontFaceObserver from "fontfaceobserver";
-import VParallax from "./VParallax";
+import VParallax from "./VParallax.vue";
 
 export default {
   name: "App",
