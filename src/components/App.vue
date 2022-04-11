@@ -129,35 +129,29 @@
             <div class="card small sticky-action">
               <div class="card-image waves-effect waves-block waves-light">
                 <d-img
-                  src="https://trajano.net/wp-content/uploads/2016/11/triforce-672x340.png"
-                  alt="GitHub, Travis, SonarQube"
+                  :src="require('../assets/lock-unlock.jpg?size=800')"
+                  alt="My design language"
                   class="activator darken"
                 />
-                <span class="activator card-title"
-                  >GitHub, Travis-CI and SonarQube</span
-                >
+                <span class="activator card-title">My design language</span>
               </div>
               <div class="card-content">
                 <p class="truncate activator">
-                  Lately, I wanted to rework my open source projects so it works
-                  end to end using free external services rather than my own
-                  servers. So I am making my projects use the new tooling.
+                  I'm neither a marketting nor UI/UX person by trade, but I like
+                  to dabble.
                 </p>
               </div>
               <div class="card-action">
-                <a
-                  href="https://trajano.net/2016/11/integrating-travis-sonarqube/"
-                  >Blog post</a
-                >
+                <a href="./storybook/">Storybook</a>
               </div>
               <div class="card-reveal">
                 <span class="card-title grey-text text-darken-4"
-                  >GitHub, Travis-CI and SonarQube</span
+                  >My design language</span
                 >
                 <p>
-                  Lately, I wanted to rework my open source projects so it works
-                  end-to-end using the free services rather than my own servers.
-                  So I am making my projects use the new tooling.
+                  I'm neither a marketting nor UI/UX person by trade, but I like
+                  to dabble. However, I do have some ideas and there's no better
+                  place to experiment than my own personal website.
                 </p>
               </div>
             </div>

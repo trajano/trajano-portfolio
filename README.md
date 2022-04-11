@@ -17,3 +17,12 @@ This will run `webpack --mode=production` to build the resulting site in the `di
 `npm start`
 
 This will start up a server on http://localhost:8080/ that will show the portfolio site.  It is configured to automatically refresh the page when there is a change in the application.
+
+# Docker
+
+```
+docker compose up
+```
+
+Then open up locally using http://localhost:4000
+
