@@ -21,7 +21,7 @@ RUN npm run build-storybook
 
 # FROM busybox:1.36.1-uclibc AS caddy
 FROM caddy:alpine
-COPY --from=builder /usr/bin/caddy /usr/bin/caddy
+# COPY --from=builder /usr/bin/caddy /usr/bin/caddy
 COPY Caddyfile /etc/caddy/Caddyfile
 COPY --from=build-stage /app/dist/ /usr/share/caddy/
 COPY --from=build-storybook /app/storybook-static/ /usr/share/caddy/storybook/
