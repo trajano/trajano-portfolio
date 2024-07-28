@@ -2,7 +2,10 @@ FROM node:16.14.2 AS ci-stage
 WORKDIR /app
 COPY package*.json ./
 RUN --mount=type=cache,target=/root/.npm npm ci
-COPY ./ .
+COPY ./src/  ./src/
+COPY ./.storybook/  ./.storybook/
+COPY *.js *.json ./
+RUN ls ./
 
 FROM ci-stage AS build-stage
 RUN npm run build
