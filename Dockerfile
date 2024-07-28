@@ -16,9 +16,7 @@ RUN npm run build-storybook
 FROM caddy:builder AS builder
 RUN git clone https://github.com/trajano/caddy /mnt/
 RUN xcaddy build \
-    --replace github.com/caddyserver/caddy/v2/modules/caddyhttp/tracing=/mnt/modules/caddyhttp/tracing \
-    --with github.com/caddyserver/replace-response \
-    --with github.com/caddyserver/cache-handler
+    --replace github.com/caddyserver/caddy/v2/modules/caddyhttp/tracing=/mnt/modules/caddyhttp/tracing
 
 FROM busybox:1.36.1-uclibc AS caddy
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
