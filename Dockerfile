@@ -1,18 +1,19 @@
-FROM node:16.14.2 as ci-stage
+FROM node:16.14.2 AS ci-stage
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci
-COPY ./ .
+RUN --mount=type=cache,target=/root/.npm npm ci
+COPY ./src/  ./src/
+COPY ./.storybook/  ./.storybook/
+COPY *.js *.json ./
+RUN ls ./
 
-FROM ci-stage as build-stage
+FROM ci-stage AS build-stage
 RUN npm run build
 
-FROM ci-stage as build-storybook
+FROM ci-stage AS build-storybook
 RUN npm run build-storybook
 
-FROM nginx:alpine as production-stage
-RUN mkdir /app
-COPY nginx.conf /etc/nginx/nginx.conf
-COPY --from=build-stage /app/dist /app
-COPY --from=build-storybook /app/storybook-static /app/storybook
-
+FROM caddy:alpine
+COPY Caddyfile /etc/caddy/Caddyfile
+COPY --from=build-stage /app/dist/ /usr/share/caddy/
+COPY --from=build-storybook /app/storybook-static/ /usr/share/caddy/storybook/
