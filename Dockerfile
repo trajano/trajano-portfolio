@@ -3,6 +3,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN --mount=type=cache,target=/root/.npm npm ci
 COPY ./src/  ./src/
+COPY ./public/  ./public/
 COPY ./.storybook/  ./.storybook/
 COPY *.js *.json ./
 RUN ls ./
