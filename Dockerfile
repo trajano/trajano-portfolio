@@ -15,7 +15,7 @@ RUN npm run build-storybook
 
 FROM caddy:builder AS builder
 RUN --mount=type=cache,target=/go/pkg/mod/cache xcaddy build \
-  --with github.com/caddyserver/caddy/v2=github.com/trajano/caddy/v2@ea6a6298f5ef94efef2900af22d200583ca09f3f
+  --with github.com/caddyserver/caddy/v2=github.com/trajano/caddy/v2@1f6b8322bd1828de43db038483f79196d8a094f4
 
 FROM caddy:alpine
 # FROM busybox:1.36.1-uclibc AS caddy
