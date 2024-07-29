@@ -14,14 +14,13 @@ RUN npm run build
 FROM ci-stage AS build-storybook
 RUN npm run build-storybook
 
-# FROM caddy:builder AS builder
-# RUN git clone https://github.com/trajano/caddy /mnt/
-# RUN xcaddy build \
-#     --replace github.com/caddyserver/caddy/v2/modules/caddyhttp/tracing=/mnt/modules/caddyhttp/tracing
+FROM caddy:builder AS builder
+RUN xcaddy build \
+  --with github.com/caddyserver/caddy/v2=github.com/trajano/caddy/v2@ea6a6298f5ef94efef2900af22d200583ca09f3f
 
-# FROM busybox:1.36.1-uclibc AS caddy
-FROM caddy:alpine
-# COPY --from=builder /usr/bin/caddy /usr/bin/caddy
+# FROM caddy:alpine
+FROM busybox:1.36.1-uclibc AS caddy
+COPY --from=builder /usr/bin/caddy /usr/bin/caddy
 COPY Caddyfile /etc/caddy/Caddyfile
 COPY --from=build-stage /app/dist/ /usr/share/caddy/
 COPY --from=build-storybook /app/storybook-static/ /usr/share/caddy/storybook/
