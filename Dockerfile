@@ -6,7 +6,6 @@ COPY ./src/  ./src/
 COPY ./public/  ./public/
 COPY ./.storybook/  ./.storybook/
 COPY *.js *.json ./
-RUN ls ./
 
 FROM ci-stage AS build-stage
 RUN npm run build
@@ -15,7 +14,7 @@ FROM ci-stage AS build-storybook
 RUN npm run build-storybook
 
 FROM caddy:builder AS builder
-RUN xcaddy build \
+RUN --mount=type=cache,target=/go/pkg/mod/cache xcaddy build \
   --with github.com/caddyserver/caddy/v2=github.com/trajano/caddy/v2@ea6a6298f5ef94efef2900af22d200583ca09f3f
 
 FROM caddy:alpine
