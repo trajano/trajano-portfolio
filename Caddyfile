@@ -12,6 +12,6 @@ file_server
 try_files {path} /
 handle @tracingEnabled {
 	tracing {
-		span "{method} {path}"
+		span "{method} {uri}"
 	}
 }
